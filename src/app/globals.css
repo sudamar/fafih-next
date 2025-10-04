@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply box-border;
+  }
+
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    @apply min-h-screen bg-white text-neutral-950 antialiased;
+  }
+}
