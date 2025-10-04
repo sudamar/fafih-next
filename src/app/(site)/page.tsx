@@ -1,16 +1,19 @@
-import { PageHeading } from '@/components/ui/page-heading'
+import { HeroSlider } from '@/components/domain/home/hero-slider'
+import { ConhecaSection } from '@/components/domain/home/conheca-section'
+import { FocusSection } from '@/components/domain/home/focus-section'
+import { CoursesSection } from '@/components/domain/home/courses-section'
+import { TestimonialsSection } from '@/components/domain/home/testimonials-section'
+import { NewsSection } from '@/components/domain/home/news-section'
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center px-6 py-16">
-      <div className="w-full max-w-xl space-y-8">
-        <PageHeading title="FAFIH" subtitle="Portal institucional em construção" />
-        <p className="text-sm text-neutral-500">
-          Esta estrutura foi preparada para receber páginas, componentes reutilizáveis e assets públicos de forma
-          organizada. Inicie adicionando suas seções em <code>src/components</code> e reutilize-as nos grupos de rotas
-          dentro de <code>src/app</code>.
-        </p>
-      </div>
+    <div className="flex flex-col">
+      <HeroSlider />
+      <ConhecaSection />
+      <FocusSection />
+      <CoursesSection />
+      <TestimonialsSection />
+      <NewsSection />
     </div>
   )
 }

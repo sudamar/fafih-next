@@ -8,7 +8,7 @@
 ## Stack e Ferramentas
 - Node.js 18+
 - Next.js 14 (App Router)
-- Tailwind CSS 3
+- Sempre use Tailwind CSS 3
 - TanStack Query para gerenciamento de dados assíncronos
 - React Hook Form + Zod para formulários tipados
 
@@ -55,7 +55,7 @@ src/
 │   │   ├── Header.tsx
 │   │   ├── Footer.tsx
 │   ├── domain/                               # Componentes específicos de domínio
-│   │   ├── course/
+│   │   ├── curso/
 │   │   │   ├── CourseHero.tsx
 │   │   │   └── InvestmentCard.tsx
 │   │   └── professor/
@@ -66,7 +66,7 @@ src/
 │
 ├── lib/
 │   ├── features/                             # Lógica de negócios e acesso a dados
-│   │   ├── courses/
+│   │   ├── cursos/
 │   │   │   ├── hooks/
 │   │   │   │   ├── useCourse.ts              # Hooks para Client Components
 │   │   │   │   └── useCourses.ts
@@ -76,7 +76,7 @@ src/
 │   │   │   │   └── course.types.ts           # Definições de tipos (Interfaces/Typescript)
 │   │   │   └── utils/
 │   │   │       └── courseMapper.ts
-│   │   └── professors/
+│   │   └── professores/
 │   │       ├── hooks/
 │   │       ├── services/
 │   │       └── types/
@@ -87,8 +87,8 @@ src/
 │   │   └── errorHandler.ts
 │   │
 │   ├── data/                                 # Dados estáticos (se necessário)
-│   │   ├── courses.json
-│   │   └── professors.json
+│   │   ├── cursos.json
+│   │   └── professores.json
 │   │
 │   ├── utils/
 │   │   ├── formatters.ts
@@ -108,7 +108,6 @@ src/
 
 ## Integrações Futuras
 - API institucional para cursos, docentes, notícias, eventos.
-- Sistema de autenticação para áreas internas.
 - Internacionalização (pt-BR como padrão).
 
 ## Área para Personalizações
@@ -117,12 +116,19 @@ src/
 - Componentes de navegação: `TODO`
 
 ### Funcionalidades
-- Fluxos de inscrição: `TODO`
 - Integração com CMS/notícias: `TODO`
-- Painel administrativo: `TODO`
+- Integração com API's de cursos, professores e polos: `TODO`
 
 ### Documentação Complementar
 - Guia de deploy: `TODO`
 - Padrões de conteúdo editorial: `TODO`
+
+### Instruções personalizadas pelo responsável.
+- Eu me chamo SUDAMAR e sou o responsável pela aplicação.
+- SEMPRE use componentes tailwind ao invés de classes CSS. Caso precise de uma classe específica, precisa me avisar, pedir minha confirmação com LESTRAS MAIÚSCULAS.
+- Essa aplicação é uma universidade que vai iniciar seus trabalhos por agora e terá aulas de pós graduação e pós graduação.
+- Só teremos dados vindos de API para cursos, professores e polos. Todo o resto do site será estático.
+- Sempre rode o LINT antes de finalizar uma etapa do seu processamento para verificar se quebrou algo.
+- Por favor, sempre confirme o entendimento antes de iniciar uma execução
 
 > Preencha as seções `TODO` conforme as decisões forem tomadas.
