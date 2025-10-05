@@ -52,6 +52,23 @@
     background: linear-gradient(90deg, #6A0DAD, #0000FF, #008000, #FFFF00, #FFA500, #FF0000);
   }
 
+  .form-title {
+    @apply relative mb-14 text-left font-display text-[1.8rem] font-bold text-secondary;
+  }
+
+  .form-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    left: 50%;
+    bottom: -16px;
+    transform: translateX(-50%); 
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #6A0DAD, #0000FF, #008000, #FFFF00, #FFA500, #FF0000);
+  }
+
+
   .focus-card {
     height: 300px;
     perspective: 1000px;

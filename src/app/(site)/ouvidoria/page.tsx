@@ -20,6 +20,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { PageTitle } from '@/components/ui/page-title'
 import { CardAcentoBorda } from '@/components/ui/card-acento-borda'
+import { FormTitle } from "@/components/ui/form-title"
 
 // Define the form schema with Zod
 const ouvidoriaFormSchema = z.object({
@@ -114,8 +115,9 @@ export default function OuvidoriaPage() {
 
           <div className="lg:col-span-2">
             <div className="rounded-xl bg-white p-8 shadow-lg">
-              <h2 className="font-display text-3xl font-bold text-secondary">Registre sua Manifestação</h2>
-              <br />
+              <div className="mb-6">
+                <FormTitle>Registre sua Manifestação</FormTitle>
+              </div>
               {submitSuccess && (
                 <div className="my-4 rounded-lg bg-green-100 p-4 text-center text-green-800">
                   Sua manifestação foi enviada com sucesso! Retornaremos em até 10 dias úteis.
