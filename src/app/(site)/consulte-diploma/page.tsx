@@ -1,37 +1,49 @@
 'use client'
 
-import { useState } from 'react'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import * as z from 'zod'
 import { PageTitle } from '@/components/ui/page-title'
 import { SectionTitle } from '@/components/ui/section-title'
+import { Button } from '@/components/ui/button'
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
+import { FormTitle } from '@/components/ui/form-title'
+
+const formSchema = z.object({
+  registro: z.string().optional(),
+  rg: z.string().optional(),
+  cpf: z.string().optional(),
+  nascimento: z.string().optional(),
+  validacao: z.string().optional(),
+})
 
 export default function ConsultarDiplomaPage() {
-  const [formData, setFormData] = useState({
-    registro: '',
-    rg: '',
-    cpf: '',
-    nascimento: '',
-    validacao: '',
-  })
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    console.log('Form data submitted:', formData)
-    // TODO: Implementar a lógica de busca do diploma
-  }
-
-  const handleReset = () => {
-    setFormData({
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
       registro: '',
       rg: '',
       cpf: '',
       nascimento: '',
       validacao: '',
-    })
+    },
+  })
+
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    console.log('Form data submitted:', values)
+    // TODO: Implementar a lógica de busca do diploma
+  }
+
+  const handleReset = () => {
+    form.reset()
   }
 
   return (
@@ -47,45 +59,110 @@ export default function ConsultarDiplomaPage() {
           </p>
 
           <div className="rounded-2xl bg-white p-8 shadow-lg md:p-12">
-            <SectionTitle as="h2" className="mb-8 text-center">
+            <FormTitle as="h2" className="mb-8 text-left">
               Busca de Diploma
-            </SectionTitle>
+            </FormTitle>
 
-            <form onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2">
-                <FormField label="Número de Registro" name="registro" value={formData.registro} onChange={handleInputChange} />
-                <FormField label="RG" name="rg" value={formData.rg} onChange={handleInputChange} />
-              </div>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2">
+                  <FormField
+                    control={form.control}
+                    name="registro"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Número de Registro</FormLabel>
+                        <FormControl>
+                          <Input {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="rg"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>RG</FormLabel>
+                        <FormControl>
+                          <Input {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
 
-              <Separator text="OU" />
+                <Separator text="OU" />
 
-              <div className="grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2">
-                <FormField label="CPF" name="cpf" value={formData.cpf} onChange={handleInputChange} />
-                <FormField label="Data de Nascimento" name="nascimento" type="date" value={formData.nascimento} onChange={handleInputChange} />
-              </div>
+                <div className="grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2">
+                  <FormField
+                    control={form.control}
+                    name="cpf"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>CPF</FormLabel>
+                        <FormControl>
+                          <Input {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="nascimento"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Data de Nascimento</FormLabel>
+                        <FormControl>
+                          <Input type="date" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
 
-              <Separator text="OU" />
+                <Separator text="OU" />
 
-              <div>
-                <FormField label="Código de Validação" name="validacao" value={formData.validacao} onChange={handleInputChange} />
-              </div>
+                <div>
+                  <FormField
+                    control={form.control}
+                    name="validacao"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Código de Validação</FormLabel>
+                        <FormControl>
+                          <Input {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
 
-              <div className="mt-10 flex flex-wrap justify-center gap-4">
-                <button
-                  type="submit"
-                  className="rounded-full bg-primary px-10 py-3 font-bold text-white transition hover:bg-primary/90 shadow-md"
-                >
-                  Filtrar
-                </button>
-                <button
-                  type="button"
-                  onClick={handleReset}
-                  className="rounded-full border-2 border-secondary bg-transparent px-10 py-3 font-bold text-secondary transition hover:bg-secondary hover:text-white shadow-md"
-                >
-                  Nova Consulta
-                </button>
-              </div>
-            </form>
+                <div className="mt-10 flex flex-wrap justify-center gap-4">
+                  <Button
+                    type="submit"
+                    className="rounded-full px-10 py-3 font-bold shadow-md"
+                    size="lg"
+                  >
+                    Filtrar
+                  </Button>
+                  <Button
+                    type="button"
+                    onClick={handleReset}
+                    variant="outline"
+                    className="rounded-full border-2 border-secondary px-10 py-3 font-bold text-secondary shadow-md hover:bg-secondary hover:text-white"
+                    size="lg"
+                  >
+                    Nova Consulta
+                  </Button>
+                </div>
+              </form>
+            </Form>
           </div>
 
           <p className="mt-12 text-center text-sm leading-relaxed text-gray-500">
@@ -107,39 +184,6 @@ export default function ConsultarDiplomaPage() {
         </div>
       </section>
     </main>
-  )
-}
-
-// Componente para os campos do formulário
-function FormField({
-  label,
-  name,
-  type = 'text',
-  value,
-  onChange,
-}: {
-  label: string
-  name: string
-  type?: string
-  value: string
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-}) {
-  return (
-    <div>
-      <label htmlFor={name} className="block text-sm font-medium text-gray-700">
-        {label}
-      </label>
-      <div className="mt-1">
-        <input
-          type={type}
-          name={name}
-          id={name}
-          value={value}
-          onChange={onChange}
-          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
-        />
-      </div>
-    </div>
   )
 }
 

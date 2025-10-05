@@ -72,7 +72,7 @@ const navItems: NavItem[] = [
     href: '#contato',
     children: [
       { label: 'Ouvidoria', href: '/ouvidoria' },
-      { label: 'Perguntas Frequentes', href: 'perguntas-frequentes.html' },
+      { label: 'Perguntas Frequentes', href: '/faq' },
       { label: 'Consulta de Diplomas', href: '/consulte-diploma' },
     ],
   },
