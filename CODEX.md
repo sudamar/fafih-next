@@ -107,7 +107,7 @@ src/
 - Regras de lint seguem `eslint-config-next` com TypeScript estrito.
 
 ## Integrações Futuras
-- API institucional para cursos, docentes, notícias, eventos.
+- API institucional para cursos, depoimentos, docentes, notícias, eventos.
 - Internacionalização (pt-BR como padrão).
 
 ## Área para Personalizações
@@ -127,7 +127,8 @@ src/
 - Eu me chamo SUDAMAR e sou o responsável pela aplicação.
 - SEMPRE use componentes tailwind ao invés de classes CSS. Caso precise de uma classe específica, precisa me avisar, pedir minha confirmação com LESTRAS MAIÚSCULAS.
 - Essa aplicação é uma universidade que vai iniciar seus trabalhos por agora e terá aulas de pós graduação e pós graduação.
-- Só teremos dados vindos de API para cursos, professores e polos. Todo o resto do site será estático.
+- Só teremos dados vindos de API para cursos, depoimentos, professores e polos. Todo o resto do site será estático. **Não sendo necessário separar dados** para qualquer outro domínio.
+- caso crie um JSON, sempre crie  ou adapte um service correspondente.
 - Sempre rode o LINT antes de finalizar uma etapa do seu processamento para verificar se quebrou algo.
 - Por favor, sempre confirme o entendimento antes de iniciar uma execução
 

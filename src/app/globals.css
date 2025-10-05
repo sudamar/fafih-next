@@ -116,6 +116,50 @@
     background-color: #006400;
   }
 
+  /* Cards pequenos para caber em uma linha */
+  .focus-card-small {
+    height: 280px;
+    perspective: 1000px;
+  }
+
+  .focus-card-inner-small {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+  }
+
+  .focus-card-small:hover .focus-card-inner-small {
+    transform: rotateY(180deg);
+  }
+
+  .focus-card-face-small {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .focus-card-front-small {
+    background-color: #ffffff;
+    color: #0A2342;
+    border-top: 5px solid;
+    border-image: linear-gradient(90deg, #6A0DAD, #0000FF, #008000, #FFFF00, #FFA500, #FF0000) 1;
+  }
+
+  .focus-card-back-small {
+    transform: rotateY(180deg);
+  }
+
   .header-gradient-border {
     border-bottom: 4px solid transparent;
     border-image: linear-gradient(90deg, #6A0DAD, #0000FF, #008000, #FFFF00, #FFA500, #FF0000) 1;

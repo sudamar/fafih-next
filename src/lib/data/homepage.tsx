@@ -24,12 +24,6 @@ export interface CourseCardData {
   href: string
 }
 
-export interface Testimonial {
-  quote: string
-  author: string
-  role: string
-}
-
 export interface NewsItem {
   title: string
   href: string
@@ -215,32 +209,6 @@ export const courses: CourseCardData[] = [
   },
 ]
 
-export const testimonials: Testimonial[] = [
-  {
-    quote:
-      'A FAFIH abriu minha mente para novas formas de pensar e criar. A abordagem transdisciplinar é um diferencial incrível.',
-    author: 'Maria Clara Souza',
-    role: 'Aluna de Psicologia Junguiana',
-  },
-  {
-    quote:
-      'Lecionar na FAFIH é participar de uma revolução educacional. Aqui, teoria e prática se encontram com a alma.',
-    author: 'Dr. João Santos',
-    role: 'Professor de Psicossomática',
-  },
-  {
-    quote:
-      'O curso de Arteterapia foi transformador, não apenas para minha carreira, mas para minha vida pessoal. Recomendo a todos.',
-    author: 'Ana Beatriz Lima',
-    role: 'Egressa de Arteterapia',
-  },
-  {
-    quote:
-      'A abordagem transdisciplinar me permitiu conectar arte, psicologia e espiritualidade de forma única.',
-    author: 'Ana Costa',
-    role: 'Aluna de Arteterapia',
-  },
-]
 
 export const newsList: NewsItem[] = [
   {

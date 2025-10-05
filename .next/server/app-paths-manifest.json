@@ -1,4 +1,4 @@
 {
-  "/(site)/page": "app/(site)/page.js",
-  "/(site)/iniciacao-cientifica/page": "app/(site)/iniciacao-cientifica/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/(site)/page": "app/(site)/page.js"
 }
