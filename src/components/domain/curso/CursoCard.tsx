@@ -1,17 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import type { Route } from 'next'
 
-interface CursoCardProps {
-  curso: {
-    id: string
-    title: string
-    description: string
-    category: string
-    categoryLabel: string
-    image?: string
-    slug?: string
-  }
-}
+// src/components/CursoCard.tsx
+import type { Course } from "@/lib/features/courses/types/Course.type";
+
+type CursoCardProps = { curso: Course };
+
 
 const CursoCard = ({ curso }: CursoCardProps) => {
   return (
@@ -44,7 +39,7 @@ const CursoCard = ({ curso }: CursoCardProps) => {
         </p>
         <div className="curso-card-actions">
           <Link 
-            href={`/cursos/${curso.slug || curso.id}`}
+            href={`/cursos/${curso.slug ?? String(curso.id)}` as Route}
             className="block w-full py-[0.8rem] rounded-[8px] font-bold text-[0.9rem] text-white text-center no-underline bg-gradient-to-r from-[#6A0DAD] to-[#2C678F] transition-all duration-300 hover:brightness-110 hover:scale-[1.02]"
           >
             Saiba Mais

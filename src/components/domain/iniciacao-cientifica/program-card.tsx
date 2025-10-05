@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { IniciacaoProgram } from '@/lib/data/iniciacao-cientifica'
+import type { Route } from 'next'
 
 interface ProgramCardProps {
   program: IniciacaoProgram
@@ -41,7 +42,7 @@ export function ProgramCard({ program }: ProgramCardProps) {
           }
 
           return (
-            <Link key={action.label} href={action.href} className={className}>
+            <Link key={action.label} href={action.href as Route} className={className}>
               {action.label}
             </Link>
           )

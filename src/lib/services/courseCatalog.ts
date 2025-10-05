@@ -1,6 +1,6 @@
 import rawCourses from '@/lib/data/courses.json'
 
-const cardImageOverrides = {
+const cardImageOverrides: Record<string, string> = {
   'livros-negros-e-livro-vermelho': 'https://i.imgur.com/qwiCmA6.jpeg',
   'sonhando-atraves-da-arteterapia': 'https://i.imgur.com/AnnChjx.png',
   'de-aion-a-jo': 'https://i.imgur.com/REzhmRK.jpeg',
@@ -30,7 +30,7 @@ courses.forEach((course) => {
 
 export const getAllCourses = () => courses.slice();
 
-export const getCourseById = (id) => {
+export const getCourseById = (id: number | string | null | undefined) => {
   if (id === undefined || id === null) {
     return null;
   }
@@ -38,7 +38,7 @@ export const getCourseById = (id) => {
   return coursesById.get(String(id)) || null;
 };
 
-export const getCourseBySlug = (slug) => {
+export const getCourseBySlug = (slug: string | null | undefined) => {
   if (!slug) {
     return null;
   }
@@ -46,8 +46,12 @@ export const getCourseBySlug = (slug) => {
   return coursesBySlug.get(String(slug)) || null;
 };
 
-export const getCourseDetails = (identifier, { fallback = true } = {}) => {
-  const course = getCourseById(identifier) || getCourseBySlug(identifier);
+export const getCourseDetails = (identifier: number | string, { fallback = true } = {}) => {
+  // Check if identifier is a number (for ID lookup) or string (for slug lookup)
+  const course = typeof identifier === 'number' 
+    ? getCourseById(identifier) 
+    : getCourseById(identifier) || getCourseBySlug(identifier);
+    
   if (course) {
     return course;
   }

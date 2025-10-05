@@ -9,12 +9,12 @@
       "A Pós-Graduação em Psicologia Junguiana oferece uma formação aprofundada na teoria e prática da Psicologia Analítica desenvolvida por Carl Gustav Jung. Este programa é destinado a profissionais da área da saúde mental que desejam se especializar nesta abordagem terapêutica única e transformadora.",
       "O curso aborda conceitos fundamentais como inconsciente coletivo, arquétipos, individuação, tipos psicológicos e análise de sonhos, proporcionando uma compreensão integral da psique humana segundo a perspectiva junguiana."
     ],
-    "image": "https://storage.googleapis.com/uxpilot-auth.appspot.com/e30c4d6bd3-d8d26c9e64de72469123.png",
+    "image": "/assets/images/header-curso-1.png",
     "hero": {
       "type": "video",
-      "source": "/assets/videos/video-curso-1.mp4",
+      "source": "/assets/videos/video-curso-1.mp4", 
       "alt": "Apresentação do curso Pós-Graduação em Psicologia Junguiana",
-      "fallbackImage": "https://storage.googleapis.com/uxpilot-auth.appspot.com/e30c4d6bd3-d8d26c9e64de72469123.png"
+      "fallbackImage": "/assets/images/header-curso-1.png"
     },
     "category": "especializacao",
     "categoryLabel": "Pós-Graduação",
@@ -229,14 +229,14 @@
     "testimonials": [
       {
         "text": "Curso excepcional! Transformou minha prática clínica completamente.",
-        "author": "Dra. Fernanda Oliveira",
-        "image": "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-6.jpg",
+        "author": "Fabiana Oliveira",
+        "image": "/assets/images/aluna-fabiana.jpg",
         "borderColor": "border-secondary"
       },
       {
         "text": "Professores excepcionais e conteúdo muito bem estruturado.",
         "author": "Dr. Roberto Silva",
-        "image": "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-8.jpg",
+        "image": "/assets/images/foto-fallback-generica.jpg",
         "borderColor": "border-primary"
       }
     ],
@@ -390,7 +390,7 @@
       {
         "text": "Curso transformador! Mudou completamente minha visão sobre saúde.",
         "author": "Dr. Paulo Santos",
-        "image": "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-8.jpg",
+        "image": "/assets/images/foto-fallback-generica.jpg",
         "borderColor": "border-primary"
       }
     ],

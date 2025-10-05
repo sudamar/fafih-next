@@ -1,6 +1,8 @@
+import type { ReactNode } from 'react'
+
 interface CardMovingProps {
   title: string
-  bullets: string[]
+  bullets: ReactNode[]
   index?: number
 }
 
