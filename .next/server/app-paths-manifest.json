@@ -1,3 +1,4 @@
 {
-  "/(site)/extensao/page": "app/(site)/extensao/page.js"
+  "/(site)/extensao/page": "app/(site)/extensao/page.js",
+  "/(site)/iniciacao-cientifica/page": "app/(site)/iniciacao-cientifica/page.js"
 }

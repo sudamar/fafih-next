@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/(site)/extensao/page": [
+    "/(site)/iniciacao-cientifica/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(site)/extensao/page.js"
+      "static/chunks/app/(site)/iniciacao-cientifica/page.js"
     ],
     "/(site)/layout": [
       "static/chunks/webpack.js",
@@ -20,6 +20,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
+    ],
+    "/(site)/extensao/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/extensao/page.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

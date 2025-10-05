@@ -1,0 +1,1 @@
+Para trabalhar nese projeto, utilizar o CODEX.md como documentação oficial

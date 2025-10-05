@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { PageTitle } from '@/components/ui/page-title'
+import { SectionTitle } from '@/components/ui/section-title'
 
 export default function ExtensaoPage() {
   const [activeTab, setActiveTab] = useState('apresentacao')
@@ -13,7 +14,7 @@ export default function ExtensaoPage() {
     { id: 'jornada', label: 'Jornada da Extensão' },
     { id: 'editais', label: 'Editais' },
     { id: 'regulamentacao', label: 'Regulamentação' },
-    { id: 'faq', label: 'FAQ' },
+    { id: 'faq', label: 'FAQ' }, 
   ]
 
   return (
@@ -70,11 +71,12 @@ export default function ExtensaoPage() {
   )
 }
 
+
 // Apresentação Tab
 function ApresentacaoTab() {
   return (
     <div className="space-y-6">
-      <h2 className="font-display text-2xl font-bold text-secondary">Seja bem-vindo à Extensão</h2>
+      <SectionTitle>Seja bem-vindo à Extensão</SectionTitle>
 
       <p className="leading-relaxed text-gray-700">
         A Curricularização da Extensão é um processo orgânico e dinâmico. Ocorre pela vontade de mudar o mundo
@@ -129,7 +131,7 @@ function ApresentacaoTab() {
 function ProgramasTab() {
   return (
     <div className="space-y-6">
-      <h2 className="font-display text-2xl font-bold text-secondary">Nossos Programas</h2>
+      <SectionTitle>Nossos Programas</SectionTitle>
 
       <p className="leading-relaxed text-gray-700">
         Os Programas de Extensão reúnem, a médio e longo prazo, projetos e ações integradas com objetivos comuns,
@@ -185,7 +187,7 @@ function AtividadesTab() {
 
   return (
     <div className="space-y-6">
-      <h2 className="font-display text-2xl font-bold text-secondary">Projetos de Extensão</h2>
+      <SectionTitle>Projetos de Extensão</SectionTitle>
 
       <p className="leading-relaxed text-gray-700">
         Consulte abaixo a lista de projetos de extensão disponíveis. Clique no nome do projeto para ver mais
@@ -296,7 +298,7 @@ function JornadaTab() {
 
   return (
     <div className="space-y-6">
-      <h2 className="font-display text-2xl font-bold text-secondary">Jornada do Estudante na Extensão</h2>
+      <SectionTitle>Jornada do Estudante na Extensão</SectionTitle>
 
       <div className="relative mx-auto max-w-5xl py-12">
         {/* Timeline vertical line - centralizada */}
@@ -305,8 +307,8 @@ function JornadaTab() {
         {steps.map((step, index) => (
           <div key={index} className="relative mb-20 last:mb-0 flex items-center justify-center">
             {/* Icon Circle - sempre centralizado */}
-            <div className="absolute left-1/2 -translate-x-1/2 z-10 flex h-[100px] w-[100px] items-center justify-center rounded-full bg-white border-[5px] border-[#0A2342]">
-              <svg viewBox="0 0 24 24" className="h-12 w-12 fill-[#0A2342]">
+            <div className="absolute left-1/2 -translate-x-1/2 z-10 flex h-[100px] w-[100px] items-center justify-center rounded-full bg-primary border-[5px] border-white shadow-lg">
+              <svg viewBox="0 0 24 24" className="h-12 w-12 fill-white">
                 <path d={step.svgPath} />
               </svg>
             </div>
@@ -334,7 +336,7 @@ function EditaisTab() {
 
   return (
     <div className="space-y-6">
-      <h2 className="font-display text-2xl font-bold text-secondary">Editais de Extensão</h2>
+      <SectionTitle>Editais de Extensão</SectionTitle>
 
       <p className="leading-relaxed text-gray-700">
         Fique atento aos editais para submissão de novos projetos de extensão e oportunidades de participação.
@@ -364,7 +366,7 @@ function EditaisTab() {
 function RegulamentacaoTab() {
   return (
     <div className="space-y-6">
-      <h2 className="font-display text-2xl font-bold text-secondary">Regulamentação e Documentos</h2>
+      <SectionTitle>Regulamentação e Documentos</SectionTitle>
 
       <h3 className="mt-8 font-display text-xl font-bold text-secondary">Documentos Legais</h3>
       <p className="leading-relaxed text-gray-700">
@@ -463,7 +465,7 @@ function FAQTab() {
 
   return (
     <div className="space-y-6">
-      <h2 className="font-display text-2xl font-bold text-secondary">FAQ | Curricularização da Extensão</h2>
+      <SectionTitle>FAQ | Curricularização da Extensão</SectionTitle>
 
       {faqSections.map((section, sectionIndex) => (
         <div key={sectionIndex} className="space-y-4">
