@@ -1,50 +1,68 @@
 'use client'
 
-import { useState } from 'react'
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+import { useState } from "react"
+
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { 
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { PageTitle } from '@/components/ui/page-title'
 import { CardAcentoBorda } from '@/components/ui/card-acento-borda'
-import { FormField } from '@/components/ui/form-field'
-import { FormSelect } from '@/components/ui/form-select'
-import { FormTextarea } from '@/components/ui/form-textarea'
-import { RadioOption } from '@/components/ui/radio-option'
+
+// Define the form schema with Zod
+const ouvidoriaFormSchema = z.object({
+  identificacao: z.enum(['identificado', 'anonimo'], {
+    required_error: "Por favor, selecione o tipo de identificação.",
+  }),
+  nome: z.string().min(2, { message: "O nome deve ter pelo menos 2 caracteres." }).optional().or(z.literal('')),
+  email: z.string().email({ message: "Por favor, insira um e-mail válido." }).optional().or(z.literal('')),
+  telefone: z.string().optional(),
+  vinculo: z.string().optional(),
+  tipoManifestacao: z.string().min(1, { message: "Por favor, selecione o tipo de manifestação." }),
+  assunto: z.string().min(2, { message: "O assunto deve ter pelo menos 2 caracteres." }),
+  mensagem: z.string().min(10, { message: "A mensagem deve ter pelo menos 10 caracteres." }),
+})
 
 export default function OuvidoriaPage() {
-  const [formData, setFormData] = useState({
-    nome: '',
-    email: '',
-    telefone: '',
-    vinculo: '',
-    tipoManifestacao: '',
-    assunto: '',
-    mensagem: '',
-    identificacao: 'identificado',
-  })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  // Initialize the form with React Hook Form and Zod resolver
+  const form = useForm<z.infer<typeof ouvidoriaFormSchema>>({
+    resolver: zodResolver(ouvidoriaFormSchema),
+    defaultValues: {
+      identificacao: 'identificado',
+      nome: '',
+      email: '',
+      telefone: '',
+      vinculo: '',
+      tipoManifestacao: '',
+      assunto: '',
+      mensagem: '',
+    },
+  })
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  const handleSubmit = async (data: z.infer<typeof ouvidoriaFormSchema>) => {
     setIsSubmitting(true)
     try {
+      // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1500))
-      console.log('Formulário enviado:', formData)
+      console.log('Formulário enviado:', data)
       setSubmitSuccess(true)
+      form.reset()
       setTimeout(() => {
-        setFormData({
-          nome: '',
-          email: '',
-          telefone: '',
-          vinculo: '',
-          tipoManifestacao: '',
-          assunto: '',
-          mensagem: '',
-          identificacao: 'identificado',
-        })
         setSubmitSuccess(false)
       }, 5000)
     } catch (error) {
@@ -53,6 +71,9 @@ export default function OuvidoriaPage() {
       setIsSubmitting(false)
     }
   }
+
+  // Watch the identificacao field to conditionally render fields
+  const identificacao = form.watch('identificacao')
 
   return (
     <section className="bg-gray-50 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
@@ -96,49 +117,177 @@ export default function OuvidoriaPage() {
               <h2 className="font-display text-3xl font-bold text-secondary">Registre sua Manifestação</h2>
               <br />
               {submitSuccess && (
-                <p className="my-4 rounded-lg bg-green-100 p-4 text-center text-green-800">
+                <div className="my-4 rounded-lg bg-green-100 p-4 text-center text-green-800">
                   Sua manifestação foi enviada com sucesso! Retornaremos em até 10 dias úteis.
-                </p>
-              )}
-              <form onSubmit={handleSubmit} className="mt-6 space-y-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-800">Tipo de Identificação</label>
-                  <div className="flex flex-wrap gap-x-6 gap-y-2">
-                    <RadioOption name="identificacao" value="identificado" label="Identificado" checked={formData.identificacao === 'identificado'} onChange={handleInputChange} />
-                    <RadioOption name="identificacao" value="anonimo" label="Anônimo" checked={formData.identificacao === 'anonimo'} onChange={handleInputChange} />
-                  </div>
                 </div>
+              )}
+              
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(handleSubmit)} className="mt-6 space-y-6">
+                  <FormField
+                    control={form.control}
+                    name="identificacao"
+                    render={({ field }) => (
+                      <FormItem className="space-y-3">
+                        <FormLabel className="text-sm font-medium text-gray-800">Tipo de Identificação</FormLabel>
+                        <FormControl>
+                          <RadioGroup
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                            className="flex flex-wrap gap-x-6 gap-y-2"
+                          >
+                            <div className="flex items-center space-x-2">
+                              <RadioGroupItem value="identificado" id="identificado" />
+                              <label htmlFor="identificado" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                                Identificado
+                              </label>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <RadioGroupItem value="anonimo" id="anonimo" />
+                              <label htmlFor="anonimo" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                                Anônimo
+                              </label>
+                            </div>
+                          </RadioGroup>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-                {formData.identificacao === 'identificado' && (
-                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                    <FormField label="Nome Completo *" name="nome" value={formData.nome} onChange={handleInputChange} required />
-                    <FormField label="E-mail *" name="email" type="email" value={formData.email} onChange={handleInputChange} required />
-                    <FormField label="Telefone" name="telefone" type="tel" value={formData.telefone} onChange={handleInputChange} placeholder="(XX) XXXXX-XXXX" />
-                    <FormSelect label="Vínculo com a FAFIH" name="vinculo" value={formData.vinculo} onChange={handleInputChange} options={[
-                      { value: 'aluno', label: 'Aluno' },
-                      { value: 'professor', label: 'Professor' },
-                      { value: 'funcionario', label: 'Funcionário' },
-                      { value: 'ex-aluno', label: 'Ex-aluno' },
-                      { value: 'comunidade', label: 'Comunidade Externa' },
-                      { value: 'outro', label: 'Outro' },
-                    ]} />
-                  </div>
-                )}
+                  {identificacao === 'identificado' && (
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                      <FormField
+                        control={form.control}
+                        name="nome"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Nome Completo *</FormLabel>
+                            <FormControl>
+                              <Input placeholder="Digite seu nome completo" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>E-mail *</FormLabel>
+                            <FormControl>
+                              <Input type="email" placeholder="seu.email@exemplo.com" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name="telefone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Telefone</FormLabel>
+                            <FormControl>
+                              <Input type="tel" placeholder="(XX) XXXXX-XXXX" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name="vinculo"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Vínculo com a FAFIH</FormLabel>
+                            <Select onValueChange={field.onChange} value={field.value}>
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Selecione seu vínculo" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                <SelectItem value="aluno">Aluno</SelectItem>
+                                <SelectItem value="professor">Professor</SelectItem>
+                                <SelectItem value="funcionario">Funcionário</SelectItem>
+                                <SelectItem value="ex-aluno">Ex-aluno</SelectItem>
+                                <SelectItem value="comunidade">Comunidade Externa</SelectItem>
+                                <SelectItem value="outro">Outro</SelectItem>
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                  )}
 
-                <FormSelect label="Tipo de Manifestação *" name="tipoManifestacao" value={formData.tipoManifestacao} onChange={handleInputChange} required options={[
-                  { value: 'elogio', label: 'Elogio' },
-                  { value: 'sugestao', label: 'Sugestão' },
-                  { value: 'reclamacao', label: 'Reclamação' },
-                  { value: 'denuncia', label: 'Denúncia' },
-                  { value: 'solicitacao', label: 'Solicitação de Informação' },
-                ]} />
-                <FormField label="Assunto *" name="assunto" value={formData.assunto} onChange={handleInputChange} required />
-                <FormTextarea label="Mensagem *" name="mensagem" value={formData.mensagem} onChange={handleInputChange} rows={5} required />
+                  <FormField
+                    control={form.control}
+                    name="tipoManifestacao"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Tipo de Manifestação *</FormLabel>
+                        <Select onValueChange={field.onChange} value={field.value}>
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Selecione o tipo de manifestação" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="elogio">Elogio</SelectItem>
+                            <SelectItem value="sugestao">Sugestão</SelectItem>
+                            <SelectItem value="reclamacao">Reclamação</SelectItem>
+                            <SelectItem value="denuncia">Denúncia</SelectItem>
+                            <SelectItem value="solicitacao">Solicitação de Informação</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="assunto"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Assunto *</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Informe o assunto da manifestação" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="mensagem"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Mensagem *</FormLabel>
+                        <FormControl>
+                          <Textarea 
+                            placeholder="Descreva sua manifestação com detalhes" 
+                            rows={5}
+                            {...field} 
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-                <button type="submit" disabled={isSubmitting} className="w-full rounded-full bg-primary py-3 px-6 font-bold text-white shadow-md transition hover:bg-primary/90 disabled:opacity-50">
-                  {isSubmitting ? 'Enviando...' : 'Enviar Manifestação'}
-                </button>
-              </form>
+                  <Button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="w-full rounded-full bg-primary py-3 px-6 font-bold text-white shadow-md transition hover:bg-primary/90 disabled:opacity-50"
+                  >
+                    {isSubmitting ? 'Enviando...' : 'Enviar Manifestação'}
+                  </Button>
+                </form>
+              </Form>
             </div>
           </div>
         </div>
@@ -160,7 +309,6 @@ export default function OuvidoriaPage() {
                 </div>
             </div>
         </div>
-
       </div>
     </section>
   )

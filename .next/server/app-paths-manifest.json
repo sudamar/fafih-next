@@ -1,8 +1,4 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/(site)/ouvidoria/page": "app/(site)/ouvidoria/page.js",
-  "/(site)/extensao/page": "app/(site)/extensao/page.js",
-  "/(site)/consulte-diploma/page": "app/(site)/consulte-diploma/page.js",
-  "/(site)/iniciacao-cientifica/page": "app/(site)/iniciacao-cientifica/page.js",
-  "/(site)/page": "app/(site)/page.js"
+  "/(site)/consulte-diploma/page": "app/(site)/consulte-diploma/page.js"
 }
