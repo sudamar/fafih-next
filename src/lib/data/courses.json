@@ -1,122 +1,795 @@
 [
   {
     "id": 1,
-    "title": "Psicologia Junguiana",
+    "slug": "pos-graduacao-psicologia-junguiana",
+    "title": "Pós-Graduação em Psicologia Junguiana",
+    "subtitle": "Formação especializada em Psicologia Analítica de Carl Gustav Jung",
     "description": "Uma jornada de autoconhecimento e capacitação profissional baseada na obra de C.G. Jung.",
+    "fullDescription": [
+      "A Pós-Graduação em Psicologia Junguiana oferece uma formação aprofundada na teoria e prática da Psicologia Analítica desenvolvida por Carl Gustav Jung. Este programa é destinado a profissionais da área da saúde mental que desejam se especializar nesta abordagem terapêutica única e transformadora.",
+      "O curso aborda conceitos fundamentais como inconsciente coletivo, arquétipos, individuação, tipos psicológicos e análise de sonhos, proporcionando uma compreensão integral da psique humana segundo a perspectiva junguiana."
+    ],
+    "image": "https://storage.googleapis.com/uxpilot-auth.appspot.com/e30c4d6bd3-d8d26c9e64de72469123.png",
+    "hero": {
+      "type": "video",
+      "source": "/assets/videos/video-curso-1.mp4",
+      "alt": "Apresentação do curso Pós-Graduação em Psicologia Junguiana",
+      "fallbackImage": "https://storage.googleapis.com/uxpilot-auth.appspot.com/e30c4d6bd3-d8d26c9e64de72469123.png"
+    },
     "category": "especializacao",
     "categoryLabel": "Pós-Graduação",
-    "image": "https://i.imgur.com/STdPJA5.png",
-    "price": "R$ 1.200,00",
-    "modalidade": "EAD",
-    "slug": "psicologia-junguiana",
-    "hero": {
-      "source": "/assets/videos/video-curso-1.mp4",
-      "fallbackImage": "https://i.imgur.com/STdPJA5.png"
-    }
+    "price": 3890.00,
+    "originalPrice": 6000.00,
+    "precoMatricula": 300.00,
+    "modalidade": "Presencial",
+    "duration": "18 meses",
+    "workload": "360h",
+    "startDate": "Março 2024",
+    "maxStudents": "Máx. 25 alunos",
+    "certificate": "Reconhecida MEC",
+    "monthlyPrice": "R$ 160,56/mês",
+    "justificativa": [
+      "Esse curso que titula e forma especialistas em Psicologia Junguiana visa difundir as teorias, práticas e pesquisas da Psicoterapia Analítica de Carl Gustav Jung e de seus sucessores, cujas obras estão sendo alvo de grande interesse na atualidade.",
+      "Objetivamos oferecer este conhecimento através de aulas expositivas e presenciais, com apostilas ou referências bibliográficas, seguidas de debates e atividades práticas supervisionadas. Atualmente, apesar da crescente demanda para o conhecimento do homem integral em todas as áreas de saúde, constatamos que os cursos do Magistério Superior não estão conseguindo incluir este conteúdo em seus programas oficiais, por outro lado, as sociedades de formação praticam uma seleção econômica desleal devido aos altos custos por elas cobrados.",
+      "Desta forma, este curso vem suprir tanto a demanda de um conhecimento mais profundo sobre a Psicologia Junguiana, também chamada de Psicologia Analítica ou Análise Junguiana, na formação profissional, preferencialmente das áreas da saúde, humanas e biológicas, como possibilitar que este conhecimento seja acessível e socializado a um maior número de profissionais e, conseqüentemente, a população que irá se beneficiar deste cuidado."
+    ],
+    "objetivos": [
+      "Aprofundar a compreensão dos fundamentos da teoria analítica de C. G. Jung.",
+      "Aplicar métodos e técnicas da Psicologia Analítica na prática profissional.",
+      "Desenvolver competências para análise de sonhos, supervisão clínica e intervenção simbólica."
+    ],
+    "publico": [
+      "O curso PSICOLOGIA JUNGUIANA destina-se aos portadores de diploma do ensino superior, provenientes de instituições públicas ou privadas, preferencialmente atuantes nas áreas de humanas e da saúde, como psicologia, medicina, fisioterapia, filosofia, pedagogia, terapia ocupacional, fonoaudiologia, serviço social, artes, educação, administração, arquitetura, jornalismo, sociologia, teologia, arte-educação, entre outras.",
+      "Este curso oferece conhecimentos suplementares e titulação àqueles que já têm experiência prática na psicoterapia clínica. Sua articulação com outras funções, independente da área, ultrapassa a visão tecnicista do tempo, proporcionando formação geral e complexa aos profissionais."
+    ],
+    "highlights": [
+      {
+        "icon": "fas fa-brain",
+        "title": "Abordagem Profunda",
+        "description": "Estudo aprofundado da teoria junguiana e suas aplicações práticas",
+        "bgColor": "bg-blue-50",
+        "iconColor": "bg-blue-500"
+      },
+      {
+        "icon": "fas fa-users",
+        "title": "Corpo Docente",
+        "description": "Professores especialistas e analistas junguianos certificados",
+        "bgColor": "bg-green-50",
+        "iconColor": "bg-green-500"
+      },
+      {
+        "icon": "fas fa-certificate",
+        "title": "Certificação",
+        "description": "Certificado reconhecido pelo MEC e entidades especializadas",
+        "bgColor": "bg-purple-50",
+        "iconColor": "bg-purple-500"
+      }
+    ],
+    "curriculum": [
+      {
+        "number": 1,
+        "title": "O Modelo Junguiano da Psique",
+        "hours": 45,
+        "ementa": "Aspectos fundamentais e biográficos da vida e obra de Jung, incluindo a visão de homem, mundo e Deus que permeia a sua obra, o conceito de símbolo, angústia vital, consciente e inconsciente e a primeira parte dos fundamentos de Psicologia Analítica, incluindo conceitos de arquétipos, persona, sombra, anima e animus.",
+        "objetivos": "Fundamentar os alunos para que os conceitos básicos da Psicologia Analítica, também chamada de Psicologia Profunda de C. G. Jung, sejam bem consolidados.",
+        "bibliography": [
+          "EDINGER, Edward F. Ego e Arquétipo, SP, Cultrix, 1989",
+          "HILLMAN, James. Estudos de Psicologia arquetípica, RJ, Achiamé, 1981",
+          "JAFFÉ, Aniela. O Mito do Significado na Obra de C. G. Jung, SP, Cultrix, 1989",
+          "JUNG, Carl Gustav. Obras Completas, Petrópolis, Vozes",
+          "JUNG, Carl Gustav. O Homem e Seus Símbolos, RJ, Nova Fronteira, 1964",
+          "JUNG, Carl Gustav. Memórias Sonhos e Reflexões, RJ, Nova Fronteira, 1961",
+          "NEUMANN, Erich. História da Origem da Consciência, SP, Cultrix, 1990",
+          "SILVEIRA, Nise. Imagens do Inconsciente, RJ, Alambra, 1981",
+          "VON FRANZ, Marie-Louise, C.G.Jung, Seu Mito em Nossa Época, SP, Cultrix, 1992",
+          "WHITMONT, Edward C. A Busca do Símbolo, SP, Cultrix, 1994",
+          "ZWEIG, Connie, e ABRAMS, Jeremiah.(organizadores). Ao Encontro da Sombra, SP, Cultrix, 1994"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Fundamentos de Psicologia Analítica",
+        "hours": 45,
+        "ementa": "Aprofundamento de todos os conceitos fundamentais da Psicologia Analítica, incluindo os tipos e as funções psicológicas, a função transcendente, a energia psíquica, o trabalho com sonhos, o processo de individuação abrangendo as relações do ego com o inconsciente, o Self e o aspecto psicóide dos arquétipos.",
+        "objetivos": "Dar bases teóricas para que os alunos possam transitar confiantes pelo universo da obra junguiana, bem como começar a fazer uso dos principais conceitos desta obra.",
+        "bibliography": [
+          "HILLMAN, James. O Código do Ser, RJ, Objetiva, 1997",
+          "MINDELL, Arnold, O Corpo Onírico, SP, Summus, 1989",
+          "NEUMANN, Erich. A Criança, SP, Cultrix, 1991",
+          "SAMUELS, Andrew e Colaboradores. Dicionário Crítico de Análise Junguiana, R J, Imago, 1988",
+          "SHARP, D. Tipos de personalidade, SP, Cultrix, 1990",
+          "VON FRANZ, M. L. & HILLMAN, J. A tipologia de Jung, SP, Cultrix, 1990"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Raízes filosóficas, epistemológicas, científicas e religiosas na obra junguiana",
+        "hours": 30,
+        "ementa": "Análise textual e interpretativa da obra junguiana frente às principais correntes filosóficas, científicas e epistemológicas que influenciaram C. G. Jung, abordando a linguagem simbólica e arquetípica das principais tradições religiosas que formam o universo psíquico do homem moderno.",
+        "objetivos": "Fazer com que o aluno compreenda a obra junguiana frente às várias correntes filosóficas, religiões, teorias do conhecimento e a origem da Ciência. Contribuindo para que o senso crítico e ético seja melhor consolidado, além de solidificar os conceitos de arquétipo, inconsciente coletivo e sincronicidade.",
+        "bibliography": [
+          "BOLEN, Jean Shinoda. A Sincronicidade e o Tao, SP, Cultrix, 1991",
+          "CLARKE, J. J. Em Busca de Jung, RJ, Ediouro, 1993",
+          "FRANZ, Marie-Louise von. Adivinhação e sincronicidade, SP, Cultrix, 1985",
+          "HILLMAN, James. Suicídio e alma, Petrópolis, Vozes, 1993",
+          "HILLMAN, James. Uma busca interior em psicologia e religião, SP, Paulinas, 1985",
+          "PROGROFF, Ira. Jung, Sincronicidade e destino humano, SP, Cultrix, 1989",
+          "Tuiavii. O Papalagui, SP, Marco Zero. 1987"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Aspectos clínicos da análise junguiana",
+        "hours": 30,
+        "ementa": "Reflexões sobre a prática junguiana e as questões transferenciais, os mecanismos de defesa do ego, o setting e o holding terapêutico, a construção do vínculo, o abuso de poder, além de possibilitar ponderações sobre o sucesso e o fracasso na clínica junguiana.",
+        "objetivos": "Permitir que o aluno reflita e se posicione frente às questões transferências, encontrando, de acordo com o seu tipo e sua função psicológica, para encontrar o modus operandi mais harmonioso para sua atuação profissional e existencial.",
+        "bibliography": [
+          "GUGGENBÜHL-CRAIG, Adolf. O abuso do poder na psicoterapia e na medicina, serviço social, sacerdócio e magistério. RJ, Achiamé, 1978",
+          "SANFORD, J. Os Parceiros Invisíveis, SP, Paulus, 1986",
+          "STEIN, Robert. Incesto e amor humano, SP, Símbolo, 1978",
+          "STEINBVERG, Warren. Aspectos Clínicos da Terapia Junguiana, SP, Cultrix, 1992"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Psicopatologia e a mitologia como ferramenta simbólica",
+        "hours": 30,
+        "ementa": "Aspectos psicopatológicos e a mitologia como ferramenta de ampliação e de entendimento das dinâmicas psíquicas em busca da cura da alma.",
+        "objetivos": "Proporcionar aos alunos uma formação teórica e capacitação frente aos diagnósticos psicopatológicos, bem como capacitá-los na utilização de mitos e de contos de fadas como ferramenta de trabalho nas mais diferentes demandas psíquicas.",
+        "bibliography": [
+          "BRANDÃO, Junito de Souza. Mitologia Grega, Petrópolis, Vozes, 1989",
+          "CAMPBELL, Joseph. O poder do mito, SP, Palas Athena, 1990",
+          "FIERZ, Heinrich Karl. Psiquiatria junguiana, SP, Paulus, 1997",
+          "HILLMAN, J. O mito da análise, RJ, Paz e Terra, 1984",
+          "KERÉNYI, Karl. Os Deuses Gregos/Os Heróis Gregos, SP, Cultrix, 1994",
+          "SALAND, N. S. A Personalidade limítrofe, SP, Cultrix, 1989",
+          "VON FRANZ, Marie-Louise. Reflexos da alma, SP, Cultrix, 1992"
+        ]
+      },
+      {
+        "number": 6,
+        "title": "Procedimentos e práxis da Psicologia Analítica",
+        "hours": 30,
+        "ementa": "Aprofundar quanto ao uso de sonhos, contos de fadas, mitos, amplificação simbólica nas práticas dos profissionais de ajuda, além de priorizar as questões das práticas transdisciplinares e da utilização de técnicas e instrumentos projetivos utilizados pela abordagem junguiana.",
+        "objetivos": "Subsidiar a práxis do referencial junguiano, nas diversas áreas de atuação profissional.",
+        "bibliography": [
+          "SAMUELS, Andrew. Jung e os Pós-Junguianos, RJ, Imago, 1989",
+          "SANFORD, John. Os sonhos e a cura da alma. SP, Paulinas, 1991",
+          "WHITMONT, Edward e S. Pereira. Sonhos um portal para a fonte,SP, Summus, 1995"
+        ]
+      },
+      {
+        "number": 7,
+        "title": "Metodologia do trabalho científico",
+        "hours": 30,
+        "ementa": "Conceitos básicos de metodologia científica. Ciências e conhecimento. Diretrizes para a leitura, análise e interpretação de textos. A análise textual, temática e interpretativa. Pesquisa e projeto de pesquisa. Subsídios para a elaboração de uma monografia.",
+        "objetivos": "Fornecer os elementos básicos necessários para capacitar o aluno para o trabalho monográfico, desde o desenvolvimento da pesquisa, análise de textos, elaboração de projeto, até os subsídios para a elaboração de uma monografia científica. Compreensão dos métodos correntes mais utilizados.",
+        "bibliography": [
+          "Manual de Elaboracao do Projeto e da Monografia do IJEP",
+          "Assista o vídeo tutorial do PROJETO E MONOGRAFIA DO IJEP neste link: https://youtu.be/UrVA6szS84M"
+        ]
+      },
+      {
+        "number": 8,
+        "title": "Atividades Programadas",
+        "hours": 160,
+        "ementa": "São atividades que subsidiam a formação acadêmica e o desenvolvimento do conhecimento e da pesquisa dos alunos, atribuindo créditos obrigatórios. Todos os alunos farão, no décimo oitavo mês do curso, a exposição do projeto de conclusão de curso, que será apresentado aos demais colegas, para um professor, numa data previamente acordada, expondo o embrião da pesquisa e as resenhas dos livros (mínimo de quatro) que subsidiarão o referencial teórico do trabalho (o aluno que não cumprir essa atividade deverá apresentar um trabalho complementar para compensar as horas e obter esse crédito). Essas horas complementam as horas aula, que são de 45min, onde em um sábado de aula são computadas 10 horas/aula.",
+        "objetivos": "Resenha de livro, para o trabalho monográfico, equivale a fazer uma breve explanação do seu conteúdo, analisando, descrevendo e enumerando os teores considerados relevantes, em relação ao objeto do trabalho monográfico, apresentando ao leitor as contribuições da sua leitura para sustentação da hipótese e conclusão do TCC. Resenha não é resumo de livro. Geralmente, em dois parágrafos, é possível fazer uma excelente resenha, com identificação e apresentação do autor e da obra, no primeiro, e qual é sua importância e contribuições dela, apoiando a elaboração do seu trabalho monográfico, no segundo parágrafo.",
+        "bibliography": []
+      },
+      {
+        "number": 9,
+        "title": "Atividades Complementares",
+        "hours": "220 ou mais",
+        "ementa": "Previsão de integralização de mais 220 horas, que podem ser acrescidas, facultativamente, com 120 horas de atendimentos clínicos e 100 horas de supervisão de casos clínicos, extramuros acadêmicos. Além disso, serão computadas a participação, como congressistas, do Congresso Junguiano do IJEP, que acontece anualmente no mês de junho, onde os conteúdos dos anos anteriores podem ser adquiridos, com a emissão de seus respectivos certificados, para que suas horas sejam computadas no certificado de conclusão do curso.",
+        "objetivos": "",
+        "bibliography": []
+      },
+      {
+        "number": 10,
+        "title": "Trabalho de Conclusão",
+        "hours": "não disponível",
+        "ementa": "Produção de trabalho monográfico, em concordância com as normas do IJEP.",
+        "objetivos": "",
+        "bibliography": [
+          "Assista o vídeo tutorial do PROJETO E MONOGRAFIA DO IJEP neste link: https://youtu.be/UrVA6szS84M"
+        ]
+      },
+      {
+        "number": 11,
+        "title": "Controle de Frequência",
+        "hours": "",
+        "ementa": "Por tratar-se de um curso de especialização do conhecimento científico e prático na área da saúde, a avaliação ocorrerá como ato contínuo no decorrer das aulas, somados a uma prova escrita e individual, que acontecerá no final do curso, e frequência mínima de 80% das aulas, com controle presencial.",
+        "objetivos": "",
+        "bibliography": []
+      }
+    ],
+    "avaliacao": [
+      "Frequência mínima de 75% e aproveitamento mínimo de 70% (nota 7,0) nas disciplinas",
+      "Serão concedidos certificados aos discentes que cursarem todas as disciplinas e apresentarem o trabalho de conclusão de curso."
+    ],
+    "cargahoraria": {
+      "texto": [
+        "A carga horária do Curso de Especialização em Psicologia Junguiana é de 400 horas, distribuídas em 2 disciplinas de 45 horas/aula, 5 disciplinas de 30 horas/aula e 160 horas de atividades programadas com previsão de integralização de mais 220 horas (que podem ser acrescidas, facultativamente, com 120 horas de atendimentos clínicos e 100 horas de supervisão de casos), podendo totalizar 620 horas.",
+        "Sua duração é de 25 meses, oferecido em aulas presenciais, que acontecem num único sábado de cada mês, das 9hs às 17h45m, contabilizando 10 horas/aula (45min cada), divididas em quatro aulas de 2,5 horas/aula."
+      ],
+      "atividades": [
+        { "descricao": "Horas aulas", "carga": 240 },
+        { "descricao": "Atividades programadas", "carga": 160 },
+        { "descricao": "Atendimentos/Ateliê*", "carga": 120 },
+        { "descricao": "Supervisão*", "carga": 100 },
+        { "descricao": "Total Geral", "carga": 620 }
+      ],
+      "observacao": "* Atividades facultativas que complementam a formação básica."
+    },
+    "faculty": {
+      "professor": "Prof. Dr. Waldemar Magaldi Filho",
+      "descricao": "Psicólogo, educador, especialista em psicologia analítica junguiana, psicossomática, arteterapia, EMDR e homeopatia. Mestre e doutor em ciências da religião e autor do livro: \"Dinheiro, saúde e sagrado - interfaces culturais, econômicas e religiosas à luz da psicologia analítica\"."
+    },
+    "testimonials": [
+      {
+        "text": "Curso excepcional! Transformou minha prática clínica completamente.",
+        "author": "Dra. Fernanda Oliveira",
+        "image": "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-6.jpg",
+        "borderColor": "border-secondary"
+      },
+      {
+        "text": "Professores excepcionais e conteúdo muito bem estruturado.",
+        "author": "Dr. Roberto Silva",
+        "image": "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-8.jpg",
+        "borderColor": "border-primary"
+      }
+    ],
+    "contact": {
+      "phone": "(11) 3333-4444",
+      "whatsapp": "(11) 99999-8888",
+      "email": "contato @fafih.edu.br"
+    },
+    "breadcrumb": ["Início", "Pós-Graduação", "Psicologia Junguiana"]
   },
   {
     "id": 2,
+    "slug": "psicossomatica",
     "title": "Psicossomática",
+    "subtitle": "Integração entre corpo, alma e espírito",
     "description": "Explore a integração entre corpo, alma e espírito com uma abordagem holística e humanista.",
+    "fullDescription": [
+      "O curso de Psicossomática oferece uma abordagem integrada para compreender as relações entre os aspectos psicológicos e físicos da saúde. Baseado em uma visão holística e humanista, o programa prepara profissionais para atuar na interface entre mente e corpo.",
+      "Com metodologia prático-teórica, o curso aborda desde os fundamentos da medicina psicossomática até técnicas avançadas de intervenção, proporcionando uma formação completa e diferenciada."
+    ],
+    "image": "https://i.imgur.com/cTs1Zdf.png",
+    "hero": {
+      "type": "video",
+      "source": "/assets/videos/video-curso-2.mp4",
+      "alt": "Ambiente representativo do curso Psicossomática",
+      "fallbackImage": "https://i.imgur.com/cTs1Zdf.png"
+    },
     "category": "especializacao",
     "categoryLabel": "Pós-Graduação",
-    "image": "https://i.imgur.com/cTs1Zdf.png",
-    "price": "R$ 1.150,00",
-    "modalidade": "EAD",
-    "slug": "psicossomatica",
-    "hero": {
-      "source": "/assets/videos/video-curso-2.mp4",
-      "fallbackImage": "https://i.imgur.com/cTs1Zdf.png"
-    }
+    "price": 6200.00,
+    "originalPrice": 10000.00,
+    "precoMatricula": 300.00,
+    "modalidade": "Presencial",
+    "duration": "18 meses",
+    "workload": "360h",
+    "startDate": "Março 2024",
+    "maxStudents": "Máx. 25 alunos",
+    "certificate": "Reconhecida MEC",
+    "monthlyPrice": "R$ 122,22/mês",
+    "justificativa": [
+      "Responde à necessidade de profissionais capazes de integrar dimensões psíquicas e corporais no cuidado em saúde.",
+      "Articula conhecimentos de medicina psicossomática, neuropsicoimunologia e práticas clínicas supervisionadas.",
+      "Oferece abordagens atualizadas para tratamentos holísticos e humanizados."
+    ],
+    "objetivos": [
+      "Compreender os fundamentos teóricos e históricos da medicina psicossomática.",
+      "Relacionar sistemas psíquicos, neuroendócrinos e imunológicos em situações clínicas.",
+      "Aplicar técnicas de intervenção psicossomática em contextos clínicos supervisionados."
+    ],
+    "publico": [
+      "Profissionais da saúde, psicoterapeutas e educadores interessados em abordagens mente-corpo.",
+      "Graduados das áreas de humanas e biológicas que buscam formação complementar em psicossomática."
+    ],
+    "highlights": [
+      {
+        "icon": "fas fa-heart",
+        "title": "Abordagem Holística",
+        "description": "Visão integrada entre mente, corpo e espírito",
+        "bgColor": "bg-red-50",
+        "iconColor": "bg-red-500"
+      },
+      {
+        "icon": "fas fa-users",
+        "title": "Prática Clínica",
+        "description": "Experiência prática com supervisão especializada",
+        "bgColor": "bg-green-50",
+        "iconColor": "bg-green-500"
+      },
+      {
+        "icon": "fas fa-certificate",
+        "title": "Certificação",
+        "description": "Certificado reconhecido pelo MEC",
+        "bgColor": "bg-purple-50",
+        "iconColor": "bg-purple-500"
+      }
+    ],
+    "curriculum": [
+      {
+        "number": 1,
+        "title": "Fundamentos da Psicossomática",
+        "hours": 60,
+        "ementa": "Base teórica e histórica da medicina psicossomática; integração mente-corpo; paradigmas holísticos.",
+        "objetivos": "Compreender os fundamentos teóricos e históricos da medicina psicossomática.",
+        "bibliography": [
+          "Alexander, F. Medicina Psicossomática. Artes Médicas, 1989",
+          "Dethlefsen, T. A Doença como Caminho. Cultrix, 1983",
+          "Reich, W. A Função do Orgasmo. Brasiliense, 1975"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Neuropsicoimunologia",
+        "hours": 45,
+        "ementa": "Interações entre sistema nervoso e imunológico; stress e doença; psiconeuroimunologia.",
+        "objetivos": "Relacionar sistemas psíquicos, neuroendócrinos e imunológicos em situações clínicas.",
+        "bibliography": [
+          "Ader, R. Psychoneuroimmunology. Academic Press, 1991",
+          "Selye, H. Stress: A Tensão da Vida. Ibrasa, 1965",
+          "Solomon, G. The Emerging Field of Psychoneuroimmunology. Adler, 1987"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Técnicas de Intervenção",
+        "hours": 60,
+        "ementa": "Métodos terapêuticos integrativos; técnicas corporais; abordagens holísticas.",
+        "objetivos": "Aplicar técnicas de intervenção psicossomática em contextos clínicos supervisionados.",
+        "bibliography": [
+          "Lowen, A. Bioenergética. Summus, 1982",
+          "Capra, F. O Ponto de Mutação. Cultrix, 1982",
+          "Wilber, K. Uma Teoria de Tudo. Gaia, 2003"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Estudos de Caso",
+        "hours": 45,
+        "ementa": "Análise prática de casos clínicos; elaboração de relatórios; supervisão clínica.",
+        "objetivos": "Desenvolver habilidades práticas na análise e condução de casos psicossomáticos.",
+        "bibliography": [
+          "McDougall, J. Teatros do Corpo. Martins Fontes, 1996",
+          "Marty, P. Psicossomática do Adulto. Artes Médicas, 1993",
+          "Chiozza, L. Psicanálise dos Distúrbios Psicossomáticos. Casa do Psicólogo, 1998"
+        ]
+      }
+    ],
+    "avaliacao": [
+      "Frequência mínima de 75% e aproveitamento mínimo de 70% (nota 7,0) nas disciplinas",
+      "Serão concedidos certificados aos discentes que cursarem todas as disciplinas e apresentarem o trabalho de conclusão de curso."
+    ],
+    "cargahoraria": {
+      "texto": [
+        "A carga horária do Curso de Pós-Graduação em Psicossomática é de 360 horas, distribuídas em disciplinas teóricas e práticas, com previsão de integralização completa.",
+        "Sua duração é de 18 meses, oferecido em aulas presenciais."
+      ],
+      "atividades": [
+        { "descricao": "Fundamentos da Psicossomática", "carga": 60 },
+        { "descricao": "Neuropsicoimunologia", "carga": 45 },
+        { "descricao": "Técnicas de Intervenção", "carga": 60 },
+        { "descricao": "Estudos de Caso", "carga": 45 },
+        { "descricao": "Atividades Complementares", "carga": 150 },
+        { "descricao": "Total Geral", "carga": 360 }
+      ],
+      "observacao": "Carga horária total conforme regulamentação do MEC para pós-graduação lato sensu."
+    },
+    "faculty": {
+      "professor": "Prof. Dr. Carlos Mendes",
+      "descricao": "Especialista em Psicossomática com 20 anos de experiência clínica, focado na integração entre mente, corpo e espírito."
+    },
+    "testimonials": [
+      {
+        "text": "Curso transformador! Mudou completamente minha visão sobre saúde.",
+        "author": "Dr. Paulo Santos",
+        "image": "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-8.jpg",
+        "borderColor": "border-primary"
+      }
+    ],
+    "contact": {
+      "phone": "(11) 3333-4444",
+      "whatsapp": "(11) 99999-8888",
+      "email": "contato @fafih.edu.br"
+    },
+    "breadcrumb": ["Início", "Pós-Graduação", "Psicossomática"]
   },
   {
     "id": 3,
+    "slug": "arteterapia-e-expressoes-criativas",
     "title": "Arteterapia e Expressões Criativas",
-    "description": "Capacite-se para despertar e utilizar a criatividade como uma poderosa ferramenta terapêutica.",
+    "subtitle": "Curso presencial com turmas no RJ, Brasília e São Paulo",
+    "description": "Formação filiada à SOBRARTE que usa as expressões criativas como recurso terapêutico e clínico.",
+    "fullDescription": [
+      "O curso de Arteterapia e Expressões Criativas capacita profissionais a despertar a potência inventiva de indivíduos e grupos, transformando-a em intervenções terapêuticas efetivas em contextos clínicos, educacionais, organizacionais e comunitários.",
+      "Com abordagem transdisciplinar, integra fundamentos da psicologia analítica, das terapias expressivas e das artes para promover processos de cura biopsicossocial e desenvolvimento simbólico.",
+      "As vivências percorrem distintas formas de expressão – desenho, colagem, pintura, modelagem, música e corpo – além de práticas iniciáticas que favorecem estados ampliados de consciência e experiências numinosas."
+    ],
+    "image": "https://i.imgur.com/iVpnrwc.png",
+    "hero": {
+      "type": "video",
+      "source": "/assets/videos/video-curso-3.mp4",
+      "alt": "Ambiente criativo do curso Arteterapia e Expressões Criativas",
+      "fallbackImage": "https://i.imgur.com/iVpnrwc.png"
+    },
     "category": "especializacao",
     "categoryLabel": "Pós-Graduação",
-    "image": "https://i.imgur.com/iVpnrwc.png",
-    "price": "R$ 1.250,00",
-    "modalidade": "EAD",
-    "slug": "arteterapia",
-    "hero": {
-      "source": "/assets/videos/video-curso-3.mp4",
-      "fallbackImage": "https://i.imgur.com/iVpnrwc.png"
-    }
+    "price": 6360.00,
+    "originalPrice": 12000.00,
+    "precoMatricula": 300.00,
+    "modalidade": "Presencial",
+    "duration": "24 meses",
+    "workload": "360h",
+    "startDate": "RJ: 11/04/2026 · Brasília: 14/03/2026 · São Paulo: 30/08/2025",
+    "maxStudents": "Turmas presenciais reduzidas",
+    "certificate": "Filiado à SOBRARTE",
+    "monthlyPrice": "Matrícula R$ 360 + 24x de R$ 663,57",
+    "justificativa": [
+      "O curso forma especialistas em Psicologia Analítica ao difundir teorias, práticas e pesquisas de C. G. Jung e sucessores, em aulas presenciais com debates e supervisão.",
+      "Supre a demanda por conhecimento profundo da Psicologia Junguiana ao oferecer formação acessível a profissionais das áreas de saúde, humanas e biológicas.",
+      "Promove integração entre arte, psicologia, educação e espiritualidade como caminhos terapêuticos para acolher sintomas psicoafetivos e psicossomáticos."
+    ],
+    "objetivos": [
+      "Ampliar conhecimentos teóricos e práticos da Psicologia Analítica.",
+      "Aplicar procedimentos e fundamentos junguianos com ética e responsabilidade.",
+      "Estimular a pesquisa teórico-prática em Psicologia Analítica e arteterapia.",
+      "Situar-se criticamente frente aos paradigmas pessoais e profissionais."
+    ],
+    "publico": [
+      "Profissionais graduados nas áreas de saúde, humanas e biológicas interessados em Psicologia Analítica.",
+      "Terapeutas, educadores e artistas que desejam integrar expressões criativas a processos de cuidado."
+    ],
+    "highlights": [
+      {
+        "icon": "fas fa-map-marker-alt",
+        "title": "Turmas 2025/2026",
+        "description": "Encontros presenciais no Rio de Janeiro, Brasília e São Paulo",
+        "bgColor": "bg-blue-50",
+        "iconColor": "bg-blue-500"
+      },
+      {
+        "icon": "fas fa-palette",
+        "title": "Percurso Criativo",
+        "description": "Vivências expressivas, oficinas e supervisão clínica em arteterapia",
+        "bgColor": "bg-yellow-50",
+        "iconColor": "bg-yellow-500"
+      },
+      {
+        "icon": "fas fa-award",
+        "title": "Filiado à SOBRARTE",
+        "description": "Curso reconhecido pela Sociedade Brasileira de Arteterapia",
+        "bgColor": "bg-green-50",
+        "iconColor": "bg-green-500"
+      }
+    ],
+    "curriculum": [
+      {
+        "number": 1,
+        "title": "Fundamentos das Terapias Artísticas",
+        "hours": 45,
+        "ementa": "Histórico da arteterapia e diferenciações conceituais; criatividade, processo criador e materiais simbólicos; transferência, contratransferência e ética em arteterapia; o pensamento de Nise da Silveira e referências junguianas.",
+        "objetivos": "Compreender os fundamentos históricos e teóricos da Arteterapia; relacionar a Psicologia Analítica de C. G. Jung às práticas expressivas; reconhecer critérios éticos e clínicos para atuação arteterapêutica.",
+        "bibliography": [
+          "Silveira, N. Imagens do Inconsciente. Imago, 1978",
+          "Jung, C.G. O Homem e seus Símbolos. Nova Fronteira, 1964",
+          "Kramer, E. Arteterapia: Teoria e Prática. Artes Médicas, 2001"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "(11) 3333-4444",
+      "whatsapp": "(11) 99999-8888",
+      "email": "contato @fafih.edu.br"
+    },
+    "breadcrumb": ["Início", "Pós-Graduação", "Arteterapia"]
   },
   {
     "id": 4,
-    "title": "Livros Negros e Livro Vermelho",
-    "description": "De volta com mais uma edição do Curso sobre Os Livros Negros e Liber Novus, com a professora Lilian Wurzba, lembrando a importância que as experiências registradas no período de nov/1913 a dez/1932 teve na obra ulterior de Jung.",
-    "category": "extensao",
-    "categoryLabel": "Curta e Média Duração",
-    "image": "https://i.imgur.com/qwiCmA6.jpeg",
-    "price": "R$ 800,00",
-    "modalidade": "EAD",
     "slug": "livros-negros-e-livro-vermelho",
+    "title": "Livros Negros e Livro Vermelho",
+    "subtitle": "Estudo aprofundado das obras de C.G. Jung",
+    "description": "Análise detalhada dos Livros Negros (Black Books) e do Livro Vermelho (Liber Novus) de Carl Gustav Jung.",
+    "fullDescription": [
+      "Este curso oferece uma análise profunda dos Livros Negros (Black Books) e do Livro Vermelho (Liber Novus) de C.G. Jung, documentos fundamentais para compreender o desenvolvimento da psicologia analítica."
+    ],
+    "image": "https://i.imgur.com/bookcover.png",
     "hero": {
+      "type": "video",
       "source": "/assets/videos/video-curso-4.mp4",
-      "fallbackImage": "https://i.imgur.com/qwiCmA6.jpeg"
-    }
+      "alt": "Apresentação do curso Livros Negros e Livro Vermelho",
+      "fallbackImage": "https://i.imgur.com/bookcover.png"
+    },
+    "category": "extensao",
+    "categoryLabel": "Extensão",
+    "price": 890.00,
+    "originalPrice": 1200.00,
+    "precoMatricula": 100.00,
+    "modalidade": "Online",
+    "duration": "6 meses",
+    "workload": "60h",
+    "startDate": "Março 2024",
+    "maxStudents": "Máx. 50 alunos",
+    "certificate": "Certificado de Extensão",
+    "monthlyPrice": "6x de R$ 148,33",
+    "highlights": [
+      {
+        "icon": "fas fa-book",
+        "title": "Textos Originais",
+        "description": "Estudo direto dos manuscritos originais de Jung",
+        "bgColor": "bg-red-50",
+        "iconColor": "bg-red-500"
+      },
+      {
+        "icon": "fas fa-user-graduate",
+        "title": "Professora Especialista",
+        "description": "Condução por especialista em obras junguianas",
+        "bgColor": "bg-blue-50",
+        "iconColor": "bg-blue-500"
+      },
+      {
+        "icon": "fas fa-laptop",
+        "title": "Modalidade Online",
+        "description": "Aulas síncronas e materiais digitais",
+        "bgColor": "bg-green-50",
+        "iconColor": "bg-green-500"
+      }
+    ],
+    "contact": {
+      "phone": "(11) 3333-4444",
+      "whatsapp": "(11) 99999-8888",
+      "email": "contato @fafih.edu.br"
+    },
+    "breadcrumb": ["Início", "Extensão", "Livros Negros e Livro Vermelho"]
   },
   {
     "id": 5,
-    "title": "Sonhando Através da Arteterapia",
-    "description": "Jornada na Arteterapia a partir de imagens oníricas e representações simbólicas com as professoras Ana Paula Maluf e Bárbara Pessanha.",
-    "category": "extensao",
-    "categoryLabel": "Curta e Média Duração",
-    "image": "https://i.imgur.com/AnnChjx.png",
-    "price": "R$ 750,00",
-    "modalidade": "EAD",
     "slug": "sonhando-atraves-da-arteterapia",
+    "title": "Sonhando Através da Arteterapia",
+    "subtitle": "Jornada na Arteterapia a partir de Imagens Oníricas",
+    "description": "Explore a conexão entre sonhos e arteterapia em uma experiência transformadora.",
+    "fullDescription": [
+      "Este workshop oferece uma jornada única na arteterapia, explorando as imagens oníricas como fonte de criatividade e autoconhecimento através de técnicas expressivas."
+    ],
+    "image": "https://i.imgur.com/dreamart.png",
     "hero": {
+      "type": "video",
       "source": "/assets/videos/video-curso-5.mp4",
-      "fallbackImage": "https://i.imgur.com/AnnChjx.png"
-    }
+      "alt": "Apresentação do curso Sonhando Através da Arteterapia",
+      "fallbackImage": "https://i.imgur.com/dreamart.png"
+    },
+    "category": "extensao",
+    "categoryLabel": "Extensão",
+    "price": 450.00,
+    "originalPrice": 600.00,
+    "precoMatricula": 50.00,
+    "modalidade": "Presencial",
+    "duration": "2 dias",
+    "workload": "16h",
+    "startDate": "Março 2024",
+    "maxStudents": "Máx. 12 alunos",
+    "certificate": "Certificado de Participação",
+    "monthlyPrice": "Pagamento à vista",
+    "highlights": [
+      {
+        "icon": "fas fa-moon",
+        "title": "Trabalho com Sonhos",
+        "description": "Técnicas junguianas para análise onírica",
+        "bgColor": "bg-purple-50",
+        "iconColor": "bg-purple-500"
+      },
+      {
+        "icon": "fas fa-hands",
+        "title": "Oficina Imersiva",
+        "description": "Experiência prática intensiva de 2 dias",
+        "bgColor": "bg-yellow-50",
+        "iconColor": "bg-yellow-500"
+      },
+      {
+        "icon": "fas fa-users",
+        "title": "Grupo Pequeno",
+        "description": "Máximo 12 participantes para atenção personalizada",
+        "bgColor": "bg-green-50",
+        "iconColor": "bg-green-500"
+      }
+    ],
+    "contact": {
+      "phone": "(11) 3333-4444",
+      "whatsapp": "(11) 99999-8888",
+      "email": "contato @fafih.edu.br"
+    },
+    "breadcrumb": ["Início", "Extensão", "Sonhando Através da Arteterapia"]
   },
   {
     "id": 6,
-    "title": "De Aion a Jó",
-    "description": "Do Javismo da Antiga Era de Áries à Revolução Aquariana do Mundo que Deseja Nascer, com os professores Dimas Künsch e Waldemar Magaldi.",
-    "category": "extensao",
-    "categoryLabel": "Curta e Média Duração",
-    "image": "https://i.imgur.com/REzhmRK.jpeg",
-    "price": "R$ 700,00",
-    "modalidade": "EAD",
     "slug": "de-aion-a-jo",
+    "title": "De Aion a Jó",
+    "subtitle": "Do Javismo da Antiga Era de Áries à Revolução Aquariana",
+    "description": "Análise profunda das transformações espirituais e psicológicas através das eras.",
+    "fullDescription": [
+      "Este curso explora as transformações espirituais e psicológicas da humanidade, desde o javismo da antiga Era de Áries até a emergente Revolução Aquariana, baseado nas obras de C.G. Jung."
+    ],
+    "image": "https://i.imgur.com/astrological.png",
     "hero": {
+      "type": "video",
       "source": "/assets/videos/video-curso-6.mp4",
-      "fallbackImage": "https://i.imgur.com/REzhmRK.jpeg"
-    }
+      "alt": "Apresentação do curso De Aion a Jó",
+      "fallbackImage": "https://i.imgur.com/astrological.png"
+    },
+    "category": "extensao",
+    "categoryLabel": "Extensão",
+    "price": 650.00,
+    "originalPrice": 850.00,
+    "precoMatricula": 100.00,
+    "modalidade": "Online",
+    "duration": "4 meses",
+    "workload": "40h",
+    "startDate": "Abril 2024",
+    "maxStudents": "Máx. 30 alunos",
+    "certificate": "Certificado de Extensão",
+    "monthlyPrice": "4x de R$ 162,50",
+    "highlights": [
+      {
+        "icon": "fas fa-history",
+        "title": "Perspectiva Histórica",
+        "description": "Análise das transformações através das eras",
+        "bgColor": "bg-indigo-50",
+        "iconColor": "bg-indigo-500"
+      },
+      {
+        "icon": "fas fa-star",
+        "title": "Era Aquariana",
+        "description": "Compreensão da nova era emergente",
+        "bgColor": "bg-cyan-50",
+        "iconColor": "bg-cyan-500"
+      },
+      {
+        "icon": "fas fa-book-open",
+        "title": "Textos Fundamentais",
+        "description": "Estudo de Aion e Resposta a Jó",
+        "bgColor": "bg-orange-50",
+        "iconColor": "bg-orange-500"
+      }
+    ],
+    "contact": {
+      "phone": "(11) 3333-4444",
+      "whatsapp": "(11) 99999-8888",
+      "email": "contato @fafih.edu.br"
+    },
+    "breadcrumb": ["Início", "Extensão", "De Aion a Jó"]
   },
   {
     "id": 7,
-    "title": "Formação de Membros Analistas Junguianos do IJEP",
-    "description": "Filiação e Formação de Analistas. Somente para Ex-Alunos do Curso de Psicologia Junguiana do IJEP.",
-    "category": "extensao",
-    "categoryLabel": "Curta e Média Duração",
-    "image": "https://i.imgur.com/lXkjLLG.png",
-    "price": "R$ 2.500,00",
-    "modalidade": "EAD",
     "slug": "formacao-de-membros-analistas-junguianos",
+    "title": "Formação de Membros Analistas Junguianos",
+    "subtitle": "Filiação e Formação de Analistas do IJEP",
+    "description": "Formação completa para analistas junguianos com certificação oficial.",
+    "fullDescription": [
+      "Programa completo de formação para analistas junguianos, incluindo análise pessoal, supervisão clínica e seminários teóricos, com certificação oficial do IJEP."
+    ],
+    "image": "https://i.imgur.com/analyst.png",
     "hero": {
+      "type": "video",
       "source": "/assets/videos/video-curso-7.mp4",
-      "fallbackImage": "https://i.imgur.com/lXkjLLG.png"
-    }
+      "alt": "Apresentação da Formação de Analistas Junguianos",
+      "fallbackImage": "https://i.imgur.com/analyst.png"
+    },
+    "category": "formacao",
+    "categoryLabel": "Formação",
+    "price": 15000.00,
+    "originalPrice": 20000.00,
+    "precoMatricula": 1000.00,
+    "modalidade": "Presencial",
+    "duration": "5 anos",
+    "workload": "500h",
+    "startDate": "Março 2025",
+    "maxStudents": "Máx. 8 candidatos",
+    "certificate": "Certificação como Analista Junguiano",
+    "monthlyPrice": "60x de R$ 250,00",
+    "highlights": [
+      {
+        "icon": "fas fa-graduation-cap",
+        "title": "Formação Completa",
+        "description": "Programa integral de 5 anos para analistas",
+        "bgColor": "bg-blue-50",
+        "iconColor": "bg-blue-500"
+      },
+      {
+        "icon": "fas fa-user-md",
+        "title": "Supervisão Clínica",
+        "description": "Acompanhamento individual especializado",
+        "bgColor": "bg-green-50",
+        "iconColor": "bg-green-500"
+      },
+      {
+        "icon": "fas fa-certificate",
+        "title": "Certificação Oficial",
+        "description": "Reconhecimento como Analista Junguiano",
+        "bgColor": "bg-gold-50",
+        "iconColor": "bg-gold-500"
+      }
+    ],
+    "contact": {
+      "phone": "(11) 3333-4444",
+      "whatsapp": "(11) 99999-8888",
+      "email": "formacao @fafih.edu.br"
+    },
+    "breadcrumb": ["Início", "Formação", "Analistas Junguianos"]
   },
   {
     "id": 8,
-    "title": "Congressos Junguianos do IJEP",
-    "description": "Adquira ou saiba mais deste e dos demais Congressos Junguianos do IJEP.",
-    "category": "eventos",
-    "categoryLabel": "Eventos",
-    "image": "https://i.imgur.com/M3vP6UT.png",
-    "price": "Gratuito",
-    "modalidade": "EAD",
     "slug": "congressos-junguianos-do-ijep",
+    "title": "Congressos Junguianos do IJEP",
+    "subtitle": "Eventos científicos de excelência",
+    "description": "Participe dos principais eventos científicos em psicologia analítica.",
+    "fullDescription": [
+      "Os Congressos Junguianos do IJEP são eventos científicos de excelência que reúnem especialistas nacionais e internacionais em psicologia analítica, oferecendo palestras magistrais, mesas redondas e comunicações livres."
+    ],
+    "image": "https://i.imgur.com/congress.png",
     "hero": {
+      "type": "video",
       "source": "/assets/videos/video-curso-1.mp4",
-      "fallbackImage": "https://i.imgur.com/M3vP6UT.png"
-    }
+      "alt": "Apresentação dos Congressos Junguianos",
+      "fallbackImage": "https://i.imgur.com/congress.png"
+    },
+    "category": "evento",
+    "categoryLabel": "Evento",
+    "price": 200.00,
+    "originalPrice": 300.00,
+    "precoMatricula": 50.00,
+    "modalidade": "Presencial",
+    "duration": "3 dias",
+    "workload": "24h",
+    "startDate": "Junho 2024",
+    "maxStudents": "Máx. 200 participantes",
+    "certificate": "Certificado de Participação",
+    "monthlyPrice": "Pagamento à vista",
+    "highlights": [
+      {
+        "icon": "fas fa-globe",
+        "title": "Alcance Internacional",
+        "description": "Palestrantes e participantes do mundo todo",
+        "bgColor": "bg-blue-50",
+        "iconColor": "bg-blue-500"
+      },
+      {
+        "icon": "fas fa-microphone",
+        "title": "Palestras Magistrais",
+        "description": "Apresentações de especialistas renomados",
+        "bgColor": "bg-purple-50",
+        "iconColor": "bg-purple-500"
+      },
+      {
+        "icon": "fas fa-network-wired",
+        "title": "Networking",
+        "description": "Oportunidades de conexão profissional",
+        "bgColor": "bg-green-50",
+        "iconColor": "bg-green-500"
+      }
+    ],
+    "cargahoraria": {
+      "texto": [
+        "Carga horária total de 24 horas distribuídas em 3 dias de evento científico."
+      ],
+      "atividades": [
+        { "descricao": "Palestras Magistrais", "carga": 12 },
+        { "descricao": "Mesas Redondas", "carga": 8 },
+        { "descricao": "Comunicações Livres", "carga": 4 },
+        { "descricao": "Total Geral", "carga": 24 }
+      ],
+      "observacao": "Carga horária para evento científico com certificado de participação."
+    },
+    "contact": {
+      "phone": "(11) 3333-4444",
+      "whatsapp": "(11) 99999-8888",
+      "email": "eventos @fafih.edu.br"
+    },
+    "breadcrumb": ["Início", "Eventos", "Congressos Junguianos do IJEP"]
   }
 ]
