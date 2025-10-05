@@ -20,29 +20,32 @@ export default function IniciacaoCientificaPage() {
             <CardDecorado
               icon={<BookOpen className="h-6 w-6" />}
               title="Iniciação Científica"
-              description="O Programa Institucional de Bolsas de Iniciação Científica - PIBIC tem como objetivo criar mecanismos adicionais para estímulo à pesquisa discente, promover o fortalecimento das linhas de pesquisa da Faculdade, a integração entre graduação e pós-graduação e conceder de bolsas de estudos de Iniciação Científica, em face do orçamento estabelecido pela instituição ou da captação de recursos provenientes de parcerias com outras instituições, de acordo com os termos estabelecidos em Resolução própria."
               buttons={[
                 { label: 'Edital', href: '#' },
                 { label: 'Manual de Iniciação Científica', href: '#' },
               ]}
-            />
+            >
+              <p>O Programa Institucional de Bolsas de Iniciação Científica - PIBIC tem como objetivo criar mecanismos adicionais para estímulo à pesquisa discente, promover o fortalecimento das linhas de pesquisa da Faculdade, a integração entre graduação e pós-graduação e conceder de bolsas de estudos de Iniciação Científica, em face do orçamento estabelecido pela instituição ou da captação de recursos provenientes de parcerias com outras instituições, de acordo com os termos estabelecidos em Resolução própria.</p>
+            </CardDecorado>
 
             <CardDecorado
               icon={<Users className="h-6 w-6" />}
               title="Iniciação à Docência"
-              description="O Programa de Bolsas de Iniciação à Docência - PIBID tem como objetivo fomentar a formação docente, promover o desenvolvimento de atividades de pesquisa e de práticas de ensino inovadoras que contribuam para a melhoria do ensino, propiciando uma reflexão sobre a relação teoria-prática no processo de aprendizagem docente e conceder de bolsas de estudos de Iniciação Científica, em face do orçamento estabelecido pela instituição ou da captação de recursos provenientes de parcerias com outras instituições, de acordo com os termos estabelecidos em Resolução própria."
               buttons={[
                 { label: 'Edital', href: '#' },
                 { label: 'Manual de Iniciação à Docência', href: '#' },
               ]}
-            />
+            >
+              <p>O Programa de Bolsas de Iniciação à Docência - PIBID tem como objetivo fomentar a formação docente, promover o desenvolvimento de atividades de pesquisa e de práticas de ensino inovadoras que contribuam para a melhoria do ensino, propiciando uma reflexão sobre a relação teoria-prática no processo de aprendizagem docente e conceder de bolsas de estudos de Iniciação Científica, em face do orçamento estabelecido pela instituição ou da captação de recursos provenientes de parcerias com outras instituições, de acordo com os termos estabelecidos em Resolução própria.</p>
+            </CardDecorado>
 
             <CardDecorado
               icon={<FileText className="h-6 w-6" />}
               title="Grupos de Iniciação Científica e à Docência"
-              description="Os grupos de iniciação científica e à docência têm a finalidade de assegurar a geração de conhecimento, oferecer um ambiente propício para desenvolver raciocínio científico e, sobretudo, combinar esforços para aprimorar a produção gerada por ele. Sob a liderança de um professor pesquisador com experiência na área, cada grupo tem o objetivo de conduzir a pesquisa e expandir o saber em seu determinado campo de trabalho."
               buttons={[{ label: 'Conheça nossos grupos', href: '#' }]}
-            />
+            >
+              <p>Os grupos de iniciação científica e à docência têm a finalidade de assegurar a geração de conhecimento, oferecer um ambiente propício para desenvolver raciocínio científico e, sobretudo, combinar esforços para aprimorar a produção gerada por ele. Sob a liderança de um professor pesquisador com experiência na área, cada grupo tem o objetivo de conduzir a pesquisa e expandir o saber em seu determinado campo de trabalho.</p>
+            </CardDecorado>
           </div>
 
           <div className="mt-16 flex flex-wrap justify-center gap-6">

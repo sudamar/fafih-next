@@ -59,7 +59,7 @@ const navItems: NavItem[] = [
   },
   {
     label: 'Extensão',
-    href: 'extensao.html',
+    href: '/extensao',
   },
   {
     label: 'Portal do Aluno',
@@ -70,8 +70,9 @@ const navItems: NavItem[] = [
     label: 'Contato',
     href: '#contato',
     children: [
-      { label: 'Ouvidoria', action: 'ouvidoria' },
+      { label: 'Ouvidoria', href: '/ouvidoria' },
       { label: 'Perguntas Frequentes', href: 'perguntas-frequentes.html' },
+      { label: 'Consulta de Diplomas', href: '/consulte-diploma' },
     ],
   },
 ]
@@ -136,7 +137,7 @@ export function SiteHeader() {
                   {itemContent}
 
                   {hasDropdown ? (
-                    <div className="invisible absolute left-0 top-full mt-3 w-60 rounded-lg border-t-4 border-primary bg-white py-3 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
+                    <div className="invisible absolute left-0 top-full w-60 rounded-lg border-t-4 border-primary bg-white pt-5 pb-3 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
                       <ul className="space-y-2">
                         {item.children?.map((child) => {
                           if (child.action === 'ouvidoria') {
