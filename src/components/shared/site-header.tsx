@@ -51,7 +51,7 @@ const navItems: NavItem[] = [
       { label: 'Eventos', href: 'index.html?filter=eventos#cursos' },
       { label: 'Formas de Ingresso', href: 'formas-de-ingresso.html' },
       { label: 'Regulamentos', href: 'regulamentos.html' },
-      { label: 'Polos', href: 'polos.html' },
+      { label: 'Polos', href: '/polos' },
     ],
   },
   {
