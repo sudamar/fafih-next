@@ -31,6 +31,7 @@ declare namespace __next_route_internal_types__ {
   type StaticRoutes = 
     | `/`
     | `/consulte-diploma`
+    | `/cursos`
     | `/extensao`
     | `/iniciacao-cientifica`
     | `/ouvidoria`

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Psicologia Junguiana",
+    "description": "Uma jornada de autoconhecimento e capacitação profissional baseada na obra de C.G. Jung.",
+    "category": "especializacao",
+    "categoryLabel": "Pós-Graduação",
+    "image": "https://i.imgur.com/STdPJA5.png",
+    "price": "R$ 1.200,00",
+    "modalidade": "EAD",
+    "slug": "psicologia-junguiana",
+    "hero": {
+      "source": "/assets/videos/video-curso-1.mp4",
+      "fallbackImage": "https://i.imgur.com/STdPJA5.png"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Psicossomática",
+    "description": "Explore a integração entre corpo, alma e espírito com uma abordagem holística e humanista.",
+    "category": "especializacao",
+    "categoryLabel": "Pós-Graduação",
+    "image": "https://i.imgur.com/cTs1Zdf.png",
+    "price": "R$ 1.150,00",
+    "modalidade": "EAD",
+    "slug": "psicossomatica",
+    "hero": {
+      "source": "/assets/videos/video-curso-2.mp4",
+      "fallbackImage": "https://i.imgur.com/cTs1Zdf.png"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Arteterapia e Expressões Criativas",
+    "description": "Capacite-se para despertar e utilizar a criatividade como uma poderosa ferramenta terapêutica.",
+    "category": "especializacao",
+    "categoryLabel": "Pós-Graduação",
+    "image": "https://i.imgur.com/iVpnrwc.png",
+    "price": "R$ 1.250,00",
+    "modalidade": "EAD",
+    "slug": "arteterapia",
+    "hero": {
+      "source": "/assets/videos/video-curso-3.mp4",
+      "fallbackImage": "https://i.imgur.com/iVpnrwc.png"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Livros Negros e Livro Vermelho",
+    "description": "De volta com mais uma edição do Curso sobre Os Livros Negros e Liber Novus, com a professora Lilian Wurzba, lembrando a importância que as experiências registradas no período de nov/1913 a dez/1932 teve na obra ulterior de Jung.",
+    "category": "extensao",
+    "categoryLabel": "Curta e Média Duração",
+    "image": "https://i.imgur.com/qwiCmA6.jpeg",
+    "price": "R$ 800,00",
+    "modalidade": "EAD",
+    "slug": "livros-negros-e-livro-vermelho",
+    "hero": {
+      "source": "/assets/videos/video-curso-4.mp4",
+      "fallbackImage": "https://i.imgur.com/qwiCmA6.jpeg"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Sonhando Através da Arteterapia",
+    "description": "Jornada na Arteterapia a partir de imagens oníricas e representações simbólicas com as professoras Ana Paula Maluf e Bárbara Pessanha.",
+    "category": "extensao",
+    "categoryLabel": "Curta e Média Duração",
+    "image": "https://i.imgur.com/AnnChjx.png",
+    "price": "R$ 750,00",
+    "modalidade": "EAD",
+    "slug": "sonhando-atraves-da-arteterapia",
+    "hero": {
+      "source": "/assets/videos/video-curso-5.mp4",
+      "fallbackImage": "https://i.imgur.com/AnnChjx.png"
+    }
+  },
+  {
+    "id": 6,
+    "title": "De Aion a Jó",
+    "description": "Do Javismo da Antiga Era de Áries à Revolução Aquariana do Mundo que Deseja Nascer, com os professores Dimas Künsch e Waldemar Magaldi.",
+    "category": "extensao",
+    "categoryLabel": "Curta e Média Duração",
+    "image": "https://i.imgur.com/REzhmRK.jpeg",
+    "price": "R$ 700,00",
+    "modalidade": "EAD",
+    "slug": "de-aion-a-jo",
+    "hero": {
+      "source": "/assets/videos/video-curso-6.mp4",
+      "fallbackImage": "https://i.imgur.com/REzhmRK.jpeg"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Formação de Membros Analistas Junguianos do IJEP",
+    "description": "Filiação e Formação de Analistas. Somente para Ex-Alunos do Curso de Psicologia Junguiana do IJEP.",
+    "category": "extensao",
+    "categoryLabel": "Curta e Média Duração",
+    "image": "https://i.imgur.com/lXkjLLG.png",
+    "price": "R$ 2.500,00",
+    "modalidade": "EAD",
+    "slug": "formacao-de-membros-analistas-junguianos",
+    "hero": {
+      "source": "/assets/videos/video-curso-7.mp4",
+      "fallbackImage": "https://i.imgur.com/lXkjLLG.png"
+    }
+  },
+  {
+    "id": 8,
+    "title": "Congressos Junguianos do IJEP",
+    "description": "Adquira ou saiba mais deste e dos demais Congressos Junguianos do IJEP.",
+    "category": "eventos",
+    "categoryLabel": "Eventos",
+    "image": "https://i.imgur.com/M3vP6UT.png",
+    "price": "Gratuito",
+    "modalidade": "EAD",
+    "slug": "congressos-junguianos-do-ijep",
+    "hero": {
+      "source": "/assets/videos/video-curso-1.mp4",
+      "fallbackImage": "https://i.imgur.com/M3vP6UT.png"
+    }
+  }
+]

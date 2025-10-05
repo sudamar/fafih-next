@@ -246,6 +246,7 @@ export const footerLinkGroups: FooterLinkGroup[] = [
   {
     title: 'Cursos',
     links: [
+      { label: 'Todos', href: '/cursos' },
       { label: 'Graduação', href: 'index.html?filter=graduacao#cursos' },
       { label: 'Pós-graduação', href: 'index.html?filter=especializacao#cursos' },
       { label: 'Curta e Média Duração', href: 'index.html?filter=extensao#cursos' },

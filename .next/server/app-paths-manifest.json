@@ -1,4 +1,3 @@
 {
-  "/(site)/ouvidoria/page": "app/(site)/ouvidoria/page.js",
-  "/(site)/consulte-diploma/page": "app/(site)/consulte-diploma/page.js"
+  "/(site)/cursos/page": "app/(site)/cursos/page.js"
 }

@@ -44,6 +44,7 @@ const navItems: NavItem[] = [
     label: 'Cursos',
     href: '#cursos',
     children: [
+      { label: 'Todos', href: '/cursos' },
       { label: 'Graduação', href: 'index.html?filter=graduacao#cursos' },
       { label: 'Pós-Graduação', href: 'index.html?filter=especializacao#cursos' },
       { label: 'Curta e Média Duração', href: 'index.html?filter=extensao#cursos' },
