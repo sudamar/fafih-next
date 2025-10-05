@@ -1,9 +1,9 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Mail, Phone, Linkedin, Instagram, Youtube, CirclePlay, ArrowUpRight, LucideIcon } from 'lucide-react'
+import { Mail, Phone, Linkedin, Instagram, Youtube, CirclePlay, LucideIcon } from 'lucide-react'
 import {
-  footerBottomText,
   footerContact,
   footerLinkGroups,
   footerSocials,
@@ -19,69 +19,148 @@ const socialIconMap: Record<string, LucideIcon> = {
 
 export function SiteFooter() {
   const { open: openOuvidoria } = useOuvidoriaModal()
+  const [updatedDate, setUpdatedDate] = useState('')
+
+  useEffect(() => {
+    const today = new Date()
+    const currentMonth = today.getMonth() + 1
+    const currentYear = today.getFullYear()
+
+    let semesterStartMonth
+    let semesterStartYear = currentYear
+
+    if (currentMonth >= 2 && currentMonth <= 7) {
+      semesterStartMonth = 2
+    } else {
+      semesterStartMonth = 8
+      if (currentMonth === 1) {
+        semesterStartYear = currentYear - 1
+      }
+    }
+
+    const generatedDate = new Date(semesterStartYear, semesterStartMonth - 1, 1)
+    const formattedDate = generatedDate.toLocaleDateString('pt-BR', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    })
+
+    setUpdatedDate(formattedDate)
+  }, [])
 
   return (
     <footer id="contato" className="bg-footer-blue text-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-12 md:flex-row md:items-start md:justify-between">
-        <div className="flex flex-1 flex-col gap-6 md:max-w-xs">
-          <Image
-            src="https://i.imgur.com/ywaVFnj.png"
-            alt="Logo FAFIH"
-            width={180}
-            height={80}
-            className="h-20 w-auto"
-          />
-          <div className="rounded-lg bg-white/10 p-4 text-sm leading-relaxed">
-            <p>
-              Credenciada EaD pela Portaria Ministerial nº 579, de 25/06/2024, DOU nº 122, de 27/06/2024, seção 1, p. 63.
-            </p>
-            <p className="mt-2">Mantida pelo IJEP - Instituto Junguiano de Ensino e Pesquisa</p>
+      {/* Footer Top - Grid de 5 colunas */}
+      <div className="mx-auto max-w-7xl px-6 py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
+          {/* Coluna 1: Logo */}
+          <div className="lg:col-span-1 pr-10">
+            <img
+              src="/assets/images/logo-fundo-azul.png"
+              alt="Logo FAFIH no rodapé"
+              className="max-w-full h-auto scale-[1.54] origin-left mr-5"
+            />
           </div>
-        </div>
 
-        <div className="grid flex-[2] gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {footerLinkGroups.map((group) => (
-            <div key={group.title} className="space-y-4">
-              <h4 className="text-lg font-semibold uppercase tracking-wide">{group.title}</h4>
-              <ul className="space-y-2 text-sm">
-                {group.links.map((link) => {
-                  if (link.label === 'Política de Cookies' && link.href === '#') {
-                    return (
-                      <li key={link.label} className="opacity-70">
-                        <span title={link.description}>Política de Cookies</span>
-                      </li>
-                    )
-                  }
-
-                  return (
-                    <li key={link.label}>
+          {/* Coluna 2: Institucional */}
+          <div className="lg:col-span-1">
+            <h4 className="text-base font-semibold mb-4">Institucional</h4>
+            <ul className="space-y-2 text-sm">
+              {footerLinkGroups
+                .find((group) => group.title === 'Institucional')
+                ?.links.map((link) => (
+                  <li key={link.label}>
+                    {link.label === 'Política de Cookies' && link.href === '#' ? (
+                      <span className="opacity-70" title={link.description}>
+                        {link.label}
+                      </span>
+                    ) : (
                       <a
                         href={link.href}
-                        className="inline-flex items-center gap-1 transition hover:text-white"
+                        className="transition hover:text-white/90"
                         {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                       >
                         {link.label}
-                        {link.external ? <ArrowUpRight className="h-3.5 w-3.5" /> : null}
+                      </a>
+                    )}
+                  </li>
+                ))}
+            </ul>
+          </div>
+
+          {/* Coluna 3: Cursos */}
+          <div className="lg:col-span-1">
+            <h4 className="text-base font-semibold mb-4">Cursos</h4>
+            <ul className="space-y-2 text-sm">
+              {footerLinkGroups
+                .find((group) => group.title === 'Cursos')
+                ?.links.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="transition hover:text-white/90"
+                      {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </div>
+
+          {/* Coluna 4: Comunidade Acadêmica */}
+          <div className="lg:col-span-1">
+            <h4 className="text-base font-semibold mb-4">Comunidade Acadêmica</h4>
+            <ul className="space-y-2 text-sm">
+              {footerLinkGroups
+                .find((group) => group.title === 'Comunidade Acadêmica')
+                ?.links.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="transition hover:text-white/90"
+                      {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </div>
+
+          {/* Coluna 5: Contato + Redes Sociais */}
+          <div className="lg:col-span-1">
+            <h4 className="text-base font-semibold mb-4">Contato</h4>
+            <ul className="space-y-2 text-sm mb-6">
+              {footerContact.map((item) => {
+                if (item.type === 'email') {
+                  return (
+                    <li key={item.label} className="flex items-start gap-2">
+                      <Mail className="h-4 w-4 shrink-0 mt-0.5" />
+                      <a href={item.href} className="transition hover:text-white/90 break-all">
+                        {item.label}
                       </a>
                     </li>
                   )
-                })}
-              </ul>
-            </div>
-          ))}
-        </div>
+                }
 
-        <div className="flex flex-1 flex-col gap-6 md:max-w-xs">
-          <div>
-            <h4 className="text-lg font-semibold uppercase tracking-wide">Contato</h4>
-            <ul className="mt-4 space-y-3 text-sm">
-              {footerContact.map((item) => {
+                if (item.type === 'phone') {
+                  return (
+                    <li key={item.label} className="flex items-center gap-2">
+                      <Phone className="h-4 w-4 shrink-0" />
+                      <a href={item.href} className="transition hover:text-white/90">
+                        {item.label}
+                      </a>
+                    </li>
+                  )
+                }
+
                 if (item.type === 'link' && item.label.toLowerCase() === 'ouvidoria') {
                   return (
                     <li key={item.label}>
                       <button
                         type="button"
-                        className="inline-flex items-center gap-2 text-left transition hover:text-white"
+                        className="text-left transition hover:text-white/90"
                         onClick={openOuvidoria}
                       >
                         {item.label}
@@ -93,29 +172,7 @@ export function SiteFooter() {
                 if (item.type === 'link') {
                   return (
                     <li key={item.label}>
-                      <a href={item.href} className="transition hover:text-white">
-                        {item.label}
-                      </a>
-                    </li>
-                  )
-                }
-
-                if (item.type === 'email') {
-                  return (
-                    <li key={item.label} className="flex items-center gap-2">
-                      <Mail className="h-4 w-4 shrink-0" />
-                      <a href={item.href} className="transition hover:text-white">
-                        {item.label}
-                      </a>
-                    </li>
-                  )
-                }
-
-                if (item.type === 'phone') {
-                  return (
-                    <li key={item.label} className="flex items-center gap-2">
-                      <Phone className="h-4 w-4 shrink-0" />
-                      <a href={item.href} className="transition hover:text-white">
+                      <a href={item.href} className="transition hover:text-white/90">
                         {item.label}
                       </a>
                     </li>
@@ -125,11 +182,9 @@ export function SiteFooter() {
                 return null
               })}
             </ul>
-          </div>
 
-          <div>
-            <h4 className="text-lg font-semibold uppercase tracking-wide">Redes sociais</h4>
-            <div className="mt-4 flex items-center gap-3">
+            {/* Redes Sociais */}
+            <div className="flex items-center gap-3 mb-6">
               {footerSocials.map((social) => {
                 const Icon = socialIconMap[social.platform]
                 if (!Icon) return null
@@ -148,32 +203,32 @@ export function SiteFooter() {
                 )
               })}
             </div>
+
+            {/* Selo e-MEC embaixo das redes sociais */}
+            <div>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <Image
+                  src="https://i.imgur.com/i7LTAu5.png"
+                  alt="Consulte aqui o cadastro da instituição no e-MEC"
+                  width={208}
+                  height={104}
+                  className="w-auto h-auto max-h-26"
+                />
+              </a>
+            </div>
           </div>
 
-          <div className="rounded-lg bg-white p-4">
-            <a
-              href="#"
-              target="_blank"
-              className="flex items-center justify-center"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="https://i.imgur.com/i7LTAu5.png"
-                alt="Consulte aqui o cadastro da instituição no e-MEC"
-                width={200}
-                height={80}
-                className="h-20 w-auto"
-              />
-            </a>
-          </div>
+          {/* Coluna 6: Vazia (removida) */}
         </div>
       </div>
 
+      {/* Footer Bottom */}
       <div className="border-t border-white/20">
-        <div className="mx-auto max-w-6xl px-6 py-6 text-center text-xs text-white/80">
-          {footerBottomText.map((text) => (
-            <p key={text}>{text}</p>
-          ))}
+        <div className="mx-auto max-w-7xl px-6 py-6 text-center text-xs text-white/80 space-y-1">
+          <p>Credenciada EaD pela Portaria Ministerial nº 579, de 25/06/2024, DOU nº 122, de 27/06/2024, seção 1, p. 63.</p>
+          <p>Mantida pelo IJEP - Instituto Junguiano de Ensino e Pesquisa</p>
+          {updatedDate && <p>Página atualizada em {updatedDate}.</p>}
+          <p>© {new Date().getFullYear()} FAFIH - Faculdade de Artes, Filosofia e do Imaginário Humano. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
