@@ -1,3 +1,3 @@
 {
-  "/(site)/page": "app/(site)/page.js"
+  "/(site)/extensao/page": "app/(site)/extensao/page.js"
 }
