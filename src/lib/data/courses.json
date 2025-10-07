@@ -12,15 +12,15 @@
     "image": "/assets/images/header-curso-1.png",
     "hero": {
       "type": "video",
-      "source": "/assets/videos/video-curso-1.mp4", 
+      "source": "/assets/videos/video-curso-1.mp4",
       "alt": "Apresentação do curso Pós-Graduação em Psicologia Junguiana",
       "fallbackImage": "/assets/images/header-curso-1.png"
     },
     "category": "especializacao",
     "categoryLabel": "Pós-Graduação",
-    "price": 3890.00,
-    "originalPrice": 6000.00,
-    "precoMatricula": 300.00,
+    "price": 3890.0,
+    "originalPrice": 6000.0,
+    "precoMatricula": 300.0,
     "modalidade": "Presencial",
     "duration": "18 meses",
     "workload": "360h",
@@ -214,11 +214,26 @@
         "Sua duração é de 25 meses, oferecido em aulas presenciais, que acontecem num único sábado de cada mês, das 9hs às 17h45m, contabilizando 10 horas/aula (45min cada), divididas em quatro aulas de 2,5 horas/aula."
       ],
       "atividades": [
-        { "descricao": "Horas aulas", "carga": 240 },
-        { "descricao": "Atividades programadas", "carga": 160 },
-        { "descricao": "Atendimentos/Ateliê*", "carga": 120 },
-        { "descricao": "Supervisão*", "carga": 100 },
-        { "descricao": "Total Geral", "carga": 620 }
+        {
+          "descricao": "Horas aulas",
+          "carga": 240
+        },
+        {
+          "descricao": "Atividades programadas",
+          "carga": 160
+        },
+        {
+          "descricao": "Atendimentos/Ateliê*",
+          "carga": 120
+        },
+        {
+          "descricao": "Supervisão*",
+          "carga": 100
+        },
+        {
+          "descricao": "Total Geral",
+          "carga": 620
+        }
       ],
       "observacao": "* Atividades facultativas que complementam a formação básica."
     },
@@ -245,50 +260,56 @@
       "whatsapp": "(11) 99999-8888",
       "email": "contato @fafih.edu.br"
     },
-    "breadcrumb": ["Início", "Pós-Graduação", "Psicologia Junguiana"]
+    "breadcrumb": [
+      "Início",
+      "Pós-Graduação",
+      "Psicologia Junguiana"
+    ]
   },
   {
     "id": 2,
     "slug": "psicossomatica",
     "title": "Psicossomática",
     "subtitle": "Integração entre corpo, alma e espírito",
-    "description": "Explore a integração entre corpo, alma e espírito com uma abordagem holística e humanista.",
+    "description": "A crescente demanda de conhecimento sobre a integração entre corpo, alma e espírito e a busca de conhecimento sobre as causas do adoecer e os caminhos da cura, são as principais razões para oferecermos este curso, que visa formar profissionais íntegros, facilitadores e multiplicadores deste espectro de homem e de cosmos sistêmico e holístico.",
     "fullDescription": [
-      "O curso de Psicossomática oferece uma abordagem integrada para compreender as relações entre os aspectos psicológicos e físicos da saúde. Baseado em uma visão holística e humanista, o programa prepara profissionais para atuar na interface entre mente e corpo.",
-      "Com metodologia prático-teórica, o curso aborda desde os fundamentos da medicina psicossomática até técnicas avançadas de intervenção, proporcionando uma formação completa e diferenciada."
+      "O curso de PSICOSSOMÁTICA é o primeiro e único curso oficial de psicossomática que enfoca, além das visões tradicionais da psicanálise, as abordagens humanistas, holistas, junguianas e transpessoais, integrando conhecimentos atuais advindos das neurociências e da genética com práticas milenares de cura do oriente e do ocidente.",
+      "Assim, o profissional de saúde, que conhece este paradigma, terá uma visão de homem holística e humanista, reconhecendo que a doença, psíquica e ou somática, é um sinal de desequilíbrio do ser total, podendo se tornar um grande caminho para o crescimento e o restabelecimento da saúde e da evolução do ser."
     ],
     "image": "https://i.imgur.com/cTs1Zdf.png",
     "hero": {
-      "type": "video",
-      "source": "/assets/videos/video-curso-2.mp4",
-      "alt": "Ambiente representativo do curso Psicossomática",
+      "type": "image",
+      "source": "https://i.imgur.com/cTs1Zdf.png",
+      "alt": "Curso de Psicossomática",
       "fallbackImage": "https://i.imgur.com/cTs1Zdf.png"
     },
     "category": "especializacao",
     "categoryLabel": "Pós-Graduação",
-    "price": 6200.00,
-    "originalPrice": 10000.00,
-    "precoMatricula": 300.00,
-    "modalidade": "Presencial",
-    "duration": "18 meses",
-    "workload": "360h",
-    "startDate": "Março 2024",
-    "maxStudents": "Máx. 25 alunos",
-    "certificate": "Reconhecida MEC",
-    "monthlyPrice": "R$ 122,22/mês",
+    "price": 663.57,
+    "originalPrice": 0.0,
+    "precoMatricula": 360.0,
+    "modalidade": "Presencial e EAD",
+    "duration": "24 meses",
+    "workload": "390h a 610h",
+    "startDate": "São Paulo: 28 de Março de 2026 / EAD: 11 de Abril de 2026",
+    "maxStudents": "",
+    "certificate": "Especialista em Psicossomática",
+    "monthlyPrice": "24 parcelas de R$ 663,57",
     "justificativa": [
-      "Responde à necessidade de profissionais capazes de integrar dimensões psíquicas e corporais no cuidado em saúde.",
-      "Articula conhecimentos de medicina psicossomática, neuropsicoimunologia e práticas clínicas supervisionadas.",
-      "Oferece abordagens atualizadas para tratamentos holísticos e humanizados."
+      "A crescente demanda de conhecimento sobre a integração entre corpo, alma e espírito e a busca de conhecimento sobre as causas do adoecer e os caminhos da cura, são as principais razões para oferecermos este curso, que visa formar profissionais íntegros, facilitadores e multiplicadores deste espectro de homem e de cosmos sistêmico e holístico.",
+      "Com isso, este curso de PSICOSSOMÁTICA é o primeiro e único curso oficial de psicossomática que enfoca, além das visões tradicionais da psicanálise, as abordagens humanistas, holistas, junguianas e transpessoais, integrando conhecimentos atuais advindos das neurociências e da genética com práticas milenares de cura do oriente e do ocidente.",
+      "Assim, o profissional de saúde, que conhece este paradigma, terá uma visão de homem holística e humanista, reconhecendo que a doença, psíquica e ou somática, é um sinal de desequilíbrio do ser total, podendo se tornar um grande caminho para o crescimento e o restabelecimento da saúde e da evolução do ser."
     ],
     "objetivos": [
-      "Compreender os fundamentos teóricos e históricos da medicina psicossomática.",
-      "Relacionar sistemas psíquicos, neuroendócrinos e imunológicos em situações clínicas.",
-      "Aplicar técnicas de intervenção psicossomática em contextos clínicos supervisionados."
+      "Difundir e capacitar o aluno ao conhecimento e utilização das teorias, práticas e pesquisas da Psicossomática antiga, clássica, moderna e pós-moderna, percorrendo a ciência e práxis acumuladas desde os terapeutas de Alexandria, passando por Hipócrates, Hahnemann, Freud, Jung até desembocarmos nas práticas holísticas e conhecimentos modernos das neurociências e genética humana.",
+      "Analisar os princípios fundamentais da Psicossomática frente os seus próprios paradigmas.",
+      "Fazer uso dos procedimentos, métodos e fundamentos da Psicossomática.",
+      "Aplicar adequadamente os conhecimentos adquiridos, dentro da ética profissional e do digno de ser trabalhado e curado.",
+      "Proporcionar conhecimentos para a pesquisa teórico-prática em Psicossomática."
     ],
     "publico": [
-      "Profissionais da saúde, psicoterapeutas e educadores interessados em abordagens mente-corpo.",
-      "Graduados das áreas de humanas e biológicas que buscam formação complementar em psicossomática."
+      "O curso é destinado a todo aluno com formação superior, preferencialmente das áreas de humanas, saúde e biológicas.",
+      "Profissionais atuando em ambientes organizacional, hospitalares, clínicos, educacionais, entre outros, que desejam abordar o homem de forma integral."
     ],
     "highlights": [
       {
@@ -299,114 +320,326 @@
         "iconColor": "bg-red-500"
       },
       {
-        "icon": "fas fa-users",
-        "title": "Prática Clínica",
-        "description": "Experiência prática com supervisão especializada",
-        "bgColor": "bg-green-50",
-        "iconColor": "bg-green-500"
-      },
-      {
-        "icon": "fas fa-certificate",
-        "title": "Certificação",
-        "description": "Certificado reconhecido pelo MEC",
+        "icon": "fas fa-brain",
+        "title": "PNEI",
+        "description": "Psiconeuroendocrinoimunologia e neurociências aplicadas",
         "bgColor": "bg-purple-50",
         "iconColor": "bg-purple-500"
+      },
+      {
+        "icon": "fas fa-hands-helping",
+        "title": "Prática Supervisionada",
+        "description": "Atendimentos clínicos com supervisão especializada",
+        "bgColor": "bg-green-50",
+        "iconColor": "bg-green-500"
       }
     ],
     "curriculum": [
       {
         "number": 1,
-        "title": "Fundamentos da Psicossomática",
-        "hours": 60,
-        "ementa": "Base teórica e histórica da medicina psicossomática; integração mente-corpo; paradigmas holísticos.",
-        "objetivos": "Compreender os fundamentos teóricos e históricos da medicina psicossomática.",
-        "bibliography": [
-          "Alexander, F. Medicina Psicossomática. Artes Médicas, 1989",
-          "Dethlefsen, T. A Doença como Caminho. Cultrix, 1983",
-          "Reich, W. A Função do Orgasmo. Brasiliense, 1975"
-        ]
+        "title": "Fundamentação teórica dos transtornos de adoecimento",
+        "hours": 36,
+        "ementa": "História da psicossomática, conceitos básicos. Angústia vital; neurose orgânica; dinâmica dos instintos.",
+        "objetivos": "Rever e ampliar conhecimentos a cerca dos conceitos básicos da psicossomática, contemplando a integração da medicina com a psicologia.",
+        "bibliography": []
       },
       {
         "number": 2,
-        "title": "Neuropsicoimunologia",
-        "hours": 45,
-        "ementa": "Interações entre sistema nervoso e imunológico; stress e doença; psiconeuroimunologia.",
-        "objetivos": "Relacionar sistemas psíquicos, neuroendócrinos e imunológicos em situações clínicas.",
-        "bibliography": [
-          "Ader, R. Psychoneuroimmunology. Academic Press, 1991",
-          "Selye, H. Stress: A Tensão da Vida. Ibrasa, 1965",
-          "Solomon, G. The Emerging Field of Psychoneuroimmunology. Adler, 1987"
-        ]
+        "title": "Escolas Psicossomáticas, técnicas e conceitos e o Campo Junguiano",
+        "hours": 36,
+        "ementa": "Atividade reflexa instintiva e habitual, psicopatologia e personalidade, distúrbios orgânicos e psicogênicos, experiência da corporalidade e imagem corporal, teorias da personalidade.",
+        "objetivos": "Aprofundar conceitos para possibilitar o entendimento dos aspectos biopsicossociais do adoecer e da cura nas áreas de saúde e de humanas.",
+        "bibliography": []
       },
       {
         "number": 3,
-        "title": "Técnicas de Intervenção",
-        "hours": 60,
-        "ementa": "Métodos terapêuticos integrativos; técnicas corporais; abordagens holísticas.",
-        "objetivos": "Aplicar técnicas de intervenção psicossomática em contextos clínicos supervisionados.",
-        "bibliography": [
-          "Lowen, A. Bioenergética. Summus, 1982",
-          "Capra, F. O Ponto de Mutação. Cultrix, 1982",
-          "Wilber, K. Uma Teoria de Tudo. Gaia, 2003"
-        ]
+        "title": "Psicossomática e temas médicos",
+        "hours": 36,
+        "ementa": "Correlacionar vários sintomas de adoecimento com os fatores psicoafetivos, sociais, familiares e espirituais.",
+        "objetivos": "Seminários e temas médicos sobre os principais órgãos e patologias mais freqüentes como fator de queixas e de sofrimento humano.",
+        "bibliography": []
       },
       {
         "number": 4,
-        "title": "Estudos de Caso",
-        "hours": 45,
-        "ementa": "Análise prática de casos clínicos; elaboração de relatórios; supervisão clínica.",
-        "objetivos": "Desenvolver habilidades práticas na análise e condução de casos psicossomáticos.",
-        "bibliography": [
-          "McDougall, J. Teatros do Corpo. Martins Fontes, 1996",
-          "Marty, P. Psicossomática do Adulto. Artes Médicas, 1993",
-          "Chiozza, L. Psicanálise dos Distúrbios Psicossomáticos. Casa do Psicólogo, 1998"
-        ]
+        "title": "Cura e aspectos biopsicossocial",
+        "hours": 36,
+        "ementa": "Personalidade, família e sociedade. Psiquiatria e psicanálise na medicina e na dinâmica dos sintomas de adoecimento. Correlações psicossomáticas, nascimento e morte e a evolução do ser.",
+        "objetivos": "Consolidar a visão de homem integral unindo aspectos somáticos com emoções, espiritualidade, família, profissão e sociedade, ao longo de todo processo evolutivo desde a concepção até a morte.",
+        "bibliography": []
+      },
+      {
+        "number": 5,
+        "title": "Psiconeuroendocrinoimunologia - PNEI; Epigenética e Salutogênese",
+        "hours": 30,
+        "ementa": "Psiconeuroendocrinoimunologia, marcadores somáticos, doenças auto-imunes, psicogênese das doenças.",
+        "objetivos": "Correlacionar os fatores psicológicos com suas repercussões no corpo físico, integrando os aspectos neurológicos com a bioquímica hormonal e a imunologia.",
+        "bibliography": []
+      },
+      {
+        "number": 6,
+        "title": "Práxis da psicossomática",
+        "hours": 36,
+        "ementa": "Atendimento ambulatorial, hospitalar, organizacional e corporativo.",
+        "objetivos": "Capacitar os alunos a utilizarem os conceitos da psicossomática em todas as instâncias de trabalho, onde houver algum tipo de relação de ajuda.",
+        "bibliography": []
+      },
+      {
+        "number": 7,
+        "title": "Metodologia do trabalho científico",
+        "hours": 20,
+        "ementa": "Conceitos básicos de metodologia científica. Ciências e conhecimento. Diretrizes para a leitura, análise e interpretação de textos. A análise textual, temática e interpretativa. Pesquisa e projeto de pesquisa. Subsídios para a elaboração de uma monografia.",
+        "objetivos": "Fornecer os elementos básicos necessários para capacitar o aluno para o trabalho científico, desde o desenvolvimento da pesquisa, análise de textos, elaboração de projeto, até os subsídios para a elaboração de uma monografia científica.",
+        "bibliography": []
+      },
+      {
+        "number": 8,
+        "title": "Atividades Programadas",
+        "hours": 160,
+        "ementa": "Atividades que subsidiam a formação acadêmica e o desenvolvimento do conhecimento e da pesquisa dos alunos.",
+        "objetivos": "Apresentação do projeto de conclusão de curso no décimo oitavo mês do curso.",
+        "bibliography": []
+      },
+      {
+        "number": 9,
+        "title": "Atividades Complementares",
+        "hours": 220,
+        "ementa": "120 horas de atendimentos clínicos e 100 horas de supervisão de casos clínicos, extramuros acadêmicos. Participação em Congressos Junguianos do IJEP.",
+        "objetivos": "Complementar a formação com prática clínica supervisionada e participação em eventos científicos.",
+        "bibliography": []
+      },
+      {
+        "number": 10,
+        "title": "Trabalho de Conclusão",
+        "hours": 0,
+        "ementa": "Produção de trabalho monográfico, em concordância com as normas técnicas do IJEP.",
+        "objetivos": "Elaborar trabalho monográfico seguindo as normas do IJEP.",
+        "bibliography": []
       }
     ],
     "avaliacao": [
-      "Frequência mínima de 75% e aproveitamento mínimo de 70% (nota 7,0) nas disciplinas",
-      "Serão concedidos certificados aos discentes que cursarem todas as disciplinas e apresentarem o trabalho de conclusão de curso."
+      "Por tratar-se de um curso de especialização do conhecimento científico e prático na área da saúde, a avaliação ocorrerá como ato contínuo no decorrer das aulas, somados a uma prova escrita e individual, que acontecerá no final do curso, e frequência mínima de 80% das aulas, com controle presencial."
     ],
     "cargahoraria": {
       "texto": [
-        "A carga horária do Curso de Pós-Graduação em Psicossomática é de 360 horas, distribuídas em disciplinas teóricas e práticas, com previsão de integralização completa.",
-        "Sua duração é de 18 meses, oferecido em aulas presenciais."
+        "A carga horária do Curso de Especialização em Psicossomática é de 390 horas, distribuídas em 5 disciplinas de 36 horas/aula, uma disciplina de 30 horas/aula, uma disciplina de 20 horas/aula e 160 horas de atividades programadas, com previsão de integralização de mais 220 horas (que podem ser acrescidas, facultativamente, com 120 horas de atendimentos clínicos e 100 horas de supervisão de casos), podendo totalizar 610 horas.",
+        "Sua duração é de 24 meses, oferecido em aulas presenciais, que acontecem num único sábado de cada mês, das 9hs às 17hs: 45m, contabilizando 10 horas/aula (45min cada), divididas em quatro aulas de 2,5 horas/aula."
       ],
       "atividades": [
-        { "descricao": "Fundamentos da Psicossomática", "carga": 60 },
-        { "descricao": "Neuropsicoimunologia", "carga": 45 },
-        { "descricao": "Técnicas de Intervenção", "carga": 60 },
-        { "descricao": "Estudos de Caso", "carga": 45 },
-        { "descricao": "Atividades Complementares", "carga": 150 },
-        { "descricao": "Total Geral", "carga": 360 }
+        {
+          "descricao": "Horas aulas",
+          "carga": 230
+        },
+        {
+          "descricao": "Atividades programadas",
+          "carga": 160
+        },
+        {
+          "descricao": "Atendimentos/Ateliê*",
+          "carga": 120
+        },
+        {
+          "descricao": "Supervisão*",
+          "carga": 100
+        },
+        {
+          "descricao": "Total Geral",
+          "carga": 610
+        }
       ],
-      "observacao": "Carga horária total conforme regulamentação do MEC para pós-graduação lato sensu."
+      "observacao": "*facultativas"
     },
-    "faculty": {
-      "professor": "Prof. Dr. Carlos Mendes",
-      "descricao": "Especialista em Psicossomática com 20 anos de experiência clínica, focado na integração entre mente, corpo e espírito."
-    },
-    "testimonials": [
-      {
-        "text": "Curso transformador! Mudou completamente minha visão sobre saúde.",
-        "author": "Dr. Paulo Santos",
-        "image": "/assets/images/foto-fallback-generica.jpg",
-        "borderColor": "border-primary"
-      }
-    ],
+    "testimonials": [],
     "contact": {
-      "phone": "(11) 3333-4444",
-      "whatsapp": "(11) 99999-8888",
-      "email": "contato @fafih.edu.br"
+      "phone": "(11) 3456-7890",
+      "whatsapp": "",
+      "email": "contato@fafih.edu.br"
     },
-    "breadcrumb": ["Início", "Pós-Graduação", "Psicossomática"]
+    "breadcrumb": [
+      "Início",
+      "Pós-Graduação",
+      "Psicossomática"
+    ],
+    "coordenacao": {
+      "coordenador": "Prof. Dr. Waldemar Magaldi Filho",
+      "descricao": "Psicólogo, educador, especialista em psicologia analítica junguiana, psicossomática, arteterapia, EMDR e homeopatia. Mestre e doutor em ciências da religião e autor do livro: \"Dinheiro, saúde e sagrado - interfaces culturais, econômicas e religiosas à luz da psicologia analítica\"."
+    },
+    "professores": [
+      {
+        "nome": "Doutor Waldemar Magaldi Filho",
+        "titulacao": "Doutor",
+        "descricao": "Psicólogo. Especialista em Homeopatia; Psicologia Junguiana, Psicossomática, Arteterapia, DAC/DQ e MDR. Mestre em Ciências da Religião - PUCSP. Doutor em Ciências da Religião - UMESP. Coordenador dos cursos de PSICOTERAPIA JUNGUIANA, PSICOSSOMÁTICA, ARTETERAPIA E EXPRESSÕES CRIATIVAS e PSICOTERAPIA INTEGRATIVA TRANSPESSOAL. Membro Didáta do IJEP. Fundador do Instituto Junguiano de Ensino e Pesquisa. IJEP Autor do livro: DINHEIRO, SAÚDE E SAGRADO - Ed. Eleva Cultural.",
+        "telefone": "(11) 5535-4695",
+        "email": "wmagaldi@ijep.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Doutora E. Simone D. Magaldi",
+        "titulacao": "Doutora",
+        "descricao": "Pedagoga, Filósofa, analista - Especialista em Psicologia Junguiana pela UNAERP. Mestre em Ciências da Religião- PUCSP. Doutora em Ciências da Religião- UMESP. Membro Didata, Diretora e Fundadora do IJEP - Instituto Junguiano de Ensino e Pesquisa IJEP. Autora dos livros: ORDEM E CAOS: Uma visão transdisciplinar - Ed. Eleva Cultural - PITÁGORAS, O Mestre de Samos - Ed. Eleva Cultural",
+        "telefone": "(11) 5535-4695",
+        "email": "simonemagaldi@ijep.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Doutora Lilian Wurzba",
+        "titulacao": "Doutora",
+        "descricao": "Psicóloga, Especialista em Psicologia Analítica, Mestre e Doutora em Ciências da Religião pela PUC/SP. Membro Didata do IJEP - Autora do livro: Natureza Irreal ou Fantástica Realidade? - Ed. Eleva Cultural Consultório: Al. Iraé 620, cj. 93 - Moema - SP.",
+        "telefone": "(11) 5051-6891",
+        "email": "laliwi@uol.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Doutora Maria Cristina M. Guarnieri",
+        "titulacao": "Doutora",
+        "descricao": "Psicóloga, Especialista em Psicologia Junguiana, Mestre e Doutora em Ciências da Religião - PUC-SP Membro Didata -",
+        "telefone": "(11) 3085-7973 / 98966-0359",
+        "email": "crisguarnieri@uol.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Oswaldo Cudizio",
+        "titulacao": "Mestre",
+        "descricao": "Médico, Especialista em Pediatria e Homeopatia, Mestre e Doutorando em Psicossomática. Professor do IJEP. Consultório: Rua Caiubi 1563 Sumaré Consultório: R. Vol. Da Pátria 2041 Cj 305/306 Santana",
+        "telefone": "(11) 3872 1911 / 6973-1092",
+        "email": "ocudizio@uol.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Rita de Cássia Macieira",
+        "titulacao": "Mestre",
+        "descricao": "Psicóloga, especialista em Psico-Oncologia; Psicologia Integrativa Transpessoal; Psicossomática; EMDR e Hipnoterapia Erikssoniana. Mestre em Saúde Materno-Infantil pela Faculdade de Medicina de Santo Amaro. Membro Analista. Endereço: Rua Dr. Alceu de Campos Rodrigues, 229 conj. 512 V. Olímpia/SP",
+        "telefone": "(11) 99991-9803",
+        "email": "rmacieira15@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Ajax Pérez Salvador",
+        "titulacao": "Mestre",
+        "descricao": "Médico Psiquiatra e Psicoterapeuta Analista Didata do IJEP. Especialista em Saúde Pública, Mestre em Saúde Mental -- USP, Ex-preceptor de Residência Médica Psiquiátrica 8ª COREM PMSP. Membro Didata do IJEP. Consultório: Av. Pedroso de Morais 2199 - Alto de Pinheiros",
+        "telefone": "(11) 91365956",
+        "email": "apersal@uol.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Lia Romano",
+        "titulacao": "Mestre",
+        "descricao": "Médica com atuação nas áreas de Homeopatia, Clinica Médica e Reumatologia. Mestre em Homeopatia. Membro Analista Didata. Professora nos cursos de pós-graduação em Psicologia Junguiana e Psicossomática do IJEP. Consultório: Rua Bartolomeu de Gusmão, 394 - Vila Mariana - São Paulo/SP",
+        "telefone": "(11) 5579-5761",
+        "email": "lia.romano@uol.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Luciana Antonioli",
+        "titulacao": "Mestre",
+        "descricao": "Médica Pediatra, com formação em Medicina Antroposófica, Especialista em Psicologia Junguiana e Mestre em Comunicação Humana e Saúde - PUCSP (Linguagem, corpo e Psiquismo). Membro analista",
+        "telefone": "",
+        "email": "luciana_a7@hotmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Especialista Ana Paula Z. Maluf",
+        "titulacao": "Especialista",
+        "descricao": "Psicóloga, Especialista em Psicologia Junguiana, Arteterapia, Psicossomática, Psicologia Transpessoal e DAC, pelo IJEP. Membro Didata do IJEP.",
+        "telefone": "(11) 94123-0102",
+        "email": "anapaulazm@yahoo.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Doutor Dimas A. Künsch",
+        "titulacao": "Doutor",
+        "descricao": "Especialista em Psicologia Junguiana e Analista Junguiano em formação pelo IJEP. Graduado em Filosofia (São Paulo, Brasil) e em Teologia (Innsbruck, Áustria). Mestre em Integração da América Latina e doutor em Ciências da Comunicação pela Universidade de São Paulo (USP). Docente do Programa de Pós-Graduação em Comunicação Social da Universidade Metodista de São Paulo (UMESP).",
+        "telefone": "(11) 99789-1771",
+        "email": "dimas.kunsch@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Especialista Maria da Glória G. de Miranda",
+        "titulacao": "Especialista",
+        "descricao": "Psicologia, Analista Junguiana. Didata em formação do IJEP. Especialista em Psicologia Junguiana pelo IJEP e Psicologia Analítica Técnicas de Trabalho Corporal pelo Sedes Sapientiae e Terapia de Casal e Família pelo Instituto Moreno e pela SBPA.",
+        "telefone": "(11) 99338-3545",
+        "email": "mgloriagmiranda@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Doutor Leonardo Torres",
+        "titulacao": "Doutor",
+        "descricao": "Doutor e Mestre em Comunicação e Cultura pela UNIP/SP. Especialista em Psicologia Junguiana e Psicossomática pelo IJEP. Membro Analista Didata em Formação pelo IJEP. .Autor do Livro: Contágio Psíquico: a loucura das massas e suas reverberações na mídia - Ed. Eleva Cultural.",
+        "telefone": "54 99331-0389",
+        "email": "leosouzatorres@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Doutorando Rafael Rodrigues",
+        "titulacao": "Doutorando",
+        "descricao": "Psicólogo. Especialista em Psicologia Analítica Junguiana e Psicossomática pelo IJEP. Especialista em Administração de Empresas pela FGV/SP. Mestre em Comunicação e Cultura pela UNIP/SP. Analista Didata em formação do IJEP.",
+        "telefone": "11 99739-3491",
+        "email": "rafael@solucaoativa.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Doutor José Luiz Balestrini",
+        "titulacao": "Doutor",
+        "descricao": "Psicólogo, Analista didáta em formação do IJEP, Especialista em Psicologia Junguiana (IJEP), Especialista em Psicossomática (IJEP), Mestre e Doutorando em Comunicação e Cultura (UNIP), Especialista em Medicina Tradicional Chinesa (SEEB, SATOSP) ,Mestre de Kung Fu, Doutor Honoris Causa em Filosofia das Artes Marciais (FIOGA). Autor do livro: è tudo Verdade: Histórias Reais Sobre a Existência Humana - Ed. Eleva Cultural .",
+        "telefone": "11 98207 7766",
+        "email": "balestrini@lungfu.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Keller Alves Villela Ocaña Bruno",
+        "titulacao": "Mestre",
+        "descricao": "Psicóloga, Especialista em Psicologia Junguiana, Psicossomática e Arteterapia pelo IJEP. Membro Analista pelo IJEP. Mestre em Comunicação pela UMESP",
+        "telefone": "(11) 98225-4490",
+        "email": "kellervillela@terra.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Daniela Euzebio",
+        "titulacao": "Mestre",
+        "descricao": "Mestre em Comunicação Social pela UMESP; Especialista em Psicologia Junguiana e em Arteterapia pelo IJEP; Especialista em Psicologia Organizacional e do Trabalho pelo Mackenzie; Especialista em Marketing pela Anhembi Morumbi. Membro Analista pelo IJEP",
+        "telefone": "(11) 99623-5529",
+        "email": "daniela.euzebio@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Doutoranda Natalhe Vieni Garcia Costa",
+        "titulacao": "Doutoranda",
+        "descricao": "Enfermeira, Especialista em Psicologia Analítica e Psicossomática pelo IJEP. Membro didata em formação pelo IJEP. Mestre em Comunicação Social pela UMESP. Doutoranda em Comunicação Social pela UMESP.",
+        "telefone": "(11) 99456-0194",
+        "email": "natalhegarciacosta@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Mestranda Gilmara Marques Fadim Alves",
+        "titulacao": "Mestranda",
+        "descricao": "Psicóloga. Especialista em Psicologia Junguiana, Arteterapia e Psicossomática pelo IJEP. Membro Analista do IJEP e Analista Didata em formação. Especialista em Consultoria de Carreira pela FIA/USP. Mestranda em Comunicação Social pela UMESP.",
+        "telefone": "11 99201-0118",
+        "email": "gmf.alves@terra.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Mauro Ângelo Soave Jr.",
+        "titulacao": "Mestre",
+        "descricao": "Analista didata em formação pelo IJEP. Membro Analista do IJEP. Especialista em Arteterapia e expressões criativas e Psicologia Junguiana pelo IJEP. Gestor Ambiental e Mestre em Recursos Florestais pela ESALQ/USP.",
+        "telefone": "61 99677-4719",
+        "email": "maurosohan@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Mestranda Barbara Pessanha Lima",
+        "titulacao": "Mestranda",
+        "descricao": "Cientista Social (UFRJ) e Designer de Produto (UVA). Especialista em Psicologia Analítica, Arteterapia e Psicossomática. Mestranda em Comunicação Social pela UMESP. Membro Didata em formação pelo IJEP.",
+        "telefone": "(21) 99812-0111",
+        "email": "barbarapessanha.terapias@gmail.com",
+        "foto": ""
+      }
+    ]
   },
   {
     "id": 3,
     "slug": "arteterapia-e-expressoes-criativas",
     "title": "Arteterapia e Expressões Criativas",
     "subtitle": "Curso presencial com turmas no RJ, Brasília e São Paulo",
-    "description": "Formação filiada à SOBRARTE que usa as expressões criativas como recurso terapêutico e clínico.",
+    "description": "O crescente interesse pelo uso das expressões criativas como recurso clínico e terapêutico fundamenta a oferta deste curso, que se propõe a formar profissionais capazes de despertar a potência inventiva de indivíduos e grupos, transformando-a em intervenções efetivas em contextos clínicos, educacionais, organizacionais e comunitários.",
     "fullDescription": [
       "O curso de Arteterapia e Expressões Criativas capacita profissionais a despertar a potência inventiva de indivíduos e grupos, transformando-a em intervenções terapêuticas efetivas em contextos clínicos, educacionais, organizacionais e comunitários.",
       "Com abordagem transdisciplinar, integra fundamentos da psicologia analítica, das terapias expressivas e das artes para promover processos de cura biopsicossocial e desenvolvimento simbólico.",
@@ -414,57 +647,59 @@
     ],
     "image": "https://i.imgur.com/iVpnrwc.png",
     "hero": {
-      "type": "video",
-      "source": "/assets/videos/video-curso-3.mp4",
-      "alt": "Ambiente criativo do curso Arteterapia e Expressões Criativas",
+      "type": "image",
+      "source": "https://i.imgur.com/iVpnrwc.png",
+      "alt": "Curso de Arteterapia e Expressões Criativas",
       "fallbackImage": "https://i.imgur.com/iVpnrwc.png"
     },
     "category": "especializacao",
     "categoryLabel": "Pós-Graduação",
-    "price": 6360.00,
-    "originalPrice": 12000.00,
-    "precoMatricula": 300.00,
+    "price": 663.57,
+    "originalPrice": 0.0,
+    "precoMatricula": 360.0,
     "modalidade": "Presencial",
     "duration": "24 meses",
-    "workload": "360h",
+    "workload": "636h",
     "startDate": "RJ: 11/04/2026 · Brasília: 14/03/2026 · São Paulo: 30/08/2025",
     "maxStudents": "Turmas presenciais reduzidas",
     "certificate": "Filiado à SOBRARTE",
-    "monthlyPrice": "Matrícula R$ 360 + 24x de R$ 663,57",
+    "monthlyPrice": "24 parcelas de R$ 663,57",
     "justificativa": [
-      "O curso forma especialistas em Psicologia Analítica ao difundir teorias, práticas e pesquisas de C. G. Jung e sucessores, em aulas presenciais com debates e supervisão.",
-      "Supre a demanda por conhecimento profundo da Psicologia Junguiana ao oferecer formação acessível a profissionais das áreas de saúde, humanas e biológicas.",
-      "Promove integração entre arte, psicologia, educação e espiritualidade como caminhos terapêuticos para acolher sintomas psicoafetivos e psicossomáticos."
+      "O crescente interesse pelo uso das expressões criativas como recurso clínico e terapêutico fundamenta a oferta deste curso, que se propõe a formar profissionais capazes de despertar a potência inventiva de indivíduos e grupos, transformando-a em intervenções efetivas em contextos clínicos, educacionais, organizacionais e comunitários.",
+      "Com abordagem transdisciplinar, o curso integra fundamentos da psicologia analítica, das terapias expressivas e das artes para promover processos de cura biopsicossocial e desenvolvimento simbólico.",
+      "As vivências práticas percorrem distintas formas de expressão – desenho, colagem, pintura, modelagem, música, corpo e teatro – além de práticas iniciáticas que favorecem estados ampliados de consciência e experiências numinosas.",
+      "Este é o primeiro e único curso de arteterapia no Brasil filiado à SOBRARTE – Associação Brasileira de Arteterapia, oferecendo formação reconhecida nacionalmente e em conformidade com padrões éticos e técnicos da área."
     ],
     "objetivos": [
-      "Ampliar conhecimentos teóricos e práticos da Psicologia Analítica.",
-      "Aplicar procedimentos e fundamentos junguianos com ética e responsabilidade.",
-      "Estimular a pesquisa teórico-prática em Psicologia Analítica e arteterapia.",
-      "Situar-se criticamente frente aos paradigmas pessoais e profissionais."
+      "Capacitar profissionais para o uso terapêutico das expressões criativas em contextos diversos (clínico, educacional, organizacional, comunitário).",
+      "Desenvolver competências para facilitar processos expressivos que mobilizem recursos internos, promovam integração psíquica e favoreçam a individuação.",
+      "Fundamentar a prática arteterapêutica nos pilares da psicologia analítica junguiana, das teorias das artes e das neurociências contemporâneas.",
+      "Propiciar vivências que integrem teoria e prática através de ateliês, supervisões e atendimentos clínicos.",
+      "Formar profissionais capazes de atuar eticamente, respeitando as especificidades de cada linguagem expressiva e as necessidades de cada contexto de atuação."
     ],
     "publico": [
-      "Profissionais graduados nas áreas de saúde, humanas e biológicas interessados em Psicologia Analítica.",
-      "Terapeutas, educadores e artistas que desejam integrar expressões criativas a processos de cuidado."
+      "Profissionais graduados em áreas de humanas, saúde, artes e educação que desejem ampliar suas competências terapêuticas através das expressões criativas.",
+      "Psicólogos, terapeutas, educadores, arte-educadores, profissionais da saúde e áreas afins interessados em abordagens criativas e simbólicas de cuidado."
     ],
     "highlights": [
       {
-        "icon": "fas fa-map-marker-alt",
-        "title": "Turmas 2025/2026",
-        "description": "Encontros presenciais no Rio de Janeiro, Brasília e São Paulo",
-        "bgColor": "bg-blue-50",
-        "iconColor": "bg-blue-500"
-      },
-      {
         "icon": "fas fa-palette",
-        "title": "Percurso Criativo",
-        "description": "Vivências expressivas, oficinas e supervisão clínica em arteterapia",
-        "bgColor": "bg-yellow-50",
-        "iconColor": "bg-yellow-500"
+        "title": "Filiação SOBRARTE",
+        "description": "Único curso filiado à Associação Brasileira de Arteterapia",
+        "bgColor": "bg-pink-50",
+        "iconColor": "bg-pink-500"
       },
       {
-        "icon": "fas fa-award",
-        "title": "Filiado à SOBRARTE",
-        "description": "Curso reconhecido pela Sociedade Brasileira de Arteterapia",
+        "icon": "fas fa-hands",
+        "title": "Prática Vivencial",
+        "description": "Ateliês práticos com diversas linguagens expressivas",
+        "bgColor": "bg-purple-50",
+        "iconColor": "bg-purple-500"
+      },
+      {
+        "icon": "fas fa-users",
+        "title": "Supervisão Clínica",
+        "description": "Atendimentos supervisionados em arteterapia",
         "bgColor": "bg-green-50",
         "iconColor": "bg-green-500"
       }
@@ -472,23 +707,319 @@
     "curriculum": [
       {
         "number": 1,
-        "title": "Fundamentos das Terapias Artísticas",
-        "hours": 45,
-        "ementa": "Histórico da arteterapia e diferenciações conceituais; criatividade, processo criador e materiais simbólicos; transferência, contratransferência e ética em arteterapia; o pensamento de Nise da Silveira e referências junguianas.",
-        "objetivos": "Compreender os fundamentos históricos e teóricos da Arteterapia; relacionar a Psicologia Analítica de C. G. Jung às práticas expressivas; reconhecer critérios éticos e clínicos para atuação arteterapêutica.",
-        "bibliography": [
-          "Silveira, N. Imagens do Inconsciente. Imago, 1978",
-          "Jung, C.G. O Homem e seus Símbolos. Nova Fronteira, 1964",
-          "Kramer, E. Arteterapia: Teoria e Prática. Artes Médicas, 2001"
-        ]
+        "title": "Fundamentos da Arteterapia",
+        "hours": 48,
+        "ementa": "História da arteterapia, conceitos básicos, interfaces com a psicologia analítica junguiana. Fundamentos teóricos das terapias expressivas. O processo criativo como caminho terapêutico.",
+        "objetivos": "Fundamentar o aluno nos conceitos básicos da arteterapia, sua história, interfaces teóricas e campo de atuação profissional.",
+        "bibliography": []
+      },
+      {
+        "number": 2,
+        "title": "Psicologia Analítica e Processo Criativo",
+        "hours": 48,
+        "ementa": "Arquétipos, símbolos e imagens na obra de Jung. A função transcendente e o processo de individuação. Imaginação ativa e amplificação simbólica. Arte e inconsciente.",
+        "objetivos": "Aprofundar a compreensão dos fundamentos junguianos que embasam a prática arteterapêutica.",
+        "bibliography": []
+      },
+      {
+        "number": 3,
+        "title": "Linguagens Expressivas I - Artes Plásticas",
+        "hours": 60,
+        "ementa": "Desenho, pintura, colagem, modelagem. Materiais, técnicas e recursos expressivos. Vivências práticas em ateliê. Leitura de imagens e processo criativo.",
+        "objetivos": "Experimentar e dominar as principais linguagens das artes plásticas aplicadas à arteterapia.",
+        "bibliography": []
+      },
+      {
+        "number": 4,
+        "title": "Linguagens Expressivas II - Corpo, Música e Teatro",
+        "hours": 48,
+        "ementa": "Expressão corporal, dança circular, musicoterapia, psicodrama e teatro terapêutico. Práticas integrativas e recursos sonoros.",
+        "objetivos": "Explorar linguagens expressivas não-plásticas e seus recursos terapêuticos.",
+        "bibliography": []
+      },
+      {
+        "number": 5,
+        "title": "Arteterapia em Contextos Diversos",
+        "hours": 36,
+        "ementa": "Arteterapia clínica, hospitalar, educacional, organizacional e comunitária. Especificidades de atuação com crianças, adolescentes, adultos e idosos.",
+        "objetivos": "Capacitar o aluno para atuar com arteterapia em diferentes contextos e populações.",
+        "bibliography": []
+      },
+      {
+        "number": 6,
+        "title": "Neurociências e Arteterapia",
+        "hours": 24,
+        "ementa": "Bases neurobiológicas da criatividade. Neuroplasticidade e processo criativo. Contribuições das neurociências para a compreensão dos efeitos terapêuticos da arte.",
+        "objetivos": "Integrar conhecimentos das neurociências contemporâneas à prática arteterapêutica.",
+        "bibliography": []
+      },
+      {
+        "number": 7,
+        "title": "Práticas Iniciáticas e Estados Ampliados",
+        "hours": 36,
+        "ementa": "Respiração holotrópica, meditação criativa, mandalas, visualizações guiadas. Práticas que favorecem estados ampliados de consciência.",
+        "objetivos": "Vivenciar práticas que ampliem a percepção e favoreçam experiências numinosas.",
+        "bibliography": []
+      },
+      {
+        "number": 8,
+        "title": "Ética e Deontologia em Arteterapia",
+        "hours": 16,
+        "ementa": "Código de ética da SOBRARTE. Princípios éticos na prática arteterapêutica. Limites e possibilidades da atuação profissional.",
+        "objetivos": "Formar profissionais conscientes dos princípios éticos que regem a arteterapia.",
+        "bibliography": []
+      },
+      {
+        "number": 9,
+        "title": "Metodologia do Trabalho Científico",
+        "hours": 20,
+        "ementa": "Pesquisa em arteterapia, metodologias qualitativas, elaboração de projetos e monografias.",
+        "objetivos": "Capacitar o aluno para a produção científica em arteterapia.",
+        "bibliography": []
+      },
+      {
+        "number": 10,
+        "title": "Atividades Programadas",
+        "hours": 160,
+        "ementa": "Desenvolvimento de projeto de conclusão de curso, estudos dirigidos, participação em eventos.",
+        "objetivos": "Subsidiar a formação acadêmica e a elaboração do trabalho de conclusão.",
+        "bibliography": []
+      },
+      {
+        "number": 11,
+        "title": "Atividades Complementares - Ateliê e Supervisão",
+        "hours": 140,
+        "ementa": "60 horas de ateliê de arteterapia (vivências práticas) e 80 horas de supervisão de atendimentos clínicos em arteterapia.",
+        "objetivos": "Proporcionar experiência prática supervisionada em arteterapia.",
+        "bibliography": []
+      },
+      {
+        "number": 12,
+        "title": "Trabalho de Conclusão",
+        "hours": 0,
+        "ementa": "Elaboração de monografia conforme normas técnicas do IJEP e da SOBRARTE.",
+        "objetivos": "Produzir trabalho monográfico integrando teoria e prática em arteterapia.",
+        "bibliography": []
       }
     ],
-    "contact": {
-      "phone": "(11) 3333-4444",
-      "whatsapp": "(11) 99999-8888",
-      "email": "contato @fafih.edu.br"
+    "avaliacao": [
+      "A avaliação é processual e contínua, considerando participação nas vivências, elaboração de portfólios criativos, produção de trabalhos teórico-práticos e prova final escrita.",
+      "Exige-se frequência mínima de 80% nas aulas presenciais e cumprimento das atividades programadas e complementares."
+    ],
+    "cargahoraria": {
+      "texto": [
+        "A carga horária total do Curso de Especialização em Arteterapia e Expressões Criativas é de 636 horas, distribuídas em disciplinas teóricas, ateliês vivenciais, supervisões e atividades programadas.",
+        "O curso tem duração de 24 meses, com aulas presenciais mensais aos sábados, das 9h às 17h45, totalizando 10 horas/aula por encontro."
+      ],
+      "atividades": [
+        {
+          "descricao": "Disciplinas teórico-vivenciais",
+          "carga": 336
+        },
+        {
+          "descricao": "Atividades programadas",
+          "carga": 160
+        },
+        {
+          "descricao": "Ateliê de Arteterapia",
+          "carga": 60
+        },
+        {
+          "descricao": "Supervisão de atendimentos",
+          "carga": 80
+        },
+        {
+          "descricao": "Total Geral",
+          "carga": 636
+        }
+      ],
+      "observacao": "Carga horária inclui vivências práticas obrigatórias em ateliê e supervisões clínicas."
     },
-    "breadcrumb": ["Início", "Pós-Graduação", "Arteterapia"]
+    "testimonials": [],
+    "contact": {
+      "phone": "(11) 3456-7890",
+      "whatsapp": "",
+      "email": "contato@fafih.edu.br"
+    },
+    "breadcrumb": [
+      "Início",
+      "Pós-Graduação",
+      "Arteterapia e Expressões Criativas"
+    ],
+    "coordenacao": {
+      "coordenador": "Prof. Dr. Waldemar Magaldi Filho",
+      "descricao": "Psicólogo, educador, especialista em psicologia analítica junguiana, psicossomática, arteterapia, EMDR e homeopatia. Mestre e doutor em ciências da religião."
+    },
+    "professores": [
+      {
+        "nome": "Doutor Waldemar Magaldi Filho",
+        "titulacao": "Doutor",
+        "descricao": "Psicólogo. Especialista em Homeopatia; Psicologia Junguiana, Psicossomática, Arteterapia, DAC/DQ e MDR. Mestre em Ciências da Religião - PUCSP. Doutor em Ciências da Religião - UMESP. Coordenador dos cursos de PSICOTERAPIA JUNGUIANA, PSICOSSOMÁTICA, ARTETERAPIA E EXPRESSÕES CRIATIVAS e PSICOTERAPIA INTEGRATIVA TRANSPESSOAL. Membro Didáta do IJEP. Fundador do Instituto Junguiano de Ensino e Pesquisa.",
+        "telefone": "(11) 5535-4695",
+        "email": "wmagaldi@ijep.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Doutora E. Simone D. Magaldi",
+        "titulacao": "Doutora",
+        "descricao": "Pedagoga, Filósofa, analista - Especialista em Psicologia Junguiana pela UNAERP. Mestre em Ciências da Religião- PUCSP. Doutora em Ciências da Religião- UMESP. Membro Didata, Diretora e Fundadora do IJEP.",
+        "telefone": "(11) 5535-4695",
+        "email": "simonemagaldi@ijep.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Doutora Lilian Wurzba",
+        "titulacao": "Doutora",
+        "descricao": "Psicóloga, Especialista em Psicologia Analítica, Mestre e Doutora em Ciências da Religião pela PUC/SP. Membro Didata do IJEP.",
+        "telefone": "(11) 5051-6891",
+        "email": "laliwi@uol.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Doutora Maria Cristina M. Guarnieri",
+        "titulacao": "Doutora",
+        "descricao": "Psicóloga, Especialista em Psicologia Junguiana, Mestre e Doutora em Ciências da Religião - PUC-SP. Membro Didata.",
+        "telefone": "(11) 3085-7973 / 98966-0359",
+        "email": "crisguarnieri@uol.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Oswaldo Cudizio",
+        "titulacao": "Mestre",
+        "descricao": "Médico, Especialista em Pediatria e Homeopatia, Mestre e Doutorando em Psicossomática. Professor do IJEP.",
+        "telefone": "(11) 3872 1911 / 6973-1092",
+        "email": "ocudizio@uol.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Rita de Cássia Macieira",
+        "titulacao": "Mestre",
+        "descricao": "Psicóloga, especialista em Psico-Oncologia; Psicologia Integrativa Transpessoal; Psicossomática; EMDR e Hipnoterapia Erikssoniana. Mestre em Saúde Materno-Infantil. Membro Analista.",
+        "telefone": "(11) 99991-9803",
+        "email": "rmacieira15@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Ajax Pérez Salvador",
+        "titulacao": "Mestre",
+        "descricao": "Médico Psiquiatra e Psicoterapeuta Analista Didata do IJEP. Especialista em Saúde Pública, Mestre em Saúde Mental - USP. Membro Didata do IJEP.",
+        "telefone": "(11) 91365956",
+        "email": "apersal@uol.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Lia Romano",
+        "titulacao": "Mestre",
+        "descricao": "Médica com atuação nas áreas de Homeopatia, Clinica Médica e Reumatologia. Mestre em Homeopatia. Membro Analista Didata. Professora nos cursos de pós-graduação em Psicologia Junguiana e Psicossomática do IJEP.",
+        "telefone": "(11) 5579-5761",
+        "email": "lia.romano@uol.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Luciana Antonioli",
+        "titulacao": "Mestre",
+        "descricao": "Médica Pediatra, com formação em Medicina Antroposófica, Especialista em Psicologia Junguiana e Mestre em Comunicação Humana e Saúde - PUCSP. Membro analista.",
+        "telefone": "",
+        "email": "luciana_a7@hotmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Especialista Ana Paula Z. Maluf",
+        "titulacao": "Especialista",
+        "descricao": "Psicóloga, Especialista em Psicologia Junguiana, Arteterapia, Psicossomática, Psicologia Transpessoal e DAC, pelo IJEP. Membro Didata do IJEP.",
+        "telefone": "(11) 94123-0102",
+        "email": "anapaulazm@yahoo.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Doutor Dimas A. Künsch",
+        "titulacao": "Doutor",
+        "descricao": "Especialista em Psicologia Junguiana e Analista Junguiano em formação pelo IJEP. Graduado em Filosofia e em Teologia. Mestre em Integração da América Latina e doutor em Ciências da Comunicação pela USP.",
+        "telefone": "(11) 99789-1771",
+        "email": "dimas.kunsch@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Especialista Maria da Glória G. de Miranda",
+        "titulacao": "Especialista",
+        "descricao": "Psicóloga, Analista Junguiana. Didata em formação do IJEP. Especialista em Psicologia Junguiana pelo IJEP e Psicologia Analítica Técnicas de Trabalho Corporal pelo Sedes Sapientiae.",
+        "telefone": "(11) 99338-3545",
+        "email": "mgloriagmiranda@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Doutor Leonardo Torres",
+        "titulacao": "Doutor",
+        "descricao": "Doutor e Mestre em Comunicação e Cultura pela UNIP/SP. Especialista em Psicologia Junguiana e Psicossomática pelo IJEP. Membro Analista Didata em Formação pelo IJEP.",
+        "telefone": "54 99331-0389",
+        "email": "leosouzatorres@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Doutorando Rafael Rodrigues",
+        "titulacao": "Doutorando",
+        "descricao": "Psicólogo. Especialista em Psicologia Analítica Junguiana e Psicossomática pelo IJEP. Especialista em Administração de Empresas pela FGV/SP. Mestre em Comunicação e Cultura pela UNIP/SP. Analista Didata em formação do IJEP.",
+        "telefone": "11 99739-3491",
+        "email": "rafael@solucaoativa.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Doutor José Luiz Balestrini",
+        "titulacao": "Doutor",
+        "descricao": "Psicólogo, Analista didata em formação do IJEP, Especialista em Psicologia Junguiana (IJEP), Especialista em Psicossomática (IJEP), Mestre e Doutorando em Comunicação e Cultura (UNIP).",
+        "telefone": "11 98207 7766",
+        "email": "balestrini@lungfu.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Keller Alves Villela Ocaña Bruno",
+        "titulacao": "Mestre",
+        "descricao": "Psicóloga, Especialista em Psicologia Junguiana, Psicossomática e Arteterapia pelo IJEP. Membro Analista pelo IJEP. Mestre em Comunicação pela UMESP.",
+        "telefone": "(11) 98225-4490",
+        "email": "kellervillela@terra.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Daniela Euzebio",
+        "titulacao": "Mestre",
+        "descricao": "Mestre em Comunicação Social pela UMESP; Especialista em Psicologia Junguiana e em Arteterapia pelo IJEP; Especialista em Psicologia Organizacional e do Trabalho pelo Mackenzie. Membro Analista pelo IJEP.",
+        "telefone": "(11) 99623-5529",
+        "email": "daniela.euzebio@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Doutoranda Natalhe Vieni Garcia Costa",
+        "titulacao": "Doutoranda",
+        "descricao": "Enfermeira, Especialista em Psicologia Analítica e Psicossomática pelo IJEP. Membro didata em formação pelo IJEP. Mestre em Comunicação Social pela UMESP. Doutoranda em Comunicação Social pela UMESP.",
+        "telefone": "(11) 99456-0194",
+        "email": "natalhegarciacosta@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Mestranda Gilmara Marques Fadim Alves",
+        "titulacao": "Mestranda",
+        "descricao": "Psicóloga. Especialista em Psicologia Junguiana, Arteterapia e Psicossomática pelo IJEP. Membro Analista do IJEP e Analista Didata em formação. Especialista em Consultoria de Carreira pela FIA/USP. Mestranda em Comunicação Social pela UMESP.",
+        "telefone": "11 99201-0118",
+        "email": "gmf.alves@terra.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Mestre Mauro Ângelo Soave Jr.",
+        "titulacao": "Mestre",
+        "descricao": "Analista didata em formação pelo IJEP. Membro Analista do IJEP. Especialista em Arteterapia e expressões criativas e Psicologia Junguiana pelo IJEP. Gestor Ambiental e Mestre em Recursos Florestais pela ESALQ/USP.",
+        "telefone": "61 99677-4719",
+        "email": "maurosohan@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Mestranda Barbara Pessanha Lima",
+        "titulacao": "Mestranda",
+        "descricao": "Cientista Social (UFRJ) e Designer de Produto (UVA). Especialista em Psicologia Analítica, Arteterapia e Psicossomática. Mestranda em Comunicação Social pela UMESP. Membro Didata em formação pelo IJEP.",
+        "telefone": "(21) 99812-0111",
+        "email": "barbarapessanha.terapias@gmail.com",
+        "foto": ""
+      }
+    ]
   },
   {
     "id": 4,
@@ -508,9 +1039,9 @@
     },
     "category": "extensao",
     "categoryLabel": "Extensão",
-    "price": 890.00,
-    "originalPrice": 1200.00,
-    "precoMatricula": 100.00,
+    "price": 890.0,
+    "originalPrice": 1200.0,
+    "precoMatricula": 100.0,
     "modalidade": "Online",
     "duration": "6 meses",
     "workload": "60h",
@@ -546,7 +1077,11 @@
       "whatsapp": "(11) 99999-8888",
       "email": "contato @fafih.edu.br"
     },
-    "breadcrumb": ["Início", "Extensão", "Livros Negros e Livro Vermelho"]
+    "breadcrumb": [
+      "Início",
+      "Extensão",
+      "Livros Negros e Livro Vermelho"
+    ]
   },
   {
     "id": 5,
@@ -566,9 +1101,9 @@
     },
     "category": "extensao",
     "categoryLabel": "Extensão",
-    "price": 450.00,
-    "originalPrice": 600.00,
-    "precoMatricula": 50.00,
+    "price": 450.0,
+    "originalPrice": 600.0,
+    "precoMatricula": 50.0,
     "modalidade": "Presencial",
     "duration": "2 dias",
     "workload": "16h",
@@ -604,7 +1139,11 @@
       "whatsapp": "(11) 99999-8888",
       "email": "contato @fafih.edu.br"
     },
-    "breadcrumb": ["Início", "Extensão", "Sonhando Através da Arteterapia"]
+    "breadcrumb": [
+      "Início",
+      "Extensão",
+      "Sonhando Através da Arteterapia"
+    ]
   },
   {
     "id": 6,
@@ -624,9 +1163,9 @@
     },
     "category": "extensao",
     "categoryLabel": "Extensão",
-    "price": 650.00,
-    "originalPrice": 850.00,
-    "precoMatricula": 100.00,
+    "price": 650.0,
+    "originalPrice": 850.0,
+    "precoMatricula": 100.0,
     "modalidade": "Online",
     "duration": "4 meses",
     "workload": "40h",
@@ -662,7 +1201,11 @@
       "whatsapp": "(11) 99999-8888",
       "email": "contato @fafih.edu.br"
     },
-    "breadcrumb": ["Início", "Extensão", "De Aion a Jó"]
+    "breadcrumb": [
+      "Início",
+      "Extensão",
+      "De Aion a Jó"
+    ]
   },
   {
     "id": 7,
@@ -682,9 +1225,9 @@
     },
     "category": "formacao",
     "categoryLabel": "Formação",
-    "price": 15000.00,
-    "originalPrice": 20000.00,
-    "precoMatricula": 1000.00,
+    "price": 15000.0,
+    "originalPrice": 20000.0,
+    "precoMatricula": 1000.0,
     "modalidade": "Presencial",
     "duration": "5 anos",
     "workload": "500h",
@@ -720,76 +1263,257 @@
       "whatsapp": "(11) 99999-8888",
       "email": "formacao @fafih.edu.br"
     },
-    "breadcrumb": ["Início", "Formação", "Analistas Junguianos"]
+    "breadcrumb": [
+      "Início",
+      "Formação",
+      "Analistas Junguianos"
+    ]
   },
   {
     "id": 8,
-    "slug": "congressos-junguianos-do-ijep",
-    "title": "Congressos Junguianos do IJEP",
-    "subtitle": "Eventos científicos de excelência",
-    "description": "Participe dos principais eventos científicos em psicologia analítica.",
+    "slug": "formacao-analistas-junguianos",
+    "title": "Formação de Membros Analistas Junguianos do IJEP",
+    "subtitle": "Filiação e Formação de Analistas",
+    "description": "O IJEP - Instituto Junguiano de Ensino e Pesquisa, tendo como visão a integração das dimensões do bom, do belo e do verdadeiro, presentes nas ciências das religiões, nas artes e nas ciências médicas e da saúde, disseminador da importância da filosofia na vida das pessoas e da base da obra de Jung, criou a FORMAÇÃO DE MEMBROS ANALISTAS JUNGUIANOS, visando, à luz psicologia analítica de Carl Gustav Jung, propiciar aos Profissionais em Formação os fundamentos teóricos e a prática do exercício profissional. Obviamente que, pela perspectiva junguiana, jamais poderemos integrar o bom, o belo e o verdadeiro, sem o reconhecimento das suas antinomias, na forma do mal, do feio e do falso ou mentiroso, porque sem a descida aos infernos para que a sombra seja encarada, jamais poderemos compreender a totalidade.",
     "fullDescription": [
-      "Os Congressos Junguianos do IJEP são eventos científicos de excelência que reúnem especialistas nacionais e internacionais em psicologia analítica, oferecendo palestras magistrais, mesas redondas e comunicações livres."
+      "O IJEP - Instituto Junguiano de Ensino e Pesquisa, tendo como visão a integração das dimensões do bom, do belo e do verdadeiro, presentes nas ciências das religiões, nas artes e nas ciências médicas e da saúde, disseminador da importância da filosofia na vida das pessoas e da base da obra de Jung, criou a FORMAÇÃO DE MEMBROS ANALISTAS JUNGUIANOS, visando, à luz psicologia analítica de Carl Gustav Jung, propiciar aos Profissionais em Formação os fundamentos teóricos e a prática do exercício profissional.",
+      "Obviamente que, pela perspectiva junguiana, jamais poderemos integrar o bom, o belo e o verdadeiro, sem o reconhecimento das suas antinomias, na forma do mal, do feio e do falso ou mentiroso, porque sem a descida aos infernos para que a sombra seja encarada, jamais poderemos compreender a totalidade."
     ],
-    "image": "https://i.imgur.com/congress.png",
+    "image": "https://i.imgur.com/lXkjLLG.png",
     "hero": {
-      "type": "video",
-      "source": "/assets/videos/video-curso-1.mp4",
-      "alt": "Apresentação dos Congressos Junguianos",
-      "fallbackImage": "https://i.imgur.com/congress.png"
+      "type": "image",
+      "source": "https://i.imgur.com/lXkjLLG.png",
+      "alt": "Formação de Membros Analistas Junguianos do IJEP",
+      "fallbackImage": "https://i.imgur.com/lXkjLLG.png"
     },
-    "category": "evento",
-    "categoryLabel": "Evento",
-    "price": 200.00,
-    "originalPrice": 300.00,
-    "precoMatricula": 50.00,
+    "category": "formacao",
+    "categoryLabel": "Formação",
+    "price": 0.0,
+    "originalPrice": 0.0,
+    "precoMatricula": 250.0,
     "modalidade": "Presencial",
-    "duration": "3 dias",
-    "workload": "24h",
-    "startDate": "Junho 2024",
-    "maxStudents": "Máx. 200 participantes",
-    "certificate": "Certificado de Participação",
-    "monthlyPrice": "Pagamento à vista",
+    "duration": "3 a 5 anos",
+    "workload": "",
+    "startDate": "",
+    "maxStudents": "",
+    "certificate": "Membro Analista Junguiano do IJEP",
+    "monthlyPrice": "",
     "highlights": [
       {
-        "icon": "fas fa-globe",
-        "title": "Alcance Internacional",
-        "description": "Palestrantes e participantes do mundo todo",
+        "icon": "fas fa-user-graduate",
+        "title": "Divulgação Profissional",
+        "description": "Nome no site do IJEP com divulgação para interessados",
         "bgColor": "bg-blue-50",
         "iconColor": "bg-blue-500"
       },
       {
-        "icon": "fas fa-microphone",
-        "title": "Palestras Magistrais",
-        "description": "Apresentações de especialistas renomados",
-        "bgColor": "bg-purple-50",
-        "iconColor": "bg-purple-500"
-      },
-      {
-        "icon": "fas fa-network-wired",
-        "title": "Networking",
-        "description": "Oportunidades de conexão profissional",
+        "icon": "fas fa-users",
+        "title": "Filiação ao IJEP",
+        "description": "Membros formados seguem filiados com indicação na home page",
         "bgColor": "bg-green-50",
         "iconColor": "bg-green-500"
+      },
+      {
+        "icon": "fas fa-chalkboard-teacher",
+        "title": "Oportunidades de Ensino",
+        "description": "Possibilidade de dar supervisões e ministrar aulas",
+        "bgColor": "bg-purple-50",
+        "iconColor": "bg-purple-500"
       }
     ],
     "cargahoraria": {
       "texto": [
-        "Carga horária total de 24 horas distribuídas em 3 dias de evento científico."
+        "A formação de Membro Analista tem duração de 3 a 5 anos ininterruptos e inclui diversos componentes práticos e teóricos."
       ],
       "atividades": [
-        { "descricao": "Palestras Magistrais", "carga": 12 },
-        { "descricao": "Mesas Redondas", "carga": 8 },
-        { "descricao": "Comunicações Livres", "carga": 4 },
-        { "descricao": "Total Geral", "carga": 24 }
+        {
+          "descricao": "Psicoterapia Individual (com membros didatas do IJEP)",
+          "carga": 180
+        },
+        {
+          "descricao": "Supervisão em grupo",
+          "carga": 150
+        },
+        {
+          "descricao": "Supervisão Individual",
+          "carga": 20
+        },
+        {
+          "descricao": "Atendimento psicoterapêutico individual",
+          "carga": 300
+        },
+        {
+          "descricao": "Cursos de Extensão (28 créditos = aproximadamente 224h)",
+          "carga": 224
+        }
       ],
-      "observacao": "Carga horária para evento científico com certificado de participação."
+      "observacao": "Além das horas de formação, são necessários: trabalho monográfico, produção de artigos semestrais e participação em eventos do IJEP."
     },
     "contact": {
-      "phone": "(11) 3333-4444",
-      "whatsapp": "(11) 99999-8888",
-      "email": "eventos @fafih.edu.br"
+      "phone": "(11) 5535-4695",
+      "whatsapp": "",
+      "email": "contato@fafih.edu.br"
     },
-    "breadcrumb": ["Início", "Eventos", "Congressos Junguianos do IJEP"]
+    "breadcrumb": [
+      "Início",
+      "Formação",
+      "Formação de Membros Analistas Junguianos"
+    ],
+    "justificativa": [
+      "A inscrição deve ser feita por meio do seu analista didata para a coordenação do IJEP, com as informações da sua turma no curso de especialização, notas e motivações."
+    ],
+    "objetivos": [
+      "Formar membros analistas na abordagem da psicologia analítica de Carl Gustav Jung, num contínuo processo de aperfeiçoamento e aprimoramento, visando a difusão e o aprofundando da prática e da obra Junguiana, que é a arte do encontro de duas almas em busca do processo de individuação.",
+      "Para tanto, a formação do analista não pode limitar-se aos conhecimentos teóricos, mas necessita expandir-se para sua capacidade de entregar-se no seu próprio processo de análise, encarando sua sombra, para poder promover essa experiência no seu cliente."
+    ],
+    "publico": [
+      "SOMENTE PARA EX-ALUNOS DO CURSO DE PSICOLOGIA JUNGUIANA DO IJEP.",
+      "O candidato a membro analista deve ter concluído o curso de pós-graduação lato-sensu que titula especialistas em Psicologia Junguiana oferecido pelo IJEP com notas mínimas (8,5 oito e meio) na monografia e na prova."
+    ],
+    "prerequisitos": [
+      "Filiar-se ao IJEP como analista em treinamento, fazendo uma contribuição anual, com a anuência do seu analista didata",
+      "Estar em supervisão em grupo há pelo menos 6 meses",
+      "Ter concluído o curso de pós-graduação lato-sensu que titula especialistas em Psicologia Junguiana oferecido pelo IJEP com notas mínimas (8,5 oito e meio) na monografia e na prova",
+      "Enviar seu pedido de ingresso no processo de FORMAÇÃO, através do seu analista didáta, expondo suas motivações e disponibilidade para a formação pretendida, discutido e em concordância com o mesmo"
+    ],
+    "requisitos_formacao": [
+      "Psicoterapia Individual: 180 horas de análise individual com membros didatas do IJEP; com frequência semanal, em sessões presenciais ou por Skype (neste caso é necessário 20 sessões presenciais)",
+      "Supervisão em grupo: 150 horas (além das 100 horas da supervisão em grupo realizadas durante o curso de especialização)",
+      "Supervisão Individual: 20 horas com um membro analista didata do IJEP",
+      "Obs: É necessário, no mínimo, um analista didata diferente em uma destas três exigências",
+      "Trabalho Monográfico: Confecção de trabalho com orientação do analista didata, que será avaliado pelos demais membros didatas, com o mínimo de 60 e o máximo de 80 páginas, podendo exceder em até 10%. Esse trabalho será publicado pelo IJEP",
+      "Produção de Artigos: Produção de, no mínimo, um artigo, de quatro a seis laudas, por semestre, que serão publicados nas mídias sociais e no site do IJEP, acompanhado da produção de um pequeno vídeo, de no máximo 2 minutos",
+      "Atendimento psicoterapêutico individual: 300 horas (para que o analista em formação pratique seus conhecimentos teóricos), sendo necessário 120 horas de atendimentos pela clínica IJEP",
+      "Créditos em Cursos de Extensão: 28 créditos em cursos de extensão de aprimoramento ou aprofundamento, oferecidos pelo IJEP",
+      "Participação em Eventos: Participação nas atividades culturais e acadêmicas do IJEP, por meio da aquisição, no mínimo, de três certificados de participação integral nos Congressos Junguianos do IJEP"
+    ],
+    "cursos_obrigatorios": [
+      "Psiquiatria clínica, diagnóstico e terapêutica contemporâneos, e a psicopatologia simbólica",
+      "Desenvolvimento da personalidade, o processo de individuação e seus símbolos",
+      "Mitos, compreensão psicológica",
+      "Sonhos, compreensão psicológica e vivencial na perspectiva clínica"
+    ],
+    "investimento": {
+      "anuidade_ijep": "R$ 250,00",
+      "sessao_individual_analise": "R$ 400,00 (cada)",
+      "supervisao_individual": "R$ 400,00 (cada)",
+      "supervisao_grupo": "R$ 450,00 a hora para ser rateado pelos participantes",
+      "credito_curso": "R$ 400,00 (cada crédito = 8 horas aulas)",
+      "observacao": "Valores máximos praticados pelos membros analistas e didatas, negociável ou não, com cada profissional"
+    },
+    "membros_didatas": [
+      "Ana Paula Zaidan Maluf",
+      "Ajax Perez Salvador",
+      "Ercilia Simone Dalvio Magaldi",
+      "José Luiz Balestrini Jr.",
+      "Lia Rachel Baltazar Romano",
+      "Lilian Wurzba Ioshimoto",
+      "Maria Cristina Mariante Guarnieri",
+      "Maria da Glória Gonçalves de Miranda",
+      "Waldemar Magaldi Filho"
+    ],
+    "diferenciais": [
+      "O analista em formação terá seu nome no site do IJEP, tendo assim sua divulgação profissional para os interessados que buscam profissionais por este site para sua análise, além de receberem a indicação da nossa demanda de clientes sociais",
+      "Para os Formados que concluirem esse processo seguirão filiados ao IJEP, a indicação de seu nome seguirá na home page",
+      "A FORMAÇÃO é extensiva a todos os pós-graduados no curso de Psicologia Junguiana do IJEP, que tenham se destacado em nota de prova e monografia, independente da sua formação de origem não ser medicina ou psicologia, como acontece com outras sociedades internacionais",
+      "Os membros analistas formados poderão dar supervisões aos alunos do curso de especialização de Psicologia Junguiana, caso tenha completado também Psicossomática e Arteterapia poderá dar supervisões a esses alunos também",
+      "Estar filiado ao IJEP, em qualquer categoria, pressupõe, além da participação anual nas palestras dos nossos congressos junguianos e publicação de artigos semestralmente, uma relação de fidelidade, lealdade e cumplicidade onde esperamos engajamento social na divulgação das nossas publicações e atividades"
+    ],
+    "formacao_didata": {
+      "titulo": "Formação de Membros Didatas Junguianos do IJEP",
+      "objetivos": "Formar membros didatas na abordagem da psicologia analítica de Carl Gustav Jung, para contribuírem na formação de membros analistas do IJEP",
+      "prerequisitos": "O candidato a membro didata deve ter cumprido todos os pré-requisitos da formação de membro analista e ter, preferencialmente, titulação de doutor, ou no mínimo, mestrado",
+      "requisitos": [
+        "120 horas de Supervisão em grupo, com membro didata do IJEP",
+        "30 horas de Supervisão Individual com membro didata do IJEP, diferente do psicoterapeuta",
+        "100 horas de análise individual com membro analista didata do IJEP",
+        "Ministrar 24 horas de aulas nos cursos de pós-graduação do IJEP, sob a tutoria de algum membro didata",
+        "16 créditos em cursos de extensão, aprimoramento ou aprofundamento, diferentes dos realizados na formação de membro analista",
+        "Participação obrigatória das atividades culturais ou acadêmicas do IJEP"
+      ]
+    },
+    "consideracoes_finais": [
+      "O grupo de fundadores do IJEP - Instituto Junguiano de Ensino e Pesquisa ministra cursos de pós-graduação em várias cidades brasileiras desde 1988. Somos os pioneiros, no Brasil, nesta modalidade de ensino e divulgação da obra e da prática Junguiana.",
+      "Levamos esse conhecimento a todos os alunos interessados neste construto ideológico, independente da sua graduação de origem. Essa sempre foi nossa marca diferencial, por sermos independentes das amarras que as sociedades de psicologia analítica brasileiras impõem.",
+      "Para mais informações: https://blog.ijep.com.br/formacao-de-analista-junguiano-no-brasil/"
+    ],
+    "professores": [
+      {
+        "nome": "Ana Paula Zaidan Maluf",
+        "titulacao": "Especialista",
+        "descricao": "Psicóloga, Especialista em Psicologia Junguiana, Arteterapia, Psicossomática, Psicologia Transpessoal e DAC, pelo IJEP. Membro Didata do IJEP.",
+        "telefone": "(11) 94123-0102",
+        "email": "anapaulazm@yahoo.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Ajax Perez Salvador",
+        "titulacao": "Mestre",
+        "descricao": "Médico Psiquiatra e Psicoterapeuta Analista Didata do IJEP. Especialista em Saúde Pública, Mestre em Saúde Mental - USP, Ex-preceptor de Residência Médica Psiquiátrica 8ª COREM PMSP. Membro Didata do IJEP.",
+        "telefone": "(11) 91365956",
+        "email": "apersal@uol.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Ercilia Simone Dalvio Magaldi",
+        "titulacao": "Doutora",
+        "descricao": "Pedagoga, Filósofa, analista - Especialista em Psicologia Junguiana pela UNAERP. Mestre em Ciências da Religião- PUCSP. Doutora em Ciências da Religião- UMESP. Membro Didata, Diretora e Fundadora do IJEP.",
+        "telefone": "(11) 5535-4695",
+        "email": "simonemagaldi@ijep.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "José Luiz Balestrini Jr.",
+        "titulacao": "Doutor",
+        "descricao": "Psicólogo, Analista didata em formação do IJEP, Especialista em Psicologia Junguiana (IJEP), Especialista em Psicossomática (IJEP), Mestre e Doutorando em Comunicação e Cultura (UNIP).",
+        "telefone": "11 98207 7766",
+        "email": "balestrini@lungfu.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Lia Rachel Baltazar Romano",
+        "titulacao": "Mestre",
+        "descricao": "Médica com atuação nas áreas de Homeopatia, Clinica Médica e Reumatologia. Mestre em Homeopatia. Membro Analista Didata. Professora nos cursos de pós-graduação em Psicologia Junguiana e Psicossomática do IJEP.",
+        "telefone": "(11) 5579-5761",
+        "email": "lia.romano@uol.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Lilian Wurzba Ioshimoto",
+        "titulacao": "Doutora",
+        "descricao": "Psicóloga, Especialista em Psicologia Analítica, Mestre e Doutora em Ciências da Religião pela PUC/SP. Membro Didata do IJEP.",
+        "telefone": "(11) 5051-6891",
+        "email": "laliwi@uol.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Maria Cristina Mariante Guarnieri",
+        "titulacao": "Doutora",
+        "descricao": "Psicóloga, Especialista em Psicologia Junguiana, Mestre e Doutora em Ciências da Religião - PUC-SP. Membro Didata.",
+        "telefone": "(11) 3085-7973",
+        "email": "crisguarnieri@uol.com.br",
+        "foto": ""
+      },
+      {
+        "nome": "Maria da Glória Gonçalves de Miranda",
+        "titulacao": "Especialista",
+        "descricao": "Psicóloga, Analista Junguiana. Didata em formação do IJEP. Especialista em Psicologia Junguiana pelo IJEP e Psicologia Analítica Técnicas de Trabalho Corporal pelo Sedes Sapientiae.",
+        "telefone": "(11) 99338-3545",
+        "email": "mgloriagmiranda@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Waldemar Magaldi Filho",
+        "titulacao": "Doutor",
+        "descricao": "Psicólogo. Especialista em Homeopatia; Psicologia Junguiana, Psicossomática, Arteterapia, DAC/DQ e MDR. Mestre em Ciências da Religião - PUCSP. Doutor em Ciências da Religião - UMESP. Membro Didata do IJEP. Fundador do Instituto Junguiano de Ensino e Pesquisa.",
+        "telefone": "(11) 5535-4695",
+        "email": "wmagaldi@ijep.com.br",
+        "foto": ""
+      }
+    ],
+    "coordenacao": {
+      "coordenador": "",
+      "descricao": ""
+    }
   }
 ]
