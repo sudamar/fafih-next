@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import styles from './CourseCurriculum.module.css';
+import { SectionTitle } from '@/components/ui/section-title';
 
 interface CurriculumItem {
   number: number;
@@ -29,7 +30,7 @@ export default function CourseCurriculum({ curriculum }: CourseCurriculumProps) 
 
   return (
     <section className={styles.section}>
-      <h2 className={styles.sectionTitle}>Currículo do Curso</h2>
+      <SectionTitle>Currículo do Curso</SectionTitle>
 
       <div className={styles.curriculumList}>
         {curriculum.map((item, index) => {

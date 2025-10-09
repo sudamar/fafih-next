@@ -1,4 +1,5 @@
 import styles from './CourseAbout.module.css';
+import { PageTitle } from '@/components/ui/page-title';
 
 interface CourseAboutProps {
   fullDescription: string[];
@@ -14,7 +15,7 @@ interface CourseAboutProps {
 export default function CourseAbout({ fullDescription, highlights }: CourseAboutProps) {
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>Sobre o Curso</h2>
+      <PageTitle>Sobre o Curso</PageTitle>
 
       <div className={styles.description}>
         {fullDescription.map((paragraph, index) => (

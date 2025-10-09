@@ -9,6 +9,8 @@ import CourseFaculty from '@/components/cursos/CourseFaculty';
 import CourseEvaluation from '@/components/cursos/CourseEvaluation';
 import CourseWorkload from '@/components/cursos/CourseWorkload';
 import { DepoimentosBasicoLista } from '@/components/ui/depoimentos-basico-lista';
+import { SectionTitle } from '@/components/ui/section-title';
+import { PageTitle } from '@/components/ui/page-title';
 import styles from './page.module.css';
 
 export default async function CourseDetailPage({ params }: { params: { slug: string } }) {
@@ -56,7 +58,7 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
           {/* Justificativa */}
           {course.justificativa && course.justificativa.length > 0 && (
             <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>Justificativa</h2>
+              <SectionTitle>Justificativa</SectionTitle>
               <div className={styles.sectionContent}>
                 {course.justificativa.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
@@ -68,7 +70,7 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
           {/* Objetivos */}
           {course.objetivos && course.objetivos.length > 0 && (
             <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>Objetivos</h2>
+              <SectionTitle>Objetivos</SectionTitle>
               <div className={styles.sectionContent}>
                 <ul className={styles.list}>
                   {course.objetivos.map((objetivo, index) => (
@@ -82,7 +84,7 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
           {/* Público-alvo */}
           {course.publico && course.publico.length > 0 && (
             <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>Para quem é este curso</h2>
+              <SectionTitle>Para quem é este curso</SectionTitle>
               <div className={styles.sectionContent}>
                 {course.publico.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
@@ -117,7 +119,7 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
           {/* Depoimentos */}
           {course.testimonials && course.testimonials.length > 0 && (
             <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>Depoimentos de Alunos</h2>
+              <SectionTitle>Depoimentos de Alunos</SectionTitle>
               <DepoimentosBasicoLista
                 depoimentos={course.testimonials.map((t: any) => ({
                   quote: t.text || t.quote,
@@ -130,7 +132,7 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
 
           {/* Fale com a Secretaria */}
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Fale com a Secretaria</h2>
+            <SectionTitle>Fale com a Secretaria</SectionTitle>
             <div className={styles.contactSection}>
               <p className={styles.contactDescription}>
                 Tem dúvidas sobre o curso? Nossa equipe está pronta para ajudar você!

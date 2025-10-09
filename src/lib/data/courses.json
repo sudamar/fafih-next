@@ -278,9 +278,9 @@
     ],
     "image": "https://i.imgur.com/cTs1Zdf.png",
     "hero": {
-      "type": "image",
-      "source": "https://i.imgur.com/cTs1Zdf.png",
-      "alt": "Curso de Psicossomática",
+      "type": "video",
+      "source": "/assets/videos/video-curso-2.mp4",
+      "alt": "Apresentação do curso de Psicossomática",
       "fallbackImage": "https://i.imgur.com/cTs1Zdf.png"
     },
     "category": "especializacao",

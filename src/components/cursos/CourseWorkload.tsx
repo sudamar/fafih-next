@@ -1,4 +1,5 @@
 import styles from './CourseWorkload.module.css';
+import { SectionTitle } from '@/components/ui/section-title';
 
 interface WorkloadActivity {
   descricao: string;
@@ -20,7 +21,7 @@ export default function CourseWorkload({ cargahoraria }: CourseWorkloadProps) {
 
   return (
     <section className={styles.section}>
-      <h2 className={styles.sectionTitle}>Carga Horária</h2>
+      <SectionTitle>Carga Horária</SectionTitle>
 
       {cargahoraria.texto && cargahoraria.texto.length > 0 && (
         <div className={styles.description}>
