@@ -1,5 +1,5 @@
-import styles from './CourseFaculty.module.css';
 import { SectionTitle } from '@/components/ui/section-title';
+import { CardProfessor, ProfessorData } from '@/components/ui/card-professor';
 
 interface Professor {
   nome: string;
@@ -13,6 +13,7 @@ interface Professor {
 interface Coordenacao {
   coordenador: string;
   descricao: string;
+  foto?: string;
 }
 
 interface CourseFacultyProps {
@@ -25,50 +26,39 @@ export default function CourseFaculty({ professores, coordenacao }: CourseFacult
     <>
       {/* Coordenação */}
       {coordenacao && coordenacao.coordenador && (
-        <section className={styles.section}>
+        <section className="bg-white p-8 rounded-[18px] shadow-[0_8px_20px_rgba(15,32,68,0.08)] mb-8">
           <SectionTitle>Coordenação</SectionTitle>
-          <div className={styles.coordinationContent}>
-            <h4 className={styles.coordinationName}>{coordenacao.coordenador}</h4>
-            <p className={styles.coordinationDescription}>{coordenacao.descricao}</p>
+          <div className="flex gap-5 items-start">
+            {coordenacao.foto && (
+              <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
+                <img
+                  src={coordenacao.foto}
+                  alt={coordenacao.coordenador}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
+            <div>
+              <h4 className="m-0 mb-2 text-lg font-bold text-[#152c61]">
+                {coordenacao.coordenador}
+              </h4>
+              <p className="m-0 text-[#42526b] leading-relaxed">
+                {coordenacao.descricao}
+              </p>
+            </div>
           </div>
         </section>
       )}
 
       {/* Corpo Docente */}
-      <section className={styles.section}>
+      <section className="bg-white p-8 rounded-[18px] shadow-[0_8px_20px_rgba(15,32,68,0.08)]">
         <SectionTitle>Corpo Docente</SectionTitle>
-        <div className={styles.facultyGrid}>
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-8 items-stretch">
           {professores.map((professor, index) => (
-            <div key={index} className={styles.professorCard}>
-              <div className={styles.professorAvatar}>
-                {professor.foto ? (
-                  <img src={professor.foto} alt={professor.nome} />
-                ) : (
-                  <span>{professor.nome.charAt(0)}</span>
-                )}
-              </div>
-              <div className={styles.professorInfo}>
-                <h3 className={styles.professorName}>{professor.nome}</h3>
-                <p className={styles.professorTitle}>{professor.titulacao}</p>
-                <p className={styles.professorDescription}>{professor.descricao}</p>
-                {(professor.email || professor.telefone) && (
-                  <div className={styles.professorContact}>
-                    {professor.email && (
-                      <a href={`mailto:${professor.email}`} className={styles.contactLink}>
-                        <i className="fas fa-envelope"></i>
-                        {professor.email}
-                      </a>
-                    )}
-                    {professor.telefone && (
-                      <span className={styles.contactInfo}>
-                        <i className="fas fa-phone"></i>
-                        {professor.telefone}
-                      </span>
-                    )}
-                  </div>
-                )}
-              </div>
-            </div>
+            <CardProfessor
+              key={index}
+              professor={professor as ProfessorData}
+            />
           ))}
         </div>
       </section>

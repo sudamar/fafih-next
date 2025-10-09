@@ -125,7 +125,7 @@ src/
 
 ### Instruções personalizadas pelo responsável.
 - Eu me chamo SUDAMAR e sou o responsável pela aplicação.
-- SEMPRE use componentes tailwind ao invés de classes CSS. Caso precise de uma classe específica, precisa me avisar, pedir minha confirmação com LESTRAS MAIÚSCULAS.
+- SEMPRE use componentes tailwind ao invés de classes CSS. Caso precise de uma classe específica, precisa me avisar, pedir minha confirmação com LETRAS MAIÚSCULAS.
 - Essa aplicação é uma universidade que vai iniciar seus trabalhos por agora e terá aulas de pós graduação e pós graduação.
 - Só teremos dados vindos de API para cursos, depoimentos, professores e polos. Todo o resto do site será estático. **Não sendo necessário separar dados** para qualquer outro domínio.
 - caso crie um JSON, sempre crie  ou adapte um service correspondente.
