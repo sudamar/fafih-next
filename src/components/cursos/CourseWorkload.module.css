@@ -1,0 +1,128 @@
+.section {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(15, 32, 68, 0.08);
+}
+
+.sectionTitle {
+  margin: 0 0 1.5rem;
+  font-size: 1.75rem;
+  color: #152c61;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #6A0DAD, #0000FF, #008000, #FFFF00, #FFA500, #FF0000);
+  border-radius: 2px;
+}
+
+.description {
+  margin-bottom: 2rem;
+  color: #42526b;
+  line-height: 1.7;
+}
+
+.description p {
+  margin: 0 0 1rem;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
+}
+
+.table {
+  border: 1px solid #e8ecf3;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background: linear-gradient(135deg, #152c61, #1a3a6b);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.headerCell,
+.headerCellHours {
+  padding: 1rem 1.25rem;
+}
+
+.headerCellHours {
+  text-align: right;
+  min-width: 140px;
+}
+
+.tableBody {
+  background: #fff;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border-bottom: 1px solid #e8ecf3;
+  transition: background-color 0.2s;
+}
+
+.tableRow:hover {
+  background: #f7f9fc;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.totalRow {
+  background: #f7f9fc;
+  font-weight: 700;
+}
+
+.totalRow:hover {
+  background: #e8ecf3;
+}
+
+.cell,
+.cellHours {
+  padding: 1rem 1.25rem;
+  color: #42526b;
+}
+
+.cellHours {
+  text-align: right;
+  font-weight: 600;
+  color: #152c61;
+  min-width: 140px;
+}
+
+.totalRow .cell,
+.totalRow .cellHours {
+  color: #152c61;
+}
+
+.observation {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: #f7f9fc;
+  border-left: 4px solid #05b18b;
+  border-radius: 8px;
+  color: #42526b;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.observation strong {
+  color: #152c61;
+  font-weight: 700;
+}

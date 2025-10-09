@@ -1149,63 +1149,213 @@
     "id": 6,
     "slug": "de-aion-a-jo",
     "title": "De Aion a Jó",
-    "subtitle": "Do Javismo da Antiga Era de Áries à Revolução Aquariana",
-    "description": "Análise profunda das transformações espirituais e psicológicas através das eras.",
+    "subtitle": "Do Javismo da Antiga Era de Áries à Revolução Aquariana do Mundo que Deseja Nascer",
+    "description": "Mergulhe em uma jornada transformadora de acolhimento e ao mesmo tempo de confronto com a imagem da divindade em nós e na história do nosso mundo. Vamos juntos na companhia de Jó e com o auxílio de Carl Gustav Jung, por meio de duas de suas obras seminais e complementares: \"Aion: um estudo sobre o simbolismo do si-mesmo\" e \"Resposta a Jó\".",
     "fullDescription": [
-      "Este curso explora as transformações espirituais e psicológicas da humanidade, desde o javismo da antiga Era de Áries até a emergente Revolução Aquariana, baseado nas obras de C.G. Jung."
+      "Mergulhe em uma jornada transformadora de acolhimento e ao mesmo tempo de confronto com a imagem da divindade em nós e na história do nosso mundo. Vamos juntos na companhia de Jó e com o auxílio de Carl Gustav Jung, por meio de duas de suas obras seminais e complementares: \"Aion: um estudo sobre o simbolismo do si-mesmo\" e \"Resposta a Jó\".",
+      "A evolução da imagem de Deus na Era de Peixes e em sua transição para a Era de Aquário. Investigaremos como a jornada pessoal de Jung, ao superar os aspectos negativos de seu próprio complexo paterno, ilumina os desafios contemporâneos de um contexto patriarcal de perda de referências simbólicas, de desencanto e ameaças à vida no planeta.",
+      "Entretanto, é da sombra -- a nigredo dos alquimistas -- que se ergue o grito de esperança, como diz Jung, no \"esplendor sereno da vida\"."
     ],
-    "image": "https://i.imgur.com/astrological.png",
+    "image": "https://i.imgur.com/REzhmRK.jpeg",
     "hero": {
-      "type": "video",
-      "source": "/assets/videos/video-curso-6.mp4",
-      "alt": "Apresentação do curso De Aion a Jó",
-      "fallbackImage": "https://i.imgur.com/astrological.png"
+      "type": "image",
+      "source": "https://i.imgur.com/REzhmRK.jpeg",
+      "alt": "Curso De Aion a Jó",
+      "fallbackImage": "https://i.imgur.com/REzhmRK.jpeg"
     },
     "category": "extensao",
     "categoryLabel": "Extensão",
-    "price": 650.0,
-    "originalPrice": 850.0,
-    "precoMatricula": 100.0,
+    "price": 350.0,
+    "originalPrice": 0.0,
+    "precoMatricula": 350.0,
     "modalidade": "Online",
-    "duration": "4 meses",
-    "workload": "40h",
-    "startDate": "Abril 2024",
-    "maxStudents": "Máx. 30 alunos",
-    "certificate": "Certificado de Extensão",
-    "monthlyPrice": "4x de R$ 162,50",
+    "duration": "2 meses",
+    "workload": "16h",
+    "startDate": "9 de outubro a 27 de novembro",
+    "maxStudents": "Máx. 50 alunos",
+    "certificate": "Certificado de Extensão - 3 créditos IJEP",
+    "monthlyPrice": "Matrícula R$ 350,00 + 1x R$ 350,00",
+    "justificativa": [
+      "Oportunidade única e exclusiva, desenvolvida especialmente para alunos e ex-alunos da FAFIH e IJEP.",
+      "O curso propõe um mergulho profundo nas obras \"Aion\" e \"Resposta a Jó\" de Carl Gustav Jung, conectando a evolução da imagem de Deus através das eras astrológicas com os desafios contemporâneos de perda de referências simbólicas e patriarcais."
+    ],
+    "objetivos": [
+      "Aprofundar o Conhecimento Teórico: Compreender teórica e vivencialmente os conceitos junguianos de Aion, do Si-mesmo e da complexa relação simbólica apresentada em \"Resposta a Jó\".",
+      "Potencializar o Autoconhecimento: Refletir sobre as dinâmicas do arquétipo da divindade, ou do instinto religioso, no sentido numinoso do \"relegere\", como o propõe Jung, isto é, o sentido da totalidade.",
+      "Aprimorar a Prática Clínica: Adquirir ferramentas analíticas e sensibilidade terapêutica para identificar e trabalhar não só a dimensão religiosa do \"relegere\", mas também, e particularmente, a temática do patriarcado e da ausência paterna na psicoterapia.",
+      "Manter-se Relevante: Conectar a psicologia analítica clássica aos desafios sociais e psicológicos mais urgentes do século XXI, agregando um diferencial competitivo à sua atuação profissional."
+    ],
+    "publico": [
+      "Alunos e ex-alunos da FAFIH e IJEP.",
+      "Profissionais e estudantes de psicologia, terapeutas, analistas e interessados em aprofundar o conhecimento em psicologia analítica junguiana.",
+      "Pessoas interessadas em estudos sobre evolução da consciência, espiritualidade e transformações arquetípicas através das eras."
+    ],
     "highlights": [
       {
-        "icon": "fas fa-history",
-        "title": "Perspectiva Histórica",
-        "description": "Análise das transformações através das eras",
+        "icon": "fas fa-book-open",
+        "title": "Obras Seminais de Jung",
+        "description": "Estudo aprofundado de Aion e Resposta a Jó",
         "bgColor": "bg-indigo-50",
         "iconColor": "bg-indigo-500"
       },
       {
-        "icon": "fas fa-star",
-        "title": "Era Aquariana",
-        "description": "Compreensão da nova era emergente",
-        "bgColor": "bg-cyan-50",
-        "iconColor": "bg-cyan-500"
+        "icon": "fas fa-video",
+        "title": "Formato Online",
+        "description": "8 encontros via Zoom, quintas-feiras 17h-19h",
+        "bgColor": "bg-blue-50",
+        "iconColor": "bg-blue-500"
       },
       {
-        "icon": "fas fa-book-open",
-        "title": "Textos Fundamentais",
-        "description": "Estudo de Aion e Resposta a Jó",
-        "bgColor": "bg-orange-50",
-        "iconColor": "bg-orange-500"
+        "icon": "fas fa-star",
+        "title": "Facilitadores Renomados",
+        "description": "Dimas Künsch e Waldemar Magaldi",
+        "bgColor": "bg-yellow-50",
+        "iconColor": "bg-yellow-500"
+      },
+      {
+        "icon": "fas fa-award",
+        "title": "Créditos IJEP",
+        "description": "16 horas válidas como 3 créditos para formação",
+        "bgColor": "bg-green-50",
+        "iconColor": "bg-green-500"
       }
     ],
+    "curriculum": [
+      {
+        "number": 1,
+        "title": "Introdução a Aion e o Simbolismo do Si-mesmo",
+        "hours": 2,
+        "ementa": "Apresentação da obra Aion de Jung. O conceito de Si-mesmo e sua manifestação simbólica através das eras. A transição entre as eras astrológicas.",
+        "objetivos": "Introduzir os conceitos fundamentais da obra Aion e sua relevância para a compreensão da evolução da consciência.",
+        "bibliography": []
+      },
+      {
+        "number": 2,
+        "title": "A Era de Peixes e a Imagem de Deus",
+        "hours": 2,
+        "ementa": "A evolução da imagem de Deus na Era de Peixes. Simbolismo cristão e suas polaridades. O conflito entre bem e mal na teologia cristã.",
+        "objetivos": "Compreender a dinâmica da imagem divina durante a Era de Peixes e suas implicações psicológicas.",
+        "bibliography": []
+      },
+      {
+        "number": 3,
+        "title": "Resposta a Jó: O Confronto com a Divindade",
+        "hours": 2,
+        "ementa": "Análise da obra Resposta a Jó. O sofrimento de Jó e a questão da teodiceia. Jung e o complexo paterno.",
+        "objetivos": "Explorar a relação entre o humano e o divino através do livro de Jó na perspectiva junguiana.",
+        "bibliography": []
+      },
+      {
+        "number": 4,
+        "title": "A Sombra de Deus e o Problema do Mal",
+        "hours": 2,
+        "ementa": "A integração da sombra na imagem de Deus. O problema do mal na teologia e na psicologia. A nigredo alquímica como processo de transformação.",
+        "objetivos": "Compreender a importância da integração da sombra no processo de individuação coletivo.",
+        "bibliography": []
+      },
+      {
+        "number": 5,
+        "title": "O Patriarcado e a Ausência Paterna Contemporânea",
+        "hours": 2,
+        "ementa": "A crise do patriarcado na contemporaneidade. Perda de referências simbólicas paternas. Implicações clínicas do complexo paterno.",
+        "objetivos": "Identificar e trabalhar terapeuticamente as questões relacionadas ao patriarcado e à ausência paterna.",
+        "bibliography": []
+      },
+      {
+        "number": 6,
+        "title": "A Transição para a Era de Aquário",
+        "hours": 2,
+        "ementa": "Características da Era de Aquário. A revolução aquariana e o mundo que deseja nascer. Esperança e transformação: o \"esplendor sereno da vida\".",
+        "objetivos": "Explorar as potencialidades e desafios da transição para a Era de Aquário.",
+        "bibliography": []
+      },
+      {
+        "number": 7,
+        "title": "Aplicações Clínicas e Terapêuticas",
+        "hours": 2,
+        "ementa": "Ferramentas analíticas para trabalhar a dimensão religiosa (relegere). Sensibilidade terapêutica para questões espirituais e arquetípicas.",
+        "objetivos": "Desenvolver competências clínicas para trabalhar com temas espirituais e arquetípicos.",
+        "bibliography": []
+      },
+      {
+        "number": 8,
+        "title": "Integração e Perspectivas Futuras",
+        "hours": 2,
+        "ementa": "Síntese dos conceitos abordados. Relevância da psicologia analítica para os desafios do século XXI. Encerramento e perspectivas.",
+        "objetivos": "Integrar os conhecimentos adquiridos e refletir sobre sua aplicação prática.",
+        "bibliography": []
+      }
+    ],
+    "avaliacao": [],
+    "cargahoraria": {
+      "texto": [
+        "O curso tem carga horária total de 16 horas, distribuídas em 8 encontros online de 2 horas cada.",
+        "Os encontros acontecem todas as quintas-feiras, de 9 de outubro a 27 de novembro, das 17h às 19h, via plataforma Zoom."
+      ],
+      "atividades": [
+        {
+          "descricao": "Encontros online síncronos",
+          "carga": 16
+        },
+        {
+          "descricao": "Total Geral",
+          "carga": 16
+        }
+      ],
+      "observacao": "Válido como 3 créditos para a formação do IJEP."
+    },
+    "testimonials": [],
     "contact": {
-      "phone": "(11) 3333-4444",
-      "whatsapp": "(11) 99999-8888",
-      "email": "contato @fafih.edu.br"
+      "phone": "(11) 3456-7890",
+      "whatsapp": "",
+      "email": "contato@fafih.edu.br"
     },
     "breadcrumb": [
       "Início",
       "Extensão",
       "De Aion a Jó"
-    ]
+    ],
+    "coordenacao": {
+      "coordenador": "",
+      "descricao": ""
+    },
+    "professores": [
+      {
+        "nome": "Dimas A. Künsch",
+        "titulacao": "Doutor",
+        "descricao": "Especialista em Psicologia Junguiana e Analista Junguiano em formação pelo IJEP. Graduado em Filosofia (São Paulo, Brasil) e em Teologia (Innsbruck, Áustria). Mestre em Integração da América Latina e doutor em Ciências da Comunicação pela Universidade de São Paulo (USP). Docente do Programa de Pós-Graduação em Comunicação Social da Universidade Metodista de São Paulo (UMESP). Orienta pesquisas de mestrado e doutorado e é autor de livros, capítulos de livros e artigos científicos na área de Comunicação.",
+        "telefone": "(11) 99789-1771",
+        "email": "dimas.kunsch@gmail.com",
+        "foto": ""
+      },
+      {
+        "nome": "Waldemar Magaldi Filho",
+        "titulacao": "Doutor",
+        "descricao": "Psicólogo. Especialista em Homeopatia; Psicologia Junguiana, Psicossomática, Arteterapia, DAC/DQ e MDR. Mestre em Ciências da Religião - PUCSP. Doutor em Ciências da Religião - UMESP. Coordenador dos cursos de PSICOTERAPIA JUNGUIANA, PSICOSSOMÁTICA, ARTETERAPIA E EXPRESSÕES CRIATIVAS e PSICOTERAPIA INTEGRATIVA TRANSPESSOAL. Membro Didáta do IJEP. Fundador do Instituto Junguiano de Ensino e Pesquisa. IJEP Autor do livro: DINHEIRO, SAÚDE E SAGRADO - Ed. Eleva Cultural.",
+        "telefone": "(11) 5535-4695",
+        "email": "wmagaldi@ijep.com.br",
+        "foto": ""
+      }
+    ],
+    "formato_curso": {
+      "tipo": "Online",
+      "plataforma": "Zoom",
+      "frequencia": "Todas as quintas-feiras",
+      "horario": "17h às 19h",
+      "numero_encontros": 8,
+      "periodo": "9 de outubro a 27 de novembro"
+    },
+    "investimento_detalhado": {
+      "valor_total": 700.0,
+      "matricula": 350.0,
+      "parcelas": 1,
+      "valor_parcela": 350.0,
+      "desconto_membros": {
+        "aplicavel": true,
+        "valor_parcela_com_desconto": 315.0,
+        "descricao": "Desconto para membros analistas em formação"
+      }
+    }
   },
   {
     "id": 7,

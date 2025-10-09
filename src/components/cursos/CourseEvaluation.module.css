@@ -1,0 +1,38 @@
+.section {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(15, 32, 68, 0.08);
+}
+
+.sectionTitle {
+  margin: 0 0 1.5rem;
+  font-size: 1.75rem;
+  color: #152c61;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #6A0DAD, #0000FF, #008000, #FFFF00, #FFA500, #FF0000);
+  border-radius: 2px;
+}
+
+.content {
+  color: #42526b;
+  line-height: 1.7;
+}
+
+.paragraph {
+  margin: 0 0 1rem;
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+}

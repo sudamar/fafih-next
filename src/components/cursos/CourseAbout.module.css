@@ -1,0 +1,119 @@
+.section {
+  background: #f7f9fc;
+  padding: 2.75rem 2rem;
+  border-radius: 24px;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 3.5rem 3rem;
+  }
+}
+
+.title {
+  margin: 0 0 2rem;
+  font-size: 2rem;
+  color: #0a1f44;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #6A0DAD, #0000FF, #008000, #FFFF00, #FFA500, #FF0000);
+  border-radius: 2px;
+}
+
+.description {
+  margin-bottom: 2.5rem;
+  color: #4a5970;
+  line-height: 1.7;
+}
+
+.description p {
+  margin: 0 0 1rem;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
+}
+
+.highlights {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .highlights {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.highlightCard {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(12, 31, 68, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.highlightCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(12, 31, 68, 0.12);
+}
+
+.highlightIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.highlightCard:nth-child(1) .highlightIcon {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.highlightCard:nth-child(2) .highlightIcon {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.highlightCard:nth-child(3) .highlightIcon {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.highlightContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.highlightTitle {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #152c61;
+}
+
+.highlightDescription {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #6b7a94;
+  line-height: 1.5;
+}
