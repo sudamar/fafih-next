@@ -16,11 +16,6 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
 
   return (
     <div className={styles.card}>
-      {/* Badge */}
-      <div className={styles.badge}>
-        <span className={styles.badgeText}>Inscrições Abertas</span>
-      </div>
-
       {/* Preço Principal */}
       {price && (
         <div className={styles.priceBox}>

@@ -1,14 +1,15 @@
 .pageContainer {
   width: 100%;
-  max-width: 1400px;
   margin: 0 auto;
   padding: 0;
   padding-bottom: 80px; /* Espaço para o botão flutuante mobile */
+  position: relative;
 }
 
 @media (min-width: 1024px) {
   .pageContainer {
     padding-bottom: 0;
+    max-width: 1400px;
   }
 }
 
@@ -22,7 +23,8 @@
 
 @media (min-width: 1024px) {
   .contentGrid {
-    grid-template-columns: 1fr 380px;
+    grid-template-columns: 66.5% 32%;
+    gap: 1.5%;
     padding: 3rem 2rem;
   }
 }
@@ -33,18 +35,27 @@
   gap: 3rem;
 }
 
-.sidebar {
+.floatingSidebar {
   display: none;
 }
 
 @media (min-width: 1024px) {
-  .sidebar {
+  .floatingSidebar {
     display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 32%;
+    padding-right: 2rem;
+    height: 100%;
+    pointer-events: none;
   }
 
-  .sidebarSticky {
+  .stickyCard {
     position: sticky;
-    top: 100px;
+    top: 120px;
+    margin-left: auto;
+    pointer-events: auto;
   }
 }
 
@@ -160,7 +171,7 @@
 .mobileInvestmentCard {
   display: block;
   padding: 0 1.5rem;
-  margin-top: -3rem;
+  margin-top: 2rem;
   position: relative;
   z-index: 10;
 }

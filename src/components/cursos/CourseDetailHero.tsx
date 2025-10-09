@@ -9,15 +9,6 @@ export default function CourseDetailHero({ course }: CourseDetailHeroProps) {
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
-        {/* Breadcrumb */}
-        <nav className={styles.breadcrumb}>
-          <Link href="/">Início</Link>
-          <span className={styles.separator}>›</span>
-          <Link href="/#cursos">{course.categoryLabel}</Link>
-          <span className={styles.separator}>›</span>
-          <span>{course.title}</span>
-        </nav>
-
         <div className={styles.grid}>
           {/* Media + Title */}
           <div className={styles.mediaWrapper}>
@@ -64,6 +55,9 @@ export default function CourseDetailHero({ course }: CourseDetailHeroProps) {
               </div>
             </div>
           </div>
+
+          {/* Placeholder for floating card */}
+          <div className={styles.cardPlaceholder}></div>
         </div>
       </div>
     </section>

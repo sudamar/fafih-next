@@ -44,9 +44,8 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
         <CourseInvestmentCard course={course} />
       </div>
 
-      {/* Main Content Grid */}
+      {/* Main Content Grid with Floating Card */}
       <div className={styles.contentGrid}>
-        {/* Main Content */}
         <main className={styles.mainContent}>
           {/* Sobre o Curso */}
           <CourseAbout
@@ -170,9 +169,9 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
           </section>
         </main>
 
-        {/* Sidebar - Investment Card */}
-        <aside className={styles.sidebar}>
-          <div className={styles.sidebarSticky}>
+        {/* Floating Investment Card - Desktop Only */}
+        <aside className={styles.floatingSidebar}>
+          <div className={styles.stickyCard}>
             <CourseInvestmentCard course={course} />
           </div>
         </aside>
