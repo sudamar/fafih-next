@@ -647,9 +647,9 @@
     ],
     "image": "https://i.imgur.com/iVpnrwc.png",
     "hero": {
-      "type": "image",
-      "source": "https://i.imgur.com/iVpnrwc.png",
-      "alt": "Curso de Arteterapia e Expressões Criativas",
+      "type": "video",
+      "source": "/assets/videos/video-curso-3.mp4",
+      "alt": "Apresentação do curso de Arteterapia e Expressões Criativas",
       "fallbackImage": "https://i.imgur.com/iVpnrwc.png"
     },
     "category": "especializacao",
@@ -1158,9 +1158,9 @@
     ],
     "image": "https://i.imgur.com/REzhmRK.jpeg",
     "hero": {
-      "type": "image",
-      "source": "https://i.imgur.com/REzhmRK.jpeg",
-      "alt": "Curso De Aion a Jó",
+      "type": "video",
+      "source": "/assets/videos/video-curso-6.mp4",
+      "alt": "Apresentação do curso De Aion a Jó",
       "fallbackImage": "https://i.imgur.com/REzhmRK.jpeg"
     },
     "category": "extensao",
@@ -1431,9 +1431,9 @@
     ],
     "image": "https://i.imgur.com/lXkjLLG.png",
     "hero": {
-      "type": "image",
-      "source": "https://i.imgur.com/lXkjLLG.png",
-      "alt": "Formação de Membros Analistas Junguianos do IJEP",
+      "type": "video",
+      "source": "/assets/videos/video-curso-8.mp4",
+      "alt": "Apresentação da Formação de Membros Analistas Junguianos do IJEP",
       "fallbackImage": "https://i.imgur.com/lXkjLLG.png"
     },
     "category": "formacao",

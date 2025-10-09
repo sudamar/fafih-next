@@ -27,16 +27,8 @@ export default function CourseFaculty({ professores, coordenacao }: CourseFacult
       {coordenacao && coordenacao.coordenador && (
         <section className={styles.section}>
           <SectionTitle>Coordenação</SectionTitle>
-          <div className={styles.coordinationCard}>
-            <div className={styles.coordinationHeader}>
-              <div className={styles.coordinationAvatar}>
-                {coordenacao.coordenador.charAt(0)}
-              </div>
-              <div>
-                <h4 className={styles.coordinationName}>{coordenacao.coordenador}</h4>
-                <p className={styles.coordinationRole}>Coordenador(a) do Curso</p>
-              </div>
-            </div>
+          <div className={styles.coordinationContent}>
+            <h4 className={styles.coordinationName}>{coordenacao.coordenador}</h4>
             <p className={styles.coordinationDescription}>{coordenacao.descricao}</p>
           </div>
         </section>

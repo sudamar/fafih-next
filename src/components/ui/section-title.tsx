@@ -9,7 +9,7 @@ interface SectionTitleProps {
 
 export function SectionTitle({ children, className, as: Component = 'h2' }: SectionTitleProps) {
   return (
-    <Component className={cn('font-display text-[1.8rem] font-bold text-secondary', className)}>
+    <Component className={cn('font-display text-[1.8rem] font-bold text-secondary mb-6', className)}>
       {children}
     </Component>
   )
