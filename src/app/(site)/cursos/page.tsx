@@ -1,12 +1,21 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import CursoCard from '@/components/domain/curso/CursoCard'
 import { listCourseCards, listCategories } from '@/lib/services/courseCatalog'
 import { PageTitle } from '@/components/ui/page-title'
 
 const EscolhaCursosContent = () => {
-  const [activeFilter, setActiveFilter] = useState('all')
+  const searchParams = useSearchParams()
+  const filterParam = searchParams.get('filter')
+  const [activeFilter, setActiveFilter] = useState(filterParam || 'all')
+
+  useEffect(() => {
+    if (filterParam) {
+      setActiveFilter(filterParam)
+    }
+  }, [filterParam])
 
   const coursesData = useMemo(() => listCourseCards(), [])
   const categories = useMemo(() => {
