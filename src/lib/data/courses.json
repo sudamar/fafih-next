@@ -753,12 +753,12 @@
     "id": 3,
     "slug": "arteterapia-e-expressoes-criativas",
     "title": "Arteterapia e Expressões Criativas",
-    "subtitle": "Curso presencial com turmas no RJ, Brasília e São Paulo",
-    "description": "O crescente interesse pelo uso das expressões criativas como recurso clínico e terapêutico fundamenta a oferta deste curso, que se propõe a formar profissionais capazes de despertar a potência inventiva de indivíduos e grupos, transformando-a em intervenções efetivas em contextos clínicos, educacionais, organizacionais e comunitários.",
+    "subtitle": "Formação em terapias artísticas e expressões criativas",
+    "description": "Capacitação em teorias e técnicas terapêuticas, psicológicas e artísticas para aplicação nas áreas de saúde, educação, recursos-humanos, treinamento e arte-educação, identificando alternativas para solução de problemas de saúde biopsicossocial e espiritual.",
     "fullDescription": [
-      "O curso de Arteterapia e Expressões Criativas capacita profissionais a despertar a potência inventiva de indivíduos e grupos, transformando-a em intervenções terapêuticas efetivas em contextos clínicos, educacionais, organizacionais e comunitários.",
-      "Com abordagem transdisciplinar, integra fundamentos da psicologia analítica, das terapias expressivas e das artes para promover processos de cura biopsicossocial e desenvolvimento simbólico.",
-      "As vivências percorrem distintas formas de expressão – desenho, colagem, pintura, modelagem, música e corpo – além de práticas iniciáticas que favorecem estados ampliados de consciência e experiências numinosas."
+      "Sabemos que a capacidade criativa é um objetivo amplamente desejado e estimulado em todos os âmbitos de expressão humana. Por isso constatamos tantas citações onde o ato criativo acaba sendo o maior responsável das transformações evolutivas e lucrativas nos âmbitos corporativos, acadêmicos, sociais, comerciais, políticos, familiares e espirituais. Então, em função dessa demanda, idealizamos e criamos este curso, pois toda produção criativa advém, primeiramente, de situações de conflito onde a necessidade e a dificuldade estejam presentes.",
+      "Este curso oferece recursos teóricos e práticos para que os alunos, após aprenderem a estimular o surgimento das expressões criativas, saibam trabalhar terapeuticamente com elas. Percorreremos as várias formas de expressões criativas utilizadas pelos seres humanos: das manifestações bidimensionais (desenho e pintura), passando pelas tridimensionais (esculturas e modelagem), e pelas expressões literárias, musicais, sonoras, corporais e das artes cênicas, até chegarmos às expressões de caráter iniciático, dos estados alterados de consciência.",
+      "Nosso modelo educativo compreende aulas expositivas, práticas, debates, participação em eventos científicos, atividades programadas (seminários) e estágio-pesquisa (ateliê expressivo-terapêutico-educacional) que possibilitará ao profissional de ajuda o exercício constante da transição entre os vários campos do saber e atender melhor sua clientela perante os problemas contemporâneos, integrando o estético com o ético e o científico - o belo, o bom e o verdadeiro."
     ],
     "image": "https://i.imgur.com/iVpnrwc.png",
     "hero": {
@@ -774,7 +774,7 @@
     "precoMatricula": 360.0,
     "modalidade": "Presencial",
     "duration": "24 meses",
-    "workload": "636h",
+    "workload": "390h a 610h",
     "startDate": "RJ: 11/04/2026 · Brasília: 14/03/2026 · São Paulo: 30/08/2025",
     "maxStudents": "Turmas presenciais reduzidas",
     "certificate": "Filiado à SOBRARTE",
@@ -786,15 +786,15 @@
       "Este é o primeiro e único curso de arteterapia no Brasil filiado à SOBRARTE – Associação Brasileira de Arteterapia, oferecendo formação reconhecida nacionalmente e em conformidade com padrões éticos e técnicos da área."
     ],
     "objetivos": [
-      "Capacitar profissionais para o uso terapêutico das expressões criativas em contextos diversos (clínico, educacional, organizacional, comunitário).",
-      "Desenvolver competências para facilitar processos expressivos que mobilizem recursos internos, promovam integração psíquica e favoreçam a individuação.",
-      "Fundamentar a prática arteterapêutica nos pilares da psicologia analítica junguiana, das teorias das artes e das neurociências contemporâneas.",
-      "Propiciar vivências que integrem teoria e prática através de ateliês, supervisões e atendimentos clínicos.",
-      "Formar profissionais capazes de atuar eticamente, respeitando as especificidades de cada linguagem expressiva e as necessidades de cada contexto de atuação."
+      "Capacitar o profissional de nível superior no conhecimento de teorias e técnicas terapêuticas, psicológicas e artísticas visando sua aplicação nas áreas de saúde, educação, recursos-humanos, treinamento e arte-educação.",
+      "Identificar alternativas para solução de problemas de saúde biopsicossocial e espiritual.",
+      "Discutir aspectos genéricos da arte nas relações de ajuda.",
+      "Possibilitar que o aluno expresse seu universo interno e externo de forma criativa e construtiva, vivendo com mais espontaneidade e harmonia consigo mesmo e com o outro.",
+      "Capacitar para a atuação profissional e postura como arteterapeuta ou terapeuta artístico."
     ],
     "publico": [
-      "Profissionais graduados em áreas de humanas, saúde, artes e educação que desejem ampliar suas competências terapêuticas através das expressões criativas.",
-      "Psicólogos, terapeutas, educadores, arte-educadores, profissionais da saúde e áreas afins interessados em abordagens criativas e simbólicas de cuidado."
+      "Portadores de diploma do ensino superior, provenientes de instituições públicas ou privadas, preferencialmente atuantes nas áreas de humanas e da saúde, como psicologia, medicina, fisioterapia, filosofia, terapia ocupacional, fonoaudiologia, assistência social, artes, educação, administração, arquitetura, jornalismo, sociologia, teologia, arte-educação, entre outras.",
+      "Este curso oferece conhecimentos suplementares e titulação àqueles que já têm experiência prática na psicoterapia clínica. Sua articulação com outras funções, independente da área, ultrapassa a visão tecnicista do tempo, proporcionando formação geral e complexa aos profissionais."
     ],
     "highlights": [
       {
@@ -822,133 +822,232 @@
     "curriculum": [
       {
         "number": 1,
-        "title": "Fundamentos da Arteterapia",
-        "hours": 48,
+        "title": "Fundamentos das terapias artísticas",
+        "hours": 45,
         "ementa": "História da arteterapia, conceitos básicos, interfaces com a psicologia analítica junguiana. Fundamentos teóricos das terapias expressivas. O processo criativo como caminho terapêutico.",
         "objetivos": "Fundamentar o aluno nos conceitos básicos da arteterapia, sua história, interfaces teóricas e campo de atuação profissional.",
-        "bibliography": []
+        "bibliography": [
+          "BROWN, Daniel. Fundamentos em Arteterapia, Ed.Vitória Régia.",
+          "CARVALHO, Maria Margarida (org). A Arte Cura?.Editorial Psy II, 1995",
+          "CIORNAI, Selma (org.). Percursos em Arteterapia (3 Volumes), São Paulo, Summus, 2004.",
+          "JUNG, C.G. Memórias, Sonhos, Reflexões, Rio de Janeiro, Ed. Nova Fronteira, 1993.",
+          "_________ A prática da psicoterapia. Rio de Janeiro, ed. Vozes, 1985.",
+          "KAST, V. A dinâmica dos símbolos. São Paulo, edições Loyola, 1997.",
+          "MELO, Walter. Nise da Silveira. Coleção Pioneiros da Psicologia Brasileira, Volume 4, Brasília, Imago, 2001.",
+          "NACHMANOVITCH, S. (1990). Ser Criativo. São Paulo, Summus, 3e édition, 1993.",
+          "OSTROWER, Fayga. Criatividade e processos de criação. Petrópolis: Vozes, 2007.",
+          "PAÏN, Sara, JARREAU, Gladys. Teoria e técnica da arte-terapia - a compreensão do sujeito, Porto Alegre, Artes Médicas, 1996.",
+          "QUINTO DE ANDRADE, Liomar. Terapias Expressivas: uma pesquisa de referenciais teórico-práticos - Tese de Doutorado em Psicologia Clínica, São Paulo, Universidade de São Paulo, 1993.",
+          "SILVEIRA, Nise da. Jung, vida e obra. São Paulo: Paz e Terra, 1994.",
+          "SILVEIRA, Nise da (1981). Imagens do Inconsciente, Brasília, Alhambra, 1981.",
+          "TOMMASI, Sônia Maria Bufarah. Arte Terapia e Loucura: uma viagem simbólica com pacientes psiquiátricos, Ed. Vetor.",
+          "URRUTIGARAY, Maria Cristina. Arteterapia - A transformação pessoal pelas imagens. Rio de Janeiro, Wak Editora, 2003.",
+          "WINNICOTT, D.W. O Brincar e a Realidade (O Espaço Potencial).",
+          "WITHMONT, E.C. A Busca do Símbolo: conceitos básicos de Psicologia Analítica. São Paulo, Editora Cultrix, 1995."
+        ]
       },
       {
         "number": 2,
-        "title": "Psicologia Analítica e Processo Criativo",
-        "hours": 48,
-        "ementa": "Arquétipos, símbolos e imagens na obra de Jung. A função transcendente e o processo de individuação. Imaginação ativa e amplificação simbólica. Arte e inconsciente.",
-        "objetivos": "Aprofundar a compreensão dos fundamentos junguianos que embasam a prática arteterapêutica.",
-        "bibliography": []
+        "title": "Teorias e técnicas expressivas",
+        "hours": 45,
+        "ementa": "Artes Plásticas: recurso expressivo e criativo. Espaço para reflexões sobre a arte e a teoria analítica. Objetos de estudo: o desenho, a colagem, a pintura e a modelagem.",
+        "objetivos": "Promover no aluno a expressão plástica através de técnicas artísticas; Permitir um espaço aberto a discussões sobre a relação existente entre o material (plástico) expressivo e a teoria analítica; Desenvolver no aluno a percepção para os conteúdos simbólicos existentes nos seus trabalhos artísticos",
+        "bibliography": [
+          "CHEVALIER, Jean; GHEERBRANT, Allan. Dicionário de Símbolos, editora José Olympio;",
+          "GRINBERG, Luiz Paulo; Jung, O Homem Criativo, FTD editora;",
+          "OSTROWER, Fayga, Universos da Arte, editora Campus;",
+          "PHILIPPINI, Ângela; Para entender Arteterapia- Cartografias da Coragem; editora WAK;",
+          "EDWARDS, Betty; Desenhando com o lado Direito do Cérebro; editora Ediouro;",
+          "RONECKER, Jean-Paul; O Simbolismo Animal; editora Paulus;",
+          "STRICKLAND, Carol; Arte Comentada da Pré-História ao Pós-Moderno; editora Ediouro"
+        ]
       },
       {
         "number": 3,
-        "title": "Linguagens Expressivas I - Artes Plásticas",
-        "hours": 60,
-        "ementa": "Desenho, pintura, colagem, modelagem. Materiais, técnicas e recursos expressivos. Vivências práticas em ateliê. Leitura de imagens e processo criativo.",
-        "objetivos": "Experimentar e dominar as principais linguagens das artes plásticas aplicadas à arteterapia.",
-        "bibliography": []
+        "title": "Práxis da arteterapia e das terapias artísticas",
+        "hours": 45,
+        "ementa": "Campos de atuação da arteterapia. As manifestações artísticas e seu potencial terapêutico. Trabalho com grupos. Arteterapia com crianças. Imagens simbólicas. Relações entre a arteterapia e a psicologia junguiana. Arquétipos na arteterapia. Vivências artísticas terapêuticas. Organização de atividades de arteterapia.",
+        "objetivos": "Aprofundar, através de vivências, a ponte entre arteterapia e psicologia junguiana. Direcionar a atenção para a prática da arteterapia: modelos de ateliês, áreas de atuação. Reconhecer a dinâmica do trabalho arteterapêutico direcionado a públicos específicos (criança/adulto, individual/grupos). Estimular e capacitar o aluno para uma leitura sensível das imagens simbólicas emergentes nas dinâmicas propostas.",
+        "bibliography": [
+          "ALT, Cleide Becarini. Contos de Fadas e Mitos: um trabalho com grupos, numa abordagem junguiana. São Paulo: Vetor, 2000.",
+          "ANGEL, Adamo. Meditando com as Fadas. São Paulo: Gaia, 1997.",
+          "BONAVENTURE, Jette. O Que Conta o Conto?. São Paulo: Paulus, 1992.",
+          "CHAGAS, Edna Christo e SILVA, Graça Maria dias da. Criatividade em Arteterapia. Rio de Janeiro: Wak, 2006.",
+          "CIORNAI, Selma (org.). Percursos em Arteterapia (3 Volumes), São Paulo, Summus, 2004.",
+          "CORUMBA, Rosa e RAMALHO, Cybele. Descobrindo Enigmas de Heróis e Contos de Fadas: entre a Psicologia Analítica e o Psicodrama. Aracajú: Profint, 2008.",
+          "COUTINHO, Vanessa. Arteterapia com Crianças. Rio de Janeiro: Wak, 2007.",
+          "FORDHAM, Michael. A Criança como Indivíduo. São Paulo: Cultrix, 1994.",
+          "FURTH, Gregg M. O Mundo Secreto dos Desenhos - uma abordagem junguiana da cura pela arte. São Paulo: Paulus, 2004.",
+          "GOUVÊA, Álvaro de Pinheiro. Sol da terra. São Paulo: Summus, 1989.",
+          "GREIG, Philippe. A criança e seu desenho. Porto Alegre: Artmed, 2004",
+          "JOHNSON, Robert A. A Chave do Reino Interior. São Paulo: Mercúrio, 1989.",
+          "KAST, V. A dinâmica dos símbolos. São Paulo, edições Loyola, 1997.",
+          "------------ A Ansiedade e formas de lidar com ela nos contos de fadas. São Paulo: Paulus, 2006.",
+          "________ A Imaginação como espaço de liberdade. São Paulo: Loyola, 1997.",
+          "LIEBMANN, Marian. Exercícios de Arte para grupos. São Paulo: Summus, 2000.",
+          "MORENO, Maria Teresa Nappi. A Bela Adormecida e a Adolescência - um enfoque junguiano. São Paulo: Vetor, 2002.",
+          "OAKLANDER, Violet. Descobrindo crianças. São Paulo: Summus, 1980.",
+          "OSTROWER, Fayga. Criatividade e processos de criação. Petrópolis: Vozes, 2007.",
+          "PAÏN, Sara, JARREAU, Gladys. Teoria e técnica da arteterapia - a compreensão do sujeito, Porto Alegre, Artes Médicas, 1996."
+        ]
       },
       {
         "number": 4,
-        "title": "Linguagens Expressivas II - Corpo, Música e Teatro",
-        "hours": 48,
-        "ementa": "Expressão corporal, dança circular, musicoterapia, psicodrama e teatro terapêutico. Práticas integrativas e recursos sonoros.",
-        "objetivos": "Explorar linguagens expressivas não-plásticas e seus recursos terapêuticos.",
-        "bibliography": []
+        "title": "Arte educação",
+        "hours": 35,
+        "ementa": "Arte-Educação: Leitura, análise e interpretação de textos. Jogos dramáticos e teatro. Desenvolvimento da capacidade criadora. Educação pela arte e educação estética. Inteligências múltiplas. Espiritualidade do corpo.",
+        "objetivos": "Capacitar o aluno para trabalhar com arte-educação em diferentes contextos, desenvolvendo metodologias que integrem arte, educação e terapia.",
+        "bibliography": [
+          "BARBOSA, Ana Mae (Org.). Arte-Educação: Leitura no Subsolo. São Paulo, Ed. Cortez, 1997.",
+          "BOAL, Augusto. O Arco-íris do Desejo. Rio de Janeiro: Ed. Civilização Brasileira, 1996.",
+          "_____________. Jogos ' Atores e Não Atores. Rio de Janeiro: Ed. Civilização Brasileira, 2001.",
+          "______________ O teatro como arte marcial. Rio de Janeiro: Garamond, 2003.",
+          "______________Teatro do oprimido e outras poéticas políticas. 7. ed. Rio de Janeiro: Civilização Brasileira, 2005.",
+          "COURTNEY, R. Jogos ,Teatro e Pensamento. São Paulo: Ed. Perspectiva., 2003",
+          "MONTEIRO, R.F., Jogos Dramáticos. São Paulo: Ed. Macgraw-hill, 1979",
+          "ERIKSON, Erik H. O Ciclo da Vida Completo. RS, Ed. Artmed, 1997.",
+          "FERRAZ, Maria Heloisa C. de T. e FUSSARI, Maria F. de Rezende. Metodologia do Ensino da Arte. São Paulo, Ed. Cortez, 1995.",
+          "GARDNER, Howard. Inteligências múltiplas. Porto Alegre: Artmed, 1995.",
+          "JAPIASSU, Ricardo. Metodologia do Ensino do Teatro. São Paulo: Ed. Papirus, 2001.",
+          "JARES, Xésus R. Educação para a Paz: sua teoria e prática. Porto Alegre: Artmed, 2002.",
+          "JUNG, Carl Gustav. O Espírito na Arte e na Ciência. Petrópolis: Vozes, 1991.",
+          "KANDINSKY, Vassily. Do Espiritual na Arte. São Paulo: Martins Fontes, 1996.",
+          "LOWEN, Alexander. A espiritualidade do corpo. São Paulo: Summus, 1995.",
+          "LOWENFELD, Victor. Desenvolvimento da Capacidade Criadora. São Paulo: Ed. Mestre Jou, 1970.",
+          "MASLOW, Abraham. Introdução à Psicologia do Ser. Rio de Janeiro: Eldorado.",
+          "MORENO, J. L O Teatro da Espontaneidade. São Paulo: Ed. Summus, 1984",
+          "MORIN, Edgar. Os Sete Saberes Necessários à Educação do Futuro. São Paulo: Cortez, Brasília, DF: UNESCO,2000.",
+          "Neto, Onofre Penteado. Vida, Valor e Arte I. Rio de Janeiro: Perspectiva, 1988.",
+          "NOVELLY, Maria C. Jogos Teatrais: exercícios para grupos em sala de aula. São Paulo: Ed. Papirus, 1985.",
+          "OSTROWER, Fayga. Acasos e Criação Artística. São Paulo, Ed. Campus, 1990.",
+          "PEIXOTO, Fernando. O Que é Teatro. São Paulo,Ed. Brasiliense,2003.",
+          "Puebla, Eugênia. Educar com o coração. Rio de Janeiro: Fundação Petrópolis, 1992.",
+          "READ, Hebert. A Educação pela Arte. São Paulo, Ed. Martins Fontes, 1977.",
+          "READ, Herbert. A Redenção do Robô. São Paulo, Ed. Summus, 1986.",
+          "REVERBEL, Olga. Jogos Teatrais na Escola. São Paulo: Ed. Scipione, 2002.",
+          "Rohden, Humberto. Filosofia da Arte. São Paulo: Martin Claret, 1990.",
+          "Schiller, Friedrich. Sobre a Educação Estética. São Paulo: Herder, 1963.",
+          "SPOLIN, Viola. Improvisação para o Teatro. São Paulo, Ed. Perspectiva, 2003.",
+          "Weil, Pierre. A Criança, o Lar e a Escola. Petrópolis: Vozes, 1986.",
+          "____________. A arte de viver em paz. São Paulo: Gente, 2000.",
+          "Yus, Rafael. Educação integral: uma educação para o terceiro milênio. Porto Alegre: Artmed, 2003"
+        ]
       },
       {
         "number": 5,
-        "title": "Arteterapia em Contextos Diversos",
-        "hours": 36,
-        "ementa": "Arteterapia clínica, hospitalar, educacional, organizacional e comunitária. Especificidades de atuação com crianças, adolescentes, adultos e idosos.",
-        "objetivos": "Capacitar o aluno para atuar com arteterapia em diferentes contextos e populações.",
-        "bibliography": []
+        "title": "Psicopatologia, psicossomática, mitologia e neurociências",
+        "hours": 30,
+        "ementa": "Correlacionar os distúrbios psicopatológicos com transtornos culturais e mitológicos, possibilitando a compreensão do processo do adoecer à luz das neurociências e da Psiconeuroendocrinoimunologia, incluindo os marcadores somáticos, doenças autoimunes e psicogênese das doenças.",
+        "objetivos": "Correlacionar os fatores psicológicos com suas repercussões no corpo físico, integrando os aspectos neurológicos com a bioquímica hormonal e a imunologia e o registro mitológico presente no inconsciente coletivo da humanidade como fonte criativa de cura ou de adoecimento.",
+        "bibliography": [
+          "BALLONE, Geraldo e col. - Da Emoção à Lesão - um Guia de Medicina Psicossomática, São Paulo, Manole, 2001",
+          "BRANDÃO, Junito de Souza. Mitologia Grega, Petrópolis, Vozes, 1989",
+          "CAMPBELL, Joseph. O poder do mito, SP, Palas Athena, 1990",
+          "CAPSANO H.F. Doença - Episódio da Vida, Porto Alegre, Artes Médicas, 1993",
+          "CHIOZZA L.A. (org). Os Sentimentos Ocultos em..., SP, Casa do Psicólogo, 1998",
+          "CONGER, J. P. Jung e Reich, SP, Summus, 1993",
+          "DAMASIO A.R. O Erro de Descartes, SP, Companhia das Letras, 1996",
+          "DARWIN, C. A Expressão das Emoções no Homem e nos Animais, SP, Companhia das Letras, 2000",
+          "FIERZ, Heinrich Karl. Psiquiatria junguiana, SP, Paulus, 1997"
+        ]
       },
       {
         "number": 6,
-        "title": "Neurociências e Arteterapia",
-        "hours": 24,
-        "ementa": "Bases neurobiológicas da criatividade. Neuroplasticidade e processo criativo. Contribuições das neurociências para a compreensão dos efeitos terapêuticos da arte.",
-        "objetivos": "Integrar conhecimentos das neurociências contemporâneas à prática arteterapêutica.",
-        "bibliography": []
+        "title": "Psicossomática e neurociências aplicadas",
+        "hours": 35,
+        "ementa": "Aprofundamento em psicossomática, medicina psicossomática, mitologia e psique do corpo. Neuropsicobiologia e psicobiologia da cura mente-corpo. Anatomia emocional e bioética.",
+        "objetivos": "Aprofundar o conhecimento sobre as relações entre psique e soma, integrando conhecimentos de neurociências, mitologia e expressões criativas no processo terapêutico.",
+        "bibliography": [
+          "HILLMAN, J. O mito da análise, RJ, Paz e Terra, 1984",
+          "KERÉNYI, Karl. Os Deuses Gregos/Os Heróis Gregos, SP, Cultrix, 1994",
+          "MINDELL, Arnold, O Corpo Onírico, SP, Summus, 1989",
+          "PAIVA, L.M. Medicina Psicossomática, Porto Alegre, Artes Médicas, 1992.",
+          "PINHEIRO, R. Medicina psicossomática - uma abordagem clínica. SP, Fundação BYK, 1992",
+          "PORTELLANO, José Antonio. Indroción a la neuropsicobiologia, Madrid, McGraw-Hill, 2005",
+          "RAMOS, D.G. A Psique do Corpo, SP, Summus, 1994",
+          "ROSSI, E. A Psicobiologia da Cura Mente Corpo, SP, PSI, 1997",
+          "RUBY, Paulo, As Faces do Humano: Estudos de Tipologias Junguiana e Psicossomática, SP, Oficina de Textos, 1998",
+          "SACHS, O. Tempo de Despertar. SP, Companhias das Letras, 1997",
+          "SALAND, N. S. A Personalidade limítrofe, SP, Cultrix, 1989",
+          "SANVITO, L.O. Cérebro e suas Vertentes. SP, Roca, 199",
+          "SEGRE, M.; Cohen, C. (org). Bioética, SP, EDUSP, 1995",
+          "SILVA M.A.D. Quem Ama não Adoece, SP, Editora Best Seller, 1994",
+          "SONTAG, Susan. A Doença como Metáfora, SP, Graal ,1984",
+          "STANLEY, K. Anatomia emocional. SP, Summus , 1992",
+          "VON FRANZ, Marie-Louise. Reflexos da alma, SP, Cultrix, 1992"
+        ]
       },
       {
         "number": 7,
-        "title": "Práticas Iniciáticas e Estados Ampliados",
-        "hours": 36,
-        "ementa": "Respiração holotrópica, meditação criativa, mandalas, visualizações guiadas. Práticas que favorecem estados ampliados de consciência.",
-        "objetivos": "Vivenciar práticas que ampliem a percepção e favoreçam experiências numinosas.",
-        "bibliography": []
+        "title": "Metodologia do trabalho científico",
+        "hours": 30,
+        "ementa": "Conceitos básicos de metodologia científica. Ciências e conhecimento. Diretrizes para a leitura, análise e interpretação de textos. A análise textual, temática e interpretativa. Pesquisa e projeto de pesquisa. Subsídios para a elaboração de uma monografia.",
+        "objetivos": "Fornecer os elementos básicos necessários para capacitar o aluno para o trabalho científico, desde o desenvolvimento da pesquisa, análise de textos, elaboração de projeto, até os subsídios para a elaboração de uma monografia científica. Compreensão dos métodos correntes mais utilizados.",
+        "bibliography": [
+          "Manual de Elaboracao do Projeto e da Monografia do IJEP",
+          "Assista o vídeo tutorial do PROJETO E MONOGRAFIA DO IJEP neste link: https://youtu.be/UrVA6szS84M"
+        ]
       },
       {
         "number": 8,
-        "title": "Ética e Deontologia em Arteterapia",
-        "hours": 16,
-        "ementa": "Código de ética da SOBRARTE. Princípios éticos na prática arteterapêutica. Limites e possibilidades da atuação profissional.",
-        "objetivos": "Formar profissionais conscientes dos princípios éticos que regem a arteterapia.",
+        "title": "Atividades Programadas",
+        "hours": 160,
+        "ementa": "São atividades que subsidiam a formação acadêmica e o desenvolvimento do conhecimento e da pesquisa dos alunos, atribuindo créditos obrigatórios. Todos os alunos farão, no décimo oitavo mês do curso, a exposição do projeto de conclusão de curso, que será apresentado aos demais colegas, para um professor, no décimo oitavo mês do curso, expondo o embrião da pesquisa e as resenhas (mínimo de quatro) dos livros que subsidiarão o referencial teórico do trabalho (o aluno que não cumprir essa atividade deverá apresentar um trabalho complementar para compensar as horas e obter esse crédito).",
+        "objetivos": "Resenha de livro, para o trabalho monográfico, equivale a fazer uma breve explanação do seu conteúdo, analisando, descrevendo e enumerando os teores considerados relevantes, em relação ao objeto do trabalho monográfico, apresentando ao leitor as contribuições da sua leitura para sustentação da hipótese e conclusão do TCC. Resenha não é resumo de livro.",
         "bibliography": []
       },
       {
         "number": 9,
-        "title": "Metodologia do Trabalho Científico",
-        "hours": 20,
-        "ementa": "Pesquisa em arteterapia, metodologias qualitativas, elaboração de projetos e monografias.",
-        "objetivos": "Capacitar o aluno para a produção científica em arteterapia.",
+        "title": "Atividades Complementares",
+        "hours": 220,
+        "ementa": "Previsão de integralização de mais 220 horas, que podem ser acrescidas, facultativamente, com 120 horas de atendimentos clínicos e 100 horas de supervisão de casos clínicos, extramuros acadêmicos. Além disso, serão computadas a participação, como congressistas, do Congresso Junguiano do IJEP, que acontece anualmente no mês de junho, onde os conteúdos dos anos anteriores podem ser adquiridos, com a emissão de seus respectivos certificados, para que suas horas sejam computadas no certificado de conclusão do curso.",
+        "objetivos": "Proporcionar experiência prática supervisionada em arteterapia, através de atendimentos clínicos e supervisões, além de participação em eventos científicos.",
         "bibliography": []
       },
       {
         "number": 10,
-        "title": "Atividades Programadas",
-        "hours": 160,
-        "ementa": "Desenvolvimento de projeto de conclusão de curso, estudos dirigidos, participação em eventos.",
-        "objetivos": "Subsidiar a formação acadêmica e a elaboração do trabalho de conclusão.",
-        "bibliography": []
-      },
-      {
-        "number": 11,
-        "title": "Atividades Complementares - Ateliê e Supervisão",
-        "hours": 140,
-        "ementa": "60 horas de ateliê de arteterapia (vivências práticas) e 80 horas de supervisão de atendimentos clínicos em arteterapia.",
-        "objetivos": "Proporcionar experiência prática supervisionada em arteterapia.",
-        "bibliography": []
-      },
-      {
-        "number": 12,
         "title": "Trabalho de Conclusão",
         "hours": 0,
-        "ementa": "Elaboração de monografia conforme normas técnicas do IJEP e da SOBRARTE.",
-        "objetivos": "Produzir trabalho monográfico integrando teoria e prática em arteterapia.",
+        "ementa": "Produção de trabalho monográfico, em concordância com as normas técnicas do IJEP.",
+        "objetivos": "Assista o vídeo tutorial do PROJETO E MONOGRAFIA DO IJEP neste link: https://youtu.be/UrVA6szS84M",
         "bibliography": []
       }
     ],
     "avaliacao": [
-      "A avaliação é processual e contínua, considerando participação nas vivências, elaboração de portfólios criativos, produção de trabalhos teórico-práticos e prova final escrita.",
-      "Exige-se frequência mínima de 80% nas aulas presenciais e cumprimento das atividades programadas e complementares."
+      "Por tratar-se de um curso de especialização do conhecimento científico e prático na área da saúde, a avaliação ocorrerá como ato contínuo no decorrer das aulas.",
+      "Prova escrita individual ao final do curso.",
+      "Frequência mínima obrigatória de 75% nas aulas presenciais com controle presencial rigoroso.",
+      "O aluno que não cumprir a apresentação do projeto no 18º mês deverá apresentar um trabalho complementar para compensar as horas e obter o crédito das Atividades Programadas."
     ],
     "cargahoraria": {
       "texto": [
-        "A carga horária total do Curso de Especialização em Arteterapia e Expressões Criativas é de 636 horas, distribuídas em disciplinas teóricas, ateliês vivenciais, supervisões e atividades programadas.",
-        "O curso tem duração de 24 meses, com aulas presenciais mensais aos sábados, das 9h às 17h45, totalizando 10 horas/aula por encontro."
+        "A carga horária do Curso de Especialização em Arteterapia e Expressões Criativas é de 390 horas, distribuídas em 3 disciplinas de 45 horas/aula, 2 disciplinas de 35 horas/aula, uma disciplina de 30 horas/aula e 160 horas de atividades programadas, e elaboração de trabalhos expressivos, com previsão de integralização de mais 220 horas (que podem ser acrescidas, facultativamente, com 120 horas de atendimentos clínicos e 100 horas de supervisão de casos), podendo totalizar 610 horas.",
+        "Sua duração é de 24 meses, oferecido em aulas presenciais, que acontecem num único sábado de cada mês, das 9hs às 17hs: 45m.",
+        "Essas horas complementam as horas aula, que são de 45min, onde em um sábado de aula são computadas 10 horas/aula."
       ],
       "atividades": [
         {
-          "descricao": "Disciplinas teórico-vivenciais",
-          "carga": 336
+          "descricao": "Horas aulas",
+          "carga": 230
         },
         {
           "descricao": "Atividades programadas",
           "carga": 160
         },
         {
-          "descricao": "Ateliê de Arteterapia",
-          "carga": 60
+          "descricao": "Atendimentos/Ateliê*",
+          "carga": 120
         },
         {
-          "descricao": "Supervisão de atendimentos",
-          "carga": 80
+          "descricao": "Supervisão*",
+          "carga": 100
         },
         {
           "descricao": "Total Geral",
-          "carga": 636
+          "carga": 610
         }
       ],
-      "observacao": "Carga horária inclui vivências práticas obrigatórias em ateliê e supervisões clínicas."
+      "observacao": "* Atividades facultativas que podem ser acrescidas para integralizar até 610 horas."
     },
     "testimonials": [],
     "contact": {

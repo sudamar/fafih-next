@@ -128,8 +128,8 @@ src/
 - SEMPRE use componentes tailwind ao invés de classes CSS. Caso precise de uma classe específica, precisa me avisar, pedir minha confirmação com LETRAS MAIÚSCULAS.
 - Essa aplicação é uma universidade que vai iniciar seus trabalhos por agora e terá aulas de pós graduação e pós graduação.
 - Só teremos dados vindos de API para cursos, depoimentos, professores e polos. Todo o resto do site será estático. **Não sendo necessário separar dados** para qualquer outro domínio.
-- caso crie um JSON, sempre crie  ou adapte um service correspondente.
-- Sempre rode o LINT antes de finalizar uma etapa do seu processamento para verificar se quebrou algo.
-- Por favor, sempre confirme o entendimento antes de iniciar uma execução
-
+- caso crie um JSON, sempre crie ou adapte um service correspondente.
+- Sempre rode o LINT antes de finalizar uma etapa do seu processamento para verificar se quebrou algo, à exceção de mexidas exclusivas no JSON
+- Por favor, sempre confirme o entendimento antes de iniciar uma execução;
+- não use tipagem com any. Sempre usa a tipagem correta para passar no lint;
 > Preencha as seções `TODO` conforme as decisões forem tomadas.

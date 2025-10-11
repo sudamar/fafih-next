@@ -59,7 +59,7 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
             <section className={styles.section}>
               <SectionTitle>Justificativa</SectionTitle>
               <div className={styles.sectionContent}>
-                {course.justificativa.map((paragraph, index) => (
+                {course.justificativa.map((paragraph: string, index: number) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -72,9 +72,9 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
               <SectionTitle>Objetivos</SectionTitle>
               <div className={styles.sectionContent}>
                 <ul className={styles.list}>
-                  {course.objetivos.map((objetivo, index) => (
+                    {course.objetivos.map((objetivo: string, index: number) => (
                     <li key={index}>{objetivo}</li>
-                  ))}
+                    ))}
                 </ul>
               </div>
             </section>
