@@ -10,7 +10,6 @@ import CourseEvaluation from '@/components/cursos/CourseEvaluation';
 import CourseWorkload from '@/components/cursos/CourseWorkload';
 import { DepoimentosBasicoLista } from '@/components/ui/depoimentos-basico-lista';
 import { SectionTitle } from '@/components/ui/section-title';
-import { PageTitle } from '@/components/ui/page-title';
 import styles from './page.module.css';
 
 export default async function CourseDetailPage({ params }: { params: { slug: string } }) {
@@ -86,7 +85,7 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
             <section className={styles.section}>
               <SectionTitle>Para quem é este curso</SectionTitle>
               <div className={styles.sectionContent}>
-                {course.publico.map((paragraph, index) => (
+                {course.publico.map((paragraph: string, index: number) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -98,14 +97,6 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
             <CourseCurriculum curriculum={course.curriculum} />
           )}
 
-          {/* Corpo Docente */}
-          {course.professores && course.professores.length > 0 && (
-            <CourseFaculty
-              professores={course.professores}
-              coordenacao={course.coordenacao}
-            />
-          )}
-
           {/* Avaliação */}
           {course.avaliacao && course.avaliacao.length > 0 && (
             <CourseEvaluation avaliacao={course.avaliacao} />
@@ -114,6 +105,14 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
           {/* Carga Horária */}
           {course.cargahoraria && (
             <CourseWorkload cargahoraria={course.cargahoraria} />
+          )}
+
+          {/* Corpo Docente */}
+          {course.professores && course.professores.length > 0 && (
+            <CourseFaculty
+              professores={course.professores}
+              coordenacao={course.coordenacao}
+            />
           )}
 
           {/* Depoimentos */}

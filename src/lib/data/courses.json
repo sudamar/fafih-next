@@ -321,11 +321,12 @@
     "id": 2,
     "slug": "psicossomatica",
     "title": "Psicossomática",
-    "subtitle": "Integração entre corpo, alma e espírito",
-    "description": "A crescente demanda de conhecimento sobre a integração entre corpo, alma e espírito e a busca de conhecimento sobre as causas do adoecer e os caminhos da cura, são as principais razões para oferecermos este curso, que visa formar profissionais íntegros, facilitadores e multiplicadores deste espectro de homem e de cosmos sistêmico e holístico.",
+    "subtitle": "Formação holística na compreensão da saúde humana",
+    "description": "Especialização focada na compreensão holística da saúde humana, integrando dimensões psicológicas, biológicas e espirituais do adoecimento e da cura.",
     "fullDescription": [
-      "O curso de PSICOSSOMÁTICA é o primeiro e único curso oficial de psicossomática que enfoca, além das visões tradicionais da psicanálise, as abordagens humanistas, holistas, junguianas e transpessoais, integrando conhecimentos atuais advindos das neurociências e da genética com práticas milenares de cura do oriente e do ocidente.",
-      "Assim, o profissional de saúde, que conhece este paradigma, terá uma visão de homem holística e humanista, reconhecendo que a doença, psíquica e ou somática, é um sinal de desequilíbrio do ser total, podendo se tornar um grande caminho para o crescimento e o restabelecimento da saúde e da evolução do ser."
+      "A especialização em Psicossomática oferece uma formação abrangente focada na compreensão holística da saúde humana, integrando as dimensões psicológicas, biológicas e espirituais do adoecimento e da cura.",
+      "O curso fundamenta-se principalmente na obra de Carl Gustav Jung, complementada por especialistas junguianos modernos, neurociências e Psiconeuroendocrinoimunologia (PNEI), proporcionando uma visão integral do ser humano.",
+      "Com encontros mensais aos sábados e carga horária que pode chegar a 610 horas, o programa capacita profissionais da saúde e áreas afins a compreenderem os sintomas de adoecimento em múltiplas dimensões, reconhecendo a doença como sinal de desequilíbrio do ser total e potencial caminho para crescimento e evolução."
     ],
     "image": "https://i.imgur.com/cTs1Zdf.png",
     "hero": {
@@ -352,15 +353,15 @@
       "Assim, o profissional de saúde, que conhece este paradigma, terá uma visão de homem holística e humanista, reconhecendo que a doença, psíquica e ou somática, é um sinal de desequilíbrio do ser total, podendo se tornar um grande caminho para o crescimento e o restabelecimento da saúde e da evolução do ser."
     ],
     "objetivos": [
-      "Difundir e capacitar o aluno ao conhecimento e utilização das teorias, práticas e pesquisas da Psicossomática antiga, clássica, moderna e pós-moderna, percorrendo a ciência e práxis acumuladas desde os terapeutas de Alexandria, passando por Hipócrates, Hahnemann, Freud, Jung até desembocarmos nas práticas holísticas e conhecimentos modernos das neurociências e genética humana.",
-      "Analisar os princípios fundamentais da Psicossomática frente os seus próprios paradigmas.",
-      "Fazer uso dos procedimentos, métodos e fundamentos da Psicossomática.",
-      "Aplicar adequadamente os conhecimentos adquiridos, dentro da ética profissional e do digno de ser trabalhado e curado.",
-      "Proporcionar conhecimentos para a pesquisa teórico-prática em Psicossomática."
+      "Difundir e capacitar estudantes nas teorias, práticas e pesquisas da Psicossomática.",
+      "Oferecer uma abordagem holística para compreender a saúde humana em suas múltiplas dimensões.",
+      "Desenvolver habilidades para analisar sintomas de adoecimento integrando aspectos psicológicos, biológicos, sociais e espirituais.",
+      "Aplicar adequadamente os conhecimentos adquiridos dentro da ética profissional.",
+      "Proporcionar fundamentos para pesquisa teórico-prática em Psicossomática."
     ],
     "publico": [
-      "O curso é destinado a todo aluno com formação superior, preferencialmente das áreas de humanas, saúde e biológicas.",
-      "Profissionais atuando em ambientes organizacional, hospitalares, clínicos, educacionais, entre outros, que desejam abordar o homem de forma integral."
+      "Profissionais com formação superior, preferencialmente nas áreas de humanas, saúde e ciências biológicas.",
+      "Destinado a profissionais que buscam uma visão holística e integral do ser humano em suas práticas profissionais."
     ],
     "highlights": [
       {
@@ -392,7 +393,42 @@
         "hours": 36,
         "ementa": "História da psicossomática, conceitos básicos. Angústia vital; neurose orgânica; dinâmica dos instintos.",
         "objetivos": "Rever e ampliar conhecimentos a cerca dos conceitos básicos da psicossomática, contemplando a integração da medicina com a psicologia.",
-        "bibliography": []
+        "bibliography": [
+          "ALEXANDER, F. Medicina psicossomática: seus princípios e aplicações, Porto Alegre, Artes Médicas, 1989",
+          "BALINT, M. O Médico, seu Paciente e a Doença, RJ/SP, Livraria Atheneu, 1998",
+          "BIZZARI, Mariano. A mente e o Câncer, SP, Summus, 2001",
+          "BALLONE, Geraldo e col. Da Emoção à Lesão - um Guia de Medicina Psicossomática, São Paulo, Manole, 2001",
+          "CAPSANO H.F. Doença - Episódio da Vida, Porto Alegre, Artes Médicas, 1993",
+          "CHIOZZA L.A. (org). Os Sentimentos Ocultos em..., SP, Casa do Psicólogo, 1998",
+          "CONGER, J. P. Jung e Reich, SP, Summus, 1993",
+          "DAMASIO A.R. O Erro de Descartes, SP, Companhia das Letras, 1996",
+          "DETHLEFSEN, T.; DAHLKE, R. A. Doença como Caminho, SP, Cultrix, 1983",
+          "FERRAZ F.C.; VOLICH R.M. (org). Psicossoma Psicossomática Psicanalítica, SP, Casa do Psicólogo, 1997",
+          "GRODDECK G. Estudos Psicanalíticos sobre Psicossomática, SP, Perspectiva, 1992",
+          "GUGGENBÜHL-GRAIG, A. O Abuso de Poder na Psicologia, no Sacerdócio, na Medicina e nas Profissões de Ajuda, SP, Achiamé, 1975",
+          "JUNG, Carl Gustav. Obras Completas, Petrópolis, Vozes",
+          "KELEMAN, Stanley. Realidade Somática, SP, Summus, 1994",
+          "KÜBLER-ROSS E. Sobre a Morte e o Morrer, SP, Martins Fontes, 1992",
+          "LELOUP, Jean-Yves. O Corpo e seus Símbolos, Petrópolis, Vozes, 1998",
+          "LeSHAN, L. O câncer como ponto de mutação. SP, Summus Editorial, 1995",
+          "MacDOUGALL, J. Teatros do Corpo, SP, Martins Fontes, 1996",
+          "MARTY, Pierre. Mentalização e Psicossomática, SP, Casa do Psicólogo, 1998",
+          "MELLO FILHO, J. Psicossomática Hoje, Porto Alegre, Artes Médicas, 1992",
+          "MINDELL, Arnold, O Corpo Onírico, SP, Summus, 1989",
+          "PAIVA, L.M. Medicina Psicossomática, Porto Alegre, Artes Médicas, 1992",
+          "PINHEIRO, R. Medicina psicossomática - uma abordagem clínica. SP, Fundação BYK, 1992",
+          "RAMOS, D.G. A Psique do Corpo, SP, Summus, 1994",
+          "ROSSI, E. A Psicobiologia da Cura Mente Corpo, SP, PSI, 1997",
+          "RUBY, Paulo. As Faces do Humano: Estudos de Tipologias Junguiana e Psicossomática, SP, Oficina de Textos, 1998",
+          "SAPOLSKY, Robert M. Porque as Zebras não têm úlceras?, SP, Ed. Francis, 2007",
+          "SILVA M.A.D. Quem Ama não Adoece, SP, Editora Best Seller, 1994",
+          "SONTAG, Susan. A Doença como Metáfora, SP, Graal, 1984",
+          "STANLEY, K. Anatomia emocional. SP, Summus, 1992",
+          "STOUDEMIRE A (org). Fatores Psicológicos Afetando Condições Médicas, Porto Alegre, Artes Médicas, 2000",
+          "TESTA, M. Pensar em saúde, Porto Alegre, Artes Médicas, 1996",
+          "WILBER, K. A consciência sem fronteiras, SP, Cultrix, 1991",
+          "ZIEGLER, Alfred J. Medicina Arquetípica, SP, Paulus, 2012"
+        ]
       },
       {
         "number": 2,
@@ -400,7 +436,11 @@
         "hours": 36,
         "ementa": "Atividade reflexa instintiva e habitual, psicopatologia e personalidade, distúrbios orgânicos e psicogênicos, experiência da corporalidade e imagem corporal, teorias da personalidade.",
         "objetivos": "Aprofundar conceitos para possibilitar o entendimento dos aspectos biopsicossociais do adoecer e da cura nas áreas de saúde e de humanas.",
-        "bibliography": []
+        "bibliography": [
+          "SHELDRAKE, Rupert. O renascimento da natureza: o reflorecimento da Ciência e de Deus, SP, Cultrix, 1993",
+          "SOUZENELLE, Annick de. O simbolismo do corpo humano, SP, Pensamento, 1987",
+          "WILBER, Ken. Psicologia integral: consciência, espírito, psicologia, terapia, SP, Cultrix, 2002"
+        ]
       },
       {
         "number": 3,
@@ -408,7 +448,15 @@
         "hours": 36,
         "ementa": "Correlacionar vários sintomas de adoecimento com os fatores psicoafetivos, sociais, familiares e espirituais.",
         "objetivos": "Seminários e temas médicos sobre os principais órgãos e patologias mais freqüentes como fator de queixas e de sofrimento humano.",
-        "bibliography": []
+        "bibliography": [
+          "ABERASTURY, A. A adolescência, Porto Alegre, Artes Médicas, 1992",
+          "DAHLKE, R. Doença como Linguagem da Alma, SP, Cultrix, 1992",
+          "EPINAY, M. L. G. A doença como linguagem, Campinas, Papirus, 1991",
+          "LEPARGNEUR, Hubert. O doente, a doença e a morte: implicações sócio-culturais da enfermidade, Campinas, Papirus, 1987",
+          "LeSHAN, Lawrence. O dilema da psicologia, SP, Summus, 1994",
+          "ORNISH, Dean M.D. Amor e sobrevivência, RJ, Rocco, 1998",
+          "VITHOULKAS, George. Homeopatia, ciência e cura, SP, Círculo do Livro, 1986"
+        ]
       },
       {
         "number": 4,
@@ -416,7 +464,14 @@
         "hours": 36,
         "ementa": "Personalidade, família e sociedade. Psiquiatria e psicanálise na medicina e na dinâmica dos sintomas de adoecimento. Correlações psicossomáticas, nascimento e morte e a evolução do ser.",
         "objetivos": "Consolidar a visão de homem integral unindo aspectos somáticos com emoções, espiritualidade, família, profissão e sociedade, ao longo de todo processo evolutivo desde a concepção até a morte.",
-        "bibliography": []
+        "bibliography": [
+          "ILLICH, Ivan. Expropriação da saúde: nemesis da medicina, RJ, Nova Fronteira, 1975",
+          "RICHTER, H. E. A família como paciente, SP, Martins Fontes, 1990",
+          "RUFFIÉ, J. O sexo e a morte. RJ, Nova Fronteira, 1988",
+          "SIMONTON, S. M. A família e a cura. SP, Summus, 1987",
+          "VISCOTT, D. A linguagem dos sentimentos, SP, Summus, 1986",
+          "ZOJA, Luigi. A história da arrogância, psicologia e limites do desenvolvimento humano, SP, Axis Mundi, 2000"
+        ]
       },
       {
         "number": 5,
@@ -424,7 +479,13 @@
         "hours": 30,
         "ementa": "Psiconeuroendocrinoimunologia, marcadores somáticos, doenças auto-imunes, psicogênese das doenças.",
         "objetivos": "Correlacionar os fatores psicológicos com suas repercussões no corpo físico, integrando os aspectos neurológicos com a bioquímica hormonal e a imunologia.",
-        "bibliography": []
+        "bibliography": [
+          "DARWIN, C. A Expressão das Emoções no Homem e nos Animais, SP, Companhia das Letras, 2000",
+          "PORTELLANO, José Antonio. Indrociόn a la neuropsicobiologia, Madrid, McGraw-Hill, 2005",
+          "SACHS, O. Tempo de Despertar. SP, Companhias das Letras, 1997",
+          "SANVITO, L.O. Cérebro e suas Vertentes. SP, Roca, 1991",
+          "SEGRE, M.; Cohen, C. (org). Bioética, SP, EDUSP, 1995"
+        ]
       },
       {
         "number": 6,
@@ -432,7 +493,11 @@
         "hours": 36,
         "ementa": "Atendimento ambulatorial, hospitalar, organizacional e corporativo.",
         "objetivos": "Capacitar os alunos a utilizarem os conceitos da psicossomática em todas as instâncias de trabalho, onde houver algum tipo de relação de ajuda.",
-        "bibliography": []
+        "bibliography": [
+          "HISADA, Sueli. Conversando sobre psicossomática. Rio de Janeiro, Revinter, 2003",
+          "SANCHIS, Sonia Martinez (coord.). Hormonas, estado de ánimo y función cognitiva, Madrid, Delta, 2007",
+          "VISCOTT, David. A linguagem dos sentimentos. São Paulo, Summus, 1982"
+        ]
       },
       {
         "number": 7,
@@ -440,22 +505,24 @@
         "hours": 20,
         "ementa": "Conceitos básicos de metodologia científica. Ciências e conhecimento. Diretrizes para a leitura, análise e interpretação de textos. A análise textual, temática e interpretativa. Pesquisa e projeto de pesquisa. Subsídios para a elaboração de uma monografia.",
         "objetivos": "Fornecer os elementos básicos necessários para capacitar o aluno para o trabalho científico, desde o desenvolvimento da pesquisa, análise de textos, elaboração de projeto, até os subsídios para a elaboração de uma monografia científica.",
-        "bibliography": []
+        "bibliography": [
+          "Manual de Elaboração do Projeto e da Monografia do IJEP"
+        ]
       },
       {
         "number": 8,
         "title": "Atividades Programadas",
         "hours": 160,
-        "ementa": "Atividades que subsidiam a formação acadêmica e o desenvolvimento do conhecimento e da pesquisa dos alunos.",
-        "objetivos": "Apresentação do projeto de conclusão de curso no décimo oitavo mês do curso.",
+        "ementa": "Atividades que subsidiam a formação acadêmica e o desenvolvimento do conhecimento e da pesquisa dos alunos. Todos os alunos farão, no décimo oitavo mês do curso, a exposição do projeto de conclusão de curso aos demais colegas e a um professor, em data previamente acordada, expondo o embrião da pesquisa e as resenhas dos livros (mínimo de quatro) que subsidiarão o referencial teórico do trabalho.",
+        "objetivos": "Apresentar o projeto de conclusão de curso com exposição da pesquisa e resenhas bibliográficas (mínimo 4 livros). A resenha deve fazer uma breve explanação do conteúdo, analisando e descrevendo os teores relevantes em relação ao objeto do trabalho monográfico, apresentando as contribuições da leitura para sustentação da hipótese e conclusão do TCC. Geralmente em dois parágrafos é possível fazer uma excelente resenha.",
         "bibliography": []
       },
       {
         "number": 9,
         "title": "Atividades Complementares",
         "hours": 220,
-        "ementa": "120 horas de atendimentos clínicos e 100 horas de supervisão de casos clínicos, extramuros acadêmicos. Participação em Congressos Junguianos do IJEP.",
-        "objetivos": "Complementar a formação com prática clínica supervisionada e participação em eventos científicos.",
+        "ementa": "Atividades opcionais (facultativas) que podem totalizar até 220 horas adicionais: 120 horas de atendimentos clínicos extramuros acadêmicos e 100 horas de supervisão de casos clínicos. Participação em Congressos Junguianos do IJEP conta como horas complementares. Congressos de anos anteriores podem ser adquiridos com certificados que computam as horas.",
+        "objetivos": "Complementar a formação com prática clínica supervisionada, supervisão de casos e participação em eventos científicos. Estas atividades são facultativas e permitem ao aluno atingir a carga horária máxima de 610 horas.",
         "bibliography": []
       },
       {
@@ -463,17 +530,22 @@
         "title": "Trabalho de Conclusão",
         "hours": 0,
         "ementa": "Produção de trabalho monográfico, em concordância com as normas técnicas do IJEP.",
-        "objetivos": "Elaborar trabalho monográfico seguindo as normas do IJEP.",
+        "objetivos": "Assista o vídeo tutorial do PROJETO E MONOGRAFIA DO IJEP neste link: https://youtu.be/UrVA6szS84M",
         "bibliography": []
       }
     ],
     "avaliacao": [
-      "Por tratar-se de um curso de especialização do conhecimento científico e prático na área da saúde, a avaliação ocorrerá como ato contínuo no decorrer das aulas, somados a uma prova escrita e individual, que acontecerá no final do curso, e frequência mínima de 80% das aulas, com controle presencial."
+      "Por tratar-se de um curso de especialização do conhecimento científico e prático na área da saúde, a avaliação ocorrerá como ato contínuo no decorrer das aulas.",
+      "Prova escrita individual ao final do curso.",
+      "Frequência mínima obrigatória de 80% nas aulas presenciais com controle presencial rigoroso.",
+      "O aluno que não cumprir a apresentação do projeto no 18º mês deverá apresentar um trabalho complementar para compensar as horas e obter o crédito das Atividades Programadas."
     ],
     "cargahoraria": {
       "texto": [
-        "A carga horária do Curso de Especialização em Psicossomática é de 390 horas, distribuídas em 5 disciplinas de 36 horas/aula, uma disciplina de 30 horas/aula, uma disciplina de 20 horas/aula e 160 horas de atividades programadas, com previsão de integralização de mais 220 horas (que podem ser acrescidas, facultativamente, com 120 horas de atendimentos clínicos e 100 horas de supervisão de casos), podendo totalizar 610 horas.",
-        "Sua duração é de 24 meses, oferecido em aulas presenciais, que acontecem num único sábado de cada mês, das 9hs às 17hs: 45m, contabilizando 10 horas/aula (45min cada), divididas em quatro aulas de 2,5 horas/aula."
+        "A carga horária do Curso de Especialização em Psicossomática é de 390 horas obrigatórias, distribuídas em 5 disciplinas de 36 horas/aula, uma disciplina de 30 horas/aula, uma disciplina de 20 horas/aula e 160 horas de atividades programadas.",
+        "Com previsão de integralização de mais 220 horas facultativas (120 horas de atendimentos clínicos e 100 horas de supervisão de casos), podendo totalizar até 610 horas.",
+        "Duração de 24 meses, oferecido em aulas presenciais que acontecem num único sábado de cada mês, das 9h às 17h45, contabilizando 10 horas-aula de 45 minutos cada, divididas em quatro aulas de 2,5 horas/aula.",
+        "Essas horas complementam as horas-aula, que são de 45 minutos, onde em um sábado de aula são computadas 10 horas-aula."
       ],
       "atividades": [
         {
