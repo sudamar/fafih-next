@@ -54,11 +54,13 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
           {/* Coluna 1: Logo */}
-          <div className="lg:col-span-1 pr-10">
-            <img
+          <div className="lg:col-span-1 pr-10 relative h-24">
+            <Image
               src="/assets/images/logo-fundo-azul.png"
               alt="Logo FAFIH no rodapé"
-              className="max-w-full h-auto scale-[1.54] origin-left mr-5"
+              width={200}
+              height={100}
+              className="scale-[1.54] origin-left mr-5"
             />
           </div>
 

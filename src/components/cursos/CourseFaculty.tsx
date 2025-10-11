@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { SectionTitle } from '@/components/ui/section-title';
 import { CardProfessor, ProfessorData } from '@/components/ui/card-professor';
 
@@ -30,11 +31,12 @@ export default function CourseFaculty({ professores, coordenacao }: CourseFacult
           <SectionTitle>Coordenação</SectionTitle>
           <div className="flex gap-5 items-start">
             {coordenacao.foto && (
-              <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
-                <img
+              <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 relative">
+                <Image
                   src={coordenacao.foto}
                   alt={coordenacao.coordenador}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
             )}

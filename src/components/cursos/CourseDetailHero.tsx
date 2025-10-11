@@ -1,8 +1,25 @@
-import Link from 'next/link';
+import Image from 'next/image';
 import styles from './CourseDetailHero.module.css';
 
+interface CourseHero {
+  type?: string;
+  source?: string;
+  fallbackImage?: string;
+  alt?: string;
+}
+
+interface Course {
+  hero?: CourseHero;
+  image?: string;
+  title: string;
+  subtitle?: string;
+  categoryLabel?: string;
+  duration?: string;
+  modalidade?: string;
+}
+
 interface CourseDetailHeroProps {
-  course: any;
+  course: Course;
 }
 
 export default function CourseDetailHero({ course }: CourseDetailHeroProps) {
@@ -26,10 +43,13 @@ export default function CourseDetailHero({ course }: CourseDetailHeroProps) {
                   <source src={course.hero.source} type="video/mp4" />
                 </video>
               ) : (
-                <img
-                  src={course.hero?.source || course.image}
+                <Image
+                  src={course.hero?.source || course.image || ''}
                   alt={course.hero?.alt || course.title}
                   className={styles.image}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  priority
                 />
               )}
 

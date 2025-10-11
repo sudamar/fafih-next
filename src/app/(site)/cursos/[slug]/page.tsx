@@ -3,7 +3,6 @@ import { getCourseBySlug } from '@/lib/services/courses';
 import CourseDetailHero from '@/components/cursos/CourseDetailHero';
 import CourseInvestmentCard from '@/components/cursos/CourseInvestmentCard';
 import CourseAbout from '@/components/cursos/CourseAbout';
-import CourseHighlights from '@/components/cursos/CourseHighlights';
 import CourseCurriculum from '@/components/cursos/CourseCurriculum';
 import CourseFaculty from '@/components/cursos/CourseFaculty';
 import CourseEvaluation from '@/components/cursos/CourseEvaluation';
@@ -11,6 +10,13 @@ import CourseWorkload from '@/components/cursos/CourseWorkload';
 import { DepoimentosBasicoLista } from '@/components/ui/depoimentos-basico-lista';
 import { SectionTitle } from '@/components/ui/section-title';
 import styles from './page.module.css';
+
+interface Testimonial {
+  text?: string;
+  quote?: string;
+  author: string;
+  role: string;
+}
 
 export default async function CourseDetailPage({ params }: { params: { slug: string } }) {
   const course = await getCourseBySlug(params.slug);
@@ -120,7 +126,7 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
             <section className={styles.section}>
               <SectionTitle>Depoimentos de Alunos</SectionTitle>
               <DepoimentosBasicoLista
-                depoimentos={course.testimonials.map((t: any) => ({
+                depoimentos={course.testimonials.map((t: Testimonial) => ({
                   quote: t.text || t.quote,
                   author: t.author,
                   role: t.role

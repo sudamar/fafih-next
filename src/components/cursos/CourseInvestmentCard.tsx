@@ -1,7 +1,19 @@
 import styles from './CourseInvestmentCard.module.css';
 
+interface Course {
+  price?: number;
+  originalPrice?: number;
+  precoMatricula?: number;
+  monthlyPrice?: string;
+  categoryLabel?: string;
+  modalidade?: string;
+  startDate?: string;
+  duration?: string;
+  workload?: string;
+}
+
 interface CourseInvestmentCardProps {
-  course: any;
+  course: Course;
 }
 
 const formatCurrency = (value: number | null | undefined): string | null => {
@@ -12,7 +24,6 @@ const formatCurrency = (value: number | null | undefined): string | null => {
 export default function CourseInvestmentCard({ course }: CourseInvestmentCardProps) {
   const price = formatCurrency(course.price);
   const originalPrice = formatCurrency(course.originalPrice);
-  const enrollmentPrice = formatCurrency(course.precoMatricula);
 
   return (
     <div className={styles.card}>

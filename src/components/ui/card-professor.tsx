@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './card-professor.module.css';
 
 export interface ProfessorData {
@@ -21,7 +22,13 @@ export function CardProfessor({ professor }: CardProfessorProps) {
         {/* Foto do Professor */}
         <div className={styles.avatar}>
           {professor.foto ? (
-            <img src={professor.foto} alt={professor.nome} />
+            <Image
+              src={professor.foto}
+              alt={professor.nome}
+              width={80}
+              height={80}
+              className={styles.avatarImage}
+            />
           ) : (
             <span className={styles.avatarFallback}>
               {professor.nome.charAt(0)}
