@@ -22,8 +22,8 @@
     "originalPrice": 6000.0,
     "precoMatricula": 300.0,
     "modalidade": "Presencial",
-    "duration": "18 meses",
-    "workload": "360h",
+    "duration": "25 meses",
+    "workload": "400h a 620h",
     "startDate": "Março 2024",
     "maxStudents": "Máx. 25 alunos",
     "certificate": "Reconhecida MEC",
@@ -188,25 +188,16 @@
       {
         "number": 10,
         "title": "Trabalho de Conclusão",
-        "hours": "não disponível",
-        "ementa": "Produção de trabalho monográfico, em concordância com as normas do IJEP.",
-        "objetivos": "",
-        "bibliography": [
-          "Assista o vídeo tutorial do PROJETO E MONOGRAFIA DO IJEP neste link: https://youtu.be/UrVA6szS84M"
-        ]
-      },
-      {
-        "number": 11,
-        "title": "Controle de Frequência",
-        "hours": "",
-        "ementa": "Por tratar-se de um curso de especialização do conhecimento científico e prático na área da saúde, a avaliação ocorrerá como ato contínuo no decorrer das aulas, somados a uma prova escrita e individual, que acontecerá no final do curso, e frequência mínima de 80% das aulas, com controle presencial.",
-        "objetivos": "",
+        "hours": 0,
+        "ementa": "Produção de trabalho monográfico, em concordância com as normas técnicas do IJEP.",
+        "objetivos": "Assista o vídeo tutorial do PROJETO E MONOGRAFIA DO IJEP neste link: https://youtu.be/UrVA6szS84M",
         "bibliography": []
       }
     ],
     "avaliacao": [
-      "Frequência mínima de 75% e aproveitamento mínimo de 70% (nota 7,0) nas disciplinas",
-      "Serão concedidos certificados aos discentes que cursarem todas as disciplinas e apresentarem o trabalho de conclusão de curso."
+      "Por tratar-se de um curso de especialização do conhecimento científico e prático na área da saúde, a avaliação ocorrerá como ato contínuo no decorrer das aulas.",
+      "Prova escrita individual ao final do curso.",
+      "Frequência mínima obrigatória de 80% nas aulas presenciais com controle presencial rigoroso."
     ],
     "cargahoraria": {
       "texto": [
