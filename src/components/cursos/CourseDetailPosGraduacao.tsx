@@ -20,6 +20,18 @@ interface Testimonial {
 
 interface Course {
   [key: string]: unknown;
+  title: string;
+  subtitle?: string;
+  hero?: {
+    type?: string;
+    source?: string;
+    fallbackImage?: string;
+    alt?: string;
+  };
+  image?: string;
+  categoryLabel?: string;
+  duration?: string;
+  modalidade?: string;
   fullDescription?: string[];
   highlights?: Array<{
     icon: string;
@@ -112,8 +124,8 @@ export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGrad
         <main className={styles.mainContent}>
           {/* Sobre o Curso */}
           <CourseAbout
-            fullDescription={course.fullDescription}
-            highlights={course.highlights}
+            fullDescription={course.fullDescription ?? []}
+            highlights={course.highlights ?? []}
           />
 
           <CourseDifferentialsSection items={course.diferenciais} />
@@ -185,7 +197,7 @@ export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGrad
               <SectionTitle>Depoimentos de Alunos</SectionTitle>
               <DepoimentosBasicoLista
                 depoimentos={course.testimonials.map((t: Testimonial) => ({
-                  quote: t.text || t.quote,
+                  quote: t.text || t.quote || '',
                   author: t.author,
                   role: t.role
                 }))}

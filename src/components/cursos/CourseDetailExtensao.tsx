@@ -12,6 +12,14 @@ import styles from '@/app/(site)/cursos/[slug]/page.module.css';
 interface Course {
   title: string;
   subtitle?: string;
+  hero?: {
+    type?: string;
+    source?: string;
+    fallbackImage?: string;
+    alt?: string;
+  };
+  image?: string;
+  categoryLabel?: string;
   fullDescription?: string[];
   highlights?: Array<{
     icon: string;
@@ -64,7 +72,6 @@ interface Course {
   originalPrice?: number;
   precoMatricula?: number;
   monthlyPrice?: string;
-  categoryLabel?: string;
   startDate?: string;
   workload?: string;
   category?: string;

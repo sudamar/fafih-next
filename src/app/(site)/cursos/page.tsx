@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useEffect } from 'react'
+import { Suspense, useState, useMemo, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import CursoCard from '@/components/domain/curso/CursoCard'
 import { listCourseCards, listCategories } from '@/lib/services/courseCatalog'
@@ -80,4 +80,18 @@ const EscolhaCursosContent = () => {
   )
 }
 
-export default EscolhaCursosContent
+export default function CursosPage() {
+  return (
+    <Suspense
+      fallback={(
+        <section className="bg-gray-50 py-16 px-4">
+          <div className="max-w-3xl mx-auto text-center text-gray-600">
+            Carregando cursos...
+          </div>
+        </section>
+      )}
+    >
+      <EscolhaCursosContent />
+    </Suspense>
+  )
+}

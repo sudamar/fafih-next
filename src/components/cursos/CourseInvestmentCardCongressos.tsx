@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import styles from './CourseInvestmentCard.module.css';
 
@@ -94,7 +95,13 @@ export default function CourseInvestmentCardCongressos({ course }: CourseInvestm
             rel="noopener noreferrer"
             className={styles.specialOfferBadge}
           >
-            <img src="/assets/images/oferta-especial.svg" alt="Oferta especial" />
+            <Image
+              src="/assets/images/oferta-especial.svg"
+              alt="Oferta especial"
+              width={148}
+              height={46}
+              priority={false}
+            />
           </a>
         </div>
       )}
