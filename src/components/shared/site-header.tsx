@@ -36,7 +36,7 @@ const navItems: NavItem[] = [
       { label: 'Biblioteca', href: 'https://ijep.com.br/biblioteca-ijep', external: true },
       { label: 'Egressos', href: 'https://ijep.com.br/login-aluno', external: true },
       { label: 'Serviços para a Comunidade', href: 'servicos-comunidade.html' },
-      { label: 'Notícias', href: '#noticias' },
+      { label: 'Notícias', href: '/#noticias' },
       { label: 'Mantenedora', href: 'https://ijep.com.br/', external: true },
     ],
   },

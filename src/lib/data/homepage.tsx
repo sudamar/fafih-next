@@ -234,7 +234,7 @@ export const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Focos Acadêmicos', href: 'index.html#focos' },
       { label: 'Iniciação Científica', href: 'iniciacao-cientifica.html' },
       { label: 'Extensão', href: 'extensao.html' },
-      { label: 'Notícias', href: 'index.html#noticias' },
+      { label: 'Notícias', href: '/#noticias' },
       { label: 'Comissão Própria de Avaliação', href: 'cpa.html' },
       { label: 'Calendário Acadêmico', href: 'calendario-academico.html' },
       { label: 'Biblioteca', href: 'https://ijep.com.br/biblioteca-ijep', external: true },
