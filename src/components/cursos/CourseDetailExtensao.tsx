@@ -6,6 +6,7 @@ import CourseFaculty from '@/components/cursos/CourseFaculty';
 import CourseEvaluation from '@/components/cursos/CourseEvaluation';
 import CourseWorkload from '@/components/cursos/CourseWorkload';
 import { SectionTitle } from '@/components/ui/section-title';
+import CourseDifferentialsSection from '@/components/cursos/CourseDifferentialsSection';
 import styles from '@/app/(site)/cursos/[slug]/page.module.css';
 
 interface Course {
@@ -66,6 +67,18 @@ interface Course {
   categoryLabel?: string;
   startDate?: string;
   workload?: string;
+  category?: string;
+  diferenciais?: string[];
+  ctaLabel?: string;
+  moreInfoUrl?: string;
+  formato_curso?: {
+    frequencia?: string;
+    horario?: string;
+    periodo?: string;
+    tipo?: string;
+    plataforma?: string;
+    numero_encontros?: number;
+  };
 }
 
 interface CourseDetailExtensaoProps {
@@ -99,9 +112,11 @@ export default function CourseDetailExtensao({ course }: CourseDetailExtensaoPro
         <main className={styles.mainContent}>
           {/* Sobre o Curso */}
           <CourseAbout
-            fullDescription={course.fullDescription}
-            highlights={course.highlights}
+            fullDescription={course.fullDescription ?? []}
+            highlights={course.highlights ?? []}
           />
+
+          <CourseDifferentialsSection items={course.diferenciais} />
 
           {/* Justificativa */}
           {course.justificativa && course.justificativa.length > 0 && (

@@ -88,7 +88,7 @@ export const conhecaFafihContent = {
   ],
   cta: {
     label: 'Saiba Mais',
-    href: 'conheca-fafih.html',
+    href: '/conheca-a-fafih',
   },
 }
 
@@ -229,7 +229,7 @@ export const footerLinkGroups: FooterLinkGroup[] = [
   {
     title: 'Institucional',
     links: [
-      { label: 'Conheça a FAFIH', href: 'conheca-fafih.html' },
+      { label: 'Conheça a FAFIH', href: '/conheca-a-fafih' },
       { label: 'Conheça o IJEP', href: 'https://ijep.com.br/', external: true },
       { label: 'Focos Acadêmicos', href: 'index.html#focos' },
       { label: 'Iniciação Científica', href: 'iniciacao-cientifica.html' },

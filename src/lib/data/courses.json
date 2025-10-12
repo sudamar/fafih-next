@@ -18,9 +18,9 @@
     },
     "category": "especializacao",
     "categoryLabel": "Pós-Graduação",
-    "price": 3890.0,
-    "originalPrice": 6000.0,
-    "precoMatricula": 300.0,
+    "price": 3890,
+    "originalPrice": 6000,
+    "precoMatricula": 300,
     "modalidade": "Presencial",
     "duration": "25 meses",
     "workload": "400h a 620h",
@@ -306,7 +306,8 @@
       "Início",
       "Pós-Graduação",
       "Psicologia Junguiana"
-    ]
+    ],
+    "diferenciais": []
   },
   {
     "id": 2,
@@ -329,8 +330,8 @@
     "category": "especializacao",
     "categoryLabel": "Pós-Graduação",
     "price": 663.57,
-    "originalPrice": 0.0,
-    "precoMatricula": 360.0,
+    "originalPrice": 0,
+    "precoMatricula": 360,
     "modalidade": "Presencial e EAD",
     "duration": "24 meses",
     "workload": "390h a 610h",
@@ -747,7 +748,8 @@
         "email": "barbarapessanha.terapias@gmail.com",
         "foto": ""
       }
-    ]
+    ],
+    "diferenciais": []
   },
   {
     "id": 3,
@@ -770,8 +772,8 @@
     "category": "especializacao",
     "categoryLabel": "Pós-Graduação",
     "price": 663.57,
-    "originalPrice": 0.0,
-    "precoMatricula": 360.0,
+    "originalPrice": 0,
+    "precoMatricula": 360,
     "modalidade": "Presencial",
     "duration": "24 meses",
     "workload": "390h a 610h",
@@ -1234,7 +1236,8 @@
         "email": "barbarapessanha.terapias@gmail.com",
         "foto": ""
       }
-    ]
+    ],
+    "diferenciais": []
   },
   {
     "id": 4,
@@ -1254,9 +1257,9 @@
     },
     "category": "extensao",
     "categoryLabel": "Extensão",
-    "price": 890.0,
-    "originalPrice": 1200.0,
-    "precoMatricula": 100.0,
+    "price": 890,
+    "originalPrice": 1200,
+    "precoMatricula": 100,
     "modalidade": "Online",
     "duration": "6 meses",
     "workload": "60h",
@@ -1296,7 +1299,8 @@
       "Início",
       "Extensão",
       "Livros Negros e Livro Vermelho"
-    ]
+    ],
+    "diferenciais": []
   },
   {
     "id": 5,
@@ -1316,9 +1320,9 @@
     },
     "category": "extensao",
     "categoryLabel": "Extensão",
-    "price": 450.0,
-    "originalPrice": 600.0,
-    "precoMatricula": 50.0,
+    "price": 450,
+    "originalPrice": 600,
+    "precoMatricula": 50,
     "modalidade": "Presencial",
     "duration": "2 dias",
     "workload": "16h",
@@ -1358,7 +1362,8 @@
       "Início",
       "Extensão",
       "Sonhando Através da Arteterapia"
-    ]
+    ],
+    "diferenciais": []
   },
   {
     "id": 6,
@@ -1380,9 +1385,9 @@
     },
     "category": "extensao",
     "categoryLabel": "Extensão",
-    "price": 350.0,
-    "originalPrice": 0.0,
-    "precoMatricula": 350.0,
+    "price": 350,
+    "originalPrice": 0,
+    "precoMatricula": 350,
     "modalidade": "Online",
     "duration": "2 meses",
     "workload": "16h",
@@ -1553,16 +1558,17 @@
       "numero_encontros": 8
     },
     "investimento_detalhado": {
-      "valor_total": 700.0,
-      "matricula": 350.0,
+      "valor_total": 700,
+      "matricula": 350,
       "parcelas": 1,
-      "valor_parcela": 350.0,
+      "valor_parcela": 350,
       "desconto_membros": {
         "aplicavel": true,
-        "valor_parcela_com_desconto": 315.0,
+        "valor_parcela_com_desconto": 315,
         "descricao": "Desconto para membros analistas em formação"
       }
-    }
+    },
+    "diferenciais": []
   },
   {
     "id": 7,
@@ -1577,18 +1583,19 @@
     "image": "https://i.imgur.com/lXkjLLG.png",
     "hero": {
       "type": "video",
-      "source": "/assets/videos/video-curso-8.mp4",
+      "source": "/assets/videos/video-curso-7.mp4",
       "alt": "Apresentação da Formação de Membros Analistas Junguianos do IJEP",
       "fallbackImage": "https://i.imgur.com/lXkjLLG.png"
     },
     "category": "extensao",
     "categoryLabel": "Curso de Extensão",
-    "price": 0.0,
-    "originalPrice": 0.0,
-    "precoMatricula": 250.0,
+    "price": 0,
+    "originalPrice": 0,
+    "precoMatricula": 250,
     "modalidade": "Presencial",
     "duration": "3 a 5 anos",
     "workload": "",
+    "observacoes": "Curso para ex-alunos de Psicologia Junguiana do IJEP",
     "startDate": "",
     "maxStudents": "",
     "certificate": "Membro Analista Junguiano do IJEP",
@@ -1708,11 +1715,11 @@
       "Waldemar Magaldi Filho"
     ],
     "diferenciais": [
-      "O analista em formação terá seu nome no site do IJEP, tendo assim sua divulgação profissional para os interessados que buscam profissionais por este site para sua análise, além de receberem a indicação da nossa demanda de clientes sociais",
-      "Para os Formados que concluirem esse processo seguirão filiados ao IJEP, a indicação de seu nome seguirá na home page",
-      "A FORMAÇÃO é extensiva a todos os pós-graduados no curso de Psicologia Junguiana do IJEP, que tenham se destacado em nota de prova e monografia, independente da sua formação de origem não ser medicina ou psicologia, como acontece com outras sociedades internacionais",
-      "Os membros analistas formados poderão dar supervisões aos alunos do curso de especialização de Psicologia Junguiana, caso tenha completado também Psicossomática e Arteterapia poderá dar supervisões a esses alunos também",
-      "Estar filiado ao IJEP, em qualquer categoria, pressupõe, além da participação anual nas palestras dos nossos congressos junguianos e publicação de artigos semestralmente, uma relação de fidelidade, lealdade e cumplicidade onde esperamos engajamento social na divulgação das nossas publicações e atividades"
+      "O analista em formação terá seu nome no site do IJEP, tendo assim sua divulgação profissional para os interessados que buscam profissionais por este site para sua análise, além de receberem a indicação da nossa demanda de clientes sociais.",
+      "Para os Formados que concluirem esse processo seguirão filiados ao IJEP, a indicação de seu nome seguirá na home page.",
+      "A FORMAÇÃO é extensiva a todos os pós-graduados no curso de Psicologia Junguiana do IJEP, que tenham se destacado em nota de prova e monografia, independente da sua formação de origem não ser medicina ou psicologia, como acontece com outras sociedades internacionais. (no final desta página colocamos dois parágrafos aprofundando este tema).",
+      "Os membros analistas formados poderão dar supervisões aos alunos do curso de especialização de Psicologia Junguiana, caso tenha completado também Psicossomática e Arteterapia poderá dar supervisões a esses alunos também. Eventualmente, caso haja interesse de ambas as partes, ministrar cursos e aulas, e também, sendo acordado por ambos numa pré-seleção, IJEP e membro Analista, e tendo o mesmo doutorado preferencialmente, ou mestrado, poderá seguir na formação de Membro Didata do IJEP.",
+      "Estar filiado ao IJEP, em qualquer categoria, pressupõe, além da participação anual nas palestras dos nossos congressos junguianos e publicação de artigos semestralmente, uma relação de fidelidade, lealdade e cumplicidade onde esperamos engajamento social na divulgação das nossas publicações e atividades, assim como impede a participação dos membros em atividades de outras instituições que ofereçam cursos, serviços ou produtos similares aos nossos. Obviamente, participações em eventos pontuais como atividades acadêmicas ou sociais onde podemos divulgar e promover o IJEP são estimuladas e bem-vindas."
     ],
     "formacao_didata": {
       "titulo": "Formação de Membros Didatas Junguianos do IJEP",
@@ -1809,7 +1816,8 @@
     "coordenacao": {
       "coordenador": "",
       "descricao": ""
-    }
+    },
+    "ctaLabel": "Entre na Fila de Espera"
   },
   {
     "id": 8,
@@ -1822,19 +1830,19 @@
       "Com acesso de 12 meses às gravações, você pode estudar no seu próprio ritmo, com professores especialistas e analistas junguianos experientes.",
       "Os congressos cobrem temas como fundamentos da psicologia junguiana, sintomas e sincronicidade, depressão e compulsões contemporâneas, psicossomática, arteterapia, sonhos, mitos, cosmovisão, complexos culturais, ética, espiritualidade e política na psicologia junguiana."
     ],
-    "image": "https://i.imgur.com/congress.png",
     "hero": {
-      "type": "image",
-      "source": "https://i.imgur.com/congress.png",
+      "type": "video",
+      "source": "/assets/videos/video-curso-8.mp4",
       "alt": "Congressos Junguianos do IJEP",
       "fallbackImage": "https://i.imgur.com/congress.png"
     },
-    "category": "extensao",
-    "categoryLabel": "Curso de Extensão",
-    "price": 0.0,
-    "originalPrice": 0.0,
-    "precoMatricula": 0.0,
-    "modalidade": "Online",
+    "category": "congressos",
+    "categoryLabel": "Congressos",
+    "price": 0,
+    "originalPrice": 0,
+    "precoMatricula": 0,
+    "modalidade": "Onine",
+    "observacoes": "Ex-alunos do Curso de Psicologia Junguiana do IJEP.",
     "duration": "12 meses de acesso",
     "workload": "270h (9 congressos x 30h cada)",
     "startDate": "Acesso imediato",
@@ -2022,6 +2030,9 @@
       "coordenador": "Simone Magaldi e Waldemar Magaldi Filho",
       "descricao": "Analistas junguianos didatas e especialistas com ampla experiência em psicologia analítica."
     },
-    "professores": []
+    "professores": [],
+    "diferenciais": [],
+    "ctaLabel": "Adquira Agora",
+    "moreInfoUrl": "https://ijep.com.br/inscricao/aluno"
   }
 ]

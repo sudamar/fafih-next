@@ -6,9 +6,10 @@ interface Professor {
   nome: string;
   titulacao: string;
   descricao: string;
-  telefone: string;
-  email: string;
-  foto: string;
+  telefone?: string;
+  email?: string;
+  foto?: string;
+  lattes?: string;
 }
 
 interface Coordenacao {

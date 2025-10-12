@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="148" height="46" viewBox="0 0 148 46" role="img" aria-labelledby="title">
+  <title id="title">Oferta Especial</title>
+  <defs>
+    <linearGradient id="offerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05B18B" />
+      <stop offset="100%" stop-color="#152C61" />
+    </linearGradient>
+  </defs>
+  <rect width="148" height="46" rx="23" fill="url(#offerGradient)" />
+  <text x="74" y="30" font-family="'Poppins', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Oferta Especial</text>
+</svg>

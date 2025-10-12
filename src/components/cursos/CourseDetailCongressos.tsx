@@ -1,25 +1,17 @@
 import CourseDetailHero from '@/components/cursos/CourseDetailHero';
-import CourseInvestmentCard from '@/components/cursos/CourseInvestmentCard';
+import CourseInvestmentCardCongressos from '@/components/cursos/CourseInvestmentCardCongressos';
 import CourseAbout from '@/components/cursos/CourseAbout';
 import CourseCurriculum from '@/components/cursos/CourseCurriculum';
 import CourseFaculty from '@/components/cursos/CourseFaculty';
 import CourseEvaluation from '@/components/cursos/CourseEvaluation';
 import CourseWorkload from '@/components/cursos/CourseWorkload';
-import { DepoimentosBasicoLista } from '@/components/ui/depoimentos-basico-lista';
 import { SectionTitle } from '@/components/ui/section-title';
-import { ContatosSecretaria } from '@/components/shared/contatos-secretaria';
 import CourseDifferentialsSection from '@/components/cursos/CourseDifferentialsSection';
 import styles from '@/app/(site)/cursos/[slug]/page.module.css';
 
-interface Testimonial {
-  text?: string;
-  quote?: string;
-  author: string;
-  role: string;
-}
-
 interface Course {
-  [key: string]: unknown;
+  title: string;
+  subtitle?: string;
   fullDescription?: string[];
   highlights?: Array<{
     icon: string;
@@ -61,14 +53,22 @@ interface Course {
     descricao: string;
     foto?: string;
   };
-  testimonials?: Testimonial[];
+  modalidade?: string;
+  duration?: string;
   contact?: {
     phone?: string;
     whatsapp?: string;
     email?: string;
   };
-  diferenciais?: string[];
+  price?: number;
+  originalPrice?: number;
+  precoMatricula?: number;
+  monthlyPrice?: string;
+  categoryLabel?: string;
+  startDate?: string;
+  workload?: string;
   category?: string;
+  diferenciais?: string[];
   ctaLabel?: string;
   moreInfoUrl?: string;
   formato_curso?: {
@@ -81,47 +81,41 @@ interface Course {
   };
 }
 
-interface CourseDetailPosGraduacaoProps {
+interface CourseDetailCongressosProps {
   course: Course;
 }
 
-export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGraduacaoProps) {
+export default function CourseDetailCongressos({ course }: CourseDetailCongressosProps) {
   return (
     <div className={styles.pageContainer}>
-      {/* Hero Section */}
       <CourseDetailHero course={course} />
 
-      {/* Mobile Floating Button */}
       <div className={styles.mobileFloatingButton}>
         <a
-          href="https://ijep.com.br/inscricao/aluno"
+          href={course.moreInfoUrl || 'https://ijep.com.br/inscricao/aluno'}
           target="_blank"
           rel="noopener noreferrer"
         >
-          Inscrever-se Agora
+          {course.ctaLabel || 'Adquira Agora'}
         </a>
       </div>
 
-      {/* Mobile Investment Card */}
       <div className={styles.mobileInvestmentCard}>
-        <CourseInvestmentCard course={course} />
+        <CourseInvestmentCardCongressos course={course} />
       </div>
 
-      {/* Main Content Grid with Floating Card */}
       <div className={styles.contentGrid}>
         <main className={styles.mainContent}>
-          {/* Sobre o Curso */}
           <CourseAbout
-            fullDescription={course.fullDescription}
-            highlights={course.highlights}
+            fullDescription={course.fullDescription ?? []}
+            highlights={course.highlights ?? []}
           />
 
           <CourseDifferentialsSection items={course.diferenciais} />
 
-          {/* Justificativa */}
           {course.justificativa && course.justificativa.length > 0 && (
             <section className={styles.section}>
-              <SectionTitle>Justificativa</SectionTitle>
+              <SectionTitle>Por que participar</SectionTitle>
               <div className={styles.sectionContent}>
                 {course.justificativa.map((paragraph: string, index: number) => (
                   <p key={index}>{paragraph}</p>
@@ -130,10 +124,9 @@ export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGrad
             </section>
           )}
 
-          {/* Objetivos */}
           {course.objetivos && course.objetivos.length > 0 && (
             <section className={styles.section}>
-              <SectionTitle>Objetivos</SectionTitle>
+              <SectionTitle>O que você vai aprender</SectionTitle>
               <div className={styles.sectionContent}>
                 <ul className={styles.list}>
                   {course.objetivos.map((objetivo: string, index: number) => (
@@ -144,10 +137,9 @@ export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGrad
             </section>
           )}
 
-          {/* Público-alvo */}
           {course.publico && course.publico.length > 0 && (
             <section className={styles.section}>
-              <SectionTitle>Para quem é este curso</SectionTitle>
+              <SectionTitle>Para quem é</SectionTitle>
               <div className={styles.sectionContent}>
                 {course.publico.map((paragraph: string, index: number) => (
                   <p key={index}>{paragraph}</p>
@@ -156,50 +148,42 @@ export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGrad
             </section>
           )}
 
-          {/* Currículo */}
           {course.curriculum && course.curriculum.length > 0 && (
             <CourseCurriculum curriculum={course.curriculum} />
           )}
 
-          {/* Avaliação */}
-          {course.avaliacao && course.avaliacao.length > 0 && (
+          {course.avaliacao && course.avaliacao.length > 0 && course.avaliacao[0] !== 'Não disponível' && (
             <CourseEvaluation avaliacao={course.avaliacao} />
           )}
 
-          {/* Carga Horária */}
           {course.cargahoraria && (
             <CourseWorkload cargahoraria={course.cargahoraria} />
           )}
 
-          {/* Corpo Docente */}
-          {course.professores && course.professores.length > 0 && (
+          {((course.professores && course.professores.length > 0) ||
+            (course.coordenacao && course.coordenacao.coordenador)) && (
             <CourseFaculty
-              professores={course.professores}
+              professores={course.professores || []}
               coordenacao={course.coordenacao}
             />
           )}
 
-          {/* Depoimentos */}
-          {course.testimonials && course.testimonials.length > 0 && (
-            <section className={styles.section}>
-              <SectionTitle>Depoimentos de Alunos</SectionTitle>
-              <DepoimentosBasicoLista
-                depoimentos={course.testimonials.map((t: Testimonial) => ({
-                  quote: t.text || t.quote,
-                  author: t.author,
-                  role: t.role
-                }))}
-              />
-            </section>
-          )}
-
-          <ContatosSecretaria />
+          <section className={styles.section}>
+            <SectionTitle>Garanta seu acesso</SectionTitle>
+            <div className="flex flex-col gap-4 text-[#42526b]">
+              <p>
+                Tenha 12 meses de acesso às gravações dos congressos para estudar quando quiser e rever as aulas quantas vezes precisar.
+              </p>
+              <p>
+                O conteúdo é ministrado por psicoterapeutas especialistas e analistas junguianos experientes, oferecendo uma jornada completa de aprofundamento.
+              </p>
+            </div>
+          </section>
         </main>
 
-        {/* Sidebar com Card Flutuante */}
         <aside className={styles.floatingSidebar}>
           <div className={styles.stickyCard}>
-            <CourseInvestmentCard course={course} />
+            <CourseInvestmentCardCongressos course={course} />
           </div>
         </aside>
       </div>

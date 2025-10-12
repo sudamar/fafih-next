@@ -27,9 +27,9 @@ const navItems: NavItem[] = [
   },
   {
     label: 'Institucional',
-    href: '#conheca-fafih',
+    href: '/conheca-a-fafih',
     children: [
-      { label: 'Conheça a FAFIH', href: 'conheca-fafih.html' },
+      { label: 'Conheça a FAFIH', href: '/conheca-a-fafih' },
       { label: 'Focos Acadêmicos', href: '#focos' },
       { label: 'Corpo Docente', href: '/corpo-docente' },
       { label: 'Calendário Acadêmico', href: 'calendario-academico.html' },

@@ -13,21 +13,12 @@ interface Course {
   startDate?: string;
   duration?: string;
   workload?: string;
-  category?: string;
   ctaLabel?: string;
   observacoes?: string[] | string;
   moreInfoUrl?: string;
-  formato_curso?: {
-    frequencia?: string;
-    horario?: string;
-    periodo?: string;
-    tipo?: string;
-    plataforma?: string;
-    numero_encontros?: number;
-  };
 }
 
-interface CourseInvestmentCardProps {
+interface CourseInvestmentCardCongressosProps {
   course: Course;
 }
 
@@ -45,9 +36,8 @@ const normalizeString = (value?: string | null): string | null => {
   return trimmed.length > 0 ? trimmed : null;
 };
 
-export default function CourseInvestmentCard({ course }: CourseInvestmentCardProps) {
+export default function CourseInvestmentCardCongressos({ course }: CourseInvestmentCardCongressosProps) {
   const router = useRouter();
-  const isExtensionCourse = course.category === 'extensao';
   const priceValue = typeof course.price === 'number' ? course.price : null;
   const hasPrice = priceValue !== null && priceValue > 0;
   const price = hasPrice ? formatCurrency(priceValue) : null;
@@ -55,59 +45,24 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
     ? formatCurrency(course.originalPrice)
     : null;
   const monthlyPriceInfo = hasPrice ? course.monthlyPrice : null;
-  const showContactTag = isExtensionCourse && !hasPrice;
-  const primaryCtaLabel = normalizeString(course.ctaLabel) || 'Inscrever-se Agora';
   const moreInfoHref = normalizeString(course.moreInfoUrl) || 'https://ijep.com.br/inscricao/aluno';
-  const observationText = isExtensionCourse
-    ? (() => {
-        const rawObservations = course.observacoes;
-        if (Array.isArray(rawObservations)) {
-          for (const item of rawObservations) {
-            const normalized = normalizeString(item);
-            if (normalized) {
-              return normalized;
-            }
-          }
-          return null;
-        }
+  const primaryCtaLabel = normalizeString(course.ctaLabel) || 'Adquira Agora';
 
-        const single = normalizeString(rawObservations);
-        return single ? single : null;
-      })()
-    : null;
-  const extensionFormat = isExtensionCourse
-    ? normalizeString((() => {
-        const parts: string[] = [];
-        const formatInfo = course.formato_curso;
-        const frequencia = normalizeString(formatInfo?.frequencia);
-        if (frequencia) {
-          parts.push(frequencia);
+  const observationText = (() => {
+    const rawObservacoes = course.observacoes;
+    if (Array.isArray(rawObservacoes)) {
+      for (const item of rawObservacoes) {
+        const normalized = normalizeString(item);
+        if (normalized) {
+          return normalized;
         }
+      }
+      return null;
+    }
 
-        const horario = normalizeString(formatInfo?.horario);
-        if (horario) {
-          const horarioWithPrefix = horario.toLowerCase().startsWith('de ')
-            ? horario
-            : `de ${horario}`;
-          parts.push(horarioWithPrefix);
-        }
-
-        const periodo = normalizeString(formatInfo?.periodo);
-        if (periodo) {
-          parts.push(periodo);
-        }
-
-        const durationFallback = normalizeString(course.duration);
-        if (parts.length === 0 && durationFallback) {
-          parts.push(durationFallback);
-        }
-
-        return parts.join(', ');
-      })())
-    : null;
-  const rawDuration = normalizeString(course.duration);
-  const durationLabel = isExtensionCourse ? 'Formato' : 'Duração';
-  const durationValue = isExtensionCourse ? extensionFormat : rawDuration;
+    const single = normalizeString(rawObservacoes);
+    return single ? single : null;
+  })();
 
   const handleBack = () => {
     if (typeof window !== 'undefined' && window.history.length > 1) {
@@ -120,7 +75,6 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
 
   return (
     <div className={styles.card}>
-      {/* Preço Principal */}
       {price && (
         <div className={styles.priceBox}>
           <div className={styles.priceLabel}>Investimento</div>
@@ -130,14 +84,21 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
           )}
         </div>
       )}
-      {showContactTag && (
+
+      {!hasPrice && (
         <div className={styles.priceBox}>
           <div className={styles.priceLabel}>Investimento</div>
-          <div className={styles.statusTag}>Não disponível</div>
+          <a
+            href={moreInfoHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.specialOfferBadge}
+          >
+            <img src="/assets/images/oferta-especial.svg" alt="Oferta especial" />
+          </a>
         </div>
       )}
 
-      {/* Lista de detalhes */}
       <ul className={styles.list}>
         {course.startDate && (
           <li>
@@ -155,11 +116,11 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
             </div>
           </li>
         )}
-        {durationValue && (
+        {course.duration && (
           <li>
-            <span className={styles.listIcon}>📅</span>
+            <span className={styles.listIcon}>⏱️</span>
             <div className={styles.listContent}>
-              <strong>{durationLabel}:</strong> {durationValue}
+              <strong>Duração:</strong> {course.duration}
             </div>
           </li>
         )}
@@ -181,7 +142,7 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
         )}
         {course.workload && (
           <li>
-            <span className={styles.listIcon}>⏱️</span>
+            <span className={styles.listIcon}>📘</span>
             <div className={styles.listContent}>
               <strong>Carga Horária:</strong> {course.workload}
             </div>
@@ -189,7 +150,6 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
         )}
       </ul>
 
-      {/* CTAs */}
       <div className={styles.actions}>
         <button type="button" className={styles.backButton} onClick={handleBack}>
           Voltar
