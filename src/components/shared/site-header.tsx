@@ -30,7 +30,7 @@ const navItems: NavItem[] = [
     href: '/conheca-a-fafih',
     children: [
       { label: 'Conheça a FAFIH', href: '/conheca-a-fafih' },
-      { label: 'Focos Acadêmicos', href: '#focos' },
+      { label: 'Focos Acadêmicos', href: '/#focos' },
       { label: 'Corpo Docente', href: '/corpo-docente' },
       { label: 'Calendário Acadêmico', href: 'calendario-academico.html' },
       { label: 'Biblioteca', href: 'https://ijep.com.br/biblioteca-ijep', external: true },
