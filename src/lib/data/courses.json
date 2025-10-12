@@ -1574,71 +1574,9 @@
   },
   {
     "id": 7,
-    "slug": "formacao-de-membros-analistas-junguianos",
-    "title": "Formação de Membros Analistas Junguianos",
-    "subtitle": "Filiação e Formação de Analistas do IJEP",
-    "description": "Formação completa para analistas junguianos com certificação oficial.",
-    "fullDescription": [
-      "Programa completo de formação para analistas junguianos, incluindo análise pessoal, supervisão clínica e seminários teóricos, com certificação oficial do IJEP."
-    ],
-    "image": "https://i.imgur.com/analyst.png",
-    "hero": {
-      "type": "video",
-      "source": "/assets/videos/video-curso-7.mp4",
-      "alt": "Apresentação da Formação de Analistas Junguianos",
-      "fallbackImage": "https://i.imgur.com/analyst.png"
-    },
-    "category": "formacao",
-    "categoryLabel": "Formação",
-    "price": 15000.0,
-    "originalPrice": 20000.0,
-    "precoMatricula": 1000.0,
-    "modalidade": "Presencial",
-    "duration": "5 anos",
-    "workload": "500h",
-    "startDate": "Março 2025",
-    "maxStudents": "Máx. 8 candidatos",
-    "certificate": "Certificação como Analista Junguiano",
-    "monthlyPrice": "60x de R$ 250,00",
-    "highlights": [
-      {
-        "icon": "fas fa-graduation-cap",
-        "title": "Formação Completa",
-        "description": "Programa integral de 5 anos para analistas",
-        "bgColor": "bg-blue-50",
-        "iconColor": "bg-blue-500"
-      },
-      {
-        "icon": "fas fa-user-md",
-        "title": "Supervisão Clínica",
-        "description": "Acompanhamento individual especializado",
-        "bgColor": "bg-green-50",
-        "iconColor": "bg-green-500"
-      },
-      {
-        "icon": "fas fa-certificate",
-        "title": "Certificação Oficial",
-        "description": "Reconhecimento como Analista Junguiano",
-        "bgColor": "bg-gold-50",
-        "iconColor": "bg-gold-500"
-      }
-    ],
-    "contact": {
-      "phone": "(11) 3333-4444",
-      "whatsapp": "(11) 99999-8888",
-      "email": "formacao @fafih.edu.br"
-    },
-    "breadcrumb": [
-      "Início",
-      "Formação",
-      "Analistas Junguianos"
-    ]
-  },
-  {
-    "id": 8,
-    "slug": "formacao-analistas-junguianos",
-    "title": "Formação de Membros Analistas Junguianos do IJEP",
-    "subtitle": "Filiação e Formação de Analistas",
+    "slug": "filiacao-e-formacao-de-analistas",
+    "title": "Filiação e Formação de Analistas",
+    "subtitle": "Formação de Membros Analistas Junguianos do IJEP",
     "description": "O IJEP - Instituto Junguiano de Ensino e Pesquisa, tendo como visão a integração das dimensões do bom, do belo e do verdadeiro, presentes nas ciências das religiões, nas artes e nas ciências médicas e da saúde, disseminador da importância da filosofia na vida das pessoas e da base da obra de Jung, criou a FORMAÇÃO DE MEMBROS ANALISTAS JUNGUIANOS, visando, à luz psicologia analítica de Carl Gustav Jung, propiciar aos Profissionais em Formação os fundamentos teóricos e a prática do exercício profissional. Obviamente que, pela perspectiva junguiana, jamais poderemos integrar o bom, o belo e o verdadeiro, sem o reconhecimento das suas antinomias, na forma do mal, do feio e do falso ou mentiroso, porque sem a descida aos infernos para que a sombra seja encarada, jamais poderemos compreender a totalidade.",
     "fullDescription": [
       "O IJEP - Instituto Junguiano de Ensino e Pesquisa, tendo como visão a integração das dimensões do bom, do belo e do verdadeiro, presentes nas ciências das religiões, nas artes e nas ciências médicas e da saúde, disseminador da importância da filosofia na vida das pessoas e da base da obra de Jung, criou a FORMAÇÃO DE MEMBROS ANALISTAS JUNGUIANOS, visando, à luz psicologia analítica de Carl Gustav Jung, propiciar aos Profissionais em Formação os fundamentos teóricos e a prática do exercício profissional.",
@@ -1651,8 +1589,8 @@
       "alt": "Apresentação da Formação de Membros Analistas Junguianos do IJEP",
       "fallbackImage": "https://i.imgur.com/lXkjLLG.png"
     },
-    "category": "formacao",
-    "categoryLabel": "Formação",
+    "category": "extensao",
+    "categoryLabel": "Curso de Extensão",
     "price": 0.0,
     "originalPrice": 0.0,
     "precoMatricula": 250.0,
@@ -1880,5 +1818,218 @@
       "coordenador": "",
       "descricao": ""
     }
+  },
+  {
+    "id": 8,
+    "slug": "congressos-junguianos-do-ijep",
+    "title": "Congressos Junguianos do IJEP",
+    "subtitle": "9 Congressos Online com Acesso de 12 Meses",
+    "description": "Acesso completo a 9 congressos junguianos diferentes, cobrindo diversos temas da psicologia analítica, com 30 horas de conteúdo cada, 100% online.",
+    "fullDescription": [
+      "Os Congressos Junguianos do IJEP oferecem uma oportunidade única de aprofundamento em temas variados da psicologia junguiana através de 9 congressos diferentes, cada um com 30 horas de conteúdo.",
+      "Com acesso de 12 meses às gravações, você pode estudar no seu próprio ritmo, com professores especialistas e analistas junguianos experientes.",
+      "Os congressos cobrem temas como fundamentos da psicologia junguiana, sintomas e sincronicidade, depressão e compulsões contemporâneas, psicossomática, arteterapia, sonhos, mitos, cosmovisão, complexos culturais, ética, espiritualidade e política na psicologia junguiana."
+    ],
+    "image": "https://i.imgur.com/congress.png",
+    "hero": {
+      "type": "image",
+      "source": "https://i.imgur.com/congress.png",
+      "alt": "Congressos Junguianos do IJEP",
+      "fallbackImage": "https://i.imgur.com/congress.png"
+    },
+    "category": "extensao",
+    "categoryLabel": "Curso de Extensão",
+    "price": 0.0,
+    "originalPrice": 0.0,
+    "precoMatricula": 0.0,
+    "modalidade": "Online",
+    "duration": "12 meses de acesso",
+    "workload": "270h (9 congressos x 30h cada)",
+    "startDate": "Acesso imediato",
+    "maxStudents": "Ilimitado",
+    "certificate": "Certificado de participação por congresso",
+    "monthlyPrice": "Não disponível",
+    "justificativa": [
+      "Os Congressos Junguianos do IJEP foram criados para democratizar o acesso ao conhecimento profundo da psicologia analítica de Carl Gustav Jung.",
+      "Com formato 100% online e acesso estendido de 12 meses, os congressos permitem que profissionais e interessados de todo o Brasil possam aprofundar seus estudos sem limitações geográficas.",
+      "Cada congresso aborda temas específicos e relevantes para a prática clínica contemporânea, ministrados por analistas junguianos didatas e especialistas reconhecidos."
+    ],
+    "objetivos": [
+      "Proporcionar acesso amplo e democrático ao conhecimento da psicologia junguiana.",
+      "Aprofundar a compreensão de temas específicos da teoria e prática junguiana.",
+      "Oferecer formação continuada para psicoterapeutas e profissionais da saúde mental.",
+      "Promover o diálogo entre psicologia junguiana, mitologia, artes, ciências e espiritualidade."
+    ],
+    "publico": [
+      "Psicoterapeutas e profissionais da saúde mental interessados em psicologia junguiana.",
+      "Estudantes de psicologia analítica que desejam aprofundar seus conhecimentos.",
+      "Profissionais de áreas afins interessados em mitologia e fundamentos junguianos.",
+      "Público em geral com interesse em autoconhecimento e desenvolvimento pessoal."
+    ],
+    "highlights": [
+      {
+        "icon": "fas fa-video",
+        "title": "100% Online",
+        "description": "Estude de qualquer lugar com acesso às gravações",
+        "bgColor": "bg-blue-50",
+        "iconColor": "bg-blue-500"
+      },
+      {
+        "icon": "fas fa-clock",
+        "title": "12 Meses de Acesso",
+        "description": "Tempo ilimitado para assistir e rever o conteúdo",
+        "bgColor": "bg-green-50",
+        "iconColor": "bg-green-500"
+      },
+      {
+        "icon": "fas fa-book-open",
+        "title": "9 Congressos Diferentes",
+        "description": "270 horas de conteúdo sobre temas variados",
+        "bgColor": "bg-purple-50",
+        "iconColor": "bg-purple-500"
+      }
+    ],
+    "curriculum": [
+      {
+        "number": 1,
+        "title": "Fundamentos da Psicologia Junguiana",
+        "hours": 30,
+        "ementa": "Congresso abordando os conceitos fundamentais da psicologia analítica de Carl Gustav Jung.",
+        "objetivos": "Apresentar e aprofundar os fundamentos teóricos da psicologia junguiana.",
+        "bibliography": []
+      },
+      {
+        "number": 2,
+        "title": "Sintomas, Mandalas, Mitos e Sincronicidade",
+        "hours": 30,
+        "ementa": "Exploração dos conceitos de sintoma, mandala, mito e sincronicidade na teoria junguiana.",
+        "objetivos": "Compreender as manifestações simbólicas e sincronísticas na prática clínica.",
+        "bibliography": []
+      },
+      {
+        "number": 3,
+        "title": "Jung: Depressão e Compulsões na Contemporaneidade",
+        "hours": 30,
+        "ementa": "Análise dos fenômenos de depressão e compulsões sob a ótica junguiana aplicada aos tempos atuais.",
+        "objetivos": "Aplicar conceitos junguianos na compreensão e tratamento de sintomas contemporâneos.",
+        "bibliography": []
+      },
+      {
+        "number": 4,
+        "title": "Psicossomática, Arteterapia e Sonhos",
+        "hours": 30,
+        "ementa": "Integração entre psicossomática, arteterapia e análise de sonhos na abordagem junguiana.",
+        "objetivos": "Desenvolver competências para trabalhar com expressões corporais, artísticas e oníricas.",
+        "bibliography": []
+      },
+      {
+        "number": 5,
+        "title": "Mitos e Seus Reflexos na Humanidade e Clínica Junguiana",
+        "hours": 30,
+        "ementa": "Estudo dos mitos e suas manifestações na vida humana e na prática clínica junguiana.",
+        "objetivos": "Compreender o papel dos mitos no processo terapêutico e na cultura.",
+        "bibliography": []
+      },
+      {
+        "number": 6,
+        "title": "Cosmovisão na Teoria e Práticas Junguianas",
+        "hours": 30,
+        "ementa": "Exploração da cosmovisão junguiana e suas implicações teóricas e práticas.",
+        "objetivos": "Integrar a perspectiva junguiana sobre o mundo e o ser humano.",
+        "bibliography": []
+      },
+      {
+        "number": 7,
+        "title": "Complexos Culturais e Sombra Contemporânea nas Artes, Ciências e Religiões",
+        "hours": 30,
+        "ementa": "Análise dos complexos culturais e da sombra coletiva nas manifestações artísticas, científicas e religiosas.",
+        "objetivos": "Identificar e trabalhar com aspectos sombrios da cultura contemporânea.",
+        "bibliography": []
+      },
+      {
+        "number": 8,
+        "title": "Ética, Espiritualidade e Política na Psicologia Junguiana",
+        "hours": 30,
+        "ementa": "Discussão sobre dimensões éticas, espirituais e políticas na teoria e prática junguiana. Coordenado por analistas junguianos como Simone Magaldi e Waldemar Magaldi, com 29 palestras sobre posicionamento político, ética, espiritualidade e dinâmicas sociais.",
+        "objetivos": "Refletir sobre as implicações éticas, espirituais e políticas da psicologia analítica.",
+        "bibliography": []
+      },
+      {
+        "number": 9,
+        "title": "Arteterapia e Expressões Criativas na Psicologia Analítica Junguiana",
+        "hours": 30,
+        "ementa": "Aprofundamento nas técnicas e fundamentos da arteterapia sob a perspectiva junguiana.",
+        "objetivos": "Capacitar para o uso terapêutico das expressões criativas na abordagem junguiana.",
+        "bibliography": []
+      }
+    ],
+    "avaliacao": [
+      "Não disponível"
+    ],
+    "cargahoraria": {
+      "texto": [
+        "O acesso aos Congressos Junguianos do IJEP oferece 270 horas totais de conteúdo, distribuídas em 9 congressos de 30 horas cada.",
+        "Com 12 meses de acesso ilimitado às gravações, você pode estudar no seu próprio ritmo e rever o conteúdo quantas vezes desejar.",
+        "Cada congresso é ministrado por psicoterapeutas especialistas e analistas junguianos experientes, proporcionando uma abordagem educacional abrangente."
+      ],
+      "atividades": [
+        {
+          "descricao": "Congresso 1 - Fundamentos da Psicologia Junguiana",
+          "carga": 30
+        },
+        {
+          "descricao": "Congresso 2 - Sintomas, Mandalas, Mitos e Sincronicidade",
+          "carga": 30
+        },
+        {
+          "descricao": "Congresso 3 - Jung: Depressão e Compulsões",
+          "carga": 30
+        },
+        {
+          "descricao": "Congresso 4 - Psicossomática, Arteterapia e Sonhos",
+          "carga": 30
+        },
+        {
+          "descricao": "Congresso 5 - Mitos e Seus Reflexos",
+          "carga": 30
+        },
+        {
+          "descricao": "Congresso 6 - Cosmovisão Junguiana",
+          "carga": 30
+        },
+        {
+          "descricao": "Congresso 7 - Complexos Culturais e Sombra",
+          "carga": 30
+        },
+        {
+          "descricao": "Congresso 8 - Ética, Espiritualidade e Política",
+          "carga": 30
+        },
+        {
+          "descricao": "Congresso 9 - Arteterapia e Expressões Criativas",
+          "carga": 30
+        },
+        {
+          "descricao": "Total",
+          "carga": 270
+        }
+      ],
+      "observacao": "Acesso de 12 meses para assistir e rever todo o conteúdo no seu ritmo."
+    },
+    "contact": {
+      "phone": "(11) 5535-4695",
+      "whatsapp": "",
+      "email": "contato@fafih.edu.br"
+    },
+    "breadcrumb": [
+      "Início",
+      "Cursos de Extensão",
+      "Congressos Junguianos do IJEP"
+    ],
+    "coordenacao": {
+      "coordenador": "Simone Magaldi e Waldemar Magaldi Filho",
+      "descricao": "Analistas junguianos didatas e especialistas com ampla experiência em psicologia analítica."
+    },
+    "professores": []
   }
 ]

@@ -9,15 +9,20 @@ type CursoCardProps = { curso: Course };
 
 
 const CursoCard = ({ curso }: CursoCardProps) => {
+  // Define a rota baseada na categoria do curso
+  const courseRoute = curso.category === 'extensao'
+    ? `/cursos/cursos-extensao/${curso.slug ?? String(curso.id)}`
+    : `/cursos/${curso.slug ?? String(curso.id)}`;
+
   return (
-    <div 
+    <div
       className="bg-white rounded-[15px] overflow-hidden flex flex-col transition-transform duration-300 hover:shadow-lg hover:-translate-y-2 max-w-[280px] mx-auto h-full"
       style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
     >
       <div className="curso-card-img">
-        <Image 
-          src={curso.image || '/assets/images/course-placeholder.jpg'} 
-          alt={curso.title} 
+        <Image
+          src={curso.image || '/assets/images/course-placeholder.jpg'}
+          alt={curso.title}
           className="w-full h-auto block"
           width={280}
           height={160}
@@ -38,8 +43,8 @@ const CursoCard = ({ curso }: CursoCardProps) => {
           {curso.description}
         </p>
         <div className="curso-card-actions">
-          <Link 
-            href={`/cursos/${curso.slug ?? String(curso.id)}` as Route}
+          <Link
+            href={courseRoute as Route}
             className="block w-full py-[0.8rem] rounded-[8px] font-bold text-[0.9rem] text-white text-center no-underline bg-gradient-to-r from-[#6A0DAD] to-[#2C678F] transition-all duration-300 hover:brightness-110 hover:scale-[1.02]"
           >
             Saiba Mais

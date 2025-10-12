@@ -47,7 +47,7 @@ const navItems: NavItem[] = [
       { label: 'Todos', href: '/cursos' },
       { label: 'Graduação', href: '/cursos?filter=graduacao' },
       { label: 'Pós-Graduação', href: '/cursos?filter=especializacao' },
-      { label: 'Curta e Média Duração', href: '/cursos?filter=extensao' },
+      { label: 'Extensão', href: '/cursos?filter=extensao' },
       { label: 'Eventos', href: '/cursos?filter=eventos' },
       { label: 'Formas de Ingresso', href: 'formas-de-ingresso.html' },
       { label: 'Regulamentos', href: 'regulamentos.html' },
