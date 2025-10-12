@@ -10,6 +10,15 @@ interface Course {
   startDate?: string;
   duration?: string;
   workload?: string;
+  category?: string;
+  formato_curso?: {
+    frequencia?: string;
+    horario?: string;
+    periodo?: string;
+    tipo?: string;
+    plataforma?: string;
+    numero_encontros?: number;
+  };
 }
 
 interface CourseInvestmentCardProps {
@@ -21,9 +30,54 @@ const formatCurrency = (value: number | null | undefined): string | null => {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 };
 
+const normalizeString = (value?: string | null): string | null => {
+  if (typeof value !== 'string') {
+    return null;
+  }
+
+  const trimmed = value.trim();
+  return trimmed.length > 0 ? trimmed : null;
+};
+
 export default function CourseInvestmentCard({ course }: CourseInvestmentCardProps) {
   const price = formatCurrency(course.price);
   const originalPrice = formatCurrency(course.originalPrice);
+  const isExtensionCourse = course.category === 'extensao';
+  const extensionFormat = isExtensionCourse
+    ? normalizeString((() => {
+        const parts: string[] = [];
+        const formatInfo = course.formato_curso;
+        console.log("Formato INFO", formatInfo);
+
+        const frequencia = normalizeString(formatInfo?.frequencia);
+        if (frequencia) {
+          parts.push(frequencia);
+        }
+
+        const horario = normalizeString(formatInfo?.horario);
+        if (horario) {
+          const horarioWithPrefix = horario.toLowerCase().startsWith('de ')
+            ? horario
+            : `de ${horario}`;
+          parts.push(horarioWithPrefix);
+        }
+
+        const periodo = normalizeString(formatInfo?.periodo);
+        if (periodo) {
+          parts.push(periodo);
+        }
+
+        const durationFallback = normalizeString(course.duration);
+        if (parts.length === 0 && durationFallback) {
+          parts.push(durationFallback);
+        }
+
+        return parts.join(', ');
+      })())
+    : null;
+  const rawDuration = normalizeString(course.duration);
+  const durationLabel = isExtensionCourse ? 'Formato' : 'Duração';
+  const durationValue = isExtensionCourse ? extensionFormat : rawDuration;
 
   return (
     <div className={styles.card}>
@@ -38,25 +92,8 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
         </div>
       )}
 
-      {/* Informações */}
-      {/* <div className={styles.info}>
-        <div className={styles.infoRow}>
-          <span className={styles.label}>{course.categoryLabel}</span>
-          <span className={styles.divider}>•</span>
-          <span className={styles.label}>{course.modalidade}</span>
-        </div>
-      </div> */}
-
       {/* Lista de detalhes */}
       <ul className={styles.list}>
-        {course.startDate && (
-          <li>
-            <span className={styles.listIcon}>📅</span>
-            <div className={styles.listContent}>
-              <strong>Início:</strong> {course.startDate}
-            </div>
-          </li>
-        )}
         {originalPrice && (
           <li>
             <span className={styles.listIcon}>💰</span>
@@ -65,11 +102,19 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
             </div>
           </li>
         )}
-        {course.duration && (
+        {course.startDate && (
           <li>
             <span className={styles.listIcon}>📅</span>
             <div className={styles.listContent}>
-              <strong>Duração:</strong> {course.duration}
+              <strong>Início:</strong> {course.startDate}
+            </div>
+          </li>
+        )}
+        {durationValue && (
+          <li>
+            <span className={styles.listIcon}>📅</span>
+            <div className={styles.listContent}>
+              <strong>{durationLabel}:</strong> {durationValue}
             </div>
           </li>
         )}

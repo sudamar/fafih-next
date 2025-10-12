@@ -1407,13 +1407,6 @@
     ],
     "highlights": [
       {
-        "icon": "fas fa-book-open",
-        "title": "Obras Seminais de Jung",
-        "description": "Estudo aprofundado de Aion e Resposta a Jó",
-        "bgColor": "bg-indigo-50",
-        "iconColor": "bg-indigo-500"
-      },
-      {
         "icon": "fas fa-video",
         "title": "Formato Online",
         "description": "8 encontros via Zoom, quintas-feiras 17h-19h",
@@ -1557,8 +1550,7 @@
       "plataforma": "Zoom",
       "frequencia": "Todas as quintas-feiras",
       "horario": "17h às 19h",
-      "numero_encontros": 8,
-      "periodo": "9 de outubro a 27 de novembro"
+      "numero_encontros": 8
     },
     "investimento_detalhado": {
       "valor_total": 700.0,

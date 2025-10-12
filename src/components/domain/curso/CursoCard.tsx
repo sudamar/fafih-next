@@ -9,10 +9,7 @@ type CursoCardProps = { curso: Course };
 
 
 const CursoCard = ({ curso }: CursoCardProps) => {
-  // Define a rota baseada na categoria do curso
-  const courseRoute = curso.category === 'extensao'
-    ? `/cursos/cursos-extensao/${curso.slug ?? String(curso.id)}`
-    : `/cursos/${curso.slug ?? String(curso.id)}`;
+  const courseRoute = `/cursos/${curso.slug ?? String(curso.id)}`;
 
   return (
     <div
