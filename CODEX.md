@@ -122,6 +122,7 @@ src/
 ### Documentação Complementar
 - Guia de deploy: `TODO`
 - Padrões de conteúdo editorial: `TODO`
+- Design Language System: consulte `docs/DLS.md`
 
 ### Instruções personalizadas pelo responsável.
 - Eu me chamo SUDAMAR e sou o responsável pela aplicação.
