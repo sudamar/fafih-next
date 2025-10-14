@@ -267,7 +267,7 @@ export const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Membros Analistas', href: 'membros-analistas.html' },
       { label: 'Núcleo de Apoio e Desenvolvimento Docente', href: 'nucleo-apoio-docente.html' },
       { label: 'Portal do Docente', href: 'portal-do-docente.html' },
-      { label: 'Serviços para a Comunidade', href: 'servicos-comunidade.html' },
+      { label: 'Serviços para a Comunidade', href: '/servicos-comunidade' },
     ],
   },
 ]
