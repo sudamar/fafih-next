@@ -183,12 +183,12 @@ export function SiteHeader() {
 
         <div className="hidden flex-none items-center justify-end gap-4 lg:flex">
           <a
-            href="https://ijep.com.br/inscricao/aluno"
+            href="/cursos"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-footer-blue px-6 py-2 text-[0.81rem] font-semibold text-white transition hover:bg-blue-600"
           >
-            Inscreva-se
+            Nossos cursos
           </a>
         </div>
 

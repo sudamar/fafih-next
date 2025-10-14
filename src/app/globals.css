@@ -181,6 +181,26 @@
     border-bottom: 4px solid transparent;
     border-image: linear-gradient(90deg, #6A0DAD, #0000FF, #008000, #FFFF00, #FFA500, #FF0000) 1;
   }
+
+  .author-card {
+    @apply bg-white p-8 rounded-[18px] shadow-[0_8px_20px_rgba(15,32,68,0.08)];
+  }
+
+  .author-card-content {
+    @apply flex gap-5 items-start;
+  }
+
+  .author-card-photo {
+    @apply w-20 h-20 rounded-full overflow-hidden flex-shrink-0 relative;
+  }
+
+  .author-card-name {
+    @apply m-0 mb-2 text-lg font-bold text-[#152c61];
+  }
+
+  .author-card-description {
+    @apply m-0 text-[#42526b] leading-relaxed;
+  }
 }
 
 @layer utilities {
