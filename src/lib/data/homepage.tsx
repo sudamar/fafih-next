@@ -235,7 +235,7 @@ export const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Iniciação Científica', href: 'iniciacao-cientifica.html' },
       { label: 'Extensão', href: 'extensao.html' },
       { label: 'Notícias', href: '/#noticias' },
-      { label: 'Comissão Própria de Avaliação', href: 'cpa.html' },
+      { label: 'Comissão Própria de Avaliação', href: '/cpa' },
       { label: 'Calendário Acadêmico', href: 'calendario-academico.html' },
       { label: 'Biblioteca', href: 'https://ijep.com.br/biblioteca-ijep', external: true },
       { label: 'Consultar Diploma', href: 'consultar-diploma.html' },
