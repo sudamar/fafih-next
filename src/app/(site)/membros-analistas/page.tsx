@@ -92,15 +92,22 @@ const modalidadesDisponiveis: Modalidade[] = ['Online', 'Presencial']
 
 export default function MembrosAnalistasPage() {
   const [filtroTipo, setFiltroTipo] = useState<'Todos' | Tipo>('Todos')
-  const [filtroModalidade, setFiltroModalidade] = useState<'Todas' | Modalidade>('Todas')
 
   const membrosFiltrados = useMemo(() => {
     return membros.filter((membro) => {
       const matchTipo = filtroTipo === 'Todos' || membro.tipo === filtroTipo
-      const matchModalidade = filtroModalidade === 'Todas' || membro.modalidade === filtroModalidade
-      return matchTipo && matchModalidade
+      return matchTipo
     })
-  }, [filtroTipo, filtroModalidade])
+  }, [filtroTipo])
+
+  const categorias = [
+    { id: 'Todos', label: 'Todos', count: membros.length },
+    ...tiposDisponiveis.map(tipo => ({
+      id: tipo,
+      label: tipo,
+      count: membros.filter(m => m.tipo === tipo).length
+    }))
+  ]
 
   return (
     <main className="bg-background">
@@ -108,44 +115,30 @@ export default function MembrosAnalistasPage() {
         <div className="mx-auto max-w-4xl text-center">
           <PageTitle>Membros Analistas</PageTitle>
           <p className="mt-6 text-lg leading-relaxed text-neutral-600">
-            Conheça os profissionais vinculados ao IJEP disponíveis para psicoterapia, orientação profissional e
-            supervisão clínica. Utilize os filtros para localizar o membro ideal.
+            Conheça o corpo de analistas do IJEP, profissionais qualificados, 
+            especialistas pós-graduados pela FAFIH, dedicados à prática clínica e 
+            ao contínuo aprofundamento de sua formação em psicologia analítica e suas vertentes.
           </p>
         </div>
 
-        <div className="mx-auto mt-12 flex max-w-4xl flex-wrap gap-3 rounded-3xl bg-white px-6 py-6 shadow-lg shadow-neutral-900/5">
-          <div className="flex min-w-[220px] flex-1 flex-col gap-1">
-            <label className="text-xs font-semibold uppercase tracking-[0.08em] text-neutral-500">Categoria</label>
-            <select
-              value={filtroTipo}
-              onChange={(event) => setFiltroTipo(event.target.value as typeof filtroTipo)}
-              className="rounded-xl border border-primary/20 bg-white px-4 py-2 text-sm text-neutral-700 focus:border-primary focus:outline-none"
+        {/* <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10 mt-10">
+          {categorias.map(categoria => (
+            <button
+              key={categoria.id}
+              className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm rounded-full transition-colors ${
+                filtroTipo === categoria.id
+                  ? 'bg-secondary text-white'
+                  : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+              }`}
+              onClick={() => setFiltroTipo(categoria.id as typeof filtroTipo)}
             >
-              <option value="Todos">Todos</option>
-              {tiposDisponiveis.map((tipo) => (
-                <option key={tipo} value={tipo}>
-                  {tipo}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="flex min-w-[220px] flex-1 flex-col gap-1">
-            <label className="text-xs font-semibold uppercase tracking-[0.08em] text-neutral-500">Modalidade</label>
-            <select
-              value={filtroModalidade}
-              onChange={(event) => setFiltroModalidade(event.target.value as typeof filtroModalidade)}
-              className="rounded-xl border border-primary/20 bg-white px-4 py-2 text-sm text-neutral-700 focus:border-primary focus:outline-none"
-            >
-              <option value="Todas">Todas</option>
-              {modalidadesDisponiveis.map((modalidade) => (
-                <option key={modalidade} value={modalidade}>
-                  {modalidade}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
+              {categoria.label}
+              <span className="ml-1.5 sm:ml-2 bg-gray-100 text-gray-700 rounded-full px-1.5 sm:px-2 text-xs">
+                {categoria.count}
+              </span>
+            </button>
+          ))}
+        </div> */}
 
         <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
           {membrosFiltrados.map((membro) => (
