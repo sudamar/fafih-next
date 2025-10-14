@@ -88,8 +88,6 @@ const tiposDisponiveis: Tipo[] = [
   'Membro Analista',
 ]
 
-const modalidadesDisponiveis: Modalidade[] = ['Online', 'Presencial']
-
 export default function MembrosAnalistasPage() {
   const [filtroTipo, setFiltroTipo] = useState<'Todos' | Tipo>('Todos')
 
@@ -115,30 +113,11 @@ export default function MembrosAnalistasPage() {
         <div className="mx-auto max-w-4xl text-center">
           <PageTitle>Membros Analistas</PageTitle>
           <p className="mt-6 text-lg leading-relaxed text-neutral-600">
-            Conheça o corpo de analistas do IJEP, profissionais qualificados, 
-            especialistas pós-graduados pela FAFIH, dedicados à prática clínica e 
+            Conheça o corpo de analistas do IJEP, profissionais qualificados,
+            especialistas pós-graduados pela FAFIH, dedicados à prática clínica e
             ao contínuo aprofundamento de sua formação em psicologia analítica e suas vertentes.
           </p>
         </div>
-
-        {/* <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10 mt-10">
-          {categorias.map(categoria => (
-            <button
-              key={categoria.id}
-              className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm rounded-full transition-colors ${
-                filtroTipo === categoria.id
-                  ? 'bg-secondary text-white'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
-              }`}
-              onClick={() => setFiltroTipo(categoria.id as typeof filtroTipo)}
-            >
-              {categoria.label}
-              <span className="ml-1.5 sm:ml-2 bg-gray-100 text-gray-700 rounded-full px-1.5 sm:px-2 text-xs">
-                {categoria.count}
-              </span>
-            </button>
-          ))}
-        </div> */}
 
         <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
           {membrosFiltrados.map((membro) => (
