@@ -35,6 +35,7 @@ const navItems: NavItem[] = [
       { label: 'Calendário Acadêmico', href: 'calendario-academico.html' },
       { label: 'Biblioteca', href: 'https://ijep.com.br/biblioteca-ijep', external: true },
       { label: 'Egressos', href: 'https://ijep.com.br/login-aluno', external: true },
+      { label: 'Membros Analistas', href: '/membros-analistas' },
       { label: 'Serviços para a Comunidade', href: '/servicos-comunidade' },
       { label: 'Notícias', href: '/#noticias' },
       { label: 'Mantenedora', href: 'https://ijep.com.br/', external: true },

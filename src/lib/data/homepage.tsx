@@ -264,7 +264,7 @@ export const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Núcleo de Apoio Psicopedagógico', href: 'apoio-psicopedagogico.html' },
       { label: 'Egresso', href: 'https://ijep.com.br/login-aluno', external: true },
       { label: 'Corpo Docente', href: 'corpo-docente.html' },
-      { label: 'Membros Analistas', href: 'membros-analistas.html' },
+      { label: 'Membros Analistas', href: '/membros-analistas' },
       { label: 'Núcleo de Apoio e Desenvolvimento Docente', href: 'nucleo-apoio-docente.html' },
       { label: 'Portal do Docente', href: 'portal-do-docente.html' },
       { label: 'Serviços para a Comunidade', href: '/servicos-comunidade' },
