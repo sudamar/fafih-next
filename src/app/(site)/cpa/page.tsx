@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { PageTitle } from '@/components/ui/page-title'
 import { SectionTitle } from '@/components/ui/section-title'
+import { FormTitle } from '@/components/ui/form-title'
 
 export default function CPAPage() {
   const [activeTab, setActiveTab] = useState('apresentacao')
@@ -132,14 +133,84 @@ function NoticiasTab() {
 
 // Contato Tab
 function ContatoTab() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      nome: formData.get('nome'),
+      email: formData.get('email'),
+      cpf: formData.get('cpf'),
+      telefone: formData.get('telefone'),
+      mensagem: formData.get('mensagem'),
+      destinatario: 'cpa@fafih.edu.br'
+    }
+
+    try {
+      const response = await fetch('/api/enviar-mensagem', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        ;(e.target as HTMLFormElement).reset()
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Erro ao enviar mensagem:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  if (submitStatus === 'success') {
+    return (
+      <div className="space-y-6 text-center py-12">
+        <div className="mx-auto w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-4">
+          <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <SectionTitle>Mensagem Enviada com Sucesso!</SectionTitle>
+        <p className="leading-relaxed text-gray-700">
+          Sua mensagem foi enviada para a Comissão Própria de Avaliação (CPA).
+          Entraremos em contato em breve.
+        </p>
+        <button
+          onClick={() => setSubmitStatus('idle')}
+          className="bg-primary text-white py-3 px-8 rounded-lg font-bold hover:bg-secondary transition-colors"
+        >
+          Enviar Nova Mensagem
+        </button>
+      </div>
+    )
+  }
+
   return (
     <div className="space-y-6">
-      <SectionTitle>Contato</SectionTitle>
+      <FormTitle>Contato</FormTitle>
       <p className="leading-relaxed text-gray-700 mb-6">
         Utilize o formulário abaixo para enviar suas dúvidas, sugestões ou outras manifestações para a Comissão Própria de Avaliação.
       </p>
 
-      <form className="space-y-4">
+      {submitStatus === 'error' && (
+        <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+          Erro ao enviar mensagem. Por favor, tente novamente.
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="cpa-nome" className="block mb-2 font-bold text-gray-700">
             Nome Completo
@@ -223,9 +294,10 @@ function ContatoTab() {
 
         <button
           type="submit"
-          className="w-full bg-primary text-white py-4 px-6 rounded-lg font-bold text-lg hover:bg-secondary transition-colors mt-6"
+          disabled={isSubmitting}
+          className="w-full bg-primary text-white py-4 px-6 rounded-lg font-bold text-lg hover:bg-secondary transition-colors mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Enviar
+          {isSubmitting ? 'Enviando...' : 'Enviar'}
         </button>
       </form>
     </div>

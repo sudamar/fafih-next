@@ -157,20 +157,6 @@ export function SiteFooter() {
                   )
                 }
 
-                if (item.type === 'link' && item.label.toLowerCase() === 'ouvidoria') {
-                  return (
-                    <li key={item.label}>
-                      <button
-                        type="button"
-                        className="text-left transition hover:text-white/90"
-                        onClick={openOuvidoria}
-                      >
-                        {item.label}
-                      </button>
-                    </li>
-                  )
-                }
-
                 if (item.type === 'link') {
                   return (
                     <li key={item.label}>

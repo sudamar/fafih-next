@@ -1,18 +1,56 @@
 'use client'
 
-import { FormEvent } from 'react'
+import { FormEvent, useState } from 'react'
 import { useOuvidoriaModal } from '@/components/providers/ouvidoria-modal-provider'
 
 export function OuvidoriaModal() {
   const { isOpen, close } = useOuvidoriaModal()
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   if (!isOpen) {
     return null
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    close()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    const formData = new FormData(event.currentTarget)
+    const data = {
+      nome: formData.get('nome'),
+      email: formData.get('email'),
+      telefone: formData.get('telefone'),
+      mensagem: `${formData.get('assunto')}: ${formData.get('mensagem')}`,
+      destinatario: 'ouvidoria@fafih.edu.br'
+    }
+
+    try {
+      const response = await fetch('/api/enviar-mensagem', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        ;(event.target as HTMLFormElement).reset()
+        setTimeout(() => {
+          close()
+          setSubmitStatus('idle')
+        }, 3000)
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Erro ao enviar mensagem:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -36,6 +74,18 @@ export function OuvidoriaModal() {
         </button>
 
         <h2 className="mb-6 font-display text-2xl text-primary">Canal da Ouvidoria</h2>
+
+        {submitStatus === 'success' && (
+          <div className="mb-4 bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg text-center">
+            Mensagem enviada com sucesso! Fechando em instantes...
+          </div>
+        )}
+
+        {submitStatus === 'error' && (
+          <div className="mb-4 bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-center">
+            Erro ao enviar mensagem. Por favor, tente novamente.
+          </div>
+        )}
 
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
@@ -116,9 +166,10 @@ export function OuvidoriaModal() {
 
           <button
             type="submit"
-            className="w-full rounded-lg bg-primary px-6 py-3 text-lg font-semibold text-white shadow-lg transition hover:bg-primary/90"
+            disabled={isSubmitting}
+            className="w-full rounded-lg bg-primary px-6 py-3 text-lg font-semibold text-white shadow-lg transition hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Enviar Manifestação
+            {isSubmitting ? 'Enviando...' : 'Enviar Manifestação'}
           </button>
         </form>
       </div>

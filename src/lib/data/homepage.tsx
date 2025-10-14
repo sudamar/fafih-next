@@ -263,9 +263,9 @@ export const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Portal do Aluno', href: 'https://ijep.com.br/login-aluno', external: true },
       { label: 'Núcleo de Apoio Psicopedagógico', href: 'apoio-psicopedagogico.html' },
       { label: 'Egresso', href: 'https://ijep.com.br/login-aluno', external: true },
-      { label: 'Corpo Docente', href: 'corpo-docente.html' },
+      { label: 'Corpo Docente', href: '/corpo-docente' },
       { label: 'Membros Analistas', href: '/membros-analistas' },
-      { label: 'Núcleo de Apoio e Desenvolvimento Docente', href: 'nucleo-apoio-docente.html' },
+      { label: 'Núcleo de Apoio e Desenvolvimento Docente', href: '/nucleo-apoio-docente' },
       { label: 'Portal do Docente', href: 'portal-do-docente.html' },
       { label: 'Serviços para a Comunidade', href: '/servicos-comunidade' },
     ],
@@ -275,7 +275,7 @@ export const footerLinkGroups: FooterLinkGroup[] = [
 export const footerContact: ContactInfoItem[] = [
   { type: 'email', label: 'contato@fafih.edu.br', href: 'mailto:contato@fafih.edu.br' },
   { type: 'phone', label: '(11) 3456-7890', href: 'tel:+551134567890' },
-  { type: 'link', label: 'Ouvidoria', href: '#' },
+  { type: 'link', label: 'Ouvidoria', href: '/ouvidoria' },
   { type: 'link', label: 'Perguntas Frequentes', href: 'perguntas-frequentes.html' },
 ]
 

@@ -283,9 +283,8 @@ export function SiteHeader() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex w-full items-center justify-center rounded-full bg-footer-blue px-6 py-3 text-[0.81rem] font-semibold text-white"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Inscreva-se
+                onClick={() => setMobileMenuOpen(false)}>
+                 Conheça nossos cursos
               </a>
             </div>
           </nav>
