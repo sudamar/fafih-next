@@ -89,23 +89,14 @@ const tiposDisponiveis: Tipo[] = [
 ]
 
 export default function MembrosAnalistasPage() {
-  const [filtroTipo, setFiltroTipo] = useState<'Todos' | Tipo>('Todos')
+  const [filtroTipo, _setFiltroTipo] = useState<'Todos' | Tipo>('Todos')
 
-  const membrosFiltrados = useMemo(() => {
-    return membros.filter((membro) => {
-      const matchTipo = filtroTipo === 'Todos' || membro.tipo === filtroTipo
-      return matchTipo
-    })
-  }, [filtroTipo])
-
-  const categorias = [
-    { id: 'Todos', label: 'Todos', count: membros.length },
-    ...tiposDisponiveis.map(tipo => ({
-      id: tipo,
-      label: tipo,
-      count: membros.filter(m => m.tipo === tipo).length
-    }))
-  ]
+  // const membrosFiltrados = useMemo(() => {
+  //   return membros.filter((membro) => {
+  //     const matchTipo = filtroTipo === 'Todos' || membro.tipo === filtroTipo
+  //     return matchTipo
+  //   })
+  // }, [filtroTipo])
 
   return (
     <main className="bg-background">
