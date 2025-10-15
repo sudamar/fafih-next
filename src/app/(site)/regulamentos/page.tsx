@@ -113,7 +113,7 @@ export default function RegulamentosPage() {
                     href={item.href}
                     titulo={item.label}
                     descricao={item.detail}
-                    tipo={item.tipo}
+                    tipo={item.tipo as 'pdf' | 'txt' | 'xls' | 'doc' | 'md' | 'zip' | 'img' | 'link'}
                   />
                 ))}
               </div>

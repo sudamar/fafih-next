@@ -8,7 +8,6 @@ import {
   footerLinkGroups,
   footerSocials,
 } from '@/lib/data/homepage'
-import { useOuvidoriaModal } from '@/components/providers/ouvidoria-modal-provider'
 
 const socialIconMap: Record<string, LucideIcon> = {
   linkedin: Linkedin,
@@ -18,7 +17,6 @@ const socialIconMap: Record<string, LucideIcon> = {
 }
 
 export function SiteFooter() {
-  const { open: openOuvidoria } = useOuvidoriaModal()
   const [updatedDate, setUpdatedDate] = useState('')
 
   useEffect(() => {

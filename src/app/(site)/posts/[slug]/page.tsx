@@ -4,6 +4,13 @@ import { notFound } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 import AuthorCard from '@/components/shared/AuthorCard'
 
+interface ContentBlock {
+  type: 'paragraph' | 'quote' | 'faq' | 'author';
+  text?: string;
+  question?: string;
+  answer?: string;
+} 
+
 interface PostPageProps {
   params: {
     slug: string
@@ -44,17 +51,17 @@ export default function PostPage({ params }: PostPageProps) {
 
             {isMarkdown ? (
               <article className="prose prose-lg max-w-none text-justify [&>p]:leading-relaxed [&>p]:text-gray-700 [&>p]:mb-4 [&>blockquote]:italic [&>blockquote]:pl-6 [&>blockquote]:border-l-4 [&>blockquote]:border-primary [&>blockquote]:my-6 [&>hr]:my-8 [&>hr]:border-gray-300 [&>h3]:font-bold [&>h3]:text-gray-800 [&>h3]:mb-4 [&>h3]:mt-8 [&>h3]:pt-8 [&>h3]:border-t [&>h3]:border-gray-300 [&>h3:first-child]:mt-0 [&>h3:first-child]:pt-0 [&>h3:first-child]:border-t-0">
-                <ReactMarkdown>{post.content}</ReactMarkdown>
+                <ReactMarkdown>{post.content as string}</ReactMarkdown>
               </article>
             ) : (
               <article className="prose prose-lg max-w-none">
-                {Array.isArray(post.content) && post.content.map((block: any, index: number) => {
+                {Array.isArray(post.content) && post.content.map((block: ContentBlock, index: number) => {
                 if (block.type === 'paragraph') {
                   return (
                     <p
                       key={index}
                       className="text-justify leading-relaxed text-gray-700 mb-4"
-                      dangerouslySetInnerHTML={{ __html: block.text }}
+                      dangerouslySetInnerHTML={{ __html: block.text ?? '' }}
                     />
                   )
                 }
@@ -64,7 +71,7 @@ export default function PostPage({ params }: PostPageProps) {
                     <p
                       key={index}
                       className="text-justify leading-relaxed text-gray-700 italic pl-6 border-l-4 border-primary my-6"
-                      dangerouslySetInnerHTML={{ __html: block.text }}
+                      dangerouslySetInnerHTML={{ __html: block.text ?? '' }}
                     />
                   )
                 }
@@ -72,8 +79,8 @@ export default function PostPage({ params }: PostPageProps) {
                 if (block.type === 'faq') {
                   return (
                     <div key={index} className="mb-6 bg-gray-50 p-6 rounded-lg">
-                      <p className="font-bold text-gray-800 mb-3" dangerouslySetInnerHTML={{ __html: block.question }} />
-                      <p className="text-justify leading-relaxed text-gray-700" dangerouslySetInnerHTML={{ __html: block.answer }} />
+                      <p className="font-bold text-gray-800 mb-3" dangerouslySetInnerHTML={{ __html: block.question ?? '' }} />
+                      <p className="text-justify leading-relaxed text-gray-700" dangerouslySetInnerHTML={{ __html: block.answer ?? '' }} />
                     </div>
                   )
                 }
@@ -83,7 +90,7 @@ export default function PostPage({ params }: PostPageProps) {
                     <p
                       key={index}
                       className="text-justify leading-relaxed text-gray-700 mt-8 font-semibold"
-                      dangerouslySetInnerHTML={{ __html: block.text }}
+                      dangerouslySetInnerHTML={{ __html: block.text ?? '' }}
                     />
                   )
                 }
@@ -94,13 +101,13 @@ export default function PostPage({ params }: PostPageProps) {
             )}
 
             {/* Card do Autor */}
-            {(post as any).authorInfo && (
+            {post.authorInfo && (
               <div className="mt-12">
                 <AuthorCard
-                  name={(post as any).authorInfo.name}
-                  description={(post as any).authorInfo.description}
-                  photo={(post as any).authorInfo.photo}
-                  email={(post as any).authorInfo.email}
+                  name={post.authorInfo.name}
+                  description={post.authorInfo.description}
+                  photo={post.authorInfo.photo}
+                  email={post.authorInfo.email}
                 />
               </div>
             )}

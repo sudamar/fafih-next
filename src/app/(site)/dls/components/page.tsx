@@ -93,7 +93,6 @@ export default function DLSComponentsPage() {
               <CourseInvestmentCardCongressos
                 course={{
                   ...mockCourse,
-                  category: 'congressos',
                   price: 0,
                   monthlyPrice: 'Acesso 12 meses',
                   observacoes: 'Exclusivo para ex-alunos',
