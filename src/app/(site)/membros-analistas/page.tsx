@@ -1,8 +1,4 @@
-'use client'
-
-import { useMemo, useState } from 'react'
 import { PageTitle } from '@/components/ui/page-title'
-import { SectionTitle } from '@/components/ui/section-title'
 import { CardProfessor } from '@/components/ui/card-professor'
 
 type Tipo = 'Analista em Formação' | 'Analista Didata' | 'Analista Didata em Formação' | 'Membro Analista'
@@ -81,23 +77,7 @@ const membros: MembroAnalista[] = [
   },
 ]
 
-const tiposDisponiveis: Tipo[] = [
-  'Analista em Formação',
-  'Analista Didata em Formação',
-  'Analista Didata',
-  'Membro Analista',
-]
-
 export default function MembrosAnalistasPage() {
-  const [filtroTipo, _setFiltroTipo] = useState<'Todos' | Tipo>('Todos')
-
-  // const membrosFiltrados = useMemo(() => {
-  //   return membros.filter((membro) => {
-  //     const matchTipo = filtroTipo === 'Todos' || membro.tipo === filtroTipo
-  //     return matchTipo
-  //   })
-  // }, [filtroTipo])
-
   return (
     <main className="bg-background">
       <section className="px-6 py-16 md:px-8 lg:py-20">
@@ -111,7 +91,7 @@ export default function MembrosAnalistasPage() {
         </div>
 
         <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
-          {membrosFiltrados.map((membro) => (
+          {membros.map((membro) => (
             <CardProfessor
               key={membro.nome}
               professor={{
@@ -125,16 +105,6 @@ export default function MembrosAnalistasPage() {
             />
           ))}
         </div>
-
-        {membrosFiltrados.length === 0 && (
-          <div className="mx-auto mt-12 max-w-3xl rounded-3xl bg-white px-6 py-10 text-center shadow-lg shadow-neutral-900/5">
-            <SectionTitle className="text-primary">Nenhum membro encontrado</SectionTitle>
-            <p className="text-sm leading-relaxed text-neutral-600">
-              Ajuste os filtros para visualizar outros profissionais ou entre em contato com a secretaria para receber
-              orientação personalizada.
-            </p>
-          </div>
-        )}
       </section>
     </main>
   )
