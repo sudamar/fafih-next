@@ -33,7 +33,7 @@ const navItems: NavItem[] = [
       { label: 'Focos Acadêmicos', href: '/#focos' },
       { label: 'Corpo Docente', href: '/corpo-docente' },
       { label: 'Calendário Acadêmico', href: '/calendario-academico' },
-      { label: 'Biblioteca', href: 'https://ijep.com.br/biblioteca-ijep', external: true },
+      { label: 'Biblioteca', href: '/biblioteca' },
       { label: 'Egressos', href: 'https://ijep.com.br/login-aluno', external: true },
       { label: 'Membros Analistas', href: '/membros-analistas' },
       { label: 'Serviços para a Comunidade', href: '/servicos-comunidade' },

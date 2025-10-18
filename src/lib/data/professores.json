@@ -1,0 +1,50 @@
+[
+  {
+    "nome": "Prof. Dr. Waldemar Magaldi Filho",
+    "titulacao": "Doutor em Ciências da Religião",
+    "descricao": "Psicólogo, educador, especialista em psicologia analítica junguiana, psicossomática, arteterapia, EMDR e homeopatia. Mestre e doutor em ciências da religião. Fundador do Instituto Junguiano de Ensino e Pesquisa.",
+    "foto": "https://secure.gravatar.com/avatar/fd224e8d5bb3960dec64a7894426a4b8686203a8e1b1fdb84532efc0819e0285?s=500&d=mm&r=g",
+    "email": "wmagaldi@ijep.com.br",
+    "telefone": "(11) 5535-4695"
+  },
+  {
+    "nome": "Profa. Dra. E. Simone D. Magaldi",
+    "titulacao": "Doutora em Ciências da Religião",
+    "descricao": "Pedagoga, Filósofa, analista - Especialista em Psicologia Junguiana pela UNAERP. Mestre em Ciências da Religião - PUCSP. Doutora em Ciências da Religião - UMESP. Membro Didata, Diretora e Fundadora do IJEP.",
+    "foto": "https://secure.gravatar.com/avatar/324d5b54d78782d323d36e2df66d8df2e319ab45fc2cc25084cc8820a5abee1b?s=500&d=mm&r=g",
+    "email": "simonemagaldi@ijep.com.br",
+    "telefone": "(11) 5535-4695"
+  },
+  {
+    "nome": "Dr. Leonardo Torres",
+    "titulacao": "Doutor em Comunicação e Cultura",
+    "descricao": "Doutor e Mestre em Comunicação e Cultura pela UNIP/SP. Especialista em Psicologia Junguiana e Psicossomática pelo IJEP. Membro Analista Didata em Formação pelo IJEP.",
+    "foto": "https://secure.gravatar.com/avatar/4a12c850421336054e01c135d6a9cc569171656f9daeedf87d96879355798b91?s=500&d=mm&r=g",
+    "email": "leosouzatorres@gmail.com",
+    "telefone": "54 99331-0389"
+  },
+  {
+    "nome": "Dr. José Luiz Balestrini Junior",
+    "titulacao": "Doutor em Comunicação e Cultura",
+    "descricao": "Psicólogo, Analista didáta em formação do IJEP, Especialista em Psicologia Junguiana, Especialista em Psicossomática, Mestre e Doutorando em Comunicação e Cultura, Especialista em Medicina Tradicional Chinesa.",
+    "foto": "https://secure.gravatar.com/avatar/8caea897c772ea8914bc9a1c77d9b5922965a8b4068f72c3431f6f2627623295?s=500&d=mm&r=g",
+    "email": "balestrini@lungfu.com.br",
+    "telefone": "11 98207 7766"
+  },
+  {
+    "nome": "Me. Ajax Pérez Salvador",
+    "titulacao": "Mestre em Saúde Mental",
+    "descricao": "Médico Psiquiatra e Psicoterapeuta Analista Didata do IJEP. Especialista em Saúde Pública, Mestre em Saúde Mental - USP, Ex-preceptor de Residência Médica Psiquiátrica 8ª COREM PMSP.",
+    "foto": "https://secure.gravatar.com/avatar/cfc74c8fd53d33e95ea6f172919541450f882e?s=500&d=mm&r=g",
+    "email": "apersal@uol.com.br",
+    "telefone": "(11) 91365956"
+  },
+  {
+    "nome": "Me. Daniela Aimar Euzebio",
+    "titulacao": "Mestre em Comunicação Social",
+    "descricao": "Mestre em Comunicação Social pela UMESP; Especialista em Psicologia Junguiana e em Arteterapia pelo IJEP; Especialista em Psicologia Organizacional e do Trabalho pelo Mackenzie. Membro Analista pelo IJEP.",
+    "foto": "https://secure.gravatar.com/avatar/0a4752901a4a3e32b67a3e6e417a7f59e5a94016f759622a4787f9a9a38d3e61?s=500&d=mm&r=g",
+    "email": "daniela.euzebio@gmail.com",
+    "telefone": "(11) 99623-5529"
+  }
+]

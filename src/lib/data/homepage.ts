@@ -230,7 +230,7 @@ export const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Notícias', href: '/#noticias' },
       { label: 'Comissão Própria de Avaliação', href: '/cpa' },
       { label: 'Calendário Acadêmico', href: '/calendario-academico' },
-      { label: 'Biblioteca', href: 'https://ijep.com.br/biblioteca-ijep', external: true },
+      { label: 'Biblioteca', href: '/biblioteca' },
       { label: 'Consultar Diploma', href: 'consultar-diploma.html' },
       { label: 'Design System', href: '/dls/components' },
       { label: 'Política de Privacidade', href: 'politica-privacidade.html' },

@@ -1,0 +1,51 @@
+[
+  {
+    "titulo": "A Sombra e o Self: Uma Análise da Individuação na Masculinidade Contemporânea",
+    "autor": "Dr. João Silva",
+    "data_publicacao": "2025-09-15",
+    "link": "#",
+    "tags": ["masculinidade", "individuação", "relacionamentos"]
+  },
+  {
+    "titulo": "O Resgate do Sagrado Feminino na Mitologia Grega",
+    "autor": "Profa. Dra. Maria Souza",
+    "data_publicacao": "2025-08-22",
+    "link": "#",
+    "tags": ["feminilidade", "mitologia", "religiao"]
+  },
+  {
+    "titulo": "Arteterapia no Processo de Luto Infantil",
+    "autor": "Me. Ana Pereira",
+    "data_publicacao": "2025-07-05",
+    "link": "#",
+    "tags": ["luto", "infância", "artes"]
+  },
+  {
+    "titulo": "A Jornada do Herói e a Paternidade: Arquétipos em Transformação",
+    "autor": "Dr. Carlos Lima",
+    "data_publicacao": "2024-11-10",
+    "link": "#",
+    "tags": ["paternidade", "mitologia", "masculinidade"]
+  },
+  {
+    "titulo": "Misticismo Oriental e o Diálogo com a Psicologia Analítica",
+    "autor": "Profa. Dra. Helena Costa",
+    "data_publicacao": "2023-12-20",
+    "link": "#",
+    "tags": ["misticismo", "religiao", "individuação"]
+  },
+  {
+    "titulo": "Sexualidade e Adoecimento: Uma Perspectiva Psicossomática",
+    "autor": "Dr. Roberto Fernandes",
+    "data_publicacao": "2023-05-30",
+    "link": "#",
+    "tags": ["sexualidade", "adoecimento", "relacionamentos"]
+  },
+  {
+    "titulo": "O Papel da Mãe na Formação do Imaginário Infantil",
+    "autor": "Me. Sofia Almeida",
+    "data_publicacao": "2025-01-18",
+    "link": "#",
+    "tags": ["maternidade", "infância", "feminilidade"]
+  }
+]
