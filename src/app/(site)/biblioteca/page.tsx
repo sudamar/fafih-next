@@ -296,7 +296,7 @@ export default function BibliotecaPage() {
           {/* Área de conteúdo */}
           <div className="lg:col-span-3">
             <div className="mb-6">
-              <SectionTitle title="Trabalhos Publicados" />
+              <SectionTitle>Trabalhos Publicados</SectionTitle>
             </div>
 
             {filteredTrabalhos.length > 0 ? (

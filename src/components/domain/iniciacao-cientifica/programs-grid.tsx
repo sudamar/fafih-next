@@ -1,4 +1,4 @@
-import type { IniciacaoProgram } from '@/lib/data/iniciacao-cientifica'
+import type { IniciacaoProgram } from '@/lib/services/iniciacao-cientifica'
 import { ProgramCard } from '@/components/domain/iniciacao-cientifica/program-card'
 
 interface ProgramsGridProps {

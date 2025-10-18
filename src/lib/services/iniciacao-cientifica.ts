@@ -26,5 +26,5 @@ export function getIniciacaoPrograms(): IniciacaoProgram[] {
 }
 
 export function getIniciacaoPageActions(): IniciacaoPageAction[] {
-  return data.pageActions;
+  return data.pageActions as IniciacaoPageAction[];
 }
