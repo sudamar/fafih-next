@@ -1,0 +1,72 @@
+[
+  {
+    "nome": "masculinidade",
+    "icone": "User",
+    "cor": "#3b82f6"
+  },
+  {
+    "nome": "feminilidade",
+    "icone": "User",
+    "cor": "#ec4899"
+  },
+  {
+    "nome": "religiao",
+    "icone": "Church",
+    "cor": "#a855f7"
+  },
+  {
+    "nome": "mitologia",
+    "icone": "BookOpen",
+    "cor": "#eab308"
+  },
+  {
+    "nome": "sexualidade",
+    "icone": "Heart",
+    "cor": "#ef4444"
+  },
+  {
+    "nome": "paternidade",
+    "icone": "Sun",
+    "cor": "#1d4ed8"
+  },
+  {
+    "nome": "maternidade",
+    "icone": "Moon",
+    "cor": "#be185d"
+  },
+  {
+    "nome": "adoecimento",
+    "icone": "HeartPulse",
+    "cor": "#b91c1c"
+  },
+  {
+    "nome": "infância",
+    "icone": "Baby",
+    "cor": "#22c55e"
+  },
+  {
+    "nome": "artes",
+    "icone": "Paintbrush",
+    "cor": "#f97316"
+  },
+  {
+    "nome": "luto",
+    "icone": "CloudDrizzle",
+    "cor": "#6b7280"
+  },
+  {
+    "nome": "individuação",
+    "icone": "PersonStanding",
+    "cor": "#6366f1"
+  },
+  {
+    "nome": "misticismo",
+    "icone": "Sparkles",
+    "cor": "#14b8a6"
+  },
+  {
+    "nome": "relacionamentos",
+    "icone": "Link2",
+    "cor": "#06b6d4"
+  }
+]

@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { PageTitle } from '@/components/ui/page-title'
 import { SectionTitle } from '@/components/ui/section-title'
 
+import { TabNavegacao } from '@/components/ui/tab-navegacao';
+
 export default function ExtensaoPage() {
   const [activeTab, setActiveTab] = useState('apresentacao')
 
@@ -28,22 +30,7 @@ export default function ExtensaoPage() {
             importantes serviços à população, realizando a integração entre teoria e prática.
           </p>
 
-          {/* Tabs Navigation */}
-          <div className="mb-8 flex flex-wrap justify-center gap-3">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`rounded-full px-6 py-3 font-bold text-sm transition-all ${
-                  activeTab === tab.id
-                    ? 'bg-primary text-white'
-                    : 'bg-gray-200 text-secondary hover:bg-gray-300'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+          <TabNavegacao tabs={tabs} onTabChange={setActiveTab} initialTab="apresentacao" />
 
           {/* Tab Content */}
           <div className="rounded-2xl bg-white p-8 shadow-lg">

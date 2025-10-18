@@ -1,6 +1,6 @@
-import data from '@/lib/data/biblioteca.json';
+import data from '@/lib/data/trabalhos.json';
 
-export type Tag = 'masculinidade' | 'feminilidade' | 'religiao' | 'mitologia' | 'sexualidade' | 'paternidade' | 'maternidade' | 'adoecimento' | 'infância' | 'artes' | 'luto' | 'individuação' | 'misticismo' | 'relacionamentos';
+export type Tag = string;
 
 export interface Trabalho {
   titulo: string;
@@ -8,14 +8,32 @@ export interface Trabalho {
   data_publicacao: string;
   link: string;
   tags: Tag[];
+  resumo?: string;
+  nota?: number;
+  slug: string;
+  visitantes: number;
+  baixados: number;
 }
 
 export function getTrabalhos(): Trabalho[] {
-  return data;
+  return data as Trabalho[];
 }
 
-export const allTags: Tag[] = [
-  'masculinidade', 'feminilidade', 'religiao', 'mitologia', 'sexualidade', 
-  'paternidade', 'maternidade', 'adoecimento', 'infância', 'artes', 
-  'luto', 'individuação', 'misticismo', 'relacionamentos'
-];
+export function getTrabalhoBySlug(slug: string): Trabalho | undefined {
+  return data.find(trabalho => trabalho.slug === slug) as Trabalho | undefined;
+}
+
+// Extrai todas as tags únicas dos trabalhos e ordena alfabeticamente
+export function getAllTags(): Tag[] {
+  const tagsSet = new Set<Tag>();
+
+  data.forEach((trabalho) => {
+    trabalho.tags.forEach((tag) => {
+      tagsSet.add(tag);
+    });
+  });
+
+  return Array.from(tagsSet).sort();
+}
+
+export const allTags: Tag[] = getAllTags();
