@@ -1,0 +1,16 @@
+-- =============================================
+-- FAFIH Database Migration - Remove image field
+-- Remove o campo image que foi substituído por image_url
+-- Created: 2025-10-19
+-- =============================================
+
+-- Migrar dados do campo image para image_url (se image_url estiver NULL)
+UPDATE cursos
+SET image_url = image
+WHERE image_url IS NULL AND image IS NOT NULL;
+
+-- Remover campo image da tabela cursos
+ALTER TABLE cursos DROP COLUMN IF EXISTS image;
+
+-- Adicionar comentário
+COMMENT ON TABLE cursos IS 'Armazena informações sobre os cursos oferecidos (atualizado: campos hero, highlights, curriculum e image removidos)';

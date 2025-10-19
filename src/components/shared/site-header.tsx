@@ -39,6 +39,7 @@ const navItems: NavItem[] = [
       { label: 'Serviços para a Comunidade', href: '/servicos-comunidade' },
       { label: 'Notícias', href: '/#noticias' },
       { label: 'Mantenedora', href: 'https://ijep.com.br/', external: true },
+      { label: 'Revalidate', href: '/revalidate' },
     ],
   },
   {
