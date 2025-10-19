@@ -1,100 +1,19 @@
-import CourseDetailHero from '@/components/cursos/CourseDetailHero';
-import CourseInvestmentCard from '@/components/cursos/CourseInvestmentCard';
-import CourseAbout from '@/components/cursos/CourseAbout';
-import CourseCurriculum from '@/components/cursos/CourseCurriculum';
-import CourseFaculty from '@/components/cursos/CourseFaculty';
-import CourseEvaluation from '@/components/cursos/CourseEvaluation';
-import CourseWorkload from '@/components/cursos/CourseWorkload';
-import { DepoimentosBasicoLista } from '@/components/ui/depoimentos-basico-lista';
-import { SectionTitle } from '@/components/ui/section-title';
-import { ContatosSecretaria } from '@/components/shared/contatos-secretaria';
-import CourseDifferentialsSection from '@/components/cursos/CourseDifferentialsSection';
-import styles from '@/app/(site)/cursos/[slug]/page.module.css';
-
-interface Testimonial {
-  text?: string;
-  quote?: string;
-  author: string;
-  role: string;
-}
-
-interface Course {
-  [key: string]: unknown;
-  title: string;
-  subtitle?: string;
-  hero?: {
-    type?: string;
-    source?: string;
-    fallbackImage?: string;
-    alt?: string;
-  };
-  image?: string;
-  categoryLabel?: string;
-  duration?: string;
-  modalidade?: string;
-  fullDescription?: string[];
-  highlights?: Array<{
-    icon: string;
-    title: string;
-    description: string;
-    bgColor: string;
-    iconColor: string;
-  }>;
-  justificativa?: string[];
-  objetivos?: string[];
-  publico?: string[];
-  curriculum?: Array<{
-    number: number;
-    title: string;
-    hours: number;
-    ementa: string;
-    objetivos: string;
-    bibliography: string[];
-  }>;
-  avaliacao?: string[];
-  cargahoraria?: {
-    texto: string[];
-    atividades: Array<{
-      descricao: string;
-      carga: number;
-    }>;
-    observacao?: string;
-  };
-  professores?: Array<{
-    nome: string;
-    titulacao: string;
-    descricao: string;
-    telefone?: string;
-    email?: string;
-    foto?: string;
-  }>;
-  coordenacao?: {
-    coordenador: string;
-    descricao: string;
-    foto?: string;
-  };
-  testimonials?: Testimonial[];
-  contact?: {
-    phone?: string;
-    whatsapp?: string;
-    email?: string;
-  };
-  diferenciais?: string[];
-  category?: string;
-  ctaLabel?: string;
-  moreInfoUrl?: string;
-  formato_curso?: {
-    frequencia?: string;
-    horario?: string;
-    periodo?: string;
-    tipo?: string;
-    plataforma?: string;
-    numero_encontros?: number;
-  };
-}
+import CourseDetailHero from '@/components/cursos/CourseDetailHero'
+import CourseInvestmentCard from '@/components/cursos/CourseInvestmentCard'
+import CourseAbout from '@/components/cursos/CourseAbout'
+import CourseCurriculum from '@/components/cursos/CourseCurriculum'
+import CourseFaculty from '@/components/cursos/CourseFaculty'
+import CourseEvaluation from '@/components/cursos/CourseEvaluation'
+import CourseWorkload from '@/components/cursos/CourseWorkload'
+import { DepoimentosBasicoLista } from '@/components/ui/depoimentos-basico-lista'
+import { SectionTitle } from '@/components/ui/section-title'
+import { ContatosSecretaria } from '@/components/shared/contatos-secretaria'
+import CourseDifferentialsSection from '@/components/cursos/CourseDifferentialsSection'
+import styles from '@/app/(site)/cursos/[slug]/page.module.css'
+import type { CourseDetail } from '@/lib/features/courses/types/Course.type'
 
 interface CourseDetailPosGraduacaoProps {
-  course: Course;
+  course: CourseDetail
 }
 
 export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGraduacaoProps) {
@@ -196,10 +115,10 @@ export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGrad
             <section className={styles.section}>
               <SectionTitle>Depoimentos de Alunos</SectionTitle>
               <DepoimentosBasicoLista
-                depoimentos={course.testimonials.map((t: Testimonial) => ({
-                  quote: t.text || t.quote || '',
-                  author: t.author,
-                  role: t.role
+                depoimentos={course.testimonials.map((testimonial) => ({
+                  quote: testimonial.quote,
+                  author: testimonial.author,
+                  role: testimonial.role,
                 }))}
               />
             </section>

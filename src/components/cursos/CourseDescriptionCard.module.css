@@ -1,0 +1,30 @@
+.descriptionSection {
+  margin-bottom: 3rem;
+}
+
+.descriptionCard {
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.descriptionText {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #374151;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .descriptionCard {
+    padding: 1.5rem;
+  }
+
+  .descriptionText {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}

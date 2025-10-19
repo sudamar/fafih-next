@@ -1,95 +1,17 @@
-import CourseDetailHero from '@/components/cursos/CourseDetailHero';
-import CourseInvestmentCardCongressos from '@/components/cursos/CourseInvestmentCardCongressos';
-import CourseAbout from '@/components/cursos/CourseAbout';
-import CourseCurriculum from '@/components/cursos/CourseCurriculum';
-import CourseFaculty from '@/components/cursos/CourseFaculty';
-import CourseEvaluation from '@/components/cursos/CourseEvaluation';
-import CourseWorkload from '@/components/cursos/CourseWorkload';
-import { SectionTitle } from '@/components/ui/section-title';
-import CourseDifferentialsSection from '@/components/cursos/CourseDifferentialsSection';
-import styles from '@/app/(site)/cursos/[slug]/page.module.css';
-
-interface Course {
-  title: string;
-  subtitle?: string;
-  hero?: {
-    type?: string;
-    source?: string;
-    fallbackImage?: string;
-    alt?: string;
-  };
-  image?: string;
-  categoryLabel?: string;
-  duration?: string;
-  modalidade?: string;
-  fullDescription?: string[];
-  highlights?: Array<{
-    icon: string;
-    title: string;
-    description: string;
-    bgColor: string;
-    iconColor: string;
-  }>;
-  justificativa?: string[];
-  objetivos?: string[];
-  publico?: string[];
-  curriculum?: Array<{
-    number: number;
-    title: string;
-    hours: number;
-    ementa: string;
-    objetivos: string;
-    bibliography: string[];
-  }>;
-  avaliacao?: string[];
-  cargahoraria?: {
-    texto: string[];
-    atividades: Array<{
-      descricao: string;
-      carga: number;
-    }>;
-    observacao?: string;
-  };
-  professores?: Array<{
-    nome: string;
-    titulacao: string;
-    descricao: string;
-    telefone?: string;
-    email?: string;
-    foto?: string;
-  }>;
-  coordenacao?: {
-    coordenador: string;
-    descricao: string;
-    foto?: string;
-  };
-  contact?: {
-    phone?: string;
-    whatsapp?: string;
-    email?: string;
-  };
-  price?: number;
-  originalPrice?: number;
-  precoMatricula?: number;
-  monthlyPrice?: string;
-  startDate?: string;
-  workload?: string;
-  category?: string;
-  diferenciais?: string[];
-  ctaLabel?: string;
-  moreInfoUrl?: string;
-  formato_curso?: {
-    frequencia?: string;
-    horario?: string;
-    periodo?: string;
-    tipo?: string;
-    plataforma?: string;
-    numero_encontros?: number;
-  };
-}
+import CourseDetailHero from '@/components/cursos/CourseDetailHero'
+import CourseInvestmentCardCongressos from '@/components/cursos/CourseInvestmentCardCongressos'
+import CourseAbout from '@/components/cursos/CourseAbout'
+import CourseCurriculum from '@/components/cursos/CourseCurriculum'
+import CourseFaculty from '@/components/cursos/CourseFaculty'
+import CourseEvaluation from '@/components/cursos/CourseEvaluation'
+import CourseWorkload from '@/components/cursos/CourseWorkload'
+import { SectionTitle } from '@/components/ui/section-title'
+import CourseDifferentialsSection from '@/components/cursos/CourseDifferentialsSection'
+import styles from '@/app/(site)/cursos/[slug]/page.module.css'
+import type { CourseDetail } from '@/lib/features/courses/types/Course.type'
 
 interface CourseDetailCongressosProps {
-  course: Course;
+  course: CourseDetail
 }
 
 export default function CourseDetailCongressos({ course }: CourseDetailCongressosProps) {

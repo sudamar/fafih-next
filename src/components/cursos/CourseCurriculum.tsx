@@ -5,12 +5,12 @@ import styles from './CourseCurriculum.module.css';
 import { SectionTitle } from '@/components/ui/section-title';
 
 interface CurriculumItem {
-  number: number;
-  title: string;
-  hours: number;
-  ementa: string;
-  objetivos: string;
-  bibliography: string[];
+  number: number
+  title: string
+  hours: string | null
+  ementa: string | null
+  objetivos: string | null
+  bibliography: string[]
 }
 
 interface CourseCurriculumProps {
@@ -28,6 +28,24 @@ export default function CourseCurriculum({ curriculum }: CourseCurriculumProps) 
     );
   };
 
+  const formatHours = (value: string | null): string | null => {
+    if (!value) {
+      return null
+    }
+
+    const raw = value.trim()
+    if (!raw) {
+      return null
+    }
+
+    const numeric = Number.parseFloat(raw.replace(',', '.'))
+    if (!Number.isNaN(numeric) && Number.isFinite(numeric)) {
+      return `${numeric}h`
+    }
+
+    return raw
+  }
+
   return (
     <section className={styles.section}>
       <SectionTitle>Currículo do Curso</SectionTitle>
@@ -35,6 +53,7 @@ export default function CourseCurriculum({ curriculum }: CourseCurriculumProps) 
       <div className={styles.curriculumList}>
         {curriculum.map((item, index) => {
           const isOpen = openItems.includes(index);
+          const formattedHours = formatHours(item.hours)
 
           return (
             <div key={index} className={styles.curriculumItem}>
@@ -48,7 +67,9 @@ export default function CourseCurriculum({ curriculum }: CourseCurriculumProps) 
                   <h3 className={styles.moduleTitle}>{item.title}</h3>
                 </div>
                 <div className={styles.headerRight}>
-                  <span className={styles.hours}>{item.hours}h</span>
+                  {formattedHours && (
+                    <span className={styles.hours}>{formattedHours}</span>
+                  )}
                   <span className={`${styles.toggleIcon} ${isOpen ? styles.open : ''}`}>
                     +
                   </span>
