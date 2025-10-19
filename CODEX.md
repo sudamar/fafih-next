@@ -19,6 +19,17 @@
 
 > Use `npm run lint` para garantir que o código está dentro dos padrões.
 
+### Cache do catálogo de cursos (Supabase)
+- As consultas de catálogo usam cache com tags para evitar repiques no Supabase.
+- Tags disponíveis:
+  - `courses:list` — lista/painel `/cursos`.
+  - `courses:detail:{slug}` — detalhe individual (substitua `{slug}` pelo slug real).
+- Helpers em `src/lib/services/courseCatalog.ts`:
+  - `revalidateCourseList()` limpa o cache da listagem.
+  - `revalidateCourseDetail(slug)` limpa o cache de um curso específico.
+- Endpoint interno: `GET /revalidate` dispara `revalidateCourseList` e cada detalhe conhecido, retornando o status das tags invalidadas (rota não listada na navegação).
+- Aplique `revalidateTag` chamando esses helpers (ex.: rota segura, script ou ação de deploy) sempre que atualizar dados no Supabase.
+
 ## Estrutura de Pastas
 ```
 src/

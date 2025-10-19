@@ -48,6 +48,7 @@ const normalizeString = (value?: string | null): string | null => {
 export default function CourseInvestmentCard({ course }: CourseInvestmentCardProps) {
   const router = useRouter();
   const isExtensionCourse = course.category === 'extensao';
+  const isCursoFormacaoAnalista = course.category === 'formacao';
   const priceValue = typeof course.price === 'number' ? course.price : null;
   const hasPrice = priceValue !== null && priceValue > 0;
   const price = hasPrice ? formatCurrency(priceValue) : null;
@@ -130,10 +131,14 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
           )}
         </div>
       )}
-      {showContactTag && (
+      {(showContactTag || isCursoFormacaoAnalista) && (
         <div className={styles.priceBox}>
           <div className={styles.priceLabel}>Investimento</div>
-          <div className={styles.statusTag}>Não disponível</div>
+          {isCursoFormacaoAnalista ? (
+            <div className={styles.statusTag}>Consulte-nos</div>
+          ) : (
+            <div className={styles.statusTag}>Vagas encerradas</div>
+          )}
         </div>
       )}
 

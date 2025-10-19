@@ -194,11 +194,11 @@ export function SiteFooter() {
             <div>
               <a href="#" target="_blank" rel="noopener noreferrer">
                 <Image
-                  src="https://i.imgur.com/i7LTAu5.png"
-                  alt="Consulte aqui o cadastro da instituição no e-MEC"
+                  src="/assets/images/imagem-valida-mec-fafih.png"
+                  alt="Consulte aqui o cadastro da FAFIH no e-MEC"
                   width={208}
                   height={104}
-                  className="w-auto h-auto max-h-26"
+                  className="h-auto w-auto max-h-26"
                 />
               </a>
             </div>

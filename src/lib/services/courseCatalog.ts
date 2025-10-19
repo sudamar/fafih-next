@@ -1,4 +1,4 @@
-import { cache } from 'react'
+import { unstable_cache, revalidateTag } from 'next/cache'
 
 import type { Database } from '@/lib/supabase/types'
 import { supabase } from '@/lib/supabase/client'
@@ -28,6 +28,9 @@ type CourseDetailQueryRow = CourseRow & {
   }> | null
   coordenador: ProfessorRow | null
 }
+
+export const COURSE_LIST_TAG = 'courses:list'
+const COURSE_DETAIL_TAG = (identifier: string) => `courses:detail:${identifier}`
 
 const COURSE_DETAIL_SELECT = `
   id,
@@ -102,14 +105,6 @@ const COURSE_DETAIL_SELECT = `
     )
   )
 ` as const
-
-const cardImageOverrides: Record<string, string> = {
-  'livros-negros-e-livro-vermelho': 'https://i.imgur.com/qwiCmA6.jpeg',
-  'sonhando-atraves-da-arteterapia': 'https://i.imgur.com/AnnChjx.png',
-  'de-aion-a-jo': 'https://i.imgur.com/REzhmRK.jpeg',
-  'formacao-de-membros-analistas-junguianos': 'https://i.imgur.com/lXkjLLG.png',
-  'congressos-junguianos-do-ijep': 'https://i.imgur.com/M3vP6UT.png',
-}
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null && !Array.isArray(value)
@@ -301,11 +296,6 @@ const parseAdditionalInfo = (value: unknown) => {
   }
 }
 
-const applyImageOverride = (slug: string, currentImage: string | null): string | null => {
-  const override = cardImageOverrides[slug]
-  return override ?? currentImage
-}
-
 const mapHighlight = (row: HighlightRow): CourseHighlight => ({
   id: row.id,
   icon: row.icon,
@@ -368,14 +358,18 @@ const deriveHero = (row: CourseRow, image: string | null): CourseDetail['hero'] 
 }
 
 const mapCourseCard = (row: CourseRow): CourseCard => {
-  const baseImage = parseMaybeString(row.image_url) ?? parseMaybeString(row.image)
-  const image = applyImageOverride(row.slug, baseImage)
+  const image = parseMaybeString(row.image_url) ?? parseMaybeString(row.image)
+  const rawDescription = parseMaybeString(row.description)
+  const description =
+    rawDescription && rawDescription.length > 250
+      ? `${rawDescription.slice(0, 250).trimEnd()}...`
+      : rawDescription
 
   return {
     id: row.id,
     slug: row.slug,
     title: row.title,
-    description: parseMaybeString(row.description),
+    description,
     category: parseMaybeString(row.category),
     categoryLabel: parseMaybeString(row.category_label),
     image,
@@ -464,40 +458,47 @@ const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
   }
 }
 
-const fetchCourseRows = cache(async (): Promise<CourseRow[]> => {
-  const { data, error } = await supabase
-    .from('cursos')
-    .select('*')
-    .order('title', { ascending: true })
+const fetchCourseRows = unstable_cache(
+  async (): Promise<CourseRow[]> => {
+    const { data, error } = await supabase
+      .from('cursos')
+      .select('*')
+      .order('title', { ascending: true })
 
-  if (error) {
-    throw new Error(`Erro ao buscar cursos: ${error.message}`)
-  }
+    if (error) {
+      throw new Error(`Erro ao buscar cursos: ${error.message}`)
+    }
 
-  return data ?? []
-})
+    return data ?? []
+  },
+  ['courses', 'list'],
+  { tags: [COURSE_LIST_TAG] },
+)
 
-const fetchCourseDetail = async (filters: Record<string, string>): Promise<CourseDetail | null> => {
-  let query = supabase
-    .from('cursos')
-    .select<CourseDetailQueryRow>(COURSE_DETAIL_SELECT)
+const fetchCourseDetail = (column: 'slug' | 'id', value: string) =>
+  unstable_cache(
+    async (): Promise<CourseDetail | null> => {
+      let query = supabase
+        .from('cursos')
+        .select<CourseDetailQueryRow>(COURSE_DETAIL_SELECT)
 
-  for (const [column, value] of Object.entries(filters)) {
-    query = query.eq(column, value)
-  }
+      query = query.eq(column, value)
 
-  const { data, error } = await query.maybeSingle()
+      const { data, error } = await query.maybeSingle()
 
-  if (error) {
-    throw new Error(`Erro ao buscar detalhe do curso: ${error.message}`)
-  }
+      if (error) {
+        throw new Error(`Erro ao buscar detalhe do curso: ${error.message}`)
+      }
 
-  if (!data) {
-    return null
-  }
+      if (!data) {
+        return null
+      }
 
-  return mapCourseDetail(data)
-}
+      return mapCourseDetail(data)
+    },
+    ['courses', 'detail', column, value],
+    { tags: [COURSE_DETAIL_TAG(value)] },
+  )()
 
 const buildCategories = (courses: CourseCard[]) => {
   const map = new Map<string, { label: string; count: number }>()
@@ -547,7 +548,7 @@ export const getCourseBySlug = async (slug: string): Promise<CourseDetail | null
     return null
   }
 
-  return fetchCourseDetail({ slug })
+  return fetchCourseDetail('slug', slug)
 }
 
 export const getCourseById = async (id: string): Promise<CourseDetail | null> => {
@@ -555,7 +556,7 @@ export const getCourseById = async (id: string): Promise<CourseDetail | null> =>
     return null
   }
 
-  return fetchCourseDetail({ id })
+  return fetchCourseDetail('id', id)
 }
 
 export const getCourseDetails = async (
@@ -589,4 +590,29 @@ export const getCourseDetails = async (
   const courses = await listCourseCards()
   const firstSlug = courses[0]?.slug
   return firstSlug ? getCourseBySlug(firstSlug) : null
+}
+
+export const revalidateCourseList = async () => {
+  await revalidateTag(COURSE_LIST_TAG)
+}
+
+export const revalidateCourseDetail = async (identifier: string) => {
+  if (!identifier) {
+    return
+  }
+
+  await revalidateTag(COURSE_DETAIL_TAG(identifier))
+}
+
+export const getAllCourseSlugs = async (): Promise<string[]> => {
+  const { data, error } = await supabase
+    .from('cursos')
+    .select('slug')
+    .order('slug', { ascending: true })
+
+  if (error) {
+    throw new Error(`Erro ao listar slugs de cursos: ${error.message}`)
+  }
+
+  return (data ?? []).map((item) => item.slug)
 }

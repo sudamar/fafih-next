@@ -18,6 +18,10 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
     return <CourseDetailExtensao course={course} />;
   }
 
+  if (course.category === 'formacao') {
+    return <CourseDetailExtensao course={course} />;
+  }
+
   if (course.category === 'congressos') {
     return <CourseDetailCongressos course={course} />;
   }

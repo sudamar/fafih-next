@@ -13,7 +13,7 @@ const mockCourse = {
   id: 1,
   category: 'especializacao',
   categoryLabel: 'Pós-Graduação',
-  image: 'https://i.imgur.com/REzhmRK.jpeg',
+  image: '/public/images/courses/psicologia-junguiana.jpg',
   title: 'Psicologia Junguiana',
   description: 'Formação aprofundada com ênfase na prática clínica e compreensão simbólica.',
   price: 3890,
