@@ -1,4 +1,3 @@
-import type { StaticImageData } from 'next/image'
 
 export interface CourseCard {
   id: string
@@ -7,7 +6,7 @@ export interface CourseCard {
   description: string | null
   category: string | null
   categoryLabel: string | null
-  image: string | StaticImageData | null
+  image: string  | null
   price: number | null
   modalidade: string | null
 }
@@ -96,6 +95,7 @@ export interface CourseDetail extends CourseCard {
   precoMatricula: number | null
   originalPrice: number | null
   startDate: string | null
+  duration: string | null
   maxStudents: string | null
   certificate: string | null
   hero?: CourseHero

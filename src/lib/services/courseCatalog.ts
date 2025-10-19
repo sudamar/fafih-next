@@ -439,6 +439,7 @@ const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
     precoMatricula: row.preco_matricula ?? null,
     originalPrice: row.original_price ?? null,
     startDate: parseMaybeString(row.start_date),
+    duration: parseMaybeString(row.duration),
     maxStudents: parseMaybeString(row.max_students),
     certificate: parseMaybeString(row.certificate),
     hero: deriveHero(row, card.image),
@@ -480,11 +481,11 @@ const fetchCourseDetail = (column: 'slug' | 'id', value: string) =>
     async (): Promise<CourseDetail | null> => {
       let query = supabase
         .from('cursos')
-        .select<CourseDetailQueryRow>(COURSE_DETAIL_SELECT)
+        .select(COURSE_DETAIL_SELECT)
 
       query = query.eq(column, value)
 
-      const { data, error } = await query.maybeSingle()
+      const { data, error } = await query.maybeSingle<CourseDetailQueryRow>()
 
       if (error) {
         throw new Error(`Erro ao buscar detalhe do curso: ${error.message}`)
