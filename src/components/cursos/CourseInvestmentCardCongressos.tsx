@@ -5,18 +5,18 @@ import { useRouter } from 'next/navigation';
 import styles from './CourseInvestmentCard.module.css';
 
 interface Course {
-  price?: number;
-  originalPrice?: number;
-  precoMatricula?: number;
-  monthlyPrice?: string;
-  categoryLabel?: string;
-  modalidade?: string;
-  startDate?: string;
-  duration?: string;
-  workload?: string;
-  ctaLabel?: string;
-  observacoes?: string[] | string;
-  moreInfoUrl?: string;
+  price?: number | null
+  originalPrice?: number | null
+  precoMatricula?: number | null
+  monthlyPrice?: string | null
+  categoryLabel?: string | null
+  modalidade?: string | null
+  startDate?: string | null
+  duration?: string | null
+  workload?: string | null
+  ctaLabel?: string | null
+  observacoes?: string[] | string | null
+  moreInfoUrl?: string | null
 }
 
 interface CourseInvestmentCardCongressosProps {

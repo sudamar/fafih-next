@@ -159,13 +159,6 @@ export default function BibliotecaClient({ initialTrabalhos, initialTags, tagMet
       </section>
 
       <div className="container mx-auto px-4 py-12">
-        <div className="mb-6">
-          <p className="text-sm text-neutral-600">
-            <span className="font-bold text-primary text-lg">{filteredTrabalhos.length}</span>{' '}
-            {filteredTrabalhos.length === 1 ? 'trabalho encontrado' : 'trabalhos encontrados'}
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           <aside className="lg:col-span-1 space-y-6">
             <div className="bg-white rounded-3xl shadow-lg shadow-neutral-900/5 p-6 sticky top-4 mb-12">
@@ -296,6 +289,10 @@ export default function BibliotecaClient({ initialTrabalhos, initialTags, tagMet
           <div className="lg:col-span-3">
             <div className="mb-6">
               <SectionTitle>Trabalhos Publicados</SectionTitle>
+              <p className="mt-2 text-sm italic text-black">
+                <span className="font-semibold">{filteredTrabalhos.length}</span>{' '}
+                {filteredTrabalhos.length === 1 ? 'trabalho encontrado' : 'trabalhos encontrados'}
+              </p>
             </div>
 
             {filteredTrabalhos.length > 0 ? (

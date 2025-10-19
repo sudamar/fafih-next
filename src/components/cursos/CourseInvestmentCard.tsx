@@ -4,27 +4,27 @@ import { useRouter } from 'next/navigation';
 import styles from './CourseInvestmentCard.module.css';
 
 interface Course {
-  price?: number;
-  originalPrice?: number;
-  precoMatricula?: number;
-  monthlyPrice?: string;
-  categoryLabel?: string;
-  modalidade?: string;
-  startDate?: string;
-  duration?: string;
-  workload?: string;
-  category?: string;
-  ctaLabel?: string;
-  observacoes?: string[] | string;
-  moreInfoUrl?: string;
+  price?: number | null
+  originalPrice?: number | null
+  precoMatricula?: number | null
+  monthlyPrice?: string | null
+  categoryLabel?: string | null
+  modalidade?: string | null
+  startDate?: string | null
+  duration?: string | null
+  workload?: string | null
+  category?: string | null
+  ctaLabel?: string | null
+  observacoes?: string[] | string | null
+  moreInfoUrl?: string | null
   formato_curso?: {
-    frequencia?: string;
-    horario?: string;
-    periodo?: string;
-    tipo?: string;
-    plataforma?: string;
-    numero_encontros?: number;
-  };
+    frequencia?: string | null
+    horario?: string | null
+    periodo?: string | null
+    tipo?: string | null
+    plataforma?: string | null
+    numero_encontros?: number | null
+  } | null
 }
 
 interface CourseInvestmentCardProps {

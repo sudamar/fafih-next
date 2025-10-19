@@ -1,18 +1,30 @@
-import styles from './CourseAbout.module.css';
-import { PageTitle } from '@/components/ui/page-title';
+import styles from './CourseAbout.module.css'
+import { PageTitle } from '@/components/ui/page-title'
+
+interface CourseHighlight {
+  icon?: string | null
+  title?: string | null
+  description?: string | null
+}
 
 interface CourseAboutProps {
-  fullDescription: string[];
-  highlights: Array<{
-    icon: string;
-    title: string;
-    description: string;
-    bgColor: string;
-    iconColor: string;
-  }>;
+  fullDescription: string[]
+  highlights: CourseHighlight[]
 }
 
 export default function CourseAbout({ fullDescription, highlights }: CourseAboutProps) {
+  const sanitizedHighlights: Array<{ icon: string; title: string; description: string }> = (highlights?.length ? highlights : [
+    {
+      icon: 'fas fa-star',
+      title: 'Diferencial',
+      description: 'Mais detalhes em breve.',
+    },
+  ]).map((highlight) => ({
+    icon: highlight.icon ?? 'fas fa-star',
+    title: highlight.title ?? 'Diferencial',
+    description: highlight.description ?? 'Mais detalhes em breve.',
+  }))
+
   return (
     <section className={styles.section}>
       <PageTitle>Sobre o Curso</PageTitle>
@@ -23,9 +35,9 @@ export default function CourseAbout({ fullDescription, highlights }: CourseAbout
         ))}
       </div>
 
-      {highlights && highlights.length > 0 && (
+      {sanitizedHighlights.length > 0 && (
         <div className={styles.highlights}>
-          {highlights.map((highlight, index) => (
+          {sanitizedHighlights.map((highlight, index) => (
             <div key={index} className={styles.highlightCard}>
               <div className={styles.highlightIcon}>
                 <i className={highlight.icon}></i>
@@ -39,5 +51,5 @@ export default function CourseAbout({ fullDescription, highlights }: CourseAbout
         </div>
       )}
     </section>
-  );
+  )
 }
