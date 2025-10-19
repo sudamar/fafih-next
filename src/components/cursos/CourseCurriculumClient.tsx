@@ -1,31 +1,45 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import { SectionTitle } from '@/components/ui/section-title';
+import { useState } from 'react'
 
-interface CurriculumItem {
-  number: number;
-  title: string;
-  hours: string;
-  ementa: string;
-  objetivos: string;
-  bibliography: string[];
+import { SectionTitle } from '@/components/ui/section-title'
+
+export interface CurriculumItem {
+  number: number
+  title: string
+  hours: string | null
+  ementa: string | null
+  objetivos: string | null
+  bibliography: string[]
 }
 
 interface CourseCurriculumClientProps {
-  curriculum: CurriculumItem[];
+  curriculum: CurriculumItem[]
 }
 
 export default function CourseCurriculumClient({ curriculum }: CourseCurriculumClientProps) {
-  const [openItems, setOpenItems] = useState<number[]>([]);
+  const [openItems, setOpenItems] = useState<number[]>([])
 
   const toggleItem = (index: number) => {
-    setOpenItems(current =>
+    setOpenItems((current) =>
       current.includes(index)
-        ? current.filter(i => i !== index)
-        : [...current, index]
-    );
-  };
+        ? current.filter((item) => item !== index)
+        : [...current, index],
+    )
+  }
+
+  const formatHours = (value: string | null): string | null => {
+    if (!value) {
+      return null
+    }
+
+    const trimmed = value.trim()
+    if (!trimmed) {
+      return null
+    }
+
+    return trimmed.endsWith('h') ? trimmed : `${trimmed}h`
+  }
 
   return (
     <section className="mb-12">
@@ -33,14 +47,16 @@ export default function CourseCurriculumClient({ curriculum }: CourseCurriculumC
 
       <div className="space-y-4">
         {curriculum.map((item, index) => {
-          const isOpen = openItems.includes(index);
+          const isOpen = openItems.includes(index)
+          const formattedHours = formatHours(item.hours)
 
           return (
             <div
-              key={index}
+              key={item.number}
               className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
             >
               <button
+                type="button"
                 className="w-full p-6 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors text-left"
                 onClick={() => toggleItem(index)}
                 aria-expanded={isOpen}
@@ -52,9 +68,11 @@ export default function CourseCurriculumClient({ curriculum }: CourseCurriculumC
                   <h3 className="text-lg font-bold text-[#152c61]">{item.title}</h3>
                 </div>
                 <div className="flex items-center gap-4 ml-4">
-                  <span className="text-sm font-medium text-[#42526b] bg-gray-100 px-3 py-1 rounded-full">
-                    {item.hours}h
-                  </span>
+                  {formattedHours && (
+                    <span className="text-sm font-medium text-[#42526b] bg-gray-100 px-3 py-1 rounded-full">
+                      {formattedHours}
+                    </span>
+                  )}
                   <span
                     className={`text-2xl font-bold text-[#667eea] transition-transform ${
                       isOpen ? 'rotate-45' : ''
@@ -81,12 +99,15 @@ export default function CourseCurriculumClient({ curriculum }: CourseCurriculumC
                     </div>
                   )}
 
-                  {item.bibliography && item.bibliography.length > 0 && (
+                  {item.bibliography.length > 0 && (
                     <div>
                       <h4 className="font-bold text-[#152c61] mb-3">Bibliografia</h4>
                       <ul className="space-y-2">
                         {item.bibliography.map((book, idx) => (
-                          <li key={idx} className="text-[#42526b] pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-[#667eea]">
+                          <li
+                            key={idx}
+                            className="text-[#42526b] pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-[#667eea]"
+                          >
                             {book}
                           </li>
                         ))}
@@ -96,9 +117,9 @@ export default function CourseCurriculumClient({ curriculum }: CourseCurriculumC
                 </div>
               )}
             </div>
-          );
+          )
         })}
       </div>
     </section>
-  );
+  )
 }

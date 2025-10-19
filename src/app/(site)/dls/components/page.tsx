@@ -10,7 +10,7 @@ import CourseInvestmentCard from '@/components/cursos/CourseInvestmentCard'
 import CourseInvestmentCardCongressos from '@/components/cursos/CourseInvestmentCardCongressos'
 
 const mockCourse = {
-  id: 1,
+  id: 'mock-course-1',
   category: 'especializacao',
   categoryLabel: 'Pós-Graduação',
   image: '/public/images/courses/psicologia-junguiana.jpg',
@@ -18,6 +18,7 @@ const mockCourse = {
   description: 'Formação aprofundada com ênfase na prática clínica e compreensão simbólica.',
   price: 3890,
   modalidade: 'Presencial',
+  duration: '24 meses',
   slug: 'pos-graduacao-psicologia-junguiana',
 }
 

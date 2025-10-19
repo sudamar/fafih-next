@@ -1,25 +1,31 @@
 'use client'
 
-import { useState, useMemo } from 'react';
-import { Trabalho, Tag } from '@/lib/services/biblioteca';
-import { getIconMapByCategoria, getColorMapByCategoria } from '@/lib/services/categorias-trabalho';
-import { PageTitle } from '@/components/ui/page-title';
-import { SectionTitle } from '@/components/ui/section-title';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Search, Calendar, BookOpen, User, Eye, ChevronDown, ChevronUp } from 'lucide-react';
+import { useMemo, useState } from 'react'
+import { Search, Calendar, BookOpen, ChevronDown, ChevronUp } from 'lucide-react'
 
-// Carrega mapas de ícones e cores das categorias
-const tagIcons = getIconMapByCategoria();
-const tagHexColors = getColorMapByCategoria();
+import { PageTitle } from '@/components/ui/page-title'
+import { SectionTitle } from '@/components/ui/section-title'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
+import type { Trabalho, Tag, TrabalhoCategoria } from '@/lib/services/biblioteca'
+import { resolveCategoriaIcon } from '@/lib/services/categorias-trabalho'
 
-function TrabalhoCard({ trabalho }: { trabalho: Trabalho }) {
-  const publicationDate = new Date(trabalho.data_publicacao);
-  const formattedDate = new Date(publicationDate.valueOf() + publicationDate.getTimezoneOffset() * 60 * 1000).toLocaleDateString('pt-BR', {
+type TagMetadataMap = Record<Tag, { color?: string | null; icon?: string | null }>
+
+interface TrabalhoCardProps {
+  trabalho: Trabalho
+  tagMetadata: TagMetadataMap
+}
+
+function TrabalhoCard({ trabalho, tagMetadata }: TrabalhoCardProps) {
+  const publicationDate = new Date(trabalho.data_publicacao)
+  const formattedDate = new Date(
+    publicationDate.valueOf() + publicationDate.getTimezoneOffset() * 60 * 1000,
+  ).toLocaleDateString('pt-BR', {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
-  });
+  })
 
   return (
     <article className="bg-white rounded-3xl shadow-lg shadow-neutral-900/5 flex flex-col overflow-hidden transition hover:-translate-y-1 hover:shadow-xl hover:shadow-neutral-900/10">
@@ -29,9 +35,7 @@ function TrabalhoCard({ trabalho }: { trabalho: Trabalho }) {
         </h3>
 
         <div className="space-y-2 mb-4">
-          <p className="text-sm text-neutral-700 font-semibold">
-            {trabalho.autor}
-          </p>
+          <p className="text-sm text-neutral-700 font-semibold">{trabalho.autor}</p>
           <p className="text-xs text-neutral-500 flex items-center gap-1">
             <Calendar className="h-3 w-3" />
             {formattedDate}
@@ -39,19 +43,21 @@ function TrabalhoCard({ trabalho }: { trabalho: Trabalho }) {
         </div>
 
         <div className="flex flex-wrap gap-2">
-          {trabalho.tags.map(tag => {
-            const hexColor = tagHexColors[tag] || '#9ca3af';
-            const TagIcon = tagIcons[tag] || User;
+          {trabalho.categoriasDetalhes.map((categoria: TrabalhoCategoria) => {
+            const metadata = tagMetadata[categoria.nome] || {}
+            const color = metadata.color || '#9ca3af'
+            const Icon = resolveCategoriaIcon(metadata.icon)
+
             return (
               <span
-                key={tag}
+                key={categoria.nome}
                 className="text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"
-                style={{ backgroundColor: hexColor }}
+                style={{ backgroundColor: color }}
               >
-                <TagIcon className="h-3.5 w-3.5" />
-                {tag}
+                <Icon className="h-3.5 w-3.5" />
+                {categoria.nome}
               </span>
-            );
+            )
           })}
         </div>
       </div>
@@ -61,11 +67,11 @@ function TrabalhoCard({ trabalho }: { trabalho: Trabalho }) {
           href={`/biblioteca/${trabalho.slug}`}
           className="block w-full py-3 rounded-lg font-bold text-sm text-white text-center no-underline bg-gradient-to-r from-[#6A0DAD] to-[#2C678F] transition-all duration-300 hover:brightness-110 hover:scale-[1.02]"
         >
-          Saiba Mais
+          Ver Detalhes
         </a>
       </div>
     </article>
-  );
+  )
 }
 
 const dateRanges = {
@@ -74,78 +80,75 @@ const dateRanges = {
   '6m': 'Últimos 6 meses',
   '1y': 'Último ano',
   '2y': 'Últimos 2 anos',
-};
+}
 
-export default function BibliotecaClient({
-  initialTrabalhos,
-  initialTags
-}: {
-  initialTrabalhos: Trabalho[];
-  initialTags: Tag[];
-}) {
-  const [trabalhos] = useState<Trabalho[]>(initialTrabalhos);
-  const [searchText, setSearchText] = useState('');
-  const [selectedTag, setSelectedTag] = useState<Tag | null>(null);
-  const [selectedDateRange, setSelectedDateRange] = useState('all');
-  const [sortByMostVisited, setSortByMostVisited] = useState(false);
-  const [showAllCategories, setShowAllCategories] = useState(false);
+interface BibliotecaClientProps {
+  initialTrabalhos: Trabalho[]
+  initialTags: Tag[]
+  tagMetadata: TagMetadataMap
+}
 
-  // Calcula quantas vezes cada tag aparece
+export default function BibliotecaClient({ initialTrabalhos, initialTags, tagMetadata }: BibliotecaClientProps) {
+  const [trabalhos] = useState<Trabalho[]>(initialTrabalhos)
+  const [searchText, setSearchText] = useState('')
+  const [selectedTag, setSelectedTag] = useState<Tag | null>(null)
+  const [selectedDateRange, setSelectedDateRange] = useState('all')
+  const [sortByMostVisited, setSortByMostVisited] = useState(false)
+  const [showAllCategories, setShowAllCategories] = useState(false)
+
   const tagCounts = useMemo(() => {
-    const counts: Record<Tag, number> = {} as Record<Tag, number>;
-    trabalhos.forEach(t => {
-      t.tags.forEach(tag => {
-        counts[tag] = (counts[tag] || 0) + 1;
-      });
-    });
-    return counts;
-  }, [trabalhos]);
+    const counts: Record<Tag, number> = {} as Record<Tag, number>
+  trabalhos.forEach((trabalho) => {
+    trabalho.tags.forEach((tag) => {
+      counts[tag] = (counts[tag] || 0) + 1
+    })
+  })
+    return counts
+  }, [trabalhos])
 
-  // Ordena tags por quantidade de uso
   const sortedTags = useMemo(() => {
-    return initialTags.sort((a, b) => (tagCounts[b] || 0) - (tagCounts[a] || 0));
-  }, [initialTags, tagCounts]);
+    return [...initialTags].sort((a, b) => (tagCounts[b] || 0) - (tagCounts[a] || 0))
+  }, [initialTags, tagCounts])
 
-  // Top 5 categorias mais usadas
-  const topCategories = useMemo(() => sortedTags.slice(0, 5), [sortedTags]);
-  const remainingCategories = useMemo(() => sortedTags.slice(5), [sortedTags]);
+  const topCategories = useMemo(() => sortedTags.slice(0, 5), [sortedTags])
+  const remainingCategories = useMemo(() => sortedTags.slice(5), [sortedTags])
 
   const filteredTrabalhos = useMemo(() => {
-    let filtered = trabalhos;
+    let filtered = trabalhos
 
     if (searchText) {
-      filtered = filtered.filter(t =>
-        t.titulo.toLowerCase().includes(searchText.toLowerCase()) ||
-        t.autor.toLowerCase().includes(searchText.toLowerCase())
-      );
+      filtered = filtered.filter(
+        (trabalho) =>
+          trabalho.titulo.toLowerCase().includes(searchText.toLowerCase()) ||
+          trabalho.autor.toLowerCase().includes(searchText.toLowerCase()),
+      )
     }
 
     if (selectedTag) {
-      filtered = filtered.filter(t => t.tags.includes(selectedTag));
+      filtered = filtered.filter((trabalho) => trabalho.tags.includes(selectedTag))
     }
 
     if (selectedDateRange !== 'all') {
-      const now = new Date();
-      const startDate = new Date();
+      const now = new Date()
+      const startDate = new Date()
 
-      if (selectedDateRange === '3m') startDate.setMonth(now.getMonth() - 3);
-      if (selectedDateRange === '6m') startDate.setMonth(now.getMonth() - 6);
-      if (selectedDateRange === '1y') startDate.setFullYear(now.getFullYear() - 1);
-      if (selectedDateRange === '2y') startDate.setFullYear(now.getFullYear() - 2);
+      if (selectedDateRange === '3m') startDate.setMonth(now.getMonth() - 3)
+      if (selectedDateRange === '6m') startDate.setMonth(now.getMonth() - 6)
+      if (selectedDateRange === '1y') startDate.setFullYear(now.getFullYear() - 1)
+      if (selectedDateRange === '2y') startDate.setFullYear(now.getFullYear() - 2)
 
-      filtered = filtered.filter(t => new Date(t.data_publicacao) >= startDate);
+      filtered = filtered.filter((trabalho) => new Date(trabalho.data_publicacao) >= startDate)
     }
 
     if (sortByMostVisited) {
-      filtered = [...filtered].sort((a, b) => b.visitantes - a.visitantes);
+      filtered = [...filtered].sort((a, b) => b.visitantes - a.visitantes)
     }
 
-    return filtered;
-  }, [trabalhos, searchText, selectedTag, selectedDateRange, sortByMostVisited]);
+    return filtered
+  }, [trabalhos, searchText, selectedTag, selectedDateRange, sortByMostVisited])
 
   return (
     <main className="bg-background">
-      {/* Hero Section */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 text-center">
           <PageTitle>Biblioteca de Produções Acadêmicas</PageTitle>
@@ -156,15 +159,14 @@ export default function BibliotecaClient({
       </section>
 
       <div className="container mx-auto px-4 py-12">
-        {/* Contador de resultados */}
         <div className="mb-6">
           <p className="text-sm text-neutral-600">
-            <span className="font-bold text-primary text-lg">{filteredTrabalhos.length}</span> {filteredTrabalhos.length === 1 ? 'trabalho encontrado' : 'trabalhos encontrados'}
+            <span className="font-bold text-primary text-lg">{filteredTrabalhos.length}</span>{' '}
+            {filteredTrabalhos.length === 1 ? 'trabalho encontrado' : 'trabalhos encontrados'}
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Sidebar de Filtros */}
           <aside className="lg:col-span-1 space-y-6">
             <div className="bg-white rounded-3xl shadow-lg shadow-neutral-900/5 p-6 sticky top-4 mb-12">
               <h3 className="font-display text-xl font-bold text-primary mb-6 flex items-center gap-2">
@@ -173,55 +175,44 @@ export default function BibliotecaClient({
               </h3>
 
               <div className="space-y-6">
-                {/* Busca por texto */}
                 <div>
-                  <label className="block text-sm font-semibold text-neutral-700 mb-2">
-                    Buscar
-                  </label>
+                  <label className="block text-sm font-semibold text-neutral-700 mb-2">Buscar</label>
                   <Input
                     type="text"
                     placeholder="Título ou autor..."
                     value={searchText}
-                    onChange={(e) => setSearchText(e.target.value)}
+                    onChange={(event) => setSearchText(event.target.value)}
                     className="w-full"
                   />
                 </div>
 
-                {/* Filtro por período */}
                 <div>
-                  <label className="block text-sm font-semibold text-neutral-700 mb-2">
-                    Período
-                  </label>
+                  <label className="block text-sm font-semibold text-neutral-700 mb-2">Período</label>
                   <select
                     value={selectedDateRange}
-                    onChange={(e) => setSelectedDateRange(e.target.value)}
+                    onChange={(event) => setSelectedDateRange(event.target.value)}
                     className="w-full p-3 border border-neutral-300 rounded-xl bg-white text-sm focus:outline-none focus:ring-2 focus:ring-secondary transition"
                   >
                     {Object.entries(dateRanges).map(([key, value]) => (
-                      <option key={key} value={key}>{value}</option>
+                      <option key={key} value={key}>
+                        {value}
+                      </option>
                     ))}
                   </select>
                 </div>
 
-                {/* Ordenação por mais vistos */}
-                <div>
-                  <label className="block text-sm font-semibold text-neutral-700 mb-2">
-                    Ordenação
-                  </label>
-                  <button
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold text-neutral-700">Mais acessados</span>
+                  <Button
+                    type="button"
+                    variant={sortByMostVisited ? 'default' : 'outline'}
+                    size="sm"
                     onClick={() => setSortByMostVisited(!sortByMostVisited)}
-                    className={`w-full flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition border ${
-                      sortByMostVisited
-                        ? 'bg-secondary text-white border-secondary'
-                        : 'bg-white text-neutral-700 border-neutral-300 hover:bg-neutral-50'
-                    }`}
                   >
-                    <Eye className="h-4 w-4" />
-                    Mais Vistos
-                  </button>
+                    Ordenar
+                  </Button>
                 </div>
 
-                {/* Filtro por categorias */}
                 <div>
                   <label className="block text-sm font-semibold text-neutral-700 mb-3">
                     Categorias
@@ -236,9 +227,11 @@ export default function BibliotecaClient({
                       Todas
                     </Button>
                     {topCategories.map((tag) => {
-                      const Icon = tagIcons[tag];
-                      const hexColor = tagHexColors[tag] || '#9ca3af';
-                      const isSelected = selectedTag === tag;
+                      const metadata = tagMetadata[tag] || {}
+                      const Icon = resolveCategoriaIcon(metadata.icon)
+                      const color = metadata.color || '#9ca3af'
+                      const isSelected = selectedTag === tag
+
                       return (
                         <button
                           key={tag}
@@ -248,33 +241,36 @@ export default function BibliotecaClient({
                               ? 'bg-neutral-100 text-neutral-900'
                               : 'border-transparent bg-neutral-50 text-neutral-700 hover:bg-neutral-100'
                           }`}
-                          style={isSelected ? { borderLeftColor: hexColor } : {}}
+                          style={isSelected ? { borderLeftColor: color } : {}}
                         >
                           <Icon className="h-4 w-4" />
                           {tag}
                         </button>
-                      );
+                      )
                     })}
-                    {showAllCategories && remainingCategories.map((tag) => {
-                      const Icon = tagIcons[tag];
-                      const hexColor = tagHexColors[tag] || '#9ca3af';
-                      const isSelected = selectedTag === tag;
-                      return (
-                        <button
-                          key={tag}
-                          onClick={() => setSelectedTag(isSelected ? null : tag)}
-                          className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition border-l-4 ${
-                            isSelected
-                              ? 'bg-neutral-100 text-neutral-900'
-                              : 'border-transparent bg-neutral-50 text-neutral-700 hover:bg-neutral-100'
-                          }`}
-                          style={isSelected ? { borderLeftColor: hexColor } : {}}
-                        >
-                          <Icon className="h-4 w-4" />
-                          {tag}
-                        </button>
-                      );
-                    })}
+                    {showAllCategories &&
+                      remainingCategories.map((tag) => {
+                        const metadata = tagMetadata[tag] || {}
+                        const Icon = resolveCategoriaIcon(metadata.icon)
+                        const color = metadata.color || '#9ca3af'
+                        const isSelected = selectedTag === tag
+
+                        return (
+                          <button
+                            key={tag}
+                            onClick={() => setSelectedTag(isSelected ? null : tag)}
+                            className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition border-l-4 ${
+                              isSelected
+                                ? 'bg-neutral-100 text-neutral-900'
+                                : 'border-transparent bg-neutral-50 text-neutral-700 hover:bg-neutral-100'
+                            }`}
+                            style={isSelected ? { borderLeftColor: color } : {}}
+                          >
+                            <Icon className="h-4 w-4" />
+                            {tag}
+                          </button>
+                        )
+                      })}
                     {remainingCategories.length > 0 && (
                       <button
                         onClick={() => setShowAllCategories(!showAllCategories)}
@@ -282,13 +278,11 @@ export default function BibliotecaClient({
                       >
                         {showAllCategories ? (
                           <>
-                            <ChevronUp className="h-4 w-4" />
-                            Ver Menos
+                            <ChevronUp className="h-4 w-4" /> Ocultar
                           </>
                         ) : (
                           <>
-                            <ChevronDown className="h-4 w-4" />
-                            Ver Todas
+                            <ChevronDown className="h-4 w-4" /> Ver todas
                           </>
                         )}
                       </button>
@@ -299,7 +293,6 @@ export default function BibliotecaClient({
             </div>
           </aside>
 
-          {/* Área de conteúdo */}
           <div className="lg:col-span-3">
             <div className="mb-6">
               <SectionTitle>Trabalhos Publicados</SectionTitle>
@@ -307,8 +300,12 @@ export default function BibliotecaClient({
 
             {filteredTrabalhos.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {filteredTrabalhos.map(trabalho => (
-                  <TrabalhoCard key={trabalho.titulo} trabalho={trabalho} />
+                {filteredTrabalhos.map((trabalho) => (
+                  <TrabalhoCard
+                    key={trabalho.id}
+                    trabalho={trabalho}
+                    tagMetadata={tagMetadata}
+                  />
                 ))}
               </div>
             ) : (
@@ -326,5 +323,5 @@ export default function BibliotecaClient({
         </div>
       </div>
     </main>
-  );
+  )
 }
