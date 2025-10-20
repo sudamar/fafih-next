@@ -14,7 +14,7 @@ const CursoCard = ({ curso }: CursoCardProps) => {
   const courseRoute = `/cursos/${curso.slug ?? String(curso.id)}`;
 
   // Trunca a descrição em 300 caracteres
-  const truncateDescription = (text: string | undefined, maxLength: number = 380): string => {
+  const truncateDescription = (text: string | null | undefined, maxLength: number = 380): string => {
     if (!text) return '';
     if (text.length <= maxLength) return text;
     return text.substring(0, maxLength) + '(...)';

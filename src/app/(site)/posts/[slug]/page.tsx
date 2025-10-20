@@ -1,15 +1,8 @@
 import { PageTitle } from '@/components/ui/page-title'
-import postsData from '@/lib/data/posts.json'
 import { notFound } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 import AuthorCard from '@/components/shared/AuthorCard'
-
-interface ContentBlock {
-  type: 'paragraph' | 'quote' | 'faq' | 'author';
-  text?: string;
-  question?: string;
-  answer?: string;
-} 
+import { getAllPosts, getPostBySlug } from 'teste/posts'
 
 interface PostPageProps {
   params: {
@@ -18,19 +11,26 @@ interface PostPageProps {
 }
 
 export async function generateStaticParams() {
-  return postsData.map((post) => ({
+  const posts = await getAllPosts()
+  return posts.map((post) => ({
     slug: post.slug,
   }))
 }
 
-export default function PostPage({ params }: PostPageProps) {
-  const post = postsData.find((p) => p.slug === params.slug)
+export default async function PostPage({ params }: PostPageProps) {
+  const post = await getPostBySlug(params.slug)
 
   if (!post) {
     notFound()
   }
 
-  const isMarkdown = typeof post.content === 'string'
+  const authorInfo = post.author_info as {
+    name: string
+    description: string
+    email: string
+    phone?: string
+    photo: string
+  } | null
 
   return (
     <main className="bg-background">
@@ -49,65 +49,18 @@ export default function PostPage({ params }: PostPageProps) {
               </p>
             )}
 
-            {isMarkdown ? (
-              <article className="prose prose-lg max-w-none text-justify [&>p]:leading-relaxed [&>p]:text-gray-700 [&>p]:mb-4 [&>blockquote]:italic [&>blockquote]:pl-6 [&>blockquote]:border-l-4 [&>blockquote]:border-primary [&>blockquote]:my-6 [&>hr]:my-8 [&>hr]:border-gray-300 [&>h3]:font-bold [&>h3]:text-gray-800 [&>h3]:mb-4 [&>h3]:mt-8 [&>h3]:pt-8 [&>h3]:border-t [&>h3]:border-gray-300 [&>h3:first-child]:mt-0 [&>h3:first-child]:pt-0 [&>h3:first-child]:border-t-0">
-                <ReactMarkdown>{post.content as string}</ReactMarkdown>
-              </article>
-            ) : (
-              <article className="prose prose-lg max-w-none">
-                {Array.isArray(post.content) && post.content.map((block: ContentBlock, index: number) => {
-                if (block.type === 'paragraph') {
-                  return (
-                    <p
-                      key={index}
-                      className="text-justify leading-relaxed text-gray-700 mb-4"
-                      dangerouslySetInnerHTML={{ __html: block.text ?? '' }}
-                    />
-                  )
-                }
-
-                if (block.type === 'quote') {
-                  return (
-                    <p
-                      key={index}
-                      className="text-justify leading-relaxed text-gray-700 italic pl-6 border-l-4 border-primary my-6"
-                      dangerouslySetInnerHTML={{ __html: block.text ?? '' }}
-                    />
-                  )
-                }
-
-                if (block.type === 'faq') {
-                  return (
-                    <div key={index} className="mb-6 bg-gray-50 p-6 rounded-lg">
-                      <p className="font-bold text-gray-800 mb-3" dangerouslySetInnerHTML={{ __html: block.question ?? '' }} />
-                      <p className="text-justify leading-relaxed text-gray-700" dangerouslySetInnerHTML={{ __html: block.answer ?? '' }} />
-                    </div>
-                  )
-                }
-
-                if (block.type === 'author') {
-                  return (
-                    <p
-                      key={index}
-                      className="text-justify leading-relaxed text-gray-700 mt-8 font-semibold"
-                      dangerouslySetInnerHTML={{ __html: block.text ?? '' }}
-                    />
-                  )
-                }
-
-                return null
-              })}
-              </article>
-            )}
+            <article className="prose prose-lg max-w-none text-justify [&>p]:leading-relaxed [&>p]:text-gray-700 [&>p]:mb-4 [&>blockquote]:italic [&>blockquote]:pl-6 [&>blockquote]:border-l-4 [&>blockquote]:border-primary [&>blockquote]:my-6 [&>hr]:my-8 [&>hr]:border-gray-300 [&>h3]:font-bold [&>h3]:text-gray-800 [&>h3]:mb-4 [&>h3]:mt-8 [&>h3]:pt-8 [&>h3]:border-t [&>h3]:border-gray-300 [&>h3:first-child]:mt-0 [&>h3:first-child]:pt-0 [&>h3:first-child]:border-t-0">
+              <ReactMarkdown>{post.content}</ReactMarkdown>
+            </article>
 
             {/* Card do Autor */}
-            {post.authorInfo && (
+            {authorInfo && (
               <div className="mt-12">
                 <AuthorCard
-                  name={post.authorInfo.name}
-                  description={post.authorInfo.description}
-                  photo={post.authorInfo.photo}
-                  email={post.authorInfo.email}
+                  name={authorInfo.name}
+                  description={authorInfo.description}
+                  photo={authorInfo.photo}
+                  email={authorInfo.email}
                 />
               </div>
             )}

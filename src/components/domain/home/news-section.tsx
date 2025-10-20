@@ -1,12 +1,14 @@
-import postsData from '@/lib/data/posts.json'
+import { getRecentPosts } from 'teste/posts'
 
-export function NewsSection() {
+export async function NewsSection() {
+  const posts = await getRecentPosts(10) // Busca até 10 posts recentes
+
   return (
     <section id="noticias" className="bg-background px-6 py-20 lg:px-8 scroll-mt-32">
       <div className="mx-auto max-w-6xl">
         <h2 className="section-title">Notícias</h2>
         <div className="mx-auto flex max-w-3xl flex-col gap-6">
-          {postsData.map((post) => (
+          {posts.map((post) => (
             <a
               key={post.slug}
               href={`/posts/${post.slug}`}
