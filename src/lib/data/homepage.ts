@@ -164,7 +164,7 @@ export const footerLinkGroups: FooterLinkGroup[] = [
     title: 'Comunidade Acadêmica',
     links: [
       { label: 'Portal do Aluno', href: 'https://ijep.com.br/login-aluno', external: true },
-      { label: 'Núcleo de Apoio Psicopedagógico', href: 'apoio-psicopedagogico.html' },
+      { label: 'Núcleo de Apoio Psicopedagógico', href: '/nucleo-apoio-psicopedagogico' },
       { label: 'Egresso', href: 'https://ijep.com.br/login-aluno', external: true },
       { label: 'Corpo Docente', href: '/corpo-docente' },
       { label: 'Membros Analistas', href: '/membros-analistas' },
