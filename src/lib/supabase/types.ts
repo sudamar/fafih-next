@@ -38,80 +38,6 @@ export type Database = {
         }
         Relationships: []
       }
-      curso_professores: {
-        Row: {
-          created_at: string | null
-          curso_id: string
-          id: string
-          papel: string | null
-          professor_id: string
-        }
-        Insert: {
-          created_at?: string | null
-          curso_id: string
-          id?: string
-          papel?: string | null
-          professor_id: string
-        }
-        Update: {
-          created_at?: string | null
-          curso_id?: string
-          id?: string
-          papel?: string | null
-          professor_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "curso_professores_curso_id_fkey"
-            columns: ["curso_id"]
-            isOneToOne: false
-            referencedRelation: "cursos"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "curso_professores_curso_id_fkey"
-            columns: ["curso_id"]
-            isOneToOne: false
-            referencedRelation: "cursos_com_coordenador"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "curso_professores_curso_id_fkey"
-            columns: ["curso_id"]
-            isOneToOne: false
-            referencedRelation: "cursos_por_polo"
-            referencedColumns: ["curso_id"]
-          },
-          {
-            foreignKeyName: "curso_professores_curso_id_fkey"
-            columns: ["curso_id"]
-            isOneToOne: false
-            referencedRelation: "professores_por_curso"
-            referencedColumns: ["curso_id"]
-          },
-          {
-            foreignKeyName: "curso_professores_professor_id_fkey"
-            columns: ["professor_id"]
-            isOneToOne: false
-            referencedRelation: "cursos_com_coordenador"
-            referencedColumns: ["coordenador_id"]
-          },
-          {
-            foreignKeyName: "curso_professores_professor_id_fkey"
-            columns: ["professor_id"]
-            isOneToOne: false
-            referencedRelation: "professores"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "curso_professores_professor_id_fkey"
-            columns: ["professor_id"]
-            isOneToOne: false
-            referencedRelation: "professores_por_curso"
-            referencedColumns: ["professor_id"]
-          },
-        ]
-      }
       curso_curriculum: {
         Row: {
           bibliography: Json | null
@@ -245,6 +171,80 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "professores_por_curso"
             referencedColumns: ["curso_id"]
+          },
+        ]
+      }
+      curso_professores: {
+        Row: {
+          created_at: string | null
+          curso_id: string
+          id: string
+          papel: string | null
+          professor_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          curso_id: string
+          id?: string
+          papel?: string | null
+          professor_id: string
+        }
+        Update: {
+          created_at?: string | null
+          curso_id?: string
+          id?: string
+          papel?: string | null
+          professor_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "curso_professores_curso_id_fkey"
+            columns: ["curso_id"]
+            isOneToOne: false
+            referencedRelation: "cursos"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "curso_professores_curso_id_fkey"
+            columns: ["curso_id"]
+            isOneToOne: false
+            referencedRelation: "cursos_com_coordenador"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "curso_professores_curso_id_fkey"
+            columns: ["curso_id"]
+            isOneToOne: false
+            referencedRelation: "cursos_por_polo"
+            referencedColumns: ["curso_id"]
+          },
+          {
+            foreignKeyName: "curso_professores_curso_id_fkey"
+            columns: ["curso_id"]
+            isOneToOne: false
+            referencedRelation: "professores_por_curso"
+            referencedColumns: ["curso_id"]
+          },
+          {
+            foreignKeyName: "curso_professores_professor_id_fkey"
+            columns: ["professor_id"]
+            isOneToOne: false
+            referencedRelation: "cursos_com_coordenador"
+            referencedColumns: ["coordenador_id"]
+          },
+          {
+            foreignKeyName: "curso_professores_professor_id_fkey"
+            columns: ["professor_id"]
+            isOneToOne: false
+            referencedRelation: "professores"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "curso_professores_professor_id_fkey"
+            columns: ["professor_id"]
+            isOneToOne: false
+            referencedRelation: "professores_por_curso"
+            referencedColumns: ["professor_id"]
           },
         ]
       }
@@ -519,6 +519,51 @@ export type Database = {
           },
         ]
       }
+      membros_analistas: {
+        Row: {
+          atendimento: string
+          cidade: string | null
+          created_at: string | null
+          descricao: string | null
+          email: string | null
+          estado: string | null
+          foto: string | null
+          id: string
+          nome: string
+          telefone: string | null
+          tipo: string
+          updated_at: string | null
+        }
+        Insert: {
+          atendimento: string
+          cidade?: string | null
+          created_at?: string | null
+          descricao?: string | null
+          email?: string | null
+          estado?: string | null
+          foto?: string | null
+          id?: string
+          nome: string
+          telefone?: string | null
+          tipo: string
+          updated_at?: string | null
+        }
+        Update: {
+          atendimento?: string
+          cidade?: string | null
+          created_at?: string | null
+          descricao?: string | null
+          email?: string | null
+          estado?: string | null
+          foto?: string | null
+          id?: string
+          nome?: string
+          telefone?: string | null
+          tipo?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       polo_cursos: {
         Row: {
           created_at: string | null
@@ -703,7 +748,7 @@ export type Database = {
         }
         Relationships: []
       }
-      trabalho_categorias: {
+      trabalho_categorizados: {
         Row: {
           categoria_id: string
           created_at: string | null
