@@ -9,6 +9,7 @@ import { SectionTitle } from '@/components/ui/section-title'
 import CourseDifferentialsSection from '@/components/cursos/CourseDifferentialsSection'
 import styles from '@/app/(site)/cursos/[slug]/page.module.css'
 import type { CourseDetail } from '@/lib/features/courses/types/Course.type'
+import { ContatosSecretaria } from '../shared/contatos-secretaria'
 
 interface CourseDetailExtensaoProps {
   course: CourseDetail
@@ -135,51 +136,11 @@ export default function CourseDetailExtensao({ course }: CourseDetailExtensaoPro
           )}
 
           {/* Fale com a Secretaria */}
-          <section className={styles.section}>
-            <SectionTitle>Fale com a Secretaria</SectionTitle>
-            <div className={styles.contactSection}>
-              <p className={styles.contactDescription}>
-                Tem dúvidas sobre o curso? Nossa equipe está pronta para ajudar você!
-              </p>
-              <div className={styles.contactGrid}>
-                {course.contact?.phone && (
-                  <a href={`tel:${course.contact.phone}`} className={styles.contactCard}>
-                    <div className={styles.contactIcon}>📞</div>
-                    <div className={styles.contactInfo}>
-                      <div className={styles.contactLabel}>Telefone</div>
-                      <div className={styles.contactValue}>{course.contact.phone}</div>
-                    </div>
-                  </a>
-                )}
-                {course.contact?.whatsapp && (
-                  <a
-                    href={`https://wa.me/${course.contact.whatsapp.replace(/\D/g, '')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.contactCard}
-                  >
-                    <div className={styles.contactIcon}>💬</div>
-                    <div className={styles.contactInfo}>
-                      <div className={styles.contactLabel}>WhatsApp</div>
-                      <div className={styles.contactValue}>{course.contact.whatsapp}</div>
-                    </div>
-                  </a>
-                )}
-                {course.contact?.email && (
-                  <a href={`mailto:${course.contact.email}`} className={styles.contactCard}>
-                    <div className={styles.contactIcon}>✉️</div>
-                    <div className={styles.contactInfo}>
-                      <div className={styles.contactLabel}>E-mail</div>
-                      <div className={styles.contactValue}>{course.contact.email}</div>
-                    </div>
-                  </a>
-                )}
-              </div>
-            </div>
-          </section>
+          <ContatosSecretaria />
+          
 
           {/* CTA Final */}
-          <section className="mt-12 bg-gradient-to-r from-[#152c61] to-[#1e4088] p-8 rounded-2xl text-white text-center">
+          {/* <section className="mt-12 bg-gradient-to-r from-[#152c61] to-[#1e4088] p-8 rounded-2xl text-white text-center">
             <h3 className="text-2xl font-bold mb-4">Pronto para começar?</h3>
             <p className="text-lg mb-6 opacity-90">
               Inscreva-se agora e comece sua jornada de aprendizado!
@@ -192,7 +153,7 @@ export default function CourseDetailExtensao({ course }: CourseDetailExtensaoPro
             >
               Fazer Inscrição
             </a>
-          </section>
+          </section> */}
         </main>
 
         {/* Sidebar com Card Flutuante */}
