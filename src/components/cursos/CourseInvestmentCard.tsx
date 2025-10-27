@@ -207,9 +207,9 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
         >
           {primaryCtaLabel}
         </a>
-        <button className={styles.secondaryButton}>
+        {/* <button className={styles.secondaryButton}>
           Download da Ementa
-        </button>
+        </button> */}
       </div>
     </div>
   );

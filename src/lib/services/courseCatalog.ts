@@ -1,5 +1,5 @@
 import { unstable_cache, revalidateTag } from 'next/cache'
-
+import { COURSE_CATEGORY, CATEGORIES_WITH_CURRICULUM } from '@/lib/utils/constants'
 import type { Database } from '@/lib/supabase/types'
 import { supabase } from '@/lib/supabase/client'
 import type {
@@ -379,13 +379,28 @@ const mapCourseCard = (row: CourseRow): CourseCard => {
 }
 
 const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
-  const card = mapCourseCard(row)
+  const curso = mapCourseCard(row)
+  console.log('*****************************')
+  console.log('Mapping course detail for:', curso.slug)
+  console.log('Categoria:', curso.category)
+  console.log('Categoria:', curso)
+  console.log('*****************************')
+
   const highlights = (row.curso_highlights ?? [])
     .map(mapHighlight)
     .sort((a, b) => a.order - b.order)
-  const curriculum = (row.curso_curriculum ?? [])
-    .map(mapCurriculumItem)
-    .sort((a, b) => a.number - b.number)
+
+  let curriculum: CourseCurriculumItem[] = [];
+
+  if (curso.category !== COURSE_CATEGORY.EXTENSAO) {
+    console.log('----- outros cursos ------')
+    curriculum = (row.curso_curriculum ?? [])
+      .map(mapCurriculumItem)
+      .sort((a, b) => a.number - b.number)
+    } else {
+      curriculum = [];
+      console.log('----- curso de extensão ------')
+    }
 
   const additionalInfo = parseAdditionalInfo(row.additional_info)
   const investmentDetails = parseAdditionalInfo(row.investment_details)
@@ -422,7 +437,7 @@ const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
   }
 
   return {
-    ...card,
+    ...curso,
     subtitle: parseMaybeString(row.subtitle),
     fullDescription: parseStringArray(row.full_description),
     highlights,
@@ -442,7 +457,7 @@ const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
     duration: parseMaybeString(row.duration),
     maxStudents: parseMaybeString(row.max_students),
     certificate: parseMaybeString(row.certificate),
-    hero: deriveHero(row, card.image),
+    hero: deriveHero(row, curso.image),
     videoUrl: parseMaybeString(row.video_url),
     diferenciais: additionalInfo.diferenciais.length > 0 ? additionalInfo.diferenciais : investmentDetails.diferenciais,
     observacoes: Array.from(
