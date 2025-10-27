@@ -1,5 +1,5 @@
 import { unstable_cache, revalidateTag } from 'next/cache'
-import { COURSE_CATEGORY, CATEGORIES_WITH_CURRICULUM } from '@/lib/utils/constants'
+import { COURSE_CATEGORY } from '@/lib/utils/constants'
 import type { Database } from '@/lib/supabase/types'
 import { supabase } from '@/lib/supabase/client'
 import type {
