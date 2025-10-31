@@ -564,70 +564,6 @@ export type Database = {
         }
         Relationships: []
       }
-      polo_cursos: {
-        Row: {
-          created_at: string | null
-          curso_id: string
-          id: string
-          polo_id: string
-        }
-        Insert: {
-          created_at?: string | null
-          curso_id: string
-          id?: string
-          polo_id: string
-        }
-        Update: {
-          created_at?: string | null
-          curso_id?: string
-          id?: string
-          polo_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "polo_cursos_curso_id_fkey"
-            columns: ["curso_id"]
-            isOneToOne: false
-            referencedRelation: "cursos"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "polo_cursos_curso_id_fkey"
-            columns: ["curso_id"]
-            isOneToOne: false
-            referencedRelation: "cursos_com_coordenador"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "polo_cursos_curso_id_fkey"
-            columns: ["curso_id"]
-            isOneToOne: false
-            referencedRelation: "cursos_por_polo"
-            referencedColumns: ["curso_id"]
-          },
-          {
-            foreignKeyName: "polo_cursos_curso_id_fkey"
-            columns: ["curso_id"]
-            isOneToOne: false
-            referencedRelation: "professores_por_curso"
-            referencedColumns: ["curso_id"]
-          },
-          {
-            foreignKeyName: "polo_cursos_polo_id_fkey"
-            columns: ["polo_id"]
-            isOneToOne: false
-            referencedRelation: "cursos_por_polo"
-            referencedColumns: ["polo_id"]
-          },
-          {
-            foreignKeyName: "polo_cursos_polo_id_fkey"
-            columns: ["polo_id"]
-            isOneToOne: false
-            referencedRelation: "polos"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       polos: {
         Row: {
           address: string | null
@@ -638,7 +574,7 @@ export type Database = {
           map_url: string | null
           name: string
           phone: string | null
-          polo_id: string
+          slug: string
           updated_at: string | null
         }
         Insert: {
@@ -650,7 +586,7 @@ export type Database = {
           map_url?: string | null
           name: string
           phone?: string | null
-          polo_id: string
+          slug: string
           updated_at?: string | null
         }
         Update: {
@@ -662,7 +598,7 @@ export type Database = {
           map_url?: string | null
           name?: string
           phone?: string | null
-          polo_id?: string
+          slug?: string
           updated_at?: string | null
         }
         Relationships: []

@@ -49,16 +49,6 @@ export default function PolosPage() {
                     </div>
                   </div>
 
-                  <div className="rounded-lg bg-gray-50 p-4">
-                    <h4 className="mb-3 text-sm font-bold text-secondary">Cursos Oferecidos:</h4>
-                    <ul className="space-y-1.5">
-                      {polo.courses.map((course) => (
-                        <li key={course} className="text-sm text-gray-700 before:mr-2 before:content-['•']">
-                          {course}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
 
                 <a
