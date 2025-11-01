@@ -74,24 +74,6 @@ export default async function PolosPage() {
             ))}
           </div>
 
-          {/* Informações Gerais */}
-          <div className="rounded-2xl bg-white p-8 shadow-lg md:p-12">
-            <h3 className="mb-8 text-center text-2xl font-bold text-primary">
-              Informações Gerais sobre os Polos
-            </h3>
-
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {highlights.map((highlight) => (
-                <div
-                  key={highlight.title}
-                  className="rounded-lg border border-gray-200 bg-gray-50 p-6 transition hover:shadow-md"
-                >
-                  <h4 className="mb-3 text-base font-bold text-secondary">{highlight.title}</h4>
-                  <p className="text-sm leading-relaxed text-gray-600">{highlight.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* CTA de volta */}
           <div className="mt-12 flex justify-center">

@@ -86,36 +86,12 @@ export const getPoloById = async (id: string): Promise<Polo | null> => {
   return mapPolo(data)
 }
 
-const defaultHighlights: PoloHighlight[] = [
-  {
-    title: 'Infraestrutura Completa',
-    description: 'Todos os polos contam com salas de aula equipadas, bibliotecas e espaços de convivência para garantir a melhor experiência acadêmica.',
-  },
-  {
-    title: 'Mesmo Padrão de Qualidade',
-    description: 'Os cursos oferecidos nos polos seguem os mesmos critérios de excelência da sede, com professores qualificados e material didático atualizado.',
-  },
-  {
-    title: 'Suporte Acadêmico',
-    description: 'Cada polo possui coordenação local dedicada a auxiliar os alunos em suas necessidades acadêmicas e administrativas.',
-  },
-  {
-    title: 'Localização Estratégica',
-    description: 'Os polos estão localizados em regiões de fácil acesso, facilitando o deslocamento dos estudantes e promovendo a integração com a comunidade local.',
-  },
-]
-
-export const getPoloHighlights = (): PoloHighlight[] => {
-  return defaultHighlights
-}
 
 export const getPolosContent = async (): Promise<PolosData> => {
   const locations = await listPolos()
-  const highlights = getPoloHighlights()
 
   return {
     locations,
-    highlights,
   }
 }
 
