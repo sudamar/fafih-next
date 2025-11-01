@@ -9,6 +9,7 @@ import {
 } from '@/lib/services/courseCatalog'
 import { MEMBROS_LIST_TAG } from '@/lib/services/membros-analistas'
 import { POLOS_LIST_TAG, revalidatePolosList } from '@/lib/services/polosCatalog'
+import { PROFESSORES_LIST_TAG, revalidateProfessoresList } from '@/lib/services/professoresCatalog'
 
 export async function GET() {
   try {
@@ -35,6 +36,9 @@ export async function GET() {
     // Revalidar polos
     await revalidatePolosList()
 
+    // Revalidar professores
+    await revalidateProfessoresList()
+
     // Revalidar páginas importantes
     revalidatePath('/')
     revalidatePath('/cursos')
@@ -53,6 +57,7 @@ export async function GET() {
         },
         membrosAnalistas: true,
         polos: true,
+        professores: true,
         paths: [
           '/',
           '/cursos',
@@ -63,7 +68,7 @@ export async function GET() {
           '/polos',
         ],
       },
-      tags: [COURSE_LIST_TAG, MEMBROS_LIST_TAG, POLOS_LIST_TAG],
+      tags: [COURSE_LIST_TAG, MEMBROS_LIST_TAG, POLOS_LIST_TAG, PROFESSORES_LIST_TAG],
     })
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Erro desconhecido'

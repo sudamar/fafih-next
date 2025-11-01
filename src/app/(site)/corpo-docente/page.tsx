@@ -3,8 +3,8 @@ import { CardProfessor } from '@/components/ui/card-professor';
 import { PageTitle } from '@/components/ui/page-title';
 import styles from './page.module.css';
 
-export default function CorpoDocentePage() {
-  const professores = getProfessores();
+export default async function CorpoDocentePage() {
+  const professores = await getProfessores();
   return (
     <div className={styles.container}>
       <div className={styles.header}>
