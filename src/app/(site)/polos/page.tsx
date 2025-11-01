@@ -1,10 +1,11 @@
-import { getPolosContent } from '@/lib/services/polosCatalog'
+import { listPolos } from '@/lib/services/polosCatalog'
+import type { Polo } from '@/lib/types/polos'
 import { PageTitle } from '@/components/ui/page-title'
 import { CardAcentoBorda } from '@/components/ui/card-acento-borda'
 import { MapPin, Phone, Mail, User, ExternalLink } from 'lucide-react'
 
 export default async function PolosPage() {
-  const { locations, highlights } = await getPolosContent()
+  const locations = await listPolos()
 
   return (
     <main className="bg-background">
@@ -20,7 +21,7 @@ export default async function PolosPage() {
 
           {/* Grid de Polos */}
           <div className="mb-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {locations.map((polo) => (
+            {locations.map((polo: Polo) => (
               <CardAcentoBorda key={polo.id} className="flex flex-col">
                 <div className="flex-1">
                   <h3 className="mb-4 text-xl font-bold text-primary">{polo.name}</h3>
@@ -73,7 +74,6 @@ export default async function PolosPage() {
               </CardAcentoBorda>
             ))}
           </div>
-
 
           {/* CTA de volta */}
           <div className="mt-12 flex justify-center">

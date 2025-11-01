@@ -8,13 +8,3 @@ export interface Polo {
   coordinator: string | null
   mapUrl: string | null
 }
-
-export interface PoloHighlight {
-  title: string
-  description: string
-}
-
-export interface PolosData {
-  locations: Polo[]
-  highlights: PoloHighlight[]
-}

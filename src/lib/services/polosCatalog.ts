@@ -1,12 +1,14 @@
 import { unstable_cache, revalidateTag } from 'next/cache'
 import type { Database } from '@/lib/supabase/types'
 import { supabase } from '@/lib/supabase/client'
-import type { Polo, PoloHighlight, PolosData } from '@/lib/types/polos'
+import type { Polo } from '@/lib/types/polos'
 
 type PoloRow = Database['public']['Tables']['polos']['Row']
 
 export const POLOS_LIST_TAG = 'polos:list'
 
+
+// nao recrie highlights nesse arquivo até que eu expressamente peça para isso
 const mapPolo = (row: PoloRow): Polo => ({
   id: row.id,
   slug: row.slug,
@@ -84,15 +86,6 @@ export const getPoloById = async (id: string): Promise<Polo | null> => {
   }
 
   return mapPolo(data)
-}
-
-
-export const getPolosContent = async (): Promise<PolosData> => {
-  const locations = await listPolos()
-
-  return {
-    locations,
-  }
 }
 
 export const revalidatePolosList = async () => {
