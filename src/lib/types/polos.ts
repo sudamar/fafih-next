@@ -1,12 +1,12 @@
 export interface Polo {
   id: string
+  slug: string
   name: string
-  address: string
-  phone: string
-  email: string
-  coordinator: string
-  mapUrl: string
-  courses: string[]
+  address: string | null
+  phone: string | null
+  email: string | null
+  coordinator: string | null
+  mapUrl: string | null
 }
 
 export interface PoloHighlight {

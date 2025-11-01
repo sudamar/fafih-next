@@ -8,6 +8,7 @@ import {
   revalidateCourseList,
 } from '@/lib/services/courseCatalog'
 import { MEMBROS_LIST_TAG } from '@/lib/services/membros-analistas'
+import { POLOS_LIST_TAG, revalidatePolosList } from '@/lib/services/polosCatalog'
 
 export async function GET() {
   try {
@@ -31,6 +32,9 @@ export async function GET() {
     // Revalidar membros analistas
     await revalidateTag(MEMBROS_LIST_TAG)
 
+    // Revalidar polos
+    await revalidatePolosList()
+
     // Revalidar páginas importantes
     revalidatePath('/')
     revalidatePath('/cursos')
@@ -38,6 +42,7 @@ export async function GET() {
     revalidatePath('/biblioteca')
     revalidatePath('/corpo-docente')
     revalidatePath('/calendario-academico')
+    revalidatePath('/polos')
 
     return NextResponse.json({
       message: 'Revalidação executada com sucesso',
@@ -47,6 +52,7 @@ export async function GET() {
           details: detailResults,
         },
         membrosAnalistas: true,
+        polos: true,
         paths: [
           '/',
           '/cursos',
@@ -54,9 +60,10 @@ export async function GET() {
           '/biblioteca',
           '/corpo-docente',
           '/calendario-academico',
+          '/polos',
         ],
       },
-      tags: [COURSE_LIST_TAG, MEMBROS_LIST_TAG],
+      tags: [COURSE_LIST_TAG, MEMBROS_LIST_TAG, POLOS_LIST_TAG],
     })
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Erro desconhecido'

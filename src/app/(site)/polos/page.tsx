@@ -1,10 +1,10 @@
-import { getPolosContent } from '@/lib/services/polos'
+import { getPolosContent } from '@/lib/services/polosCatalog'
 import { PageTitle } from '@/components/ui/page-title'
 import { CardAcentoBorda } from '@/components/ui/card-acento-borda'
 import { MapPin, Phone, Mail, User, ExternalLink } from 'lucide-react'
 
-export default function PolosPage() {
-  const { locations, highlights } = getPolosContent()
+export default async function PolosPage() {
+  const { locations, highlights } = await getPolosContent()
 
   return (
     <main className="bg-background">
@@ -26,40 +26,50 @@ export default function PolosPage() {
                   <h3 className="mb-4 text-xl font-bold text-primary">{polo.name}</h3>
 
                   <div className="space-y-3 mb-6">
-                    <div className="flex items-start gap-3 text-sm text-gray-600">
-                      <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary" />
-                      <span>{polo.address}</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-sm text-gray-600">
-                      <Phone className="h-4 w-4 flex-shrink-0 text-secondary" />
-                      <span>{polo.phone}</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-sm text-gray-600">
-                      <Mail className="h-4 w-4 flex-shrink-0 text-secondary" />
-                      <a
-                        href={`mailto:${polo.email}`}
-                        className="hover:text-primary hover:underline"
-                      >
-                        {polo.email}
-                      </a>
-                    </div>
-                    <div className="flex items-center gap-3 text-sm text-gray-600">
-                      <User className="h-4 w-4 flex-shrink-0 text-secondary" />
-                      <span>{polo.coordinator}</span>
-                    </div>
+                    {polo.address && (
+                      <div className="flex items-start gap-3 text-sm text-gray-600">
+                        <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary" />
+                        <span>{polo.address}</span>
+                      </div>
+                    )}
+                    {polo.phone && (
+                      <div className="flex items-center gap-3 text-sm text-gray-600">
+                        <Phone className="h-4 w-4 flex-shrink-0 text-secondary" />
+                        <span>{polo.phone}</span>
+                      </div>
+                    )}
+                    {polo.email && (
+                      <div className="flex items-center gap-3 text-sm text-gray-600">
+                        <Mail className="h-4 w-4 flex-shrink-0 text-secondary" />
+                        <a
+                          href={`mailto:${polo.email}`}
+                          className="hover:text-primary hover:underline"
+                        >
+                          {polo.email}
+                        </a>
+                      </div>
+                    )}
+                    {polo.coordinator && (
+                      <div className="flex items-center gap-3 text-sm text-gray-600">
+                        <User className="h-4 w-4 flex-shrink-0 text-secondary" />
+                        <span>{polo.coordinator}</span>
+                      </div>
+                    )}
                   </div>
 
                 </div>
 
-                <a
-                  href={polo.mapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white shadow-md transition hover:bg-primary/90"
-                >
-                  Ver no mapa
-                  <ExternalLink className="h-4 w-4" />
-                </a>
+                {polo.mapUrl && (
+                  <a
+                    href={polo.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white shadow-md transition hover:bg-primary/90"
+                  >
+                    Ver no mapa
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                )}
               </CardAcentoBorda>
             ))}
           </div>
