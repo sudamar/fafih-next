@@ -37,9 +37,8 @@ const COURSE_DETAIL_SELECT = `
   slug,
   title,
   subtitle,
-  description,
+  short_description,
   full_description,
-  image,
   image_url,
   video_url,
   category,
@@ -335,7 +334,7 @@ const mapProfessor = (row: ProfessorRow | null, papel: string | null): CoursePro
 
 const deriveHero = (row: CourseRow, image: string | null): CourseDetail['hero'] | undefined => {
   const videoUrl = parseMaybeString(row.video_url)
-  const imageUrl = parseMaybeString(row.image_url) ?? parseMaybeString(row.image) ?? image
+  const imageUrl = parseMaybeString(row.image_url) ?? image
 
   if (videoUrl) {
     return {
@@ -358,8 +357,8 @@ const deriveHero = (row: CourseRow, image: string | null): CourseDetail['hero'] 
 }
 
 const mapCourseCard = (row: CourseRow): CourseCard => {
-  const image = parseMaybeString(row.image_url) ?? parseMaybeString(row.image)
-  const rawDescription = parseMaybeString(row.description)
+  const image = parseMaybeString(row.image_url)
+  const rawDescription = parseMaybeString(row.short_description)
   const description =
     rawDescription && rawDescription.length > 250
       ? `${rawDescription.slice(0, 250).trimEnd()}...`
@@ -379,64 +378,86 @@ const mapCourseCard = (row: CourseRow): CourseCard => {
 }
 
 const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
-  const curso = mapCourseCard(row)
-  console.log('*****************************')
-  console.log('Mapping course detail for:', curso.slug)
-  console.log('Categoria:', curso.category)
-  console.log('Categoria:', curso)
-  console.log('*****************************')
+  console.log('[mapCourseDetail] ====== INÍCIO MAPEAMENTO ======');
 
-  const highlights = (row.curso_highlights ?? [])
-    .map(mapHighlight)
-    .sort((a, b) => a.order - b.order)
+  try {
+    console.log('[mapCourseDetail] Mapeando card básico...');
+    const curso = mapCourseCard(row);
+    console.log('[mapCourseDetail] ✅ Card mapeado:', {
+      slug: curso.slug,
+      title: curso.title,
+      category: curso.category,
+      categoryLabel: curso.categoryLabel
+    });
 
-  let curriculum: CourseCurriculumItem[] = [];
+    console.log('[mapCourseDetail] Mapeando highlights...');
+    const highlights = (row.curso_highlights ?? [])
+      .map(mapHighlight)
+      .sort((a, b) => a.order - b.order);
+    console.log('[mapCourseDetail] ✅ Highlights mapeados:', highlights.length);
 
-  if (curso.category !== COURSE_CATEGORY.EXTENSAO) {
-    console.log('----- outros cursos ------')
-    curriculum = (row.curso_curriculum ?? [])
-      .map(mapCurriculumItem)
-      .sort((a, b) => a.number - b.number)
+    let curriculum: CourseCurriculumItem[] = [];
+
+    console.log('[mapCourseDetail] Verificando categoria para curriculum...');
+    console.log('[mapCourseDetail] Categoria do curso:', curso.category);
+    console.log('[mapCourseDetail] COURSE_CATEGORY.EXTENSAO:', COURSE_CATEGORY.EXTENSAO);
+
+    if (curso.category !== COURSE_CATEGORY.EXTENSAO) {
+      console.log('[mapCourseDetail] Categoria diferente de EXTENSAO - mapeando curriculum');
+      curriculum = (row.curso_curriculum ?? [])
+        .map(mapCurriculumItem)
+        .sort((a, b) => a.number - b.number);
+      console.log('[mapCourseDetail] ✅ Curriculum mapeado:', curriculum.length, 'itens');
     } else {
+      console.log('[mapCourseDetail] Categoria EXTENSAO - pulando curriculum');
       curriculum = [];
-      console.log('----- curso de extensão ------')
     }
 
-  const additionalInfo = parseAdditionalInfo(row.additional_info)
-  const investmentDetails = parseAdditionalInfo(row.investment_details)
+    console.log('[mapCourseDetail] Parseando additional_info...');
+    const additionalInfo = parseAdditionalInfo(row.additional_info);
+    console.log('[mapCourseDetail] ✅ Additional info parseado');
 
-  let coordenacao =
-    row.coordenador && parseMaybeString(row.coordenador.nome)
-      ? {
-          coordenador: row.coordenador.nome,
-          descricao: row.coordenador.descricao ?? '',
-          foto: row.coordenador.foto ?? null,
-        }
-      : undefined
+    console.log('[mapCourseDetail] Parseando investment_details...');
+    const investmentDetails = parseAdditionalInfo(row.investment_details);
+    console.log('[mapCourseDetail] ✅ Investment details parseado');
 
-  const professores: CourseProfessor[] = []
+    console.log('[mapCourseDetail] Processando coordenação...');
+    let coordenacao =
+      row.coordenador && parseMaybeString(row.coordenador.nome)
+        ? {
+            coordenador: row.coordenador.nome,
+            descricao: row.coordenador.descricao ?? '',
+            foto: row.coordenador.foto ?? null,
+          }
+        : undefined;
+    console.log('[mapCourseDetail] Coordenador:', coordenacao ? coordenacao.coordenador : 'Nenhum');
 
-  for (const relation of row.curso_professores ?? []) {
-    const professor = mapProfessor(relation.professor, relation.papel)
-    if (!professor) {
-      continue
-    }
+    console.log('[mapCourseDetail] Processando professores...');
+    const professores: CourseProfessor[] = [];
 
-    if (relation.papel === 'coordenador') {
-      if (!coordenacao) {
-        coordenacao = {
-          coordenador: professor.nome,
-          descricao: professor.descricao ?? '',
-          foto: professor.foto ?? null,
-        }
+    for (const relation of row.curso_professores ?? []) {
+      const professor = mapProfessor(relation.professor, relation.papel);
+      if (!professor) {
+        continue;
       }
-      continue
+
+      if (relation.papel === 'coordenador') {
+        if (!coordenacao) {
+          coordenacao = {
+            coordenador: professor.nome,
+            descricao: professor.descricao ?? '',
+            foto: professor.foto ?? null,
+          };
+        }
+        continue;
+      }
+
+      professores.push(professor);
     }
+    console.log('[mapCourseDetail] ✅ Professores processados:', professores.length);
 
-    professores.push(professor)
-  }
-
-  return {
+    console.log('[mapCourseDetail] Construindo objeto final...');
+    const result = {
     ...curso,
     subtitle: parseMaybeString(row.subtitle),
     fullDescription: parseStringArray(row.full_description),
@@ -471,21 +492,48 @@ const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
     formato_curso: additionalInfo.formato_curso ?? investmentDetails.formato_curso,
     testimonials: additionalInfo.testimonials.length > 0 ? additionalInfo.testimonials : investmentDetails.testimonials,
     workload: parseMaybeString(row.workload),
+  };
+
+    console.log('[mapCourseDetail] ✅ Objeto final construído com sucesso');
+    console.log('[mapCourseDetail] ====== FIM MAPEAMENTO ======');
+
+    return result;
+  } catch (err) {
+    console.error('[mapCourseDetail] ❌ ERRO DURANTE MAPEAMENTO:');
+    console.error('[mapCourseDetail] Erro:', err);
+    console.error('[mapCourseDetail] Stack:', err instanceof Error ? err.stack : 'N/A');
+    console.error('[mapCourseDetail] Row data:', JSON.stringify(row, null, 2));
+    console.log('[mapCourseDetail] ====== FIM COM ERRO ======');
+    throw err;
   }
 }
 
 const fetchCourseRows = unstable_cache(
   async (): Promise<CourseRow[]> => {
-    const { data, error } = await supabase
-      .from('cursos')
-      .select('*')
-      .order('title', { ascending: true })
+    console.log('[fetchCourseRows] ====== INÍCIO ======');
+    console.log('[fetchCourseRows] Buscando todos os cursos...');
 
-    if (error) {
-      throw new Error(`Erro ao buscar cursos: ${error.message}`)
+    try {
+      const { data, error } = await supabase
+        .from('cursos')
+        .select('*')
+        .order('title', { ascending: true })
+
+      if (error) {
+        console.error('[fetchCourseRows] ❌ ERRO no Supabase:', error);
+        console.error('[fetchCourseRows] Mensagem:', error.message);
+        throw new Error(`Erro ao buscar cursos: ${error.message}`)
+      }
+
+      console.log('[fetchCourseRows] ✅ Cursos carregados:', data?.length ?? 0);
+      console.log('[fetchCourseRows] ====== FIM ======');
+
+      return data ?? []
+    } catch (err) {
+      console.error('[fetchCourseRows] ❌ EXCEÇÃO CAPTURADA:', err);
+      console.log('[fetchCourseRows] ====== FIM COM ERRO ======');
+      throw err;
     }
-
-    return data ?? []
   },
   ['courses', 'list'],
   { tags: [COURSE_LIST_TAG] },
@@ -494,23 +542,59 @@ const fetchCourseRows = unstable_cache(
 const fetchCourseDetail = (column: 'slug' | 'id', value: string) =>
   unstable_cache(
     async (): Promise<CourseDetail | null> => {
-      let query = supabase
-        .from('cursos')
-        .select(COURSE_DETAIL_SELECT)
+      console.log('[fetchCourseDetail] ====== INÍCIO ======');
+      console.log('[fetchCourseDetail] Coluna:', column);
+      console.log('[fetchCourseDetail] Valor:', value);
 
-      query = query.eq(column, value)
+      try {
+        let query = supabase
+          .from('cursos')
+          .select(COURSE_DETAIL_SELECT)
 
-      const { data, error } = await query.maybeSingle<CourseDetailQueryRow>()
+        query = query.eq(column, value)
 
-      if (error) {
-        throw new Error(`Erro ao buscar detalhe do curso: ${error.message}`)
+        console.log('[fetchCourseDetail] Executando query no Supabase...');
+        const { data, error } = await query.maybeSingle<CourseDetailQueryRow>()
+
+        if (error) {
+          console.error('[fetchCourseDetail] ❌ ERRO no Supabase:', error);
+          console.error('[fetchCourseDetail] Mensagem:', error.message);
+          console.error('[fetchCourseDetail] Detalhes:', error.details);
+          console.error('[fetchCourseDetail] Hint:', error.hint);
+          throw new Error(`Erro ao buscar detalhe do curso: ${error.message}`)
+        }
+
+        console.log('[fetchCourseDetail] ✅ Query executada com sucesso');
+        console.log('[fetchCourseDetail] Dados retornados:', data ? 'SIM' : 'NULL');
+
+        if (data) {
+          console.log('[fetchCourseDetail] Título do curso:', data.title);
+          console.log('[fetchCourseDetail] Slug do curso:', data.slug);
+          console.log('[fetchCourseDetail] Categoria:', data.category);
+          console.log('[fetchCourseDetail] Highlights:', data.curso_highlights?.length ?? 0);
+          console.log('[fetchCourseDetail] Curriculum:', data.curso_curriculum?.length ?? 0);
+          console.log('[fetchCourseDetail] Professores:', data.curso_professores?.length ?? 0);
+        }
+
+        if (!data) {
+          console.log('[fetchCourseDetail] Nenhum curso encontrado com', column, '=', value);
+          console.log('[fetchCourseDetail] ====== FIM ======');
+          return null
+        }
+
+        console.log('[fetchCourseDetail] Iniciando mapeamento dos dados...');
+        const mapped = mapCourseDetail(data);
+        console.log('[fetchCourseDetail] ✅ Mapeamento concluído');
+        console.log('[fetchCourseDetail] ====== FIM ======');
+
+        return mapped;
+      } catch (err) {
+        console.error('[fetchCourseDetail] ❌ EXCEÇÃO CAPTURADA:');
+        console.error('[fetchCourseDetail] Erro:', err);
+        console.error('[fetchCourseDetail] Stack:', err instanceof Error ? err.stack : 'N/A');
+        console.log('[fetchCourseDetail] ====== FIM COM ERRO ======');
+        throw err;
       }
-
-      if (!data) {
-        return null
-      }
-
-      return mapCourseDetail(data)
     },
     ['courses', 'detail', column, value],
     { tags: [COURSE_DETAIL_TAG(value)] },
@@ -560,11 +644,21 @@ export const getCourseStats = async () => {
 }
 
 export const getCourseBySlug = async (slug: string): Promise<CourseDetail | null> => {
+  console.log('[getCourseBySlug] ====== INÍCIO ======');
+  console.log('[getCourseBySlug] Slug recebido:', slug);
+  console.log('[getCourseBySlug] Tipo do slug:', typeof slug);
+
   if (!slug) {
+    console.log('[getCourseBySlug] Slug vazio ou nulo, retornando null');
     return null
   }
 
-  return fetchCourseDetail('slug', slug)
+  console.log('[getCourseBySlug] Chamando fetchCourseDetail...');
+  const result = await fetchCourseDetail('slug', slug);
+  console.log('[getCourseBySlug] Resultado:', result ? `Curso encontrado: ${result.title}` : 'NULL');
+  console.log('[getCourseBySlug] ====== FIM ======');
+
+  return result;
 }
 
 export const getCourseById = async (id: string): Promise<CourseDetail | null> => {
