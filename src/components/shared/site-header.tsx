@@ -100,7 +100,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 bg-card-bg shadow-header header-gradient-border">
       <div className="mx-auto flex w-full max-w-[1280px] flex-nowrap items-center justify-between gap-4 px-6 py-2 md:px-8">
         <div className="flex flex-none items-center gap-4">
-          <Link href="/" className="flex items-center gap-4">
+          <Link href="/" className="flex items-center gap-4 -translate-x-[25px]">
             <Image
               src="https://i.imgur.com/2wUar6U.png"
               alt="Logo FAFIH"
@@ -127,7 +127,7 @@ export function SiteHeader() {
               const itemContent = (
                 <a
                   href={item.href}
-                  className="flex items-center gap-1 text-[0.855rem] font-semibold text-primary transition hover:text-secondary"
+                  className="flex items-center gap-1 text-[0.98rem] font-semibold text-primary transition hover:text-secondary"
                   {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 >
                   {item.label}
@@ -148,7 +148,7 @@ export function SiteHeader() {
                               <li key={child.label}>
                                 <button
                                   type="button"
-                                  className="w-full px-5 py-2 text-left text-[0.81rem] font-semibold text-primary transition hover:bg-neutral-100"
+                                  className="w-full px-5 py-2 text-left text-[0.935rem] font-semibold text-primary transition hover:bg-neutral-100"
                                   onClick={() => openOuvidoria()}
                                 >
                                   {child.label}
@@ -165,7 +165,7 @@ export function SiteHeader() {
                             <li key={child.label}>
                               <a
                                 href={child.href}
-                                className="block px-5 py-2 text-[0.81rem] font-semibold text-primary transition hover:bg-neutral-100"
+                                className="block px-5 py-2 text-[0.935rem] font-semibold text-primary transition hover:bg-neutral-100"
                                 {...(child.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                               >
                                 {child.label}
@@ -187,7 +187,7 @@ export function SiteHeader() {
             href="/cursos"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-footer-blue px-6 py-2 text-[0.81rem] font-semibold text-white transition hover:bg-blue-600"
+            className="rounded-full bg-footer-blue px-6 py-2 text-[0.81rem] font-semibold text-white transition hover:bg-blue-600 translate-x-[25px]"
           >
             Nossos cursos
           </a>
@@ -216,7 +216,7 @@ export function SiteHeader() {
                     <div className="flex items-center justify-between">
                       <a
                         href={item.href}
-                        className="py-2 text-[0.9rem] font-semibold text-primary"
+                        className="py-2 text-[1.025rem] font-semibold text-primary"
                         onClick={() => setMobileMenuOpen(false)}
                         {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                       >
@@ -245,7 +245,7 @@ export function SiteHeader() {
                               <li key={child.label}>
                                 <button
                                   type="button"
-                                  className="w-full text-left text-[0.81rem] font-semibold text-primary"
+                                  className="w-full text-left text-[0.935rem] font-semibold text-primary"
                                   onClick={() => handleChildClick(child)}
                                 >
                                   {child.label}
@@ -262,7 +262,7 @@ export function SiteHeader() {
                             <li key={child.label}>
                               <a
                                 href={child.href}
-                                className="block text-[0.81rem] font-semibold text-primary"
+                                className="block text-[0.935rem] font-semibold text-primary"
                                 onClick={() => setMobileMenuOpen(false)}
                                 {...(child.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                               >

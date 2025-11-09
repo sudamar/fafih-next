@@ -169,9 +169,13 @@ export function getConfiguracoesFafih(): ConfiguracoesFafih | null {
  * @example
  * imprimeLogs('[MeuModulo]', 'Iniciando processamento...')
  * imprimeLogs('[MeuModulo]', 'Valor:', valor, 'Status:', status)
+ *
+ * @remarks
+ * Apenas imprime se logAtivo === true (explicitamente verdadeiro).
+ * Valores null, undefined, false, ou qualquer outro valor não imprimem logs.
  */
 export function imprimeLogs(...messages: unknown[]): void {
-  if (globalConfig?.logAtivo) {
+  if (globalConfig?.logAtivo === true) {
     console.log(...messages)
   }
 }
