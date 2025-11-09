@@ -864,6 +864,39 @@ export type Database = {
           },
         ]
       }
+      settings: {
+        Row: {
+          created_at: string | null
+          data_time_server_iniciado: string | null
+          drmsocial: boolean | null
+          id: number
+          log_ativo: boolean | null
+          manutencao: boolean | null
+          nome_site: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          data_time_server_iniciado?: string | null
+          drmsocial?: boolean | null
+          id?: number
+          log_ativo?: boolean | null
+          manutencao?: boolean | null
+          nome_site?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          data_time_server_iniciado?: string | null
+          drmsocial?: boolean | null
+          id?: number
+          log_ativo?: boolean | null
+          manutencao?: boolean | null
+          nome_site?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       cursos_com_coordenador: {

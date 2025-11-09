@@ -2,6 +2,7 @@ import { unstable_cache, revalidateTag } from 'next/cache'
 import { COURSE_CATEGORY } from '@/lib/utils/constants'
 import type { Database } from '@/lib/supabase/types'
 import { supabase } from '@/lib/supabase/client'
+import { imprimeLogs } from '@/lib/config/startup'
 import type {
   CourseCard,
   CourseContact,
@@ -121,26 +122,26 @@ const parseStringArray = (value: unknown): string[] => {
 
 // Função genérica para processar campos que podem vir como array ou objeto
 const convertToStringArray = (value: unknown, fieldName: string): string[] => {
-  console.log(`[${fieldName}] Valor recebido:`, value);
-  console.log(`[${fieldName}] Tipo:`, typeof value);
-  console.log(`[${fieldName}] É array?`, Array.isArray(value));
+  imprimeLogs(`[${fieldName}] Valor recebido:`, value);
+  imprimeLogs(`[${fieldName}] Tipo:`, typeof value);
+  imprimeLogs(`[${fieldName}] É array?`, Array.isArray(value));
 
   // Se já é array, processar normalmente
   if (Array.isArray(value)) {
-    console.log(`[${fieldName}] ✅ É array, tamanho:`, value.length);
+    imprimeLogs(`[${fieldName}] ✅ É array, tamanho:`, value.length);
 
     const result = value
       .filter((item): item is string => typeof item === 'string')
       .map((item) => item.trim())
       .filter((item) => item.length > 0);
 
-    console.log(`[${fieldName}] Resultado final:`, result.length, 'itens');
+    imprimeLogs(`[${fieldName}] Resultado final:`, result.length, 'itens');
     return result;
   }
 
   // Se é um objeto, tentar converter para array
   if (isRecord(value)) {
-    console.log(`[${fieldName}] ⚠️ É um objeto, tentando converter para array...`);
+    imprimeLogs(`[${fieldName}] ⚠️ É um objeto, tentando converter para array...`);
 
     // Pegar as chaves e ordenar numericamente
     const keys = Object.keys(value).sort((a, b) => {
@@ -149,7 +150,7 @@ const convertToStringArray = (value: unknown, fieldName: string): string[] => {
       return numA - numB;
     });
 
-    console.log(`[${fieldName}] Chaves encontradas:`, keys);
+    imprimeLogs(`[${fieldName}] Chaves encontradas:`, keys);
 
     // Extrair os valores na ordem correta
     const arrayFromObject = keys
@@ -158,11 +159,11 @@ const convertToStringArray = (value: unknown, fieldName: string): string[] => {
       .map((item) => item.trim())
       .filter((item) => item.length > 0);
 
-    console.log(`[${fieldName}] ✅ Convertido para array:`, arrayFromObject.length, 'itens');
+    imprimeLogs(`[${fieldName}] ✅ Convertido para array:`, arrayFromObject.length, 'itens');
     return arrayFromObject;
   }
 
-  console.log(`[${fieldName}] ❌ Não é array nem objeto válido, retornando []`);
+  imprimeLogs(`[${fieldName}] ❌ Não é array nem objeto válido, retornando []`);
   return [];
 }
 
@@ -414,22 +415,22 @@ const deriveHero = (row: CourseRow, image: string | null): CourseDetail['hero'] 
 }
 
 const mapCourseCard = (row: CourseRow): CourseCard => {
-  console.log('[mapCourseCard] Raw short_description do banco:', row.short_description);
-  console.log('[mapCourseCard] images:', row.image_url);
-  console.log('[mapCourseCard] images:', row.video_url);
-  console.log('[mapCourseCard] Tipo:', typeof row.short_description);
+  imprimeLogs('[mapCourseCard] Raw short_description do banco:', row.short_description);
+  imprimeLogs('[mapCourseCard] images:', row.image_url);
+  imprimeLogs('[mapCourseCard] images:', row.video_url);
+  imprimeLogs('[mapCourseCard] Tipo:', typeof row.short_description);
 
   const image = parseMaybeString(row.image_url)
   const rawDescription = parseMaybeString(row.short_description)
 
-  console.log('[mapCourseCard] Depois de parseMaybeString:', rawDescription);
+  imprimeLogs('[mapCourseCard] Depois de parseMaybeString:', rawDescription);
 
   const description =
     rawDescription && rawDescription.length > 250
       ? `${rawDescription.slice(0, 250).trimEnd()}...`
       : rawDescription
 
-  console.log('[mapCourseCard] Description final:', description);
+  imprimeLogs('[mapCourseCard] Description final:', description);
 
   return {
     id: row.id,
@@ -445,50 +446,50 @@ const mapCourseCard = (row: CourseRow): CourseCard => {
 }
 
 const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
-  console.log('[mapCourseDetail] ====== INÍCIO MAPEAMENTO ======');
+  imprimeLogs('[mapCourseDetail] ====== INÍCIO MAPEAMENTO ======');
 
   try {
-    console.log('[mapCourseDetail] Mapeando card básico...');
+    imprimeLogs('[mapCourseDetail] Mapeando card básico...');
     const curso = mapCourseCard(row);
-    console.log('[mapCourseDetail] ✅ Card mapeado:', {
+    imprimeLogs('[mapCourseDetail] ✅ Card mapeado:', {
       slug: curso.slug,
       title: curso.title,
       category: curso.category,
       categoryLabel: curso.categoryLabel
     });
 
-    console.log('[mapCourseDetail] Mapeando highlights...');
+    imprimeLogs('[mapCourseDetail] Mapeando highlights...');
     const highlights = (row.curso_highlights ?? [])
       .map(mapHighlight)
       .sort((a, b) => a.order - b.order);
-    console.log('[mapCourseDetail] ✅ Highlights mapeados:', highlights.length);
+    imprimeLogs('[mapCourseDetail] ✅ Highlights mapeados:', highlights.length);
 
     let curriculum: CourseCurriculumItem[] = [];
 
-    console.log('[mapCourseDetail] Verificando categoria para curriculum...');
-    console.log('[mapCourseDetail] Categoria do curso:', curso.category);
-    console.log('[mapCourseDetail] COURSE_CATEGORY.EXTENSAO:', COURSE_CATEGORY.EXTENSAO);
+    imprimeLogs('[mapCourseDetail] Verificando categoria para curriculum...');
+    imprimeLogs('[mapCourseDetail] Categoria do curso:', curso.category);
+    imprimeLogs('[mapCourseDetail] COURSE_CATEGORY.EXTENSAO:', COURSE_CATEGORY.EXTENSAO);
 
     if (curso.category !== COURSE_CATEGORY.EXTENSAO) {
-      console.log('[mapCourseDetail] Categoria diferente de EXTENSAO - mapeando curriculum');
+      imprimeLogs('[mapCourseDetail] Categoria diferente de EXTENSAO - mapeando curriculum');
       curriculum = (row.curso_curriculum ?? [])
         .map(mapCurriculumItem)
         .sort((a, b) => a.number - b.number);
-      console.log('[mapCourseDetail] ✅ Curriculum mapeado:', curriculum.length, 'itens');
+      imprimeLogs('[mapCourseDetail] ✅ Curriculum mapeado:', curriculum.length, 'itens');
     } else {
-      console.log('[mapCourseDetail] Categoria EXTENSAO - pulando curriculum');
+      imprimeLogs('[mapCourseDetail] Categoria EXTENSAO - pulando curriculum');
       curriculum = [];
     }
 
-    console.log('[mapCourseDetail] Parseando additional_info...');
+    imprimeLogs('[mapCourseDetail] Parseando additional_info...');
     const additionalInfo = parseAdditionalInfo(row.additional_info);
-    console.log('[mapCourseDetail] ✅ Additional info parseado');
+    imprimeLogs('[mapCourseDetail] ✅ Additional info parseado');
 
-    console.log('[mapCourseDetail] Parseando investment_details...');
+    imprimeLogs('[mapCourseDetail] Parseando investment_details...');
     const investmentDetails = parseAdditionalInfo(row.investment_details);
-    console.log('[mapCourseDetail] ✅ Investment details parseado');
+    imprimeLogs('[mapCourseDetail] ✅ Investment details parseado');
 
-    console.log('[mapCourseDetail] Processando coordenação...');
+    imprimeLogs('[mapCourseDetail] Processando coordenação...');
     let coordenacao =
       row.coordenador && parseMaybeString(row.coordenador.nome)
         ? {
@@ -497,9 +498,9 @@ const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
             foto: row.coordenador.foto ?? null,
           }
         : undefined;
-    console.log('[mapCourseDetail] Coordenador:', coordenacao ? coordenacao.coordenador : 'Nenhum');
+    imprimeLogs('[mapCourseDetail] Coordenador:', coordenacao ? coordenacao.coordenador : 'Nenhum');
 
-    console.log('[mapCourseDetail] Processando professores...');
+    imprimeLogs('[mapCourseDetail] Processando professores...');
     const professores: CourseProfessor[] = [];
 
     for (const relation of row.curso_professores ?? []) {
@@ -521,18 +522,18 @@ const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
 
       professores.push(professor);
     }
-    console.log('[mapCourseDetail] ✅ Professores processados:', professores.length);
+    imprimeLogs('[mapCourseDetail] ✅ Professores processados:', professores.length);
 
-    console.log('[mapCourseDetail] Construindo objeto final...');
-    console.log('[mapCourseDetail] === PROCESSANDO FULL_DESCRIPTION ===');
-    console.log('[mapCourseDetail] row.full_description (raw):', row.full_description);
-    console.log('[mapCourseDetail] Tipo:', typeof row.full_description);
-    console.log('[mapCourseDetail] É array?', Array.isArray(row.full_description));
+    imprimeLogs('[mapCourseDetail] Construindo objeto final...');
+    imprimeLogs('[mapCourseDetail] === PROCESSANDO FULL_DESCRIPTION ===');
+    imprimeLogs('[mapCourseDetail] row.full_description (raw):', row.full_description);
+    imprimeLogs('[mapCourseDetail] Tipo:', typeof row.full_description);
+    imprimeLogs('[mapCourseDetail] É array?', Array.isArray(row.full_description));
 
     const parsedFullDescription = getFullDescriptionTotal(row.full_description);
-    console.log('[mapCourseDetail] Depois de getFullDescriptionTotal:', parsedFullDescription);
-    console.log('[mapCourseDetail] Quantidade de itens:', parsedFullDescription.length);
-    console.log('[mapCourseDetail] ========================================');
+    imprimeLogs('[mapCourseDetail] Depois de getFullDescriptionTotal:', parsedFullDescription);
+    imprimeLogs('[mapCourseDetail] Quantidade de itens:', parsedFullDescription.length);
+    imprimeLogs('[mapCourseDetail] ========================================');
 
     const result = {
     ...curso,
@@ -571,8 +572,8 @@ const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
     workload: parseMaybeString(row.workload),
   };
 
-    console.log('[mapCourseDetail] ✅ Objeto final construído com sucesso');
-    console.log('[mapCourseDetail] ====== FIM MAPEAMENTO ======');
+    imprimeLogs('[mapCourseDetail] ✅ Objeto final construído com sucesso');
+    imprimeLogs('[mapCourseDetail] ====== FIM MAPEAMENTO ======');
 
     return result;
   } catch (err) {
@@ -580,7 +581,7 @@ const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
     console.error('[mapCourseDetail] Erro:', err);
     console.error('[mapCourseDetail] Stack:', err instanceof Error ? err.stack : 'N/A');
     console.error('[mapCourseDetail] Row data:', JSON.stringify(row, null, 2));
-    console.log('[mapCourseDetail] ====== FIM COM ERRO ======');
+    imprimeLogs('[mapCourseDetail] ====== FIM COM ERRO ======');
     throw err;
   }
 }
@@ -630,7 +631,7 @@ const fetchCourseDetail = (column: 'slug' | 'id', value: string) =>
 
         query = query.eq(column, value)
 
-        console.log('[fetchCourseDetail] Executando query no Supabase...');
+        imprimeLogs('[fetchCourseDetail] Executando query no Supabase...');
         const { data, error } = await query.maybeSingle<CourseDetailQueryRow>()
 
         if (error) {
@@ -641,41 +642,41 @@ const fetchCourseDetail = (column: 'slug' | 'id', value: string) =>
           throw new Error(`Erro ao buscar detalhe do curso: ${error.message}`)
         }
 
-        console.log('[fetchCourseDetail] ✅ Query executada com sucesso');
-        console.log('[fetchCourseDetail] Dados retornados:', data ? 'SIM' : 'NULL');
+        imprimeLogs('[fetchCourseDetail] ✅ Query executada com sucesso');
+        imprimeLogs('[fetchCourseDetail] Dados retornados:', data ? 'SIM' : 'NULL');
 
         if (data) {
-          console.log('[fetchCourseDetail] Título do curso:', data.title);
-          console.log('[fetchCourseDetail] Slug do curso:', data.slug);
-          console.log('[fetchCourseDetail] Categoria:', data.category);
-          console.log('[fetchCourseDetail] === DADOS BRUTOS DO BANCO ===');
-          console.log('[fetchCourseDetail] short_description (raw):', data.short_description);
-          console.log('[fetchCourseDetail] full_description (raw):', data.full_description);
-          console.log('[fetchCourseDetail] Tipo de short_description:', typeof data.short_description);
-          console.log('[fetchCourseDetail] Tipo de full_description:', typeof data.full_description);
-          console.log('[fetchCourseDetail] ============================');
-          console.log('[fetchCourseDetail] Highlights:', data.curso_highlights?.length ?? 0);
-          console.log('[fetchCourseDetail] Curriculum:', data.curso_curriculum?.length ?? 0);
-          console.log('[fetchCourseDetail] Professores:', data.curso_professores?.length ?? 0);
+          imprimeLogs('[fetchCourseDetail] Título do curso:', data.title);
+          imprimeLogs('[fetchCourseDetail] Slug do curso:', data.slug);
+          imprimeLogs('[fetchCourseDetail] Categoria:', data.category);
+          imprimeLogs('[fetchCourseDetail] === DADOS BRUTOS DO BANCO ===');
+          imprimeLogs('[fetchCourseDetail] short_description (raw):', data.short_description);
+          imprimeLogs('[fetchCourseDetail] full_description (raw):', data.full_description);
+          imprimeLogs('[fetchCourseDetail] Tipo de short_description:', typeof data.short_description);
+          imprimeLogs('[fetchCourseDetail] Tipo de full_description:', typeof data.full_description);
+          imprimeLogs('[fetchCourseDetail] ============================');
+          imprimeLogs('[fetchCourseDetail] Highlights:', data.curso_highlights?.length ?? 0);
+          imprimeLogs('[fetchCourseDetail] Curriculum:', data.curso_curriculum?.length ?? 0);
+          imprimeLogs('[fetchCourseDetail] Professores:', data.curso_professores?.length ?? 0);
         }
 
         if (!data) {
-          console.log('[fetchCourseDetail] Nenhum curso encontrado com', column, '=', value);
-          console.log('[fetchCourseDetail] ====== FIM ======');
+          imprimeLogs('[fetchCourseDetail] Nenhum curso encontrado com', column, '=', value);
+          imprimeLogs('[fetchCourseDetail] ====== FIM ======');
           return null
         }
 
-        console.log('[fetchCourseDetail] Iniciando mapeamento dos dados...');
+        imprimeLogs('[fetchCourseDetail] Iniciando mapeamento dos dados...');
         const mapped = mapCourseDetail(data);
-        console.log('[fetchCourseDetail] ✅ Mapeamento concluído');
-        console.log('[fetchCourseDetail] ====== FIM ======');
+        imprimeLogs('[fetchCourseDetail] ✅ Mapeamento concluído');
+        imprimeLogs('[fetchCourseDetail] ====== FIM ======');
 
         return mapped;
       } catch (err) {
         console.error('[fetchCourseDetail] ❌ EXCEÇÃO CAPTURADA:');
         console.error('[fetchCourseDetail] Erro:', err);
         console.error('[fetchCourseDetail] Stack:', err instanceof Error ? err.stack : 'N/A');
-        console.log('[fetchCourseDetail] ====== FIM COM ERRO ======');
+        imprimeLogs('[fetchCourseDetail] ====== FIM COM ERRO ======');
         throw err;
       }
     },
@@ -727,33 +728,33 @@ export const getCourseStats = async () => {
 }
 
 export const getCourseBySlug = async (slug: string): Promise<CourseDetail | null> => {
-  console.log('[getCourseBySlug] ====== INÍCIO ======');
-  console.log('[getCourseBySlug] Slug recebido:', slug);
-  console.log('[getCourseBySlug] Tipo do slug:', typeof slug);
+  imprimeLogs('[getCourseBySlug] ====== INÍCIO ======');
+  imprimeLogs('[getCourseBySlug] Slug recebido:', slug);
+  imprimeLogs('[getCourseBySlug] Tipo do slug:', typeof slug);
 
   if (!slug) {
-    console.log('[getCourseBySlug] Slug vazio ou nulo, retornando null');
+    imprimeLogs('[getCourseBySlug] Slug vazio ou nulo, retornando null');
     return null
   }
 
-  console.log('[getCourseBySlug] Chamando fetchCourseDetail...');
+  imprimeLogs('[getCourseBySlug] Chamando fetchCourseDetail...');
   const result = await fetchCourseDetail('slug', slug);
-  console.log('[getCourseBySlug] Resultado:', result ? `Curso encontrado: ${result.title}` : 'NULL');
+  imprimeLogs('[getCourseBySlug] Resultado:', result ? `Curso encontrado: ${result.title}` : 'NULL');
 
   if (result) {
-    console.log('[getCourseBySlug] === DADOS DEPOIS DO MAPEAMENTO ===');
-    console.log('[getCourseBySlug] ID:', result.id);
-    console.log('[getCourseBySlug] SLUG:', result.slug);
-    console.log('[getCourseBySlug] SUBTITLE:', result.subtitle ?? 'null');
-    console.log('[getCourseBySlug] DESCRIPTION (card):', result.description ?? 'null');
-    console.log('[getCourseBySlug] FULL_DESCRIPTION (array):', result.fullDescription?.length ?? 0, 'itens');
+    imprimeLogs('[getCourseBySlug] === DADOS DEPOIS DO MAPEAMENTO ===');
+    imprimeLogs('[getCourseBySlug] ID:', result.id);
+    imprimeLogs('[getCourseBySlug] SLUG:', result.slug);
+    imprimeLogs('[getCourseBySlug] SUBTITLE:', result.subtitle ?? 'null');
+    imprimeLogs('[getCourseBySlug] DESCRIPTION (card):', result.description ?? 'null');
+    imprimeLogs('[getCourseBySlug] FULL_DESCRIPTION (array):', result.fullDescription?.length ?? 0, 'itens');
     if (result.fullDescription && result.fullDescription.length > 0) {
-      console.log('[getCourseBySlug] Primeiros itens:', result.fullDescription.slice(0, 2));
+      imprimeLogs('[getCourseBySlug] Primeiros itens:', result.fullDescription.slice(0, 2));
     }
-    console.log('[getCourseBySlug] =====================================');
+    imprimeLogs('[getCourseBySlug] =====================================');
   }
 
-  console.log('[getCourseBySlug] ====== FIM ======');
+  imprimeLogs('[getCourseBySlug] ====== FIM ======');
 
   return result;
 }
