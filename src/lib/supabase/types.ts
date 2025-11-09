@@ -256,11 +256,10 @@ export type Database = {
           certificate: string | null
           coordenador_id: string | null
           created_at: string | null
-          description: string | null
+          short_description: string | null
           duration: string | null
           full_description: Json | null
           id: string
-          image: string | null
           image_url: string | null
           investment_details: Json | null
           justificativa: Json | null
@@ -287,11 +286,10 @@ export type Database = {
           certificate?: string | null
           coordenador_id?: string | null
           created_at?: string | null
-          description?: string | null
+          short_description?: string | null
           duration?: string | null
           full_description?: Json | null
           id?: string
-          image?: string | null
           image_url?: string | null
           investment_details?: Json | null
           justificativa?: Json | null
@@ -318,11 +316,10 @@ export type Database = {
           certificate?: string | null
           coordenador_id?: string | null
           created_at?: string | null
-          description?: string | null
+          short_description?: string | null
           duration?: string | null
           full_description?: Json | null
           id?: string
-          image?: string | null
           image_url?: string | null
           investment_details?: Json | null
           justificativa?: Json | null

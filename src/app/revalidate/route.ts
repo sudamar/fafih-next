@@ -6,7 +6,7 @@ import {
   getAllCourseSlugs,
   revalidateCourseDetail,
   revalidateCourseList,
-} from '@/lib/services/courseCatalog'
+} from '@/lib/services/cursoDetalhes'
 import { MEMBROS_LIST_TAG } from '@/lib/services/membros-analistas'
 import { POLOS_LIST_TAG, revalidatePolosList } from '@/lib/services/polosCatalog'
 import { PROFESSORES_LIST_TAG, revalidateProfessoresList } from '@/lib/services/professoresCatalog'

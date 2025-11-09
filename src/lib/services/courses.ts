@@ -6,4 +6,4 @@ export {
   listCourseCards,
   listCategories,
   getCourseStats,
-} from './courseCatalog';
+} from './cursoDetalhes';

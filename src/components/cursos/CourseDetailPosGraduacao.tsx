@@ -68,7 +68,7 @@ export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGrad
               <div className={styles.sectionContent}>
                 <ul className={styles.list}>
                   {course.objetivos.map((objetivo: string, index: number) => (
-                    <li key={index}>{objetivo}</li>
+                    <li key={index} dangerouslySetInnerHTML={{ __html: objetivo }} />
                   ))}
                 </ul>
               </div>

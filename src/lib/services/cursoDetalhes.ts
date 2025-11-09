@@ -119,6 +119,63 @@ const parseStringArray = (value: unknown): string[] => {
     .filter((item) => item.length > 0)
 }
 
+// Função genérica para processar campos que podem vir como array ou objeto
+const convertToStringArray = (value: unknown, fieldName: string): string[] => {
+  console.log(`[${fieldName}] Valor recebido:`, value);
+  console.log(`[${fieldName}] Tipo:`, typeof value);
+  console.log(`[${fieldName}] É array?`, Array.isArray(value));
+
+  // Se já é array, processar normalmente
+  if (Array.isArray(value)) {
+    console.log(`[${fieldName}] ✅ É array, tamanho:`, value.length);
+
+    const result = value
+      .filter((item): item is string => typeof item === 'string')
+      .map((item) => item.trim())
+      .filter((item) => item.length > 0);
+
+    console.log(`[${fieldName}] Resultado final:`, result.length, 'itens');
+    return result;
+  }
+
+  // Se é um objeto, tentar converter para array
+  if (isRecord(value)) {
+    console.log(`[${fieldName}] ⚠️ É um objeto, tentando converter para array...`);
+
+    // Pegar as chaves e ordenar numericamente
+    const keys = Object.keys(value).sort((a, b) => {
+      const numA = Number.parseInt(a, 10);
+      const numB = Number.parseInt(b, 10);
+      return numA - numB;
+    });
+
+    console.log(`[${fieldName}] Chaves encontradas:`, keys);
+
+    // Extrair os valores na ordem correta
+    const arrayFromObject = keys
+      .map(key => value[key])
+      .filter((item): item is string => typeof item === 'string')
+      .map((item) => item.trim())
+      .filter((item) => item.length > 0);
+
+    console.log(`[${fieldName}] ✅ Convertido para array:`, arrayFromObject.length, 'itens');
+    return arrayFromObject;
+  }
+
+  console.log(`[${fieldName}] ❌ Não é array nem objeto válido, retornando []`);
+  return [];
+}
+
+// Função específica para processar full_description que pode vir como array ou objeto
+const getFullDescriptionTotal = (value: unknown): string[] => {
+  return convertToStringArray(value, 'getFullDescriptionTotal');
+}
+
+// Função específica para processar objetivos que pode vir como array ou objeto
+const getObjetivosTotal = (value: unknown): string[] => {
+  return convertToStringArray(value, 'getObjetivosTotal');
+}
+
 const parseMaybeString = (value: unknown): string | null => {
   if (typeof value !== 'string') {
     return null
@@ -357,12 +414,22 @@ const deriveHero = (row: CourseRow, image: string | null): CourseDetail['hero'] 
 }
 
 const mapCourseCard = (row: CourseRow): CourseCard => {
+  console.log('[mapCourseCard] Raw short_description do banco:', row.short_description);
+  console.log('[mapCourseCard] images:', row.image_url);
+  console.log('[mapCourseCard] images:', row.video_url);
+  console.log('[mapCourseCard] Tipo:', typeof row.short_description);
+
   const image = parseMaybeString(row.image_url)
   const rawDescription = parseMaybeString(row.short_description)
+
+  console.log('[mapCourseCard] Depois de parseMaybeString:', rawDescription);
+
   const description =
     rawDescription && rawDescription.length > 250
       ? `${rawDescription.slice(0, 250).trimEnd()}...`
       : rawDescription
+
+  console.log('[mapCourseCard] Description final:', description);
 
   return {
     id: row.id,
@@ -457,13 +524,23 @@ const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
     console.log('[mapCourseDetail] ✅ Professores processados:', professores.length);
 
     console.log('[mapCourseDetail] Construindo objeto final...');
+    console.log('[mapCourseDetail] === PROCESSANDO FULL_DESCRIPTION ===');
+    console.log('[mapCourseDetail] row.full_description (raw):', row.full_description);
+    console.log('[mapCourseDetail] Tipo:', typeof row.full_description);
+    console.log('[mapCourseDetail] É array?', Array.isArray(row.full_description));
+
+    const parsedFullDescription = getFullDescriptionTotal(row.full_description);
+    console.log('[mapCourseDetail] Depois de getFullDescriptionTotal:', parsedFullDescription);
+    console.log('[mapCourseDetail] Quantidade de itens:', parsedFullDescription.length);
+    console.log('[mapCourseDetail] ========================================');
+
     const result = {
     ...curso,
     subtitle: parseMaybeString(row.subtitle),
-    fullDescription: parseStringArray(row.full_description),
+    fullDescription: parsedFullDescription,
     highlights,
     justificativa: parseStringArray(row.justificativa),
-    objetivos: parseStringArray(row.objetivos),
+    objetivos: getObjetivosTotal(row.objetivos),
     publico: parseStringArray(row.publico),
     curriculum,
     avaliacao: additionalInfo.avaliacao.length > 0 ? additionalInfo.avaliacao : investmentDetails.avaliacao,
@@ -571,6 +648,12 @@ const fetchCourseDetail = (column: 'slug' | 'id', value: string) =>
           console.log('[fetchCourseDetail] Título do curso:', data.title);
           console.log('[fetchCourseDetail] Slug do curso:', data.slug);
           console.log('[fetchCourseDetail] Categoria:', data.category);
+          console.log('[fetchCourseDetail] === DADOS BRUTOS DO BANCO ===');
+          console.log('[fetchCourseDetail] short_description (raw):', data.short_description);
+          console.log('[fetchCourseDetail] full_description (raw):', data.full_description);
+          console.log('[fetchCourseDetail] Tipo de short_description:', typeof data.short_description);
+          console.log('[fetchCourseDetail] Tipo de full_description:', typeof data.full_description);
+          console.log('[fetchCourseDetail] ============================');
           console.log('[fetchCourseDetail] Highlights:', data.curso_highlights?.length ?? 0);
           console.log('[fetchCourseDetail] Curriculum:', data.curso_curriculum?.length ?? 0);
           console.log('[fetchCourseDetail] Professores:', data.curso_professores?.length ?? 0);
@@ -656,6 +739,20 @@ export const getCourseBySlug = async (slug: string): Promise<CourseDetail | null
   console.log('[getCourseBySlug] Chamando fetchCourseDetail...');
   const result = await fetchCourseDetail('slug', slug);
   console.log('[getCourseBySlug] Resultado:', result ? `Curso encontrado: ${result.title}` : 'NULL');
+
+  if (result) {
+    console.log('[getCourseBySlug] === DADOS DEPOIS DO MAPEAMENTO ===');
+    console.log('[getCourseBySlug] ID:', result.id);
+    console.log('[getCourseBySlug] SLUG:', result.slug);
+    console.log('[getCourseBySlug] SUBTITLE:', result.subtitle ?? 'null');
+    console.log('[getCourseBySlug] DESCRIPTION (card):', result.description ?? 'null');
+    console.log('[getCourseBySlug] FULL_DESCRIPTION (array):', result.fullDescription?.length ?? 0, 'itens');
+    if (result.fullDescription && result.fullDescription.length > 0) {
+      console.log('[getCourseBySlug] Primeiros itens:', result.fullDescription.slice(0, 2));
+    }
+    console.log('[getCourseBySlug] =====================================');
+  }
+
   console.log('[getCourseBySlug] ====== FIM ======');
 
   return result;
