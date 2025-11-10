@@ -54,16 +54,14 @@ export default function IniciacaoCientificaPage() {
           <div className="mt-16 flex flex-wrap justify-center gap-6">
             <Link
               href="/"
-              className="rounded-full border-2 border-primary bg-transparent px-10 py-4 text-lg font-semibold text-primary transition hover:scale-105 hover:bg-primary hover:text-white"
-            >
+              className="rounded-full border-2 border-primary bg-transparent px-10 py-4 text-lg font-semibold text-primary transition hover:scale-105 hover:bg-primary hover:text-white">
               Voltar
             </Link>
             <a
               href="/biblioteca"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border-2 border-footer-blue bg-footer-blue px-10 py-4 text-lg font-semibold text-white transition hover:scale-105 hover:brightness-110"
-            >
+              className="rounded-full border-2 border-footer-blue bg-footer-blue px-10 py-4 text-lg font-semibold text-white transition hover:scale-105 hover:brightness-110">
               Artigos
             </a>
           </div>

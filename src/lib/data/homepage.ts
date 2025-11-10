@@ -155,7 +155,7 @@ export const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Pós-graduação', href: 'index.html?filter=especializacao#cursos' },
       { label: 'Curta e Média Duração', href: 'index.html?filter=extensao#cursos' },
       { label: 'Eventos', href: 'index.html?filter=eventos#cursos' },
-      { label: 'Formas de Ingresso', href: 'formas-de-ingresso.html' },
+      { label: 'Formas de Ingresso', href: '/formas-de-ingresso' },
       { label: 'Regulamentos', href: '/regulamentos' },
       { label: 'Polos', href: 'polos.html' },
     ],
