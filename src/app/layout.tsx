@@ -2,6 +2,11 @@ import type { Metadata } from 'next'
 import { Lato, Montserrat } from 'next/font/google'
 import './globals.css'
 import { Providers } from './providers'
+import { MaintenancePage } from '@/components/shared/maintenance-page'
+import { getConfiguracoesFafih } from '@/lib/config/startup'
+
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store'
 
 const lato = Lato({ subsets: ['latin'], weight: ['400', '700'], variable: '--font-lato' })
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['700', '800'], variable: '--font-montserrat' })
@@ -29,10 +34,24 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const config = getConfiguracoesFafih()
+  const manutencaoAtiva = (() => {
+    const flag = config?.manutencao as boolean | string | null | undefined
+
+    if (flag === true) return true
+    if (flag === false || flag === null || flag === undefined) return false
+
+    if (typeof flag === 'string') {
+      return flag.trim().toLowerCase() === 'true'
+    }
+
+    return Boolean(flag)
+  })()
+
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={`${lato.variable} ${montserrat.variable} font-sans`}>
-        <Providers>{children}</Providers>
+        {manutencaoAtiva ? <MaintenancePage siteName={config?.nomeSite} /> : <Providers>{children}</Providers>}
       </body>
     </html>
   )
