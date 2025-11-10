@@ -167,14 +167,38 @@ const convertToStringArray = (value: unknown, fieldName: string): string[] => {
   return [];
 }
 
+const stripHtmlTags = (value: string): string => {
+  return value
+    .replace(/<\/?[^>]+(>|$)/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+const sanitizeSegments = (segments: string[], fieldName: string): string[] => {
+  const sanitized = segments
+    .map((segment) => stripHtmlTags(segment))
+    .filter((segment) => segment.length > 0)
+  imprimeLogs(`[${fieldName}] Sanitizado:`, sanitized.length, 'itens')
+  return sanitized
+}
+
 // Função específica para processar full_description que pode vir como array ou objeto
 const getFullDescriptionTotal = (value: unknown): string[] => {
-  return convertToStringArray(value, 'getFullDescriptionTotal');
+  return sanitizeSegments(convertToStringArray(value, 'getFullDescriptionTotal'), 'getFullDescriptionTotal')
 }
 
 // Função específica para processar objetivos que pode vir como array ou objeto
 const getObjetivosTotal = (value: unknown): string[] => {
-  return convertToStringArray(value, 'getObjetivosTotal');
+  return sanitizeSegments(convertToStringArray(value, 'getObjetivosTotal'), 'getObjetivosTotal')
+}
+
+const getJustificativaTotal = (value: unknown): string[] => {
+  return sanitizeSegments(convertToStringArray(value, 'getJustificativaTotal'), 'getJustificativaTotal')
+}
+
+const getPraQuemCursoTotal = (value: unknown): string[] => {
+  return sanitizeSegments(convertToStringArray(value, 'getPraQuemCursoTotal'), 'getPraQuemCursoTotal')
 }
 
 const parseMaybeString = (value: unknown): string | null => {
@@ -540,9 +564,9 @@ const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
     subtitle: parseMaybeString(row.subtitle),
     fullDescription: parsedFullDescription,
     highlights,
-    justificativa: parseStringArray(row.justificativa),
+    justificativa: getJustificativaTotal(row.justificativa),
     objetivos: getObjetivosTotal(row.objetivos),
-    publico: parseStringArray(row.publico),
+    publico: getPraQuemCursoTotal(row.publico),
     curriculum,
     avaliacao: additionalInfo.avaliacao.length > 0 ? additionalInfo.avaliacao : investmentDetails.avaliacao,
     cargahoraria: additionalInfo.cargahoraria ?? investmentDetails.cargahoraria,
