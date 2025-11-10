@@ -561,6 +561,45 @@ export type Database = {
         }
         Relationships: []
       }
+      ouvidoria: {
+        Row: {
+          assunto: string
+          created_at: string | null
+          email: string | null
+          id: string
+          identificacao_tipo: string
+          mensagem: string
+          nome_completo: string | null
+          telefone: string | null
+          tipo_manifestacao: string
+          vinculo: string | null
+        }
+        Insert: {
+          assunto: string
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          identificacao_tipo: string
+          mensagem: string
+          nome_completo?: string | null
+          telefone?: string | null
+          tipo_manifestacao: string
+          vinculo?: string | null
+        }
+        Update: {
+          assunto?: string
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          identificacao_tipo?: string
+          mensagem?: string
+          nome_completo?: string | null
+          telefone?: string | null
+          tipo_manifestacao?: string
+          vinculo?: string | null
+        }
+        Relationships: []
+      }
       polos: {
         Row: {
           address: string | null
@@ -869,6 +908,7 @@ export type Database = {
           created_at: string | null
           data_time_server_iniciado: string | null
           drmsocial: boolean | null
+          email_configuracao: string | null
           id: number
           log_ativo: boolean | null
           manutencao: boolean | null
@@ -879,6 +919,7 @@ export type Database = {
           created_at?: string | null
           data_time_server_iniciado?: string | null
           drmsocial?: boolean | null
+          email_configuracao?: string | null
           id?: number
           log_ativo?: boolean | null
           manutencao?: boolean | null
@@ -889,6 +930,7 @@ export type Database = {
           created_at?: string | null
           data_time_server_iniciado?: string | null
           drmsocial?: boolean | null
+          email_configuracao?: string | null
           id?: number
           log_ativo?: boolean | null
           manutencao?: boolean | null

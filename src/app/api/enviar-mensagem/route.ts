@@ -24,36 +24,26 @@ export async function POST(request: Request) {
 
     // Aqui você implementaria o envio real do email
     // Exemplo com Resend, Nodemailer, SendGrid, etc.
-    // Por enquanto, vamos simular o sucesso
+    // Por enquanto, vamos simular o sucesso e usar o imprimeLog geral (se disponível)
 
-    console.log('Email a ser enviado:', {
+    const logPayload = {
       from: 'site@fafih.edu.br',
       to: destinatario,
       subject: `Nova mensagem de ${nome}`,
-      body: {
-        nome,
-        email,
-        cpf,
-        telefone,
-        mensagem,
-      }
-    })
+      body: { nome, email, cpf, telefone, mensagem },
+      rota: 'enviar-mensagem',
+      timestamp: new Date().toISOString(),
+    }
 
-    // TODO: Implementar envio real de email
-    // const result = await sendEmail({
-    //   from: 'site@fafih.edu.br',
-    //   to: destinatario,
-    //   subject: `Nova mensagem de ${nome}`,
-    //   html: `
-    //     <h2>Nova mensagem recebida</h2>
-    //     <p><strong>Nome:</strong> ${nome}</p>
-    //     <p><strong>Email:</strong> ${email}</p>
-    //     ${cpf ? `<p><strong>CPF:</strong> ${cpf}</p>` : ''}
-    //     ${telefone ? `<p><strong>Telefone:</strong> ${telefone}</p>` : ''}
-    //     <p><strong>Mensagem:</strong></p>
-    //     <p>${mensagem}</p>
-    //   `
-    // })
+    const globalAny = globalThis as any
+    if (typeof globalAny.imprimeLogGeral === 'function') {
+      globalAny.imprimeLogGeral(logPayload)
+    } else if (typeof globalAny.imprimeLog === 'function') {
+      // caso a função tenha outro nome
+      globalAny.imprimeLog(logPayload)
+    } else {
+      console.log('Email a ser enviado:', logPayload)
+    }
 
     return NextResponse.json(
       {

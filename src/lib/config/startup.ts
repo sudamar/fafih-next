@@ -10,6 +10,7 @@ export interface ConfiguracoesFafih {
   nomeSite: string
   logAtivo: boolean
   dataTimeServerIniciado: string | null
+  emailConfiguracao: string | null
 }
 
 let globalConfig: ConfiguracoesFafih | null = null
@@ -72,6 +73,7 @@ async function fetchSettingsDirect(): Promise<ConfiguracoesFafih | null> {
       nomeSite: record.nome_site ?? 'Site Fafih',
       logAtivo: record.log_ativo ?? false,
       dataTimeServerIniciado: record.data_time_server_iniciado,
+      emailConfiguracao: record.email_configuracao ?? null,
     }
 
     return config
@@ -140,6 +142,7 @@ export async function Startup(): Promise<ConfiguracoesFafih | null> {
         nomeSite: 'Site Fafih',
         logAtivo: false,
         dataTimeServerIniciado: null,
+        emailConfiguracao: null,
       }
     }
 

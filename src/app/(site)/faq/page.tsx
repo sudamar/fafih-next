@@ -4,52 +4,6 @@ import { useState } from 'react'
 import { PageTitle } from '@/components/ui/page-title'
 import { SectionTitle } from '@/components/ui/section-title'
 
-interface FAQItem {
-  question: string
-  answer: string | string[]
-}
-
-const faqData: FAQItem[] = [
-  {
-    question: 'Como faço para me inscrever em um curso?',
-    answer: 'Para se inscrever em um curso da FAFIH, acesse nosso Portal do Aluno através do botão "Inscreva-se" no topo da página ou visite diretamente https://ijep.com.br/inscricao/aluno. Preencha o formulário com seus dados pessoais e escolha o curso desejado.',
-  },
-  {
-    question: 'Quais são as formas de ingresso disponíveis?',
-    answer: [
-      'Processo Seletivo (Vestibular)',
-      'ENEM (Exame Nacional do Ensino Médio)',
-      'Transferência de outra instituição',
-      'Portador de diploma de graduação',
-      'Reopção de curso',
-    ],
-  },
-  {
-    question: 'A FAFIH oferece bolsas de estudo?',
-    answer: 'Sim! A FAFIH oferece diversos programas de bolsas e descontos. Entre em contato com nossa secretaria para conhecer as opções disponíveis e verificar sua elegibilidade.',
-  },
-  {
-    question: 'Como funciona o sistema de avaliação?',
-    answer: 'O sistema de avaliação da FAFIH é composto por avaliações contínuas, trabalhos acadêmicos, participação em aulas e provas. Cada disciplina possui critérios específicos detalhados no plano de ensino apresentado pelo professor.',
-  },
-  {
-    question: 'Posso trancar minha matrícula?',
-    answer: 'Sim, é possível solicitar o trancamento de matrícula por até 2 semestres consecutivos ou alternados, de acordo com o regulamento acadêmico. O pedido deve ser feito na secretaria dentro dos prazos estabelecidos no calendário acadêmico.',
-  },
-  {
-    question: 'Como consulto meu diploma?',
-    answer: 'Você pode consultar diplomas emitidos pela FAFIH através da nossa página de Consulta de Diplomas. Utilize o número de registro, RG, CPF ou código de validação para realizar a busca.',
-  },
-  {
-    question: 'A biblioteca está aberta para a comunidade?',
-    answer: 'Sim, a biblioteca FAFIH oferece serviços para a comunidade. Consulte os horários de funcionamento e as condições de acesso no nosso site ou entre em contato diretamente com a biblioteca.',
-  },
-  {
-    question: 'Como entro em contato com a ouvidoria?',
-    answer: 'A ouvidoria da FAFIH está disponível através do formulário no menu Contato > Ouvidoria. Você pode enviar elogios, sugestões, reclamações ou denúncias de forma anônima ou identificada.',
-  },
-]
-
 export default function FAQPage() {
   const [openItems, setOpenItems] = useState<number[]>([])
 
@@ -71,7 +25,33 @@ export default function FAQPage() {
 
           {/* FAQ Container - max-w-[900px] mx-auto */}
           <div className="mx-auto max-w-[900px]">
-            {faqData.map((item, index) => {
+            {[
+              {
+                question: 'Quais são os pré-requisitos para os cursos de Pós-Graduação?',
+                answer:
+                  'Para ingressar em nossos cursos de Pós-Graduação Lato Sensu (Especialização), é necessário possuir diploma de conclusão de um curso de graduação reconhecido pelo MEC. Para alguns cursos específicos, como Arteterapia, recomendamos ter cursado nossa introdução à Psicologia Junguiana caso não tenha essa base.',
+              },
+              {
+                question: 'Os cursos EAD são totalmente online?',
+                answer:
+                  'Sim, nossos cursos na modalidade EAD são 100% online, com aulas síncronas (ao vivo), permitindo a interação em tempo real com professores e colegas. As aulas também são gravadas e disponibilizadas para que os alunos possam assistir posteriormente.',
+              },
+              {
+                question: 'Como funciona o processo de matrícula?',
+                answer:
+                  'O processo de matrícula pode ser iniciado através do nosso site, clicando no botão &ldquo;Inscreva-se&rdquo;. Você será direcionado para o portal de inscrição, onde preencherá seus dados, enviará os documentos necessários e efetuará o pagamento da taxa de matrícula para garantir sua vaga.',
+              },
+              {
+                question: 'A FAFIH oferece bolsas de estudo?',
+                answer:
+                  'A FAFIH possui uma política de descontos e convênios. Recomendamos entrar em contato com nossa secretaria acadêmica através do e-mail contato@fafih.edu.br para verificar as condições e os programas de desconto disponíveis no momento.',
+              },
+              {
+                question: 'Qual a diferença entre os cursos de Pós-Graduação e os de Curta Duração?',
+                answer:
+                  'Os cursos de Pós-Graduação (Especialização) possuem uma carga horária maior (mínimo de 360 horas), são voltados para a formação de especialistas em uma determinada área e conferem o título de especialista. Já os cursos de Curta Duração (Extensão) são mais focados em temas específicos, possuem carga horária menor e conferem um certificado de participação ou atualização profissional.',
+              },
+            ].map((item, index) => {
               const isOpen = openItems.includes(index)
 
               return (
@@ -100,17 +80,7 @@ export default function FAQPage() {
                     }`}
                   >
                     <div className="px-6 pb-6 text-gray-600">
-                      {Array.isArray(item.answer) ? (
-                        <ul className="list-none space-y-1 pl-0">
-                          {item.answer.map((point, i) => (
-                            <li key={i} className="text-[0.95rem] before:mr-2 before:content-['•']">
-                              {point}
-                            </li>
-                          ))}
-                        </ul>
-                      ) : (
-                        <p className="text-[0.95rem]">{item.answer}</p>
-                      )}
+                      <p className="text-[0.95rem]">{item.answer}</p>
                     </div>
                   </div>
                 </div>
