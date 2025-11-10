@@ -194,7 +194,7 @@ const getObjetivosTotal = (value: unknown): string[] => {
 }
 
 const getJustificativaTotal = (value: unknown): string[] => {
-  return sanitizeSegments(convertToStringArray(value, 'getJustificativaTotal'), 'getJustificativaTotal')
+  return convertToStringArray(value, 'getJustificativaTotal')
 }
 
 const getPraQuemCursoTotal = (value: unknown): string[] => {

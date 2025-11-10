@@ -55,7 +55,7 @@ export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGrad
               <SectionTitle>Justificativa</SectionTitle>
               <div className={styles.sectionContent}>
                 {course.justificativa.map((paragraph: string, index: number) => (
-                  <p key={index}>{paragraph}</p>
+                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
                 ))}
               </div>
             </section>

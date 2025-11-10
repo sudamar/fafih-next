@@ -47,7 +47,7 @@ export default function CourseDetailCongressos({ course }: CourseDetailCongresso
               <SectionTitle>Por que participar</SectionTitle>
               <div className={styles.sectionContent}>
                 {course.justificativa.map((paragraph: string, index: number) => (
-                  <p key={index}>{paragraph}</p>
+                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
                 ))}
               </div>
             </section>

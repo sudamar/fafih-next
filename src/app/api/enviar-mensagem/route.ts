@@ -1,5 +1,25 @@
 import { NextResponse } from 'next/server'
 
+interface LogPayload {
+  from: string
+  to: string
+  subject: string
+  body: {
+    nome?: string
+    email?: string
+    cpf?: string
+    telefone?: string
+    mensagem?: string
+  }
+  rota: string
+  timestamp: string
+}
+
+interface GlobalLogger {
+  imprimeLogGeral?: (payload: LogPayload) => void
+  imprimeLog?: (payload: LogPayload) => void
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json()
@@ -35,12 +55,12 @@ export async function POST(request: Request) {
       timestamp: new Date().toISOString(),
     }
 
-    const globalAny = globalThis as any
-    if (typeof globalAny.imprimeLogGeral === 'function') {
-      globalAny.imprimeLogGeral(logPayload)
-    } else if (typeof globalAny.imprimeLog === 'function') {
+    const globalLogger = globalThis as GlobalLogger
+    if (typeof globalLogger.imprimeLogGeral === 'function') {
+      globalLogger.imprimeLogGeral(logPayload)
+    } else if (typeof globalLogger.imprimeLog === 'function') {
       // caso a função tenha outro nome
-      globalAny.imprimeLog(logPayload)
+      globalLogger.imprimeLog(logPayload)
     } else {
       console.log('Email a ser enviado:', logPayload)
     }
