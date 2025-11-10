@@ -1,24 +1,5 @@
 import { NextResponse } from 'next/server'
-
-interface LogPayload {
-  from: string
-  to: string
-  subject: string
-  body: {
-    nome?: string
-    email?: string
-    cpf?: string
-    telefone?: string
-    mensagem?: string
-  }
-  rota: string
-  timestamp: string
-}
-
-interface GlobalLogger {
-  imprimeLogGeral?: (payload: LogPayload) => void
-  imprimeLog?: (payload: LogPayload) => void
-}
+import type { LogPayload } from '@/lib/types/logger.types'
 
 export async function POST(request: Request) {
   try {
@@ -46,7 +27,7 @@ export async function POST(request: Request) {
     // Exemplo com Resend, Nodemailer, SendGrid, etc.
     // Por enquanto, vamos simular o sucesso e usar o imprimeLog geral (se disponível)
 
-    const logPayload = {
+    const logPayload: LogPayload = {
       from: 'site@fafih.edu.br',
       to: destinatario,
       subject: `Nova mensagem de ${nome}`,
@@ -55,12 +36,11 @@ export async function POST(request: Request) {
       timestamp: new Date().toISOString(),
     }
 
-    const globalLogger = globalThis as GlobalLogger
-    if (typeof globalLogger.imprimeLogGeral === 'function') {
-      globalLogger.imprimeLogGeral(logPayload)
-    } else if (typeof globalLogger.imprimeLog === 'function') {
+    if (typeof globalThis.imprimeLogGeral === 'function') {
+      globalThis.imprimeLogGeral(logPayload)
+    } else if (typeof globalThis.imprimeLog === 'function') {
       // caso a função tenha outro nome
-      globalLogger.imprimeLog(logPayload)
+      globalThis.imprimeLog(logPayload)
     } else {
       console.log('Email a ser enviado:', logPayload)
     }
