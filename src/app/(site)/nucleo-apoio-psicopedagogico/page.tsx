@@ -24,42 +24,33 @@ export default function NucleoApoioPsicopedagogicoPage() {
             <div className="space-y-4">
               <SectionTitle>O que é o NAP?</SectionTitle>
               <p className="text-justify leading-relaxed text-gray-700">
-                O NAP é um serviço de apoio psicopedagógico que oferece orientação individual e em grupo para
-                alunos que enfrentam dificuldades no processo de aprendizagem ou que desejam melhorar seu
-                desempenho acadêmico. O atendimento é confidencial e gratuito.
+                O Núcleo de Apoio Psicopedagógico (NAP) da FAFIH tem como objetivo a promoção, por meio de orientação e aconselhamento psicopedagógico, do bem-estar dos relacionamentos interpessoais e institucionais dos membros da comunidade acadêmica. O foco do núcleo é apoiar os estudantes em sua adaptação à vida universitária, promover saúde mental e bem-estar e contribuir para a melhoria do processo de ensino-aprendizagem, visando ao desenvolvimento integral do aluno.
               </p>
             </div>
 
             {/* Como o NAP pode te ajudar */}
             <div className="space-y-4">
               <SectionTitle>Como o NAP pode te ajudar?</SectionTitle>
+              <p className="text-justify leading-relaxed text-gray-700">
+                No NAP, a comunidade acadêmica encontra uma equipe qualificada e preparada para apoiar em diversos aspectos. Destacam-se dentre as diversas funções do NAP:
+              </p>
               <ul className="list-disc space-y-2 pl-6 text-gray-700">
+                <li className="leading-relaxed">Oferecer suporte pedagógico e psicopedagógico às práticas acadêmicas, auxiliando no desenvolvimento cognitivo dos estudantes.</li>
+                <li className="leading-relaxed">Auxiliar os estudantes na integração ao contexto educacional e na superação de desafios, como a adaptação ao novo ambiente social acadêmico.</li>
                 <li className="leading-relaxed">
-                  <strong>Dificuldades de aprendizagem:</strong> Orientação para superar obstáculos relacionados
-                  à compreensão de conteúdos, leitura, escrita e organização de estudos.
+                  Elaborar planos de orientação de estudos individualizados para estudantes que precisam de apoio na organização do tempo e no desenvolvimento de estratégias de aprendizagem (gestão do tempo, hábitos de estudo, técnicas de aprendizagem).
                 </li>
                 <li className="leading-relaxed">
-                  <strong>Gestão do tempo:</strong> Estratégias para melhorar a organização e o planejamento
-                  de suas atividades acadêmicas.
+                  Promover palestras, rodas de conversa e oficinas sobre temas relevantes para o desenvolvimento intelectual e emocional dos estudantes.
                 </li>
                 <li className="leading-relaxed">
-                  <strong>Ansiedade e estresse acadêmico:</strong> Suporte para lidar com pressões relacionadas
-                  a provas, trabalhos e apresentações.
+                  Realizar atendimento psicológico emergencial e intervenções breves, através de aconselhamento, identificando as urgências subjetivas e propiciando reflexão para um posicionamento pessoal mais adequado.
                 </li>
                 <li className="leading-relaxed">
-                  <strong>Adaptação à vida universitária:</strong> Acolhimento e orientação para facilitar a
-                  transição para o ensino superior.
+                  Atuar como mediador na resolução de eventuais conflitos entre aluno e aluno, aluno e professor, ou aluno e coordenação.
                 </li>
                 <li className="leading-relaxed">
-                  <strong>Motivação e autoestima:</strong> Apoio para fortalecer a confiança e o engajamento
-                  nos estudos.
-                </li>
-                <li className="leading-relaxed">
-                  <strong>Orientação vocacional:</strong> Reflexão sobre escolhas acadêmicas e profissionais.
-                </li>
-                <li className="leading-relaxed">
-                  <strong>Desenvolvimento de habilidades:</strong> Orientações para aprimorar técnicas de
-                  estudo, memorização e concentração.
+                  Assessorar professores e coordenadores, identificando entraves no processo de ensino-aprendizagem e sugerindo estratégias psicopedagógicas para sua superação.
                 </li>
               </ul>
             </div>
@@ -68,43 +59,28 @@ export default function NucleoApoioPsicopedagogicoPage() {
             <div className="space-y-4">
               <SectionTitle>Quem pode acessar o NAP?</SectionTitle>
               <p className="text-justify leading-relaxed text-gray-700">
-                Todos os alunos regularmente matriculados na FAFIH têm direito ao atendimento do NAP.
-                Não é necessário estar passando por uma situação extrema para procurar ajuda – o NAP está
-                disponível para qualquer momento em que você sentir necessidade de apoio.
+                O NAP é um serviço voltado para os estudantes da graduação e pós-graduação, além de oferecer suporte aos coordenadores, professores e corpo técnico-administrativo da comunidade FAFIH.
               </p>
             </div>
 
             {/* Quando procurar o NAP */}
             <div className="space-y-4">
               <SectionTitle>Quando procurar o NAP?</SectionTitle>
+              <p className="text-justify leading-relaxed text-gray-700">Se você está enfrentando dificuldades como:</p>
               <ul className="list-disc space-y-2 pl-6 text-gray-700">
-                <li className="leading-relaxed">
-                  Quando você perceber que está com dificuldade para acompanhar as aulas ou realizar as atividades.
-                </li>
-                <li className="leading-relaxed">
-                  Quando sentir que a ansiedade ou o estresse estão prejudicando seus estudos.
-                </li>
-                <li className="leading-relaxed">
-                  Quando precisar de orientação sobre como melhorar seus métodos de estudo.
-                </li>
-                <li className="leading-relaxed">
-                  Quando estiver em dúvida sobre sua escolha de curso ou carreira.
-                </li>
+                <li className="leading-relaxed">Adaptação ao ambiente acadêmico ou sentimento de não pertencimento;</li>
+                <li className="leading-relaxed">Ansiedade intensa, desmotivação, estresse ou crises emocionais;</li>
+                <li className="leading-relaxed">Problemas relacionados ao aprendizado, concentração e organização;</li>
+                <li className="leading-relaxed">Necessidade de acolhimento, escuta qualificada ou orientação em momentos de crise.</li>
               </ul>
+              <p className="text-justify leading-relaxed text-gray-700">Estamos prontos para te ouvir e ajudar.</p>
             </div>
 
             {/* Como funciona o atendimento */}
             <div className="space-y-4">
               <SectionTitle>Como funciona o atendimento?</SectionTitle>
               <p className="text-justify leading-relaxed text-gray-700">
-                O atendimento é realizado de forma individual ou em grupo, conforme a necessidade do aluno.
-                Para agendar uma sessão, basta entrar em contato com a coordenação do NAP através do e-mail
-                institucional ou comparecer à secretaria. O agendamento é rápido e o atendimento é totalmente
-                confidencial.
-              </p>
-              <p className="text-justify leading-relaxed text-gray-700">
-                Lembre-se: buscar apoio é um sinal de cuidado consigo mesmo e de compromisso com seu desenvolvimento
-                acadêmico e pessoal. O NAP está aqui para você!
+                Os atendimentos do NAP são realizados de forma individual ou em grupo, com total sigilo e respeito. O agendamento pode ser feito diretamente pelo estudante, professor ou colaborador através do e-mail de contato do núcleo. É importante ressaltar que o NAP não realiza atendimento clínico contínuo (psicoterapia), mas oferece aconselhamento e, se necessário, realiza o encaminhamento para serviços especializados.
               </p>
             </div>
 
