@@ -21,6 +21,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { PageTitle } from '@/components/ui/page-title'
 import { CardAcentoBorda } from '@/components/ui/card-acento-borda'
 import { FormTitle } from "@/components/ui/form-title"
+import { formatBrazilianPhone, normalizeEmail } from '@/lib/utils/formatting'
 
 // Define the form schema with Zod
 const ouvidoriaFormSchema = z.object({
@@ -218,7 +219,14 @@ export default function OuvidoriaPage() {
                           <FormItem>
                             <FormLabel>E-mail *</FormLabel>
                             <FormControl>
-                              <Input type="email" placeholder="seu.email@exemplo.com" {...field} />
+                              <Input
+                                type="email"
+                                inputMode="email"
+                                autoComplete="email"
+                                placeholder="seu.email@exemplo.com"
+                                value={field.value ?? ''}
+                                onChange={(event) => field.onChange(normalizeEmail(event.target.value))}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -231,7 +239,13 @@ export default function OuvidoriaPage() {
                           <FormItem>
                             <FormLabel>Telefone</FormLabel>
                             <FormControl>
-                              <Input type="tel" placeholder="(XX) XXXXX-XXXX" {...field} />
+                              <Input
+                                type="tel"
+                                inputMode="tel"
+                                placeholder="(XX) XXXXX-XXXX"
+                                value={field.value ?? ''}
+                                onChange={(event) => field.onChange(formatBrazilianPhone(event.target.value))}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
