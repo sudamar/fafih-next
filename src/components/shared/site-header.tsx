@@ -98,9 +98,12 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 bg-card-bg shadow-header header-gradient-border">
-      <div className="mx-auto flex w-full max-w-[1280px] flex-nowrap items-center justify-between gap-4 px-6 py-2 md:px-8">
+      <div className="mx-auto flex w-full max-w-[1480px] flex-nowrap items-center justify-between gap-6 px-4 py-2 md:px-8 xl:px-12">
         <div className="flex flex-none items-center gap-4">
-          <Link href="/" className="flex items-center gap-4 -translate-x-[25px]">
+          <Link
+            href="/"
+            className="flex items-center gap-4 translate-x-0 xl:-translate-x-[30px] 2xl:-translate-x-[45px]"
+          >
             <Image
               src="https://i.imgur.com/2wUar6U.png"
               alt="Logo FAFIH"
@@ -120,14 +123,14 @@ export function SiteHeader() {
         </div>
 
         <nav className="hidden flex-1 justify-center lg:flex">
-          <ul className="flex items-center gap-5">
+          <ul className="flex flex-nowrap items-center gap-5">
             {navItems.map((item) => {
               const hasDropdown = Boolean(item.children && item.children.length)
 
               const itemContent = (
                 <a
                   href={item.href}
-                  className="flex items-center gap-1 text-[0.98rem] font-semibold text-primary transition hover:text-secondary"
+                  className="flex items-center gap-1 whitespace-nowrap text-[0.98rem] font-semibold text-primary transition hover:text-secondary"
                   {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 >
                   {item.label}
@@ -182,12 +185,12 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        <div className="hidden flex-none items-center justify-end gap-4 lg:flex">
+        <div className="hidden flex-none items-center justify-end gap-4 xl:flex">
           <a
             href="/cursos"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-footer-blue px-6 py-2 text-[0.81rem] font-semibold text-white transition hover:bg-blue-600 translate-x-[25px]"
+            className="rounded-full bg-footer-blue px-6 py-2 text-[0.81rem] font-semibold text-white transition hover:bg-blue-600 translate-x-0 xl:translate-x-[30px] 2xl:translate-x-[45px]"
           >
             Nossos cursos
           </a>
