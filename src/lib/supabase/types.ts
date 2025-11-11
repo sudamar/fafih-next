@@ -266,7 +266,7 @@ export type Database = {
           max_students: string | null
           modalidade: string | null
           monthly_price: string | null
-          objetivos: Json | null
+          objetivos: string | null
           original_price: number | null
           preco_matricula: number | null
           price: number | null
@@ -296,7 +296,7 @@ export type Database = {
           max_students?: string | null
           modalidade?: string | null
           monthly_price?: string | null
-          objetivos?: Json | null
+          objetivos?: string | null
           original_price?: number | null
           preco_matricula?: number | null
           price?: number | null
@@ -326,7 +326,7 @@ export type Database = {
           max_students?: string | null
           modalidade?: string | null
           monthly_price?: string | null
-          objetivos?: Json | null
+          objetivos?: string | null
           original_price?: number | null
           preco_matricula?: number | null
           price?: number | null

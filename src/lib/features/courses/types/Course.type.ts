@@ -79,7 +79,7 @@ export interface CourseDetail extends CourseCard {
   fullDescription: string[]
   highlights: CourseHighlight[]
   justificativa: string[]
-  objetivos: string[]
+  objetivos: string | null
   publico: string[]
   curriculum: CourseCurriculumItem[]
   avaliacao: string[]

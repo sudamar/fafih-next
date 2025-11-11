@@ -61,15 +61,11 @@ export default function CourseDetailExtensao({ course }: CourseDetailExtensaoPro
           )}
 
           {/* Objetivos */}
-          {course.objetivos && course.objetivos.length > 0 && (
+          {course.objetivos && (
             <section className={styles.section}>
               <SectionTitle>Objetivos</SectionTitle>
               <div className={styles.sectionContent}>
-                <ul className={styles.list}>
-                  {course.objetivos.map((objetivo: string, index: number) => (
-                    <li key={index} dangerouslySetInnerHTML={{ __html: objetivo }} />
-                  ))}
-                </ul>
+                <div dangerouslySetInnerHTML={{ __html: course.objetivos }} />
               </div>
             </section>
           )}

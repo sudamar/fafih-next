@@ -188,11 +188,6 @@ const getFullDescriptionTotal = (value: unknown): string[] => {
   return sanitizeSegments(convertToStringArray(value, 'getFullDescriptionTotal'), 'getFullDescriptionTotal')
 }
 
-// Função específica para processar objetivos que pode vir como array ou objeto
-const getObjetivosTotal = (value: unknown): string[] => {
-  return sanitizeSegments(convertToStringArray(value, 'getObjetivosTotal'), 'getObjetivosTotal')
-}
-
 const getJustificativaTotal = (value: unknown): string[] => {
   return convertToStringArray(value, 'getJustificativaTotal')
 }
@@ -565,7 +560,7 @@ const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
     fullDescription: parsedFullDescription,
     highlights,
     justificativa: getJustificativaTotal(row.justificativa),
-    objetivos: getObjetivosTotal(row.objetivos),
+    objetivos: parseMaybeString(row.objetivos),
     publico: getPraQuemCursoTotal(row.publico),
     curriculum,
     avaliacao: additionalInfo.avaliacao.length > 0 ? additionalInfo.avaliacao : investmentDetails.avaliacao,
