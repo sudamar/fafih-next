@@ -9,6 +9,10 @@ import { DepoimentosBasicoLista } from '@/components/ui/depoimentos-basico-lista
 import { SectionTitle } from '@/components/ui/section-title'
 import { ContatosSecretaria } from '@/components/shared/contatos-secretaria'
 import CourseDifferentialsSection from '@/components/cursos/CourseDifferentialsSection'
+import { CourseJustificativa } from '@/components/cursos/CourseJustificativa'
+import { CourseObjetivos } from '@/components/cursos/CourseObjetivos'
+import { CoursePublicoAlvo } from '@/components/cursos/CoursePublicoAlvo'
+import { CourseCardSobreJung } from '@/components/cursos/CourseCardSobreJung'
 import styles from '@/app/(site)/cursos/[slug]/page.module.css'
 import type { CourseDetail } from '@/lib/features/courses/types/Course.type'
 
@@ -49,39 +53,11 @@ export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGrad
 
           <CourseDifferentialsSection items={course.diferenciais} />
 
-          {/* Justificativa */}
-          {course.justificativa && course.justificativa.length > 0 && (
-            <section className={styles.section}>
-              <SectionTitle>Justificativa</SectionTitle>
-              <div className={styles.sectionContent}>
-                {course.justificativa.map((paragraph: string, index: number) => (
-                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
-                ))}
-              </div>
-            </section>
-          )}
+          <CourseJustificativa justificativa={course.justificativa} />
 
-          {/* Objetivos */}
-          {course.objetivos && (
-            <section className={styles.section}>
-              <SectionTitle>Objetivos</SectionTitle>
-              <div className={styles.sectionContent}>
-                <div dangerouslySetInnerHTML={{ __html: course.objetivos }} />
-              </div>
-            </section>
-          )}
+          <CourseObjetivos objetivos={course.objetivos} />
 
-          {/* Público-alvo */}
-          {course.publico && course.publico.length > 0 && (
-            <section className={styles.section}>
-              <SectionTitle>Para quem é este curso</SectionTitle>
-              <div className={styles.sectionContent}>
-                {course.publico.map((paragraph: string, index: number) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-              </div>
-            </section>
-          )}
+          <CoursePublicoAlvo publico={course.publico} />
 
           {/* Currículo */}
           {course.curriculum && course.curriculum.length > 0 && (
@@ -119,6 +95,8 @@ export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGrad
               />
             </section>
           )}
+
+          {course.category === 'especializacao' && <CourseCardSobreJung />}
 
           <ContatosSecretaria />
         </main>

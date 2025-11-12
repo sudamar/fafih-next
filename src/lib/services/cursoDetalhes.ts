@@ -163,21 +163,23 @@ const convertToStringArray = (value: unknown, fieldName: string): string[] => {
     return arrayFromObject;
   }
 
+  if (typeof value === 'string') {
+    const trimmed = value.trim()
+    if (!trimmed) {
+      imprimeLogs(`[${fieldName}] ⚠️ String vazia após trim, retornando []`)
+      return []
+    }
+    imprimeLogs(`[${fieldName}] ✅ É string, convertendo para array com 1 item`)
+    return [trimmed]
+  }
+
   imprimeLogs(`[${fieldName}] ❌ Não é array nem objeto válido, retornando []`);
   return [];
 }
 
-const stripHtmlTags = (value: string): string => {
-  return value
-    .replace(/<\/?[^>]+(>|$)/g, ' ')
-    .replace(/&nbsp;/gi, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-}
-
 const sanitizeSegments = (segments: string[], fieldName: string): string[] => {
   const sanitized = segments
-    .map((segment) => stripHtmlTags(segment))
+    .map((segment) => segment.trim())
     .filter((segment) => segment.length > 0)
   imprimeLogs(`[${fieldName}] Sanitizado:`, sanitized.length, 'itens')
   return sanitized
@@ -194,6 +196,9 @@ const getJustificativaTotal = (value: unknown): string[] => {
 
 const getPraQuemCursoTotal = (value: unknown): string[] => {
   return sanitizeSegments(convertToStringArray(value, 'getPraQuemCursoTotal'), 'getPraQuemCursoTotal')
+}
+const getObjetivosTotal = (value: unknown): string[] => {
+  return sanitizeSegments(convertToStringArray(value, 'getObjetivosTotal'), 'getObjetivosTotal')
 }
 
 const parseMaybeString = (value: unknown): string | null => {
@@ -560,7 +565,7 @@ const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
     fullDescription: parsedFullDescription,
     highlights,
     justificativa: getJustificativaTotal(row.justificativa),
-    objetivos: parseMaybeString(row.objetivos),
+    objetivos: getObjetivosTotal(row.objetivos),
     publico: getPraQuemCursoTotal(row.publico),
     curriculum,
     avaliacao: additionalInfo.avaliacao.length > 0 ? additionalInfo.avaliacao : investmentDetails.avaliacao,

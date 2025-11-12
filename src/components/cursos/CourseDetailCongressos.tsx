@@ -9,6 +9,9 @@ import { SectionTitle } from '@/components/ui/section-title'
 import CourseDifferentialsSection from '@/components/cursos/CourseDifferentialsSection'
 import styles from '@/app/(site)/cursos/[slug]/page.module.css'
 import type { CourseDetail } from '@/lib/features/courses/types/Course.type'
+import { CourseJustificativa } from '@/components/cursos/CourseJustificativa'
+import { CourseObjetivos } from '@/components/cursos/CourseObjetivos'
+import { CoursePublicoAlvo } from '@/components/cursos/CoursePublicoAlvo'
 
 interface CourseDetailCongressosProps {
   course: CourseDetail
@@ -42,36 +45,11 @@ export default function CourseDetailCongressos({ course }: CourseDetailCongresso
 
           <CourseDifferentialsSection items={course.diferenciais} />
 
-          {course.justificativa && course.justificativa.length > 0 && (
-            <section className={styles.section}>
-              <SectionTitle>Por que participar</SectionTitle>
-              <div className={styles.sectionContent}>
-                {course.justificativa.map((paragraph: string, index: number) => (
-                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
-                ))}
-              </div>
-            </section>
-          )}
+          <CourseJustificativa justificativa={course.justificativa} title="Por que participar" />
 
-          {course.objetivos && (
-            <section className={styles.section}>
-              <SectionTitle>O que você vai aprender</SectionTitle>
-              <div className={styles.sectionContent}>
-                <div dangerouslySetInnerHTML={{ __html: course.objetivos }} />
-              </div>
-            </section>
-          )}
+          <CourseObjetivos objetivos={course.objetivos} title="O que você vai aprender" />
 
-          {course.publico && course.publico.length > 0 && (
-            <section className={styles.section}>
-              <SectionTitle>Para quem é</SectionTitle>
-              <div className={styles.sectionContent}>
-                {course.publico.map((paragraph: string, index: number) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-              </div>
-            </section>
-          )}
+          <CoursePublicoAlvo publico={course.publico} title="Para quem é" />
 
           {course.curriculum && course.curriculum.length > 0 && (
             <CourseCurriculum curriculum={course.curriculum} />
