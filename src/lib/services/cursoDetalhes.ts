@@ -619,6 +619,7 @@ const fetchCourseRows = unstable_cache(
       const { data, error } = await supabase
         .from('cursos')
         .select('*')
+        .eq('is_ativo', true)
         .order('title', { ascending: true })
 
       if (error) {
@@ -652,6 +653,7 @@ const fetchCourseDetail = (column: 'slug' | 'id', value: string) =>
         let query = supabase
           .from('cursos')
           .select(COURSE_DETAIL_SELECT)
+          .eq('is_ativo', true)
 
         query = query.eq(column, value)
 
@@ -840,6 +842,7 @@ export const getAllCourseSlugs = async (): Promise<string[]> => {
   const { data, error } = await supabase
     .from('cursos')
     .select('slug')
+    .eq('is_ativo', true)
     .order('slug', { ascending: true })
 
   if (error) {
