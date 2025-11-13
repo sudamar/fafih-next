@@ -1,5 +1,6 @@
 import styles from './CourseAbout.module.css'
 import { PageTitle } from '@/components/ui/page-title'
+import { addCheckIconToLists } from '@/lib/utils/html-utils'
 
 interface CourseHighlight {
   icon?: string | null
@@ -31,7 +32,10 @@ export default function CourseAbout({ fullDescription, highlights }: CourseAbout
 
       <div className={styles.description}>
         {fullDescription.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
+          <div
+            key={index}
+            dangerouslySetInnerHTML={{ __html: addCheckIconToLists(paragraph) }}
+          />
         ))}
       </div>
 
@@ -44,7 +48,10 @@ export default function CourseAbout({ fullDescription, highlights }: CourseAbout
               </div>
               <div className={styles.highlightContent}>
                 <h3 className={styles.highlightTitle}>{highlight.title}</h3>
-                <p className={styles.highlightDescription}>{highlight.description}</p>
+                <div
+                  className={styles.highlightDescription}
+                  dangerouslySetInnerHTML={{ __html: addCheckIconToLists(highlight.description) }}
+                />
               </div>
             </div>
           ))}

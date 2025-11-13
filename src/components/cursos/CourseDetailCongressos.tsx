@@ -67,7 +67,6 @@ export default function CourseDetailCongressos({ course }: CourseDetailCongresso
             (course.coordenacao && course.coordenacao.coordenador)) && (
             <CourseFaculty
               professores={course.professores || []}
-              coordenacao={course.coordenacao}
             />
           )}
 

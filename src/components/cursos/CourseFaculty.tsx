@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { SectionTitle } from '@/components/ui/section-title';
 import { CardProfessor, ProfessorData } from '@/components/ui/card-professor';
 
@@ -12,18 +11,11 @@ interface Professor {
   lattes?: string | null
 }
 
-interface Coordenacao {
-  coordenador: string
-  descricao: string
-  foto?: string | null
-}
-
 interface CourseFacultyProps {
   professores: Professor[];
-  coordenacao?: Coordenacao;
 }
 
-export default function CourseFaculty({ professores, coordenacao }: CourseFacultyProps) {
+export default function CourseFaculty({ professores }: CourseFacultyProps) {
   const normalizedProfessores: ProfessorData[] = professores.map((professor) => ({
     nome: professor.nome,
     titulacao: professor.titulacao ?? 'Professor(a) convidado(a)',

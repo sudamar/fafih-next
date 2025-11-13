@@ -94,7 +94,6 @@ export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGrad
           {course.category !== 'especializacao' && course.professores.length > 0 && (
             <CourseFaculty
               professores={course.professores}
-              coordenacao={course.coordenacao}
             />
           )}
 

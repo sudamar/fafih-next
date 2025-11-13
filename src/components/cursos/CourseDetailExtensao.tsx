@@ -102,7 +102,6 @@ export default function CourseDetailExtensao({ course }: CourseDetailExtensaoPro
             (course.coordenacao && course.coordenacao.coordenador)) && (
             <CourseFaculty
               professores={course.professores || []}
-              coordenacao={course.coordenacao}
             />
           )}
 

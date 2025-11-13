@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import type { Route } from 'next'
+import { stripHtmlTags } from '@/lib/utils/html-utils'
 
 // src/components/CursoCard.tsx
 import type { Course } from "@/lib/features/courses/types/Course.type";
@@ -13,11 +14,13 @@ type CursoCardProps = { curso: Course };
 const CursoCard = ({ curso }: CursoCardProps) => {
   const courseRoute = `/cursos/${curso.slug ?? String(curso.id)}`;
 
-  // Trunca a descrição em 300 caracteres
+  // Remove tags HTML e trunca a descrição em 380 caracteres
   const truncateDescription = (text: string | null | undefined, maxLength: number = 380): string => {
     if (!text) return '';
-    if (text.length <= maxLength) return text;
-    return text.substring(0, maxLength) + '(...)';
+    // Remove as tags HTML primeiro
+    const plainText = stripHtmlTags(text);
+    if (plainText.length <= maxLength) return plainText;
+    return plainText.substring(0, maxLength) + '(...)';
   };
 
   return (

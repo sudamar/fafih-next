@@ -42,3 +42,25 @@ export function getObjetivosHtml(objetivos: string | null): string {
   // Aplica a classe list-item-check nas listas
   return addCheckIconToLists(objetivos)
 }
+
+/**
+ * Remove todas as tags HTML de uma string, mantendo apenas o texto.
+ * Útil para exibir conteúdo HTML como texto simples em cards ou previews.
+ *
+ * @param html - String contendo HTML
+ * @returns String apenas com o texto, sem tags HTML
+ */
+export function stripHtmlTags(html: string | null | undefined): string {
+  if (!html) return ''
+
+  return html
+    .replace(/<[^>]*>/g, '') // Remove todas as tags HTML
+    .replace(/&nbsp;/g, ' ') // Substitui &nbsp; por espaço
+    .replace(/&amp;/g, '&') // Substitui &amp; por &
+    .replace(/&lt;/g, '<') // Substitui &lt; por <
+    .replace(/&gt;/g, '>') // Substitui &gt; por >
+    .replace(/&quot;/g, '"') // Substitui &quot; por "
+    .replace(/&apos;/g, "'") // Substitui &apos; por '
+    .replace(/\s+/g, ' ') // Remove espaços múltiplos
+    .trim() // Remove espaços no início e fim
+}
