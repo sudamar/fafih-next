@@ -28,3 +28,17 @@ export function addCheckIconToLists(html: string): string {
     return `<ul class="list-item-check"${attributes}>`
   })
 }
+
+/**
+ * Processa o HTML dos objetivos do currículo para renderização segura.
+ * Adiciona classes necessárias (como list-item-check para listas com ícone de check).
+ *
+ * @param objetivos - String HTML com os objetivos do módulo
+ * @returns String HTML processada pronta para renderização
+ */
+export function getObjetivosHtml(objetivos: string | null): string {
+  if (!objetivos) return ''
+
+  // Aplica a classe list-item-check nas listas
+  return addCheckIconToLists(objetivos)
+}

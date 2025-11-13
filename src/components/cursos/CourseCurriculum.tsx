@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import styles from './CourseCurriculum.module.css';
 import { SectionTitle } from '@/components/ui/section-title';
+import { getObjetivosHtml } from '@/lib/utils/html-utils';
 
 interface CurriculumItem {
   number: number
@@ -88,7 +89,10 @@ export default function CourseCurriculum({ curriculum }: CourseCurriculumProps) 
                   {item.objetivos && (
                     <div className={styles.contentBlock}>
                       <h4 className={styles.contentTitle}>Objetivos</h4>
-                      <p className={styles.contentText}>{item.objetivos}</p>
+                      <div
+                        className={styles.contentText}
+                        dangerouslySetInnerHTML={{ __html: getObjetivosHtml(item.objetivos) }}
+                      />
                     </div>
                   )}
 
