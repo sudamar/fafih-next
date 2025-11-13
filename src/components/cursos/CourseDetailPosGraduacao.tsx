@@ -5,6 +5,8 @@ import CourseCurriculum from '@/components/cursos/CourseCurriculum'
 import CourseFaculty from '@/components/cursos/CourseFaculty'
 import CourseEvaluation from '@/components/cursos/CourseEvaluation'
 import CourseWorkload from '@/components/cursos/CourseWorkload'
+import CourseCoordenacao from '@/components/cursos/CourseCoordenacao'
+import CourseCorpoDocente from '@/components/cursos/CourseCorpoDocente'
 import { DepoimentosBasicoLista } from '@/components/ui/depoimentos-basico-lista'
 import { SectionTitle } from '@/components/ui/section-title'
 import { ContatosSecretaria } from '@/components/shared/contatos-secretaria'
@@ -74,8 +76,22 @@ export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGrad
             <CourseWorkload cargahoraria={course.cargahoraria} />
           )}
 
-          {/* Corpo Docente */}
-          {course.professores && course.professores.length > 0 && (
+          {/* Coordenação - apenas para cursos de especialização */}
+          {course.category === 'especializacao' && course.coordenacao && (
+            <CourseCoordenacao coordenacao={course.coordenacao} />
+          )}
+
+          {/* Corpo Docente - apenas para cursos de especialização */}
+          {course.category === 'especializacao' && (
+            <CourseCorpoDocente
+              ids={[]}
+              detalhamento={false}
+              maxDescricao={100}
+            />
+          )}
+
+          {/* Corpo Docente - para outros cursos */}
+          {course.category !== 'especializacao' && course.professores.length > 0 && (
             <CourseFaculty
               professores={course.professores}
               coordenacao={course.coordenacao}

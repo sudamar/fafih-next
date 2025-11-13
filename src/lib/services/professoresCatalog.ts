@@ -41,6 +41,24 @@ export const listProfessores = async (): Promise<ProfessorData[]> => {
 
 export const getProfessores = async (): Promise<ProfessorData[]> => listProfessores()
 
+export const getProfessoresByIds = async (ids: string[]): Promise<ProfessorData[]> => {
+  if (!ids || ids.length === 0) {
+    return listProfessores()
+  }
+
+  const { data, error } = await supabase
+    .from('professores')
+    .select('*')
+    .in('id', ids)
+    .order('nome', { ascending: true })
+
+  if (error) {
+    throw new Error(`Erro ao buscar professores por IDs: ${error.message}`)
+  }
+
+  return (data ?? []).map(mapProfessor)
+}
+
 export const revalidateProfessoresList = async () => {
   await revalidateTag(PROFESSORES_LIST_TAG)
 }
