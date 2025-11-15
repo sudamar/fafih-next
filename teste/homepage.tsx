@@ -266,7 +266,7 @@ export const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Corpo Docente', href: '/corpo-docente' },
       { label: 'Membros Analistas', href: '/membros-analistas' },
       { label: 'Núcleo de Apoio e Desenvolvimento Docente', href: '/nucleo-apoio-docente' },
-      { label: 'Portal do Docente', href: 'portal-do-docente.html' },
+      { label: 'Portal do Docente', href: 'https://ijep.com.br' },
       { label: 'Serviços para a Comunidade', href: '/servicos-comunidade' },
     ],
   },
