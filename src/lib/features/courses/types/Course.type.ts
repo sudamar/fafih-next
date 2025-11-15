@@ -114,4 +114,5 @@ export interface CourseDetail extends CourseCard {
   }
   testimonials: CourseTestimonial[]
   workload: string | null
+  alerta_vagas: number | null
 }

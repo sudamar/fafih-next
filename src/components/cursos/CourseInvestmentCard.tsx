@@ -17,6 +17,7 @@ interface Course {
   ctaLabel?: string | null
   observacoes?: string[] | string | null
   moreInfoUrl?: string | null
+  alerta_vagas?: number | null
   formato_curso?: {
     frequencia?: string | null
     horario?: string | null
@@ -119,6 +120,24 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
     router.push('/cursos');
   };
 
+  // Lógica de alerta de vagas
+  const getVagasAlert = (): { message: string; type: 'warning' | 'danger' } | null => {
+    const vagas = course.alerta_vagas;
+
+    if (vagas === null || vagas === undefined || vagas > 15) {
+      return null;
+    }
+
+    if (vagas <= 5) {
+      return { message: 'Últimas Vagas', type: 'danger' };
+    }
+
+    // vagas > 5 && vagas <= 15
+    return { message: 'Restam poucas vagas', type: 'warning' };
+  };
+
+  const vagasAlert = getVagasAlert();
+
   return (
     <div className={styles.card}>
       {/* Preço Principal */}
@@ -139,6 +158,14 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
           ) : (
             <div className={styles.statusTag}>Vagas encerradas</div>
           )}
+        </div>
+      )}
+
+      {/* Alerta de Vagas */}
+      {vagasAlert && (
+        <div className={`${styles.vagasAlert} ${styles[`vagasAlert${vagasAlert.type === 'danger' ? 'Danger' : 'Warning'}`]}`}>
+          <span className={styles.vagasAlertIcon}>⚠️</span>
+          <span className={styles.vagasAlertText}>{vagasAlert.message}</span>
         </div>
       )}
 

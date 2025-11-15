@@ -9,7 +9,7 @@ export function MaintenancePage({ siteName = 'FAFIH' }: MaintenancePageProps) {
     <div className="flex min-h-screen flex-col items-center justify-center bg-background px-6 py-16 text-center text-primary">
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-6 rounded-3xl bg-white/60 p-10 shadow-lg backdrop-blur">
         <Image
-          src="/assets/images/manutencao.webp"
+          src="/assets/images/manutencao_2.jpg"
           alt="Site em manutenção"
           width={420}
           height={320}

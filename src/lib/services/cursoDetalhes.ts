@@ -28,6 +28,7 @@ type CourseDetailQueryRow = CourseRow & {
     professor: ProfessorRow | null
   }> | null
   coordenador: ProfessorRow | null
+  alerta_vagas: number | null
 }
 
 export const COURSE_LIST_TAG = 'courses:list'
@@ -59,6 +60,7 @@ const COURSE_DETAIL_SELECT = `
   publico,
   investment_details,
   additional_info,
+  alerta_vagas,
   coordenador:coordenador_id (
     id,
     nome,
@@ -594,7 +596,14 @@ const mapCourseDetail = (row: CourseDetailQueryRow): CourseDetail => {
     formato_curso: additionalInfo.formato_curso ?? investmentDetails.formato_curso,
     testimonials: additionalInfo.testimonials.length > 0 ? additionalInfo.testimonials : investmentDetails.testimonials,
     workload: parseMaybeString(row.workload),
+    alerta_vagas: row.alerta_vagas ?? null,
   };
+
+    imprimeLogs('[mapCourseDetail] ========== DEBUG ALERTA_VAGAS ==========');
+    imprimeLogs('[mapCourseDetail] row.alerta_vagas (do banco):', row.alerta_vagas);
+    imprimeLogs('[mapCourseDetail] Tipo:', typeof row.alerta_vagas);
+    imprimeLogs('[mapCourseDetail] Valor final no result:', result.alerta_vagas);
+    imprimeLogs('[mapCourseDetail] =========================================');
 
     imprimeLogs('[mapCourseDetail] ✅ Objeto final construído com sucesso');
     imprimeLogs('[mapCourseDetail] ====== FIM MAPEAMENTO ======');
