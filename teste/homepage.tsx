@@ -202,7 +202,7 @@ export const courses: CourseCardData[] = [
   {
     title: 'Congressos Junguianos do IJEP',
     description: 'Adquira ou saiba mais deste e dos demais Congressos Junguianos do IJEP.',
-    imageUrl: 'https://i.imgur.com/M3vP6UT.png',
+    imageUrl: '/images/cursos/imagem-fafih-curso-congressos-junguianos.jpg',
     category: 'eventos',
     badge: 'Eventos',
     href: 'eventos-congressos-junguianos.html',

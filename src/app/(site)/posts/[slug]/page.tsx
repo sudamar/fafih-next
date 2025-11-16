@@ -1,8 +1,27 @@
 import { PageTitle } from '@/components/ui/page-title'
 import { notFound } from 'next/navigation'
-import ReactMarkdown from 'react-markdown'
 import AuthorCard from '@/components/shared/AuthorCard'
 import { getAllPosts, getPostBySlug } from 'teste/posts'
+import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
+import rehypeSanitize, { defaultSchema } from 'rehype-sanitize'
+
+// Schema customizado para rehype-sanitize permitindo tags HTML comuns em posts
+const sanitizeSchema = {
+  ...defaultSchema,
+  tagNames: [
+    ...(defaultSchema.tagNames || []),
+    'b',
+    'i',
+    'u',
+    'strong',
+    'em',
+    'div',
+    'span',
+    'br',
+    'hr',
+  ],
+}
 
 interface PostPageProps {
   params: {
@@ -49,8 +68,22 @@ export default async function PostPage({ params }: PostPageProps) {
               </p>
             )}
 
+            {/* Imagem de destaque */}
+            {post.image && (
+              <div className="mb-8 rounded-lg overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            )}
+
             <article className="prose prose-lg max-w-none text-justify [&>p]:leading-relaxed [&>p]:text-gray-700 [&>p]:mb-4 [&>blockquote]:italic [&>blockquote]:pl-6 [&>blockquote]:border-l-4 [&>blockquote]:border-primary [&>blockquote]:my-6 [&>hr]:my-8 [&>hr]:border-gray-300 [&>h3]:font-bold [&>h3]:text-gray-800 [&>h3]:mb-4 [&>h3]:mt-8 [&>h3]:pt-8 [&>h3]:border-t [&>h3]:border-gray-300 [&>h3:first-child]:mt-0 [&>h3:first-child]:pt-0 [&>h3:first-child]:border-t-0">
-              <ReactMarkdown>{post.content}</ReactMarkdown>
+              <ReactMarkdown rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}>
+                {post.content}
+              </ReactMarkdown>
             </article>
 
             {/* Card do Autor */}
