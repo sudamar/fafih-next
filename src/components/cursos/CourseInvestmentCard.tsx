@@ -58,7 +58,9 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
     : null;
   const monthlyPriceInfo = hasPrice ? course.monthlyPrice : null;
   const showContactTag = isExtensionCourse && !hasPrice;
-  const primaryCtaLabel = normalizeString(course.ctaLabel) || 'Inscrever-se Agora';
+  const primaryCtaLabel = course.alerta_vagas === 0
+    ? 'Lista de Espera'
+    : (normalizeString(course.ctaLabel) || 'Inscrever-se Agora');
   const moreInfoHref = normalizeString(course.moreInfoUrl) || 'https://ijep.com.br/inscricao/aluno';
   const observationText = isExtensionCourse
     ? (() => {
@@ -126,6 +128,10 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
 
     if (vagas === null || vagas === undefined || vagas > 15) {
       return null;
+    }
+
+    if (vagas === 0) {
+      return { message: 'Vagas Esgotadas', type: 'danger' };
     }
 
     if (vagas <= 5) {
