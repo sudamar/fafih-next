@@ -141,10 +141,10 @@ export const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Comissão Própria de Avaliação', href: '/cpa' },
       { label: 'Calendário Acadêmico', href: '/calendario-academico' },
       { label: 'Biblioteca', href: '/biblioteca' },
-      { label: 'Consultar Diploma', href: 'consultar-diploma.html' },
+      { label: 'Consultar Diploma', href: '/consulte-diploma' },
       // { label: 'Design System', href: '/dls/components' },
       { label: 'Política de Privacidade', href: '/politica-privacidade' },
-      { label: 'Política de Cookies', href: '#', description: 'Página em construção' },
+      // { label: 'Política de Cookies', href: '#', description: 'Página em construção' },
     ],
   },
   {
@@ -153,8 +153,9 @@ export const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Todos', href: '/cursos' },
       { label: 'Graduação', href: '/cursos?filter=graduacao' },
       { label: 'Pós-graduação', href: '/cursos?filter=especializacao' },
-      { label: 'Curta e Média Duração', href: '/cursos?filter=extensao' },
-      { label: 'Eventos', href: '/cursos?filter=congressos' },
+      { label: 'Extensão', href: '/cursos?filter=extensao' },
+      { label: 'Congressos', href: '/cursos?filter=congressos' },
+      { label: 'Formação', href: '/cursos?filter=formacao' },
       { label: 'Formas de Ingresso', href: '/formas-de-ingresso' },
       { label: 'Regulamentos', href: '/regulamentos' },
       { label: 'Polos', href: '/polos' },
@@ -169,7 +170,7 @@ export const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Corpo Docente', href: '/corpo-docente' },
       { label: 'Membros Analistas', href: '/membros-analistas' },
       { label: 'Núcleo de Apoio e Desenvolvimento Docente', href: '/nucleo-apoio-docente' },
-      { label: 'Portal do Docente', href: 'https://ijep.com.br' },
+      // { label: 'Portal do Docente', href: 'https://ijep.com.br' },
       { label: 'Serviços para a Comunidade', href: '/servicos-comunidade' },
     ],
   },
@@ -179,7 +180,7 @@ export const footerContact: ContactInfoItem[] = [
   { type: 'email', label: 'contato@fafih.edu.br', href: 'mailto:contato@fafih.edu.br' },
   { type: 'phone', label: '(11) 3456-7890', href: 'tel:+551134567890' },
   { type: 'link', label: 'Ouvidoria', href: '/ouvidoria' },
-  { type: 'link', label: 'Perguntas Frequentes', href: '/perguntas-frequentes' },
+  { type: 'link', label: 'Perguntas Frequentes', href: '/faq' },
 ]
 
 export const footerSocials: SocialLink[] = [

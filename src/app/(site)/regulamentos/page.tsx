@@ -11,31 +11,6 @@ export const metadata: Metadata = {
 
 const regulatoryGroups = [
   {
-    title: 'Documentos Institucionais',
-    description:
-      'Diretrizes que fundamentam a estrutura acadêmica e administrativa da FAFIH.',
-    items: [
-      {
-        label: 'Regimento Geral da FAFIH',
-        detail: 'Organiza a gestão, os órgãos colegiados e os processos acadêmicos da instituição.',
-        href: '/docs/regimento-geral.pdf',
-        tipo: "pdf"
-      },
-      {
-        label: 'Estatuto do IJEP',
-        detail: 'Documento da mantenedora que descreve a missão, visão e estrutura organizacional.',
-        href: '/docs/estatuto-ijep.txt',
-        tipo: "txt"
-      },
-      {
-        label: 'Plano de Desenvolvimento Institucional (PDI)',
-        detail: 'Planejamento estratégico com metas, indicadores e ações para os próximos anos.',
-        href: '/docs/pdi-fafih.xls',
-        tipo: "xls"
-      },
-    ],
-  },
-  {
     title: 'Políticas Institucionais',
     description:
     'Compromissos institucionais com inclusão, acessibilidade e atendimento à comunidade acadêmica.',
