@@ -638,6 +638,23 @@ const fetchCourseRows = unstable_cache(
       }
 
       console.log('[fetchCourseRows] ✅ Cursos carregados:', data?.length ?? 0);
+      console.log('[fetchCourseRows] Cursos por categoria:');
+
+      const cursosGroupedByCategory = (data ?? []).reduce((acc, course) => {
+        const cat = course.category || 'sem-categoria'
+        const catLabel = course.category_label || 'Sem Label'
+        if (!acc[cat]) {
+          acc[cat] = { label: catLabel, titles: [] }
+        }
+        acc[cat].titles.push(course.title)
+        return acc
+      }, {} as Record<string, { label: string; titles: string[] }>)
+
+      Object.entries(cursosGroupedByCategory).forEach(([cat, info]) => {
+        console.log(`  - ${cat} (${info.label}): ${info.titles.length} curso(s)`)
+        info.titles.forEach(title => console.log(`    * ${title}`))
+      })
+
       console.log('[fetchCourseRows] ====== FIM ======');
 
       return data ?? []

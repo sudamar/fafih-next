@@ -24,6 +24,27 @@ const EscolhaCursosContent = ({
   const [activeFilter, setActiveFilter] = useState(filterParam || 'all')
 
   useEffect(() => {
+    console.log('[CursosClient] Total de cursos:', courses.length)
+    console.log('[CursosClient] Categorias recebidas:', categories)
+    console.log('[CursosClient] Cursos por categoria:')
+
+    const cursosGroupedByCategory = courses.reduce((acc, course) => {
+      const cat = course.category || 'sem-categoria'
+      const catLabel = course.categoryLabel || 'Sem Categoria'
+      if (!acc[cat]) {
+        acc[cat] = { label: catLabel, courses: [] }
+      }
+      acc[cat].courses.push(course.title)
+      return acc
+    }, {} as Record<string, { label: string; courses: string[] }>)
+
+    Object.entries(cursosGroupedByCategory).forEach(([cat, data]) => {
+      console.log(`  - ${cat} (${data.label}): ${data.courses.length} curso(s)`)
+      console.log(`    Cursos:`, data.courses)
+    })
+  }, [courses, categories])
+
+  useEffect(() => {
     if (filterParam) {
       setActiveFilter(filterParam)
     }
