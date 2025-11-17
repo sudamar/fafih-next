@@ -38,11 +38,6 @@ export async function CoursesSection() {
   return (
     <section id="cursos" className="px-6 py-20 lg:px-8 scroll-mt-32">
       <div className="mx-auto max-w-6xl">
-        <h2 className="section-title text-center">Nossos Cursos</h2>
-        <p className="mt-4 text-center text-sm text-neutral-600">
-          Explore a seleção dos cursos da FAFIH. Use os filtros para encontrar a formação ideal e clique em “Ver
-          detalhes” para acessar a página completa de cada curso.
-        </p>
 
         <div className="mt-10">
           <CursosClient courses={previewCourses} categories={categories} />

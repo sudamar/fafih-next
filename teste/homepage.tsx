@@ -239,7 +239,7 @@ export const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Calendário Acadêmico', href: 'calendario-academico.html' },
       { label: 'Biblioteca', href: 'https://ijep.com.br/biblioteca-ijep', external: true },
       { label: 'Consultar Diploma', href: 'consultar-diploma.html' },
-      { label: 'Design System', href: '/dls/components' },
+      // { label: 'Design System', href: '/dls/components' },
       { label: 'Política de Privacidade', href: 'politica-privacidade.html' },
       { label: 'Política de Cookies', href: '#', description: 'Página em construção' },
     ],
