@@ -1,100 +1,25 @@
-import CourseDetailHero from '@/components/cursos/CourseDetailHero';
-import CourseInvestmentCard from '@/components/cursos/CourseInvestmentCard';
-import CourseAbout from '@/components/cursos/CourseAbout';
-import CourseCurriculum from '@/components/cursos/CourseCurriculum';
-import CourseFaculty from '@/components/cursos/CourseFaculty';
-import CourseEvaluation from '@/components/cursos/CourseEvaluation';
-import CourseWorkload from '@/components/cursos/CourseWorkload';
-import { DepoimentosBasicoLista } from '@/components/ui/depoimentos-basico-lista';
-import { SectionTitle } from '@/components/ui/section-title';
-import { ContatosSecretaria } from '@/components/shared/contatos-secretaria';
-import CourseDifferentialsSection from '@/components/cursos/CourseDifferentialsSection';
-import styles from '@/app/(site)/cursos/[slug]/page.module.css';
-
-interface Testimonial {
-  text?: string;
-  quote?: string;
-  author: string;
-  role: string;
-}
-
-interface Course {
-  [key: string]: unknown;
-  title: string;
-  subtitle?: string;
-  hero?: {
-    type?: string;
-    source?: string;
-    fallbackImage?: string;
-    alt?: string;
-  };
-  image?: string;
-  categoryLabel?: string;
-  duration?: string;
-  modalidade?: string;
-  fullDescription?: string[];
-  highlights?: Array<{
-    icon: string;
-    title: string;
-    description: string;
-    bgColor: string;
-    iconColor: string;
-  }>;
-  justificativa?: string[];
-  objetivos?: string[];
-  publico?: string[];
-  curriculum?: Array<{
-    number: number;
-    title: string;
-    hours: number;
-    ementa: string;
-    objetivos: string;
-    bibliography: string[];
-  }>;
-  avaliacao?: string[];
-  cargahoraria?: {
-    texto: string[];
-    atividades: Array<{
-      descricao: string;
-      carga: number;
-    }>;
-    observacao?: string;
-  };
-  professores?: Array<{
-    nome: string;
-    titulacao: string;
-    descricao: string;
-    telefone?: string;
-    email?: string;
-    foto?: string;
-  }>;
-  coordenacao?: {
-    coordenador: string;
-    descricao: string;
-    foto?: string;
-  };
-  testimonials?: Testimonial[];
-  contact?: {
-    phone?: string;
-    whatsapp?: string;
-    email?: string;
-  };
-  diferenciais?: string[];
-  category?: string;
-  ctaLabel?: string;
-  moreInfoUrl?: string;
-  formato_curso?: {
-    frequencia?: string;
-    horario?: string;
-    periodo?: string;
-    tipo?: string;
-    plataforma?: string;
-    numero_encontros?: number;
-  };
-}
+import CourseDetailHero from '@/components/cursos/CourseDetailHero'
+import CourseInvestmentCard from '@/components/cursos/CourseInvestmentCard'
+import CourseAbout from '@/components/cursos/CourseAbout'
+import CourseCurriculum from '@/components/cursos/CourseCurriculum'
+import CourseFaculty from '@/components/cursos/CourseFaculty'
+import CourseEvaluation from '@/components/cursos/CourseEvaluation'
+import CourseWorkload from '@/components/cursos/CourseWorkload'
+import CourseCoordenacao from '@/components/cursos/CourseCoordenacao'
+import CourseCorpoDocente from '@/components/cursos/CourseCorpoDocente'
+import { DepoimentosBasicoLista } from '@/components/ui/depoimentos-basico-lista'
+import { SectionTitle } from '@/components/ui/section-title'
+import { ContatosSecretaria } from '@/components/shared/contatos-secretaria'
+import CourseDifferentialsSection from '@/components/cursos/CourseDifferentialsSection'
+import { CourseJustificativa } from '@/components/cursos/CourseJustificativa'
+import { CourseObjetivos } from '@/components/cursos/CourseObjetivos'
+import { CoursePublicoAlvo } from '@/components/cursos/CoursePublicoAlvo'
+import { CourseCardSobreJung } from '@/components/cursos/CourseCardSobreJung'
+import styles from '@/app/(site)/cursos/[slug]/page.module.css'
+import type { CourseDetail } from '@/lib/features/courses/types/Course.type'
 
 interface CourseDetailPosGraduacaoProps {
-  course: Course;
+  course: CourseDetail
 }
 
 export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGraduacaoProps) {
@@ -130,43 +55,11 @@ export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGrad
 
           <CourseDifferentialsSection items={course.diferenciais} />
 
-          {/* Justificativa */}
-          {course.justificativa && course.justificativa.length > 0 && (
-            <section className={styles.section}>
-              <SectionTitle>Justificativa</SectionTitle>
-              <div className={styles.sectionContent}>
-                {course.justificativa.map((paragraph: string, index: number) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-              </div>
-            </section>
-          )}
+          <CourseJustificativa justificativa={course.justificativa} />
 
-          {/* Objetivos */}
-          {course.objetivos && course.objetivos.length > 0 && (
-            <section className={styles.section}>
-              <SectionTitle>Objetivos</SectionTitle>
-              <div className={styles.sectionContent}>
-                <ul className={styles.list}>
-                  {course.objetivos.map((objetivo: string, index: number) => (
-                    <li key={index}>{objetivo}</li>
-                  ))}
-                </ul>
-              </div>
-            </section>
-          )}
+          <CourseObjetivos objetivos={course.objetivos} />
 
-          {/* Público-alvo */}
-          {course.publico && course.publico.length > 0 && (
-            <section className={styles.section}>
-              <SectionTitle>Para quem é este curso</SectionTitle>
-              <div className={styles.sectionContent}>
-                {course.publico.map((paragraph: string, index: number) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-              </div>
-            </section>
-          )}
+          <CoursePublicoAlvo publico={course.publico} />
 
           {/* Currículo */}
           {course.curriculum && course.curriculum.length > 0 && (
@@ -183,11 +76,24 @@ export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGrad
             <CourseWorkload cargahoraria={course.cargahoraria} />
           )}
 
-          {/* Corpo Docente */}
-          {course.professores && course.professores.length > 0 && (
+          {/* Coordenação - apenas para cursos de especialização */}
+          {course.category === 'especializacao' && course.coordenacao && (
+            <CourseCoordenacao coordenacao={course.coordenacao} />
+          )}
+
+          {/* Corpo Docente - apenas para cursos de especialização */}
+          {course.category === 'especializacao' && (
+            <CourseCorpoDocente
+              ids={[]}
+              detalhamento={false}
+              maxDescricao={100}
+            />
+          )}
+
+          {/* Corpo Docente - para outros cursos */}
+          {course.category !== 'especializacao' && course.professores.length > 0 && (
             <CourseFaculty
               professores={course.professores}
-              coordenacao={course.coordenacao}
             />
           )}
 
@@ -196,14 +102,16 @@ export default function CourseDetailPosGraduacao({ course }: CourseDetailPosGrad
             <section className={styles.section}>
               <SectionTitle>Depoimentos de Alunos</SectionTitle>
               <DepoimentosBasicoLista
-                depoimentos={course.testimonials.map((t: Testimonial) => ({
-                  quote: t.text || t.quote || '',
-                  author: t.author,
-                  role: t.role
+                depoimentos={course.testimonials.map((testimonial) => ({
+                  quote: testimonial.quote,
+                  author: testimonial.author,
+                  role: testimonial.role,
                 }))}
               />
             </section>
           )}
+
+          {course.category === 'especializacao' && <CourseCardSobreJung />}
 
           <ContatosSecretaria />
         </main>

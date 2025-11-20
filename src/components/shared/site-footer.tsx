@@ -52,12 +52,12 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
           {/* Coluna 1: Logo */}
-          <div className="lg:col-span-1 pr-10 relative h-24">
+          <div className="lg:col-span-1 pr-10 relative h-24 -ml-[65px]">
             <Image
               src="/assets/images/logo-fundo-azul.png"
               alt="Logo FAFIH no rodapé"
-              width={200}
-              height={100}
+              width={225}
+              height={113}
               className="scale-[1.54] origin-left mr-5"
             />
           </div>
@@ -194,11 +194,11 @@ export function SiteFooter() {
             <div>
               <a href="#" target="_blank" rel="noopener noreferrer">
                 <Image
-                  src="https://i.imgur.com/i7LTAu5.png"
-                  alt="Consulte aqui o cadastro da instituição no e-MEC"
+                  src="/assets/images/imagem-valida-mec-fafih.png"
+                  alt="Consulte aqui o cadastro da FAFIH no e-MEC"
                   width={208}
                   height={104}
-                  className="w-auto h-auto max-h-26"
+                  className="h-auto w-auto max-h-26"
                 />
               </a>
             </div>

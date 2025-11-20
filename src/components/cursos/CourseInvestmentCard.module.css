@@ -215,3 +215,40 @@
   background: #d6451b;
   box-shadow: 0 0 0 4px rgba(214, 69, 27, 0.18);
 }
+
+/* Alerta de Vagas */
+.vagasAlert {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.25rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-align: center;
+  justify-content: center;
+  border: 2px solid;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.vagasAlertWarning {
+  background: linear-gradient(135deg, #fff7e6, #fff3d9);
+  color: #d97706;
+  border-color: #fbbf24;
+}
+
+.vagasAlertDanger {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #dc2626;
+  border-color: #f87171;
+}
+
+.vagasAlertIcon {
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.vagasAlertText {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}

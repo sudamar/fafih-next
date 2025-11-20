@@ -1,10 +1,8 @@
-import { getProfessores } from '@/lib/services/professores';
-import { CardProfessor } from '@/components/ui/card-professor';
+import { ListaCorpoDocente } from '@/components/shared/lista-corpo-docente';
 import { PageTitle } from '@/components/ui/page-title';
 import styles from './page.module.css';
 
-export default function CorpoDocentePage() {
-  const professores = getProfessores();
+export default async function CorpoDocentePage() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -14,11 +12,7 @@ export default function CorpoDocentePage() {
         </p>
       </div>
 
-      <div className={styles.grid}>
-        {professores.map((professor, index) => (
-          <CardProfessor key={index} professor={professor} />
-        ))}
-      </div>
+      <ListaCorpoDocente detalhamento={true} />
     </div>
   );
 }

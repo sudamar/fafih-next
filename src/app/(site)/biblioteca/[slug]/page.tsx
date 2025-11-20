@@ -1,43 +1,47 @@
-import { getTrabalhoBySlug, getTrabalhos } from '@/lib/services/biblioteca';
-import { getIconMapByCategoria, getColorMapByCategoria } from '@/lib/services/categorias-trabalho';
-import { PageTitle } from '@/components/ui/page-title';
-import { SectionTitle } from '@/components/ui/section-title';
-import { notFound } from 'next/navigation';
-import {
-  User, Calendar, Star, ExternalLink, ArrowLeft, Download, Eye
-} from 'lucide-react';
-import Link from 'next/link';
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
+import { ArrowLeft, Calendar, Download, Eye, ExternalLink, Star } from 'lucide-react'
 
-// Carrega mapas de ícones e cores das categorias
-const tagIconsMap = getIconMapByCategoria();
-const tagHexColors = getColorMapByCategoria();
+import { PageTitle } from '@/components/ui/page-title'
+import { SectionTitle } from '@/components/ui/section-title'
+import { getTrabalhoBySlug, incrementTrabalhoVisitantes } from '@/lib/services/biblioteca'
+import { resolveCategoriaIcon } from '@/lib/services/categorias-trabalho'
 
-export async function generateStaticParams() {
-  const trabalhos = getTrabalhos();
-  return trabalhos.map((trabalho) => ({
-    slug: trabalho.slug,
-  }));
-}
+export const dynamic = 'force-dynamic'
 
-export default function TrabalhoDetalhesPage({ params }: { params: { slug: string } }) {
-  const trabalho = getTrabalhoBySlug(params.slug);
-
-  if (!trabalho) {
-    notFound();
-  }
-
-  const publicationDate = new Date(trabalho.data_publicacao);
-  const formattedDate = new Date(
-    publicationDate.valueOf() + publicationDate.getTimezoneOffset() * 60 * 1000
-  ).toLocaleDateString('pt-BR', {
+const formatDate = (value: string) => {
+  const date = new Date(value)
+  const adjusted = new Date(date.valueOf() + date.getTimezoneOffset() * 60 * 1000)
+  return adjusted.toLocaleDateString('pt-BR', {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
-  });
+  })
+}
+
+export default async function TrabalhoDetalhesPage({ params }: { params: { slug: string } }) {
+  let trabalho: Awaited<ReturnType<typeof getTrabalhoBySlug>>
+  try {
+    trabalho = await getTrabalhoBySlug(params.slug)
+  } catch (error) {
+    console.error('Não foi possível carregar o trabalho:', error)
+    notFound()
+  }
+
+  if (!trabalho) {
+    notFound()
+  }
+
+  try {
+    await incrementTrabalhoVisitantes(trabalho.id)
+  } catch (error) {
+    console.error('Não foi possível registrar a visualização do trabalho:', error)
+  }
+  const visitantesAtualizados = trabalho.visitantes + 1
+  const dataPublicacaoFormatada = formatDate(trabalho.data_publicacao)
 
   return (
     <main className="bg-background">
-      {/* Hero Section */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 text-center">
           <PageTitle>Visualizar Trabalho</PageTitle>
@@ -47,12 +51,9 @@ export default function TrabalhoDetalhesPage({ params }: { params: { slug: strin
         </div>
       </section>
 
-      {/* Content Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Título da Publicação */}
             <div className="bg-white rounded-3xl shadow-lg shadow-neutral-900/5 p-8">
               <SectionTitle>Título da Publicação</SectionTitle>
               <h2 className="mt-4 font-display text-2xl font-bold text-primary leading-snug">
@@ -64,12 +65,11 @@ export default function TrabalhoDetalhesPage({ params }: { params: { slug: strin
                 <span className="text-neutral-400">•</span>
                 <p className="flex items-center gap-2 text-sm">
                   <Calendar className="h-4 w-4" />
-                  {formattedDate}
+                  {dataPublicacaoFormatada}
                 </p>
               </div>
             </div>
 
-            {/* Resumo */}
             <div className="bg-white rounded-3xl shadow-lg shadow-neutral-900/5 p-8">
               <SectionTitle>Resumo</SectionTitle>
               <p className="mt-4 text-neutral-700 leading-relaxed text-lg">
@@ -77,8 +77,7 @@ export default function TrabalhoDetalhesPage({ params }: { params: { slug: strin
               </p>
             </div>
 
-            {/* Nota */}
-            {trabalho.nota !== undefined ? (
+            {trabalho.nota !== null ? (
               <div className="bg-white rounded-3xl shadow-lg shadow-neutral-900/5 p-8">
                 <SectionTitle>Avaliação</SectionTitle>
                 <div className="mt-4 flex items-center gap-4">
@@ -102,12 +101,9 @@ export default function TrabalhoDetalhesPage({ params }: { params: { slug: strin
             )}
           </div>
 
-          {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-3xl shadow-lg shadow-neutral-900/5 p-6 sticky top-4 space-y-6">
-              <h3 className="font-display text-xl font-bold text-primary">
-                Acesso ao Trabalho
-              </h3>
+              <h3 className="font-display text-xl font-bold text-primary">Acesso ao Trabalho</h3>
 
               <div className="space-y-3">
                 {trabalho.link && trabalho.link !== '#' ? (
@@ -122,10 +118,7 @@ export default function TrabalhoDetalhesPage({ params }: { params: { slug: strin
                       Visualizar Trabalho
                     </a>
                     <a
-                      href={trabalho.link}
-                      download
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={`/biblioteca/${trabalho.slug}/download`}
                       className="w-full inline-flex items-center justify-center gap-2 bg-primary px-6 py-4 rounded-xl font-bold text-white transition hover:bg-secondary"
                     >
                       <Download className="h-5 w-5" />
@@ -150,7 +143,7 @@ export default function TrabalhoDetalhesPage({ params }: { params: { slug: strin
                   </div>
                   <div>
                     <dt className="text-neutral-500">Data de Publicação</dt>
-                    <dd className="font-semibold text-neutral-900">{formattedDate}</dd>
+                    <dd className="font-semibold text-neutral-900">{dataPublicacaoFormatada}</dd>
                   </div>
                 </dl>
               </div>
@@ -163,14 +156,18 @@ export default function TrabalhoDetalhesPage({ params }: { params: { slug: strin
                       <Eye className="h-4 w-4" />
                       Visitantes
                     </dt>
-                    <dd className="font-bold text-lg text-primary">{trabalho.visitantes.toLocaleString('pt-BR')}</dd>
+                    <dd className="font-bold text-lg text-primary">
+                      {visitantesAtualizados.toLocaleString('pt-BR')}
+                    </dd>
                   </div>
                   <div className="flex items-center justify-between">
                     <dt className="text-neutral-500 flex items-center gap-2">
                       <Download className="h-4 w-4" />
                       Downloads
                     </dt>
-                    <dd className="font-bold text-lg text-primary">{trabalho.baixados.toLocaleString('pt-BR')}</dd>
+                    <dd className="font-bold text-lg text-primary">
+                      {trabalho.baixados.toLocaleString('pt-BR')}
+                    </dd>
                   </div>
                 </dl>
               </div>
@@ -178,27 +175,32 @@ export default function TrabalhoDetalhesPage({ params }: { params: { slug: strin
               <div className="border-t border-neutral-200 pt-6">
                 <h4 className="font-semibold text-neutral-700 mb-3">Categorias</h4>
                 <div className="flex flex-wrap gap-2">
-                  {trabalho.tags.map(tag => {
-                    const hexColor = tagHexColors[tag] || '#9ca3af';
-                    const TagIcon = tagIconsMap[tag] || User;
-                    return (
-                      <span
-                        key={tag}
-                        className="text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"
-                        style={{ backgroundColor: hexColor }}
-                      >
-                        <TagIcon className="h-3.5 w-3.5" />
-                        {tag}
-                      </span>
-                    );
-                  })}
+                  {trabalho.categoriasDetalhes.length > 0 ? (
+                    trabalho.categoriasDetalhes.map((categoria) => {
+                      const Icon = resolveCategoriaIcon(categoria.icone)
+                      const color = categoria.cor || '#9ca3af'
+                      return (
+                        <span
+                          key={categoria.nome}
+                          className="text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"
+                          style={{ backgroundColor: color }}
+                        >
+                          <Icon className="h-3.5 w-3.5" />
+                          {categoria.nome}
+                        </span>
+                      )
+                    })
+                  ) : (
+                    <span className="text-sm text-neutral-500">
+                      Nenhuma categoria associada a este trabalho.
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Botão Voltar no final */}
         <div className="mt-12 text-center">
           <Link
             href="/biblioteca"
@@ -210,5 +212,9 @@ export default function TrabalhoDetalhesPage({ params }: { params: { slug: strin
         </div>
       </section>
     </main>
-  );
+  )
+}
+
+export async function generateStaticParams() {
+  return []
 }

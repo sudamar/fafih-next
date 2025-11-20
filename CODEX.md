@@ -19,6 +19,17 @@
 
 > Use `npm run lint` para garantir que o código está dentro dos padrões.
 
+### Cache do catálogo de cursos (Supabase)
+- As consultas de catálogo usam cache com tags para evitar repiques no Supabase.
+- Tags disponíveis:
+  - `courses:list` — lista/painel `/cursos`.
+  - `courses:detail:{slug}` — detalhe individual (substitua `{slug}` pelo slug real).
+- Helpers em `src/lib/services/courseCatalog.ts`:
+  - `revalidateCourseList()` limpa o cache da listagem.
+  - `revalidateCourseDetail(slug)` limpa o cache de um curso específico.
+- Endpoint interno: `GET /revalidate` dispara `revalidateCourseList` e cada detalhe conhecido, retornando o status das tags invalidadas (rota não listada na navegação).
+- Aplique `revalidateTag` chamando esses helpers (ex.: rota segura, script ou ação de deploy) sempre que atualizar dados no Supabase.
+
 ## Estrutura de Pastas
 ```
 src/
@@ -126,6 +137,7 @@ src/
 
 ### Instruções personalizadas pelo responsável.
 - Eu me chamo SUDAMAR e sou o responsável pela aplicação.
+- NUNCA alterar sozinho nenhum campo no BD. Sempre me fornecer o SQL para que eu faça. ISSO É SUPER IMPORTANTE!!!
 - SEMPRE use componentes tailwind ao invés de classes CSS. Caso precise de uma classe específica, precisa me avisar, pedir minha confirmação com LETRAS MAIÚSCULAS.
 - Essa aplicação é uma universidade que vai iniciar seus trabalhos por agora e terá aulas de pós graduação e pós graduação.
 - Só teremos dados vindos de API para cursos, depoimentos, professores e polos. Todo o resto do site será estático. **Não sendo necessário separar dados** para qualquer outro domínio.

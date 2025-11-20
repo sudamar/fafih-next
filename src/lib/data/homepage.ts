@@ -1,5 +1,3 @@
-type CourseCategory = 'all' | 'graduacao' | 'especializacao' | 'extensao' | 'eventos'
-
 export interface HeroSlide {
   id: number
   title: string
@@ -11,15 +9,6 @@ export interface HeroSlide {
 export interface FocusArea {
   title: string
   bullets: string[]
-}
-
-export interface CourseCardData {
-  title: string
-  description: string
-  imageUrl: string
-  category: Exclude<CourseCategory, 'all'>
-  badge: string
-  href: string
 }
 
 export interface NewsItem {
@@ -123,85 +112,6 @@ export const focusAreas: FocusArea[] = [
   },
 ]
 
-export const courseFilters: { label: string; value: CourseCategory }[] = [
-  { label: 'Todos os Cursos', value: 'all' },
-  { label: 'Graduação', value: 'graduacao' },
-  { label: 'Pós-Graduação', value: 'especializacao' },
-  { label: 'Curta e Média Duração', value: 'extensao' },
-  { label: 'Eventos', value: 'eventos' },
-]
-
-export const courses: CourseCardData[] = [
-  {
-    title: 'Psicologia Junguiana',
-    description: 'Uma jornada de autoconhecimento e capacitação profissional baseada na obra de C.G. Jung.',
-    imageUrl: 'https://i.imgur.com/STdPJA5.png',
-    category: 'especializacao',
-    badge: 'Pós-Graduação',
-    href: 'curso-psicologia-junguiana.html',
-  },
-  {
-    title: 'Psicossomática',
-    description: 'Explore a integração entre corpo, alma e espírito com uma abordagem holística e humanista.',
-    imageUrl: 'https://i.imgur.com/cTs1Zdf.png',
-    category: 'especializacao',
-    badge: 'Pós-Graduação',
-    href: 'curso-psicossomatica.html',
-  },
-  {
-    title: 'Arteterapia e Expressões Criativas',
-    description: 'Capacite-se para despertar e utilizar a criatividade como uma poderosa ferramenta terapêutica.',
-    imageUrl: 'https://i.imgur.com/iVpnrwc.png',
-    category: 'especializacao',
-    badge: 'Pós-Graduação',
-    href: 'curso-arteterapia.html',
-  },
-  {
-    title: 'Livros Negros e Livro Vermelho',
-    description:
-      'De volta com mais uma edição do Curso sobre Os Livros Negros e Liber Novus, com a professora Lilian Wurzba, lembrando a importância que as experiências registradas no período de nov/1913 a dez/1932 teve na obra ulterior de Jung.',
-    imageUrl: 'https://i.imgur.com/qwiCmA6.jpeg',
-    category: 'extensao',
-    badge: 'Curta e Média Duração',
-    href: 'curso-livros-negros.html',
-  },
-  {
-    title: 'Sonhando Através da Arteterapia',
-    description:
-      'Jornada na Arteterapia a partir de imagens oníricas e representações simbólicas com as professoras Ana Paula Maluf e Bárbara Pessanha.',
-    imageUrl: 'https://i.imgur.com/AnnChjx.png',
-    category: 'extensao',
-    badge: 'Curta e Média Duração',
-    href: 'curso-sonhando-arteterapia.html',
-  },
-  {
-    title: 'De Aion a Jó',
-    description:
-      'Do Javismo da Antiga Era de Áries à Revolução Aquariana do Mundo que Deseja Nascer, com os professores Dimas Künsch e Waldemar Magaldi.',
-    imageUrl: 'https://i.imgur.com/REzhmRK.jpeg',
-    category: 'extensao',
-    badge: 'Curta e Média Duração',
-    href: 'curso-aion-jo.html',
-  },
-  {
-    title: 'Formação de Membros Analistas Junguianos do IJEP',
-    description:
-      'Filiação e Formação de Analistas. Somente para Ex-Alunos do Curso de Psicologia Junguiana do IJEP.',
-    imageUrl: 'https://i.imgur.com/lXkjLLG.png',
-    category: 'extensao',
-    badge: 'Curta e Média Duração',
-    href: 'curso-formacao-analistas.html',
-  },
-  {
-    title: 'Congressos Junguianos do IJEP',
-    description: 'Adquira ou saiba mais deste e dos demais Congressos Junguianos do IJEP.',
-    imageUrl: 'https://i.imgur.com/M3vP6UT.png',
-    category: 'eventos',
-    badge: 'Eventos',
-    href: 'eventos-congressos-junguianos.html',
-  },
-]
-
 
 export const newsList: NewsItem[] = [
   {
@@ -224,42 +134,43 @@ export const footerLinkGroups: FooterLinkGroup[] = [
     links: [
       { label: 'Conheça a FAFIH', href: '/conheca-a-fafih' },
       { label: 'Conheça o IJEP', href: 'https://ijep.com.br/', external: true },
-      { label: 'Focos Acadêmicos', href: 'index.html#focos' },
-      { label: 'Iniciação Científica', href: 'iniciacao-cientifica.html' },
-      { label: 'Extensão', href: 'extensao.html' },
+      { label: 'Focos Acadêmicos', href: '/#focos' },
+      { label: 'Iniciação Científica', href: '/iniciacao-cientifica' },
+      { label: 'Extensão', href: '/extensao' },
       { label: 'Notícias', href: '/#noticias' },
       { label: 'Comissão Própria de Avaliação', href: '/cpa' },
       { label: 'Calendário Acadêmico', href: '/calendario-academico' },
       { label: 'Biblioteca', href: '/biblioteca' },
-      { label: 'Consultar Diploma', href: 'consultar-diploma.html' },
-      { label: 'Design System', href: '/dls/components' },
-      { label: 'Política de Privacidade', href: 'politica-privacidade.html' },
-      { label: 'Política de Cookies', href: '#', description: 'Página em construção' },
+      { label: 'Consultar Diploma', href: '/consulte-diploma' },
+      // { label: 'Design System', href: '/dls/components' },
+      { label: 'Política de Privacidade', href: '/politica-privacidade' },
+      // { label: 'Política de Cookies', href: '#', description: 'Página em construção' },
     ],
   },
   {
     title: 'Cursos',
     links: [
       { label: 'Todos', href: '/cursos' },
-      { label: 'Graduação', href: 'index.html?filter=graduacao#cursos' },
-      { label: 'Pós-graduação', href: 'index.html?filter=especializacao#cursos' },
-      { label: 'Curta e Média Duração', href: 'index.html?filter=extensao#cursos' },
-      { label: 'Eventos', href: 'index.html?filter=eventos#cursos' },
-      { label: 'Formas de Ingresso', href: 'formas-de-ingresso.html' },
+      { label: 'Graduação', href: '/cursos?filter=graduacao' },
+      { label: 'Pós-graduação', href: '/cursos?filter=especializacao' },
+      { label: 'Extensão', href: '/cursos?filter=extensao' },
+      { label: 'Congressos', href: '/cursos?filter=congressos' },
+      { label: 'Formação', href: '/cursos?filter=formacao' },
+      { label: 'Formas de Ingresso', href: '/formas-de-ingresso' },
       { label: 'Regulamentos', href: '/regulamentos' },
-      { label: 'Polos', href: 'polos.html' },
+      { label: 'Polos', href: '/polos' },
     ],
   },
   {
     title: 'Comunidade Acadêmica',
     links: [
       { label: 'Portal do Aluno', href: 'https://ijep.com.br/login-aluno', external: true },
-      { label: 'Núcleo de Apoio Psicopedagógico', href: 'apoio-psicopedagogico.html' },
+      { label: 'Núcleo de Apoio Psicopedagógico', href: '/nucleo-apoio-psicopedagogico' },
       { label: 'Egresso', href: 'https://ijep.com.br/login-aluno', external: true },
       { label: 'Corpo Docente', href: '/corpo-docente' },
       { label: 'Membros Analistas', href: '/membros-analistas' },
       { label: 'Núcleo de Apoio e Desenvolvimento Docente', href: '/nucleo-apoio-docente' },
-      { label: 'Portal do Docente', href: 'portal-do-docente.html' },
+      // { label: 'Portal do Docente', href: 'https://ijep.com.br' },
       { label: 'Serviços para a Comunidade', href: '/servicos-comunidade' },
     ],
   },
@@ -269,7 +180,7 @@ export const footerContact: ContactInfoItem[] = [
   { type: 'email', label: 'contato@fafih.edu.br', href: 'mailto:contato@fafih.edu.br' },
   { type: 'phone', label: '(11) 3456-7890', href: 'tel:+551134567890' },
   { type: 'link', label: 'Ouvidoria', href: '/ouvidoria' },
-  { type: 'link', label: 'Perguntas Frequentes', href: 'perguntas-frequentes.html' },
+  { type: 'link', label: 'Perguntas Frequentes', href: '/faq' },
 ]
 
 export const footerSocials: SocialLink[] = [

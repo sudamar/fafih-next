@@ -17,6 +17,7 @@
 
   html {
     scroll-behavior: smooth;
+    font-size: calc(1rem + 1pt);
   }
 
   body {
@@ -201,6 +202,36 @@
   .author-card-description {
     @apply m-0 text-[#42526b] leading-relaxed;
   }
+}
+
+/* Lista com ícone de check verde - fora do layer para maior especificidade */
+ul.list-item-check {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-top: 1rem;
+}
+
+ul.list-item-check li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.75rem;
+  padding-left: 0 !important;
+  margin-bottom: 0.75rem;
+  background: none !important;
+  list-style: none !important;
+}
+
+ul.list-item-check li::before {
+  content: '' !important;
+  display: block !important;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  background-image: url('/assets/icons/item-lista-check.svg') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
 }
 
 @layer utilities {

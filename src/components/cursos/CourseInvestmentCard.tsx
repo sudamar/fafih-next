@@ -4,27 +4,28 @@ import { useRouter } from 'next/navigation';
 import styles from './CourseInvestmentCard.module.css';
 
 interface Course {
-  price?: number;
-  originalPrice?: number;
-  precoMatricula?: number;
-  monthlyPrice?: string;
-  categoryLabel?: string;
-  modalidade?: string;
-  startDate?: string;
-  duration?: string;
-  workload?: string;
-  category?: string;
-  ctaLabel?: string;
-  observacoes?: string[] | string;
-  moreInfoUrl?: string;
+  price?: number | null
+  originalPrice?: number | null
+  precoMatricula?: number | null
+  monthlyPrice?: string | null
+  categoryLabel?: string | null
+  modalidade?: string | null
+  startDate?: string | null
+  duration?: string | null
+  workload?: string | null
+  category?: string | null
+  ctaLabel?: string | null
+  observacoes?: string[] | string | null
+  moreInfoUrl?: string | null
+  alerta_vagas?: number | null
   formato_curso?: {
-    frequencia?: string;
-    horario?: string;
-    periodo?: string;
-    tipo?: string;
-    plataforma?: string;
-    numero_encontros?: number;
-  };
+    frequencia?: string | null
+    horario?: string | null
+    periodo?: string | null
+    tipo?: string | null
+    plataforma?: string | null
+    numero_encontros?: number | null
+  } | null
 }
 
 interface CourseInvestmentCardProps {
@@ -48,6 +49,7 @@ const normalizeString = (value?: string | null): string | null => {
 export default function CourseInvestmentCard({ course }: CourseInvestmentCardProps) {
   const router = useRouter();
   const isExtensionCourse = course.category === 'extensao';
+  const isCursoFormacaoAnalista = course.category === 'formacao';
   const priceValue = typeof course.price === 'number' ? course.price : null;
   const hasPrice = priceValue !== null && priceValue > 0;
   const price = hasPrice ? formatCurrency(priceValue) : null;
@@ -56,7 +58,9 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
     : null;
   const monthlyPriceInfo = hasPrice ? course.monthlyPrice : null;
   const showContactTag = isExtensionCourse && !hasPrice;
-  const primaryCtaLabel = normalizeString(course.ctaLabel) || 'Inscrever-se Agora';
+  const primaryCtaLabel = course.alerta_vagas === 0
+    ? 'Lista de Espera'
+    : (normalizeString(course.ctaLabel) || 'Inscrever-se Agora');
   const moreInfoHref = normalizeString(course.moreInfoUrl) || 'https://ijep.com.br/inscricao/aluno';
   const observationText = isExtensionCourse
     ? (() => {
@@ -118,6 +122,28 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
     router.push('/cursos');
   };
 
+  // Lógica de alerta de vagas
+  const getVagasAlert = (): { message: string; type: 'warning' | 'danger' } | null => {
+    const vagas = course.alerta_vagas;
+
+    if (vagas === null || vagas === undefined || vagas > 15) {
+      return null;
+    }
+
+    if (vagas === 0) {
+      return { message: 'Vagas Esgotadas', type: 'danger' };
+    }
+
+    if (vagas <= 5) {
+      return { message: 'Últimas Vagas', type: 'danger' };
+    }
+
+    // vagas > 5 && vagas <= 15
+    return { message: 'Restam poucas vagas', type: 'warning' };
+  };
+
+  const vagasAlert = getVagasAlert();
+
   return (
     <div className={styles.card}>
       {/* Preço Principal */}
@@ -130,10 +156,22 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
           )}
         </div>
       )}
-      {showContactTag && (
+      {(showContactTag || isCursoFormacaoAnalista) && (
         <div className={styles.priceBox}>
           <div className={styles.priceLabel}>Investimento</div>
-          <div className={styles.statusTag}>Não disponível</div>
+          {isCursoFormacaoAnalista ? (
+            <div className={styles.statusTag}>Consulte-nos</div>
+          ) : (
+            <div className={styles.statusTag}>Vagas encerradas</div>
+          )}
+        </div>
+      )}
+
+      {/* Alerta de Vagas */}
+      {vagasAlert && (
+        <div className={`${styles.vagasAlert} ${styles[`vagasAlert${vagasAlert.type === 'danger' ? 'Danger' : 'Warning'}`]}`}>
+          <span className={styles.vagasAlertIcon}>⚠️</span>
+          <span className={styles.vagasAlertText}>{vagasAlert.message}</span>
         </div>
       )}
 
@@ -202,9 +240,9 @@ export default function CourseInvestmentCard({ course }: CourseInvestmentCardPro
         >
           {primaryCtaLabel}
         </a>
-        <button className={styles.secondaryButton}>
+        {/* <button className={styles.secondaryButton}>
           Download da Ementa
-        </button>
+        </button> */}
       </div>
     </div>
   );

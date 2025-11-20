@@ -1,28 +1,44 @@
-import Image from 'next/image';
-import styles from './CourseDetailHero.module.css';
+import Image from 'next/image'
+import type { StaticImageData } from 'next/image'
+import styles from './CourseDetailHero.module.css'
 
 interface CourseHero {
-  type?: string;
-  source?: string;
-  fallbackImage?: string;
-  alt?: string;
+  type?: string
+  source?: string | null
+  fallbackImage?: string | null
+  alt?: string | null
 }
 
 interface Course {
-  hero?: CourseHero;
-  image?: string;
-  title: string;
-  subtitle?: string;
-  categoryLabel?: string;
-  duration?: string;
-  modalidade?: string;
+  hero?: CourseHero
+  image?: string | StaticImageData | null
+  title: string
+  subtitle?: string | null
+  categoryLabel?: string | null
+  duration?: string | null
+  modalidade?: string | null
 }
 
 interface CourseDetailHeroProps {
-  course: Course;
+  course: Course
 }
 
 export default function CourseDetailHero({ course }: CourseDetailHeroProps) {
+  const posterImage = (() => {
+    if (typeof course.hero?.fallbackImage === 'string' && course.hero.fallbackImage.trim()) {
+      return course.hero.fallbackImage
+    }
+    if (typeof course.image === 'string' && course.image.trim()) {
+      return course.image
+    }
+    return '/assets/images/foto-fallback-generica.jpg'
+  })()
+
+  const heroImage: string | StaticImageData =
+    course.hero?.source ?? course.image ?? '/assets/images/foto-fallback-generica.jpg'
+
+  const mediaAlt = course.hero?.alt || course.title
+
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
@@ -30,7 +46,7 @@ export default function CourseDetailHero({ course }: CourseDetailHeroProps) {
           {/* Media + Title */}
           <div className={styles.mediaWrapper}>
             <div className={styles.media}>
-              {course.hero?.type === 'video' ? (
+              {course.hero?.type === 'video' && course.hero?.source ? (
                 <video
                   className={styles.video}
                   autoPlay
@@ -38,14 +54,14 @@ export default function CourseDetailHero({ course }: CourseDetailHeroProps) {
                   loop
                   playsInline
                   controls
-                  poster={course.hero.fallbackImage}
+                  poster={posterImage}
                 >
                   <source src={course.hero.source} type="video/mp4" />
                 </video>
               ) : (
                 <Image
-                  src={course.hero?.source || course.image || ''}
-                  alt={course.hero?.alt || course.title}
+                  src={heroImage}
+                  alt={mediaAlt}
                   className={styles.image}
                   fill
                   style={{ objectFit: 'cover' }}

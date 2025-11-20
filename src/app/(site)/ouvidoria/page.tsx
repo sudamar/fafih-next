@@ -21,6 +21,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { PageTitle } from '@/components/ui/page-title'
 import { CardAcentoBorda } from '@/components/ui/card-acento-borda'
 import { FormTitle } from "@/components/ui/form-title"
+import { formatBrazilianPhone, normalizeEmail } from '@/lib/utils/formatting'
 
 // Define the form schema with Zod
 const ouvidoriaFormSchema = z.object({
@@ -39,6 +40,8 @@ const ouvidoriaFormSchema = z.object({
 export default function OuvidoriaPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
+  const [protocolo, setProtocolo] = useState<string | null>(null)
 
   // Initialize the form with React Hook Form and Zod resolver
   const form = useForm<z.infer<typeof ouvidoriaFormSchema>>({
@@ -57,17 +60,44 @@ export default function OuvidoriaPage() {
 
   const handleSubmit = async (data: z.infer<typeof ouvidoriaFormSchema>) => {
     setIsSubmitting(true)
+    setSubmitSuccess(false)
+    setSubmitError(null)
+    setProtocolo(null)
+
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-      console.log('Formulário enviado:', data)
+      const response = await fetch('/api/ouvidoria', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json().catch(() => ({}))
+
+      if (!response.ok) {
+        throw new Error(result?.error ?? 'Não foi possível enviar sua manifestação. Tente novamente.')
+      }
+
       setSubmitSuccess(true)
-      form.reset()
+      setProtocolo(result?.protocolo ?? null)
+      form.reset({
+        identificacao: 'identificado',
+        nome: '',
+        email: '',
+        telefone: '',
+        vinculo: '',
+        tipoManifestacao: '',
+        assunto: '',
+        mensagem: '',
+      })
       setTimeout(() => {
         setSubmitSuccess(false)
+        setProtocolo(null)
       }, 5000)
     } catch (error) {
       console.error('Erro ao enviar formulário:', error)
+      setSubmitError(error instanceof Error ? error.message : 'Não foi possível enviar sua manifestação. Tente novamente.')
     } finally {
       setIsSubmitting(false)
     }
@@ -121,6 +151,16 @@ export default function OuvidoriaPage() {
               {submitSuccess && (
                 <div className="my-4 rounded-lg bg-green-100 p-4 text-center text-green-800">
                   Sua manifestação foi enviada com sucesso! Retornaremos em até 10 dias úteis.
+                  {protocolo ? (
+                    <p className="mt-2 text-sm font-semibold">
+                      Protocolo: <span className="font-bold">{protocolo}</span>
+                    </p>
+                  ) : null}
+                </div>
+              )}
+              {submitError && (
+                <div className="my-4 rounded-lg bg-red-100 p-4 text-center text-red-800">
+                  {submitError}
                 </div>
               )}
               
@@ -179,7 +219,14 @@ export default function OuvidoriaPage() {
                           <FormItem>
                             <FormLabel>E-mail *</FormLabel>
                             <FormControl>
-                              <Input type="email" placeholder="seu.email@exemplo.com" {...field} />
+                              <Input
+                                type="email"
+                                inputMode="email"
+                                autoComplete="email"
+                                placeholder="seu.email@exemplo.com"
+                                value={field.value ?? ''}
+                                onChange={(event) => field.onChange(normalizeEmail(event.target.value))}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -192,7 +239,13 @@ export default function OuvidoriaPage() {
                           <FormItem>
                             <FormLabel>Telefone</FormLabel>
                             <FormControl>
-                              <Input type="tel" placeholder="(XX) XXXXX-XXXX" {...field} />
+                              <Input
+                                type="tel"
+                                inputMode="tel"
+                                placeholder="(XX) XXXXX-XXXX"
+                                value={field.value ?? ''}
+                                onChange={(event) => field.onChange(formatBrazilianPhone(event.target.value))}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>

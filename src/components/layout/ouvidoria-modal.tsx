@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from 'react'
 import { useOuvidoriaModal } from '@/components/providers/ouvidoria-modal-provider'
+import { formatBrazilianPhone, normalizeEmail } from '@/lib/utils/formatting'
 
 export function OuvidoriaModal() {
   const { isOpen, close } = useOuvidoriaModal()
@@ -109,7 +110,12 @@ export function OuvidoriaModal() {
               id="ouvidoria-email"
               name="email"
               type="email"
+              inputMode="email"
+              autoComplete="email"
               required
+              onChange={(event) => {
+                event.currentTarget.value = normalizeEmail(event.currentTarget.value)
+              }}
               className="w-full rounded-lg border border-neutral-300 px-4 py-3 text-neutral-900 shadow-sm focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/40"
             />
           </div>
@@ -122,6 +128,11 @@ export function OuvidoriaModal() {
               id="ouvidoria-telefone"
               name="telefone"
               type="tel"
+              inputMode="tel"
+              placeholder="(XX) XXXXX-XXXX"
+              onChange={(event) => {
+                event.currentTarget.value = formatBrazilianPhone(event.currentTarget.value)
+              }}
               className="w-full rounded-lg border border-neutral-300 px-4 py-3 text-neutral-900 shadow-sm focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/40"
             />
           </div>
